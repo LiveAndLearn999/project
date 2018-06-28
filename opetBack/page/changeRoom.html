@@ -1,0 +1,114 @@
+<style>
+	.changeBd{width: 100%;height: 100%;}
+	.changle{display: inline-block;width: 45%;height: 100%;float: left;text-align: right;padding-right: 30px;box-sizing: border-box}
+	.changerg{display: inline-block;width: 45%;height: 100%;float: right;text-align: left;}
+	.changemd{display: inline-block;width: 10%;height: 100%;line-height: 600px;text-align: center}
+	.changemd img{border-radius: 100%;border: 2px solid lightgray;width: 80px;}
+	.changemd img:hover{border: 2px solid #f36201;}
+
+	.changeTit{width: 100%;height: 40px;text-align: center;line-height: 40px}
+.changeBd span{display: inline-block;width: 160px;height: 70px;background: #0462c5;line-height: 70px;font-size: 18px;color: white;margin-left: 30px;margin-top: 10px;text-align: center;}
+.changeBd label{display: inline-block;width: 60px;height: 20px;position: absolute;margin-left: -100px;margin-top: 45px;text-align: center;line-height: 20px;}
+
+
+.model{position: fixed;width: 400px;height: 240px;left: 40%;top: 50%;margin-top: -200px;z-index: 99;background: white;padding: 20px;box-sizing: border-box;box-shadow: 0 0 10px gray;border-radius: 5px;font-size: 22px}
+.medelCot{width: 100%;height: 80px;text-align: center;line-height: 80px;}
+.modelFot{width: 100%;height: 60px;line-height: 60px;}
+.modleft{width: 50%;height: 60px;display: inline;float: left}
+.modright{width: 50%;height: 60px;display: inline;float: right;text-align: right}
+.modelFot button{display: inline-block;width: 110px;height: 40px;border: 1px solid #666;background: none;border-radius: 5px;outline: none;font-size: 18px;}
+.modelFot button:hover{background: #378be5;color: white}
+
+
+.smallMod{width: 180px;height: 180px;background: gray;text-align: center;line-height: 180px;color: white;font-size: 20px;position: fixed;left: 50%;top: 50%;z-index: 999999;margin-top: -150px;margin-left: -90px;
+animation: myfirst 1s;
+-moz-animation: myfirst 1s;	/* Firefox */
+-webkit-animation: myfirst 1s;	/* Safari 和 Chrome */
+-o-animation: myfirst 1s;	/* Opera */
+}
+
+@keyframes myfirst
+{
+from {background: gray;color: white;display: block}
+to {background: transparent;display: none;color: #eee}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+from {background:red;}
+to {background:yellow;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+from {background:red;}
+to {background:yellow;}
+}
+/* .model{position: fixed;width: 400px;height: 600px;left: 50%;top: 50%;margin-top: -300px;z-index: 99;background: #eee} */
+</style>
+<div class="changeBd">
+
+	<div class="changle" ng-click="model1=false">
+		<div class="changeTit">已定房间号</div>
+		<span ng-repeat="item in data1" ng-click="showModel1($event,item.roomNum,item.ss)" ng-style="{{item.color}}">
+			{{item.roomNum}}
+			<label>{{item.people}}</label>
+			<label style="margin-left: -50px;color: red;margin-top: 35px;font-size: 24px;" ng-if="item.ss">已选</label>
+		</span>
+	</div>
+
+	<div class="changemd">
+		<img src="images/iconpng.png" alt="" ng-click="beTrue()" title="确认无误后点击交换">
+	</div>
+
+	<div class="changerg" ng-click="model1=false">
+		<div class="changeTit">替换房间号</div>
+		<span ng-repeat="item in data2" ng-click="showModel2($event,item.roomNum)">
+			{{item.roomNum}}
+			<label style="margin-left: -50px;color: red;margin-top: 35px;font-size: 24px;" ng-if="item.ss">已选</label>
+		</span>
+	</div>
+
+
+	<div class="model" ng-show="model1">
+		<div style="display: inline;width: 100px;height: 60px;line-height: 60px;;font-size: 20px;" ng-click="hideModel1()">X</div>
+		<div class="medelCot" ng-if="modMesg">将: {{seleRoom1}} 替换成：{{seleRoom2}}</div>
+		<div class="medelCot" ng-if="!modMesg">{{modmsg}}未选择</div>
+		<div class="modelFot">
+			<div class="modleft" ng-click="hideModel1()">
+				<button type="button">取消</button>
+			</div>
+			<div class="modright">
+				<button type="button" ng-click="getData1()">确定</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="model" ng-show="model2">
+		<div style="display: inline;width: 100px;height: 60px;line-height: 60px;;font-size: 20px;" ng-click="hideModel2()">X</div>
+		<div class="medelCot">替换房间: {{seleRoom2}}</div>
+		<div class="modelFot">
+			<div class="modleft" ng-click="hideModel2()">
+				<button type="button">取消</button>
+			</div>
+			<div class="modright">
+				<button type="button" ng-click="getData2()">确定</button>
+			</div>
+		</div>
+	</div> -->
+
+
+</div>
+
+
+
+
+<div class="smallMod" ng-show="showMsg">
+	{{mesg}}
+</div>

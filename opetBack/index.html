@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	   body{margin: 0px;padding: 0px;min-width: 1450px;}
+	   .colBlu{background: #0462c5}
+	   .colGren{background: #184714}
+	   .colYell{background: #a1af48}
+	   .colBlig{background: #14a1d7}
+	   .colRed{background: #c04723}
+	   .colRedlig{background: #cb4874}
+
+	   .head{width: 100%;height: 80px;background: #1a6761}
+
+	   .headerLef{display: inline-block;width: 1050px;height: 80px;float: left;padding-left: 30px;box-sizing: border-box;}
+	   /* border-right: 1px solid white */
+
+		.logo{width: 100%;height: 30px;line-height: 30px}
+			
+		.hedList{width: 100%;display: inline-block;height: 50px;margin: 0px;padding: 0px;}
+		.hedList li{list-style: none;display: inline-block;width: 140px;height: 50px;}
+		.lileft{display: inline-block;width: 30px;height: 50px;float: left}
+		.lileft span{display: inline-block;width: 30px;height: 30px;margin-top: 10px;}
+		.liright{display: inline-block;width: 100px;height: 50px;float: right;line-height: 50px;font-size: 14px;text-indent: 5px;}
+
+		.headerRg{display: inline-block;width: 400px;height: 80px;float: right;}
+
+		.headerRg ul{display: inline-block;width: 100%;height: 60px;font-size: 0px;padding: 0px;margin: 0px;text-align: center;margin-top: 10px;}
+		.headerRg ul li{display: inline-block;width: 100px;height: 60px;margin-left: 10px;font-size: 16px;text-align: center;line-height: 60px;background: #7c95a4;color: white}
+
+		
+		.hergleft{width: 200px;height: 60px;display: inline-block;float: left;margin-top: 10px;line-height: 60px;text-align: right;color: white;}
+		.hergight{width: 200px;height: 60px;display: inline-block;float: right;margin-top: 10px;line-height: 60px;text-align: center;color: white}
+
+	   .contain{width: 100%;height: 1000px;}
+	   .left{width: 250px;height: 100%;float: left;background: #b4c3c8}
+	   .left a{text-decoration: none;color: white}
+       .left ul{display: inline-block;width: 100%;height: 60px;font-size: 0px;padding: 0px;margin: 0px;}
+       .left ul li{display: inline-block;list-style: none;width: 200px;height: 60px;margin-top: 10px;margin-left: 30px;text-align: center;line-height: 60px;color: white;font-size: 18px;}
+       .left ul li a{display: inline-block;width: 200px;height: 60px;}
+
+	   .right{height: 100%;margin-left: 250px;background-color: #eee;}
+	</style>
+	<script src="js/angularjs.js"></script>
+	<script src="js/router.js"></script>
+	<script src="js/angular-cookies.min.js"></script>
+
+	<script src="js/index.js"></script>
+	<script src="js/config.js"></script>
+	<script src="controller/bulkController.js"></script>
+	<script src="controller/changeController.js"></script>
+	<script src="controller/homeController.js"></script>
+	<script src="controller/hourController.js"></script>
+	<script src="controller/orderController.js"></script>
+	<script src="controller/retreatController.js"></script>
+	<script src="controller/serchController.js"></script>
+</head>
+<body>
+	<div class="head">
+		
+		<div class="headerLef">
+      		<tott-directive></tott-directive>
+      	</div>
+
+      	 <div class="headerRg">
+        	<div class="hergleft">XX  登陆</div>
+        	<div class="hergight">2018-05-08</div>
+        </div>
+        
+       <!--  <div class="headerRg">
+        	<ul>
+        		<li>网络检测</li>
+        		<li>重启设备</li>
+        		<li>菜单</li>
+        	</ul>
+        </div> -->
+
+	</div>
+
+	<div class="contain">
+
+		<div class="left">
+			<left-directive></left-directive>
+		</div>
+
+    	<div class="right" ng-view></div>
+
+	</div>
+</body>
+</html>

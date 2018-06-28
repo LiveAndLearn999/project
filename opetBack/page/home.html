@@ -1,0 +1,27 @@
+<style>     
+.homeBd{width: 100%;height: auto;text-align: left}
+.homeBd span{display: inline-block;width: 160px;height: 70px;background: green;line-height: 70px;font-size: 18px;color: white;margin-left: 30px;margin-top: 10px;text-align: center}
+.homeBd label{display: inline-block;width: 60px;height: 20px;position: absolute;margin-left: -100px;margin-top: 45px;text-align: center;line-height: 20px;}
+.model{position: fixed;width: 400px;height: 600px;left: 50%;top: 50%;margin-top: -300px;z-index: 99;background: #eee}
+</style>
+
+<div class="homeBd">
+	<span ng-repeat="item in data" ng-style="{{item.color}}">
+		{{item.roomHao}}
+		<label>{{item.peole}}</label>
+	</span>
+	<!-- <span>
+		8201
+		<label>1</label>
+	</span>
+	<span>
+		8201
+		<label>1</label>
+	</span> -->
+	
+</div>
+
+
+<!-- <div class="model" ng-show="model">
+	<div style="display: inline;width: 100px;height: 60px;line-height: 60px;;font-size: 20px;padding-left: 20px;box-sizing: border-box;" ng-click="hideModel()">X</div>
+</div> -->
