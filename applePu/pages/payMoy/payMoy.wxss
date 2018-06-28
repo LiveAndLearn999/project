@@ -1,0 +1,85 @@
+/* pages/deposit/deposit.wxss */
+.depositBg{width: 100%;height: 1280rpx;background-color: #f4f0f1;overflow: hidden}
+
+.ff{border: 1px solid red}
+
+.depositTop{width: 100%;height: 385rpx;text-align: center;background-color: white;overflow-x: hidden;}
+.Bgcol{background-color: #f36201;color: white}
+.noneBg{background:none;color: #ffa001}
+
+.depositTop1 image{width: 60rpx;height: 60rpx;position: relative;top: -77rpx;left: 118rpx;}
+
+.clear{width: 100%;height: 1rpx;clear: both;}
+
+.depositTopline{width: 80%!important;height: 2rpx!important;margin-left: 10%;margin-top: 60rpx;border:none!important;border-bottom: 2px solid #f6f3f3!important;}
+
+
+
+
+.depositFooter{width: 100%;height: 160rpx;margin-top: 20rpx;}
+.careFore{width: 70%;height: 30rpx;margin-left: 15%;font-size: 22rpx;text-align: center;line-height: 30rpx;color: #9f9d9e}
+.careFore2{margin-top: 5rpx;margin-bottom: 15rpx;}
+.careFore label{color: #ffa001}
+.depositFbtn{width: 96%;height: 100rpx;margin-left: 2%;}
+.depositFbtn button{background-color: #f36201}
+
+
+
+/*1.25  */
+.deCard{display: inline-block;width: 40%;height: 90rpx; border: 1px solid #ffa001;margin-left: 10rpx;border-radius: 10rpx;font-size: 28rpx;position: relative;font-size: 40rpx;margin-top: 10rpx;}
+.depositTop{padding-top: 20rpx;box-sizing: border-box;height: auto}
+
+
+.deCardL{display: inline-block;width: 60%;height: 100%;float: left;margin-left: 20%;text-align: center}
+.deCardR{display: inline-block;width: 20%;height: 100%;float: right;}
+.deCardL view{font-size: 24rpx;width: 100%;text-align: center;}
+.deCard2{line-height: 100rpx}
+.deCardR image{width: 60rpx;height: 60rpx}
+.bigWord{font-size: 40rpx!important;margin-top: 5rpx;}
+.smallWord{margin-top: -10rpx!important;}
+
+
+
+
+
+
+
+
+
+.payMyimg{width: 100%;height: 160rpx;backface-visibility: #f3f3f3}
+.payMyimg image{width: 100%;height: 100%}
+
+.payDetail{width: 100%;height: 140rpx;text-align: center;font-size: 40rpx;line-height: 40rpx;background: 
+white;padding-top: 60rpx;}
+.payDetail label{font-size: 50rpx;}
+.grayWod{color: gray;font-size: 30rpx;  }
+
+
+.moreMetd{width: 100%;height: 100rpx;margin-top: 15rpx;background: white;text-align: center;line-height: 100rpx;color: gray}
+.moreMetd image{width: 38rpx;height:24rpx;position: relative;top: 3rpx;}
+.moreCot{position: relative;width: 50%;left: 25%;height: 100%;font-size: 30rpx;}
+
+.seMetd{width: 100%;height: 160rpx;background: white}
+.seMetdCot{width: 90%;margin-left: 5%;height: 100%;border-top: 2px solid #f3f3f3}
+.sePay{width: 100%;height: 140rpx;text-align: center}
+.sePayL{display: inline-block;width: 15%;height: 100%;float: left;}
+.sePayL image{width: 60rpx;height: 60rpx;position: relative;top: 40rpx;}
+.sePayM{display: inline-block;width:60%;height: 100%; }
+.sePtop{width: 100%;height: 40rpx;margin-top: 13%;font-size: 30rpx;text-align: left}
+.sePfoot{width: 100%;height: 40rpx;margin-top: 10rpx;}
+.sePfoot label{display: inline-block;width: 150rpx;height: 30rpx;font-size: 28rpx;float: left;background: #f55055;border-radius: 5rpx;color: white;font-size: 24rpx;line-height: 30rpx;}
+.sePfoot label:nth-child(2){margin-left: 20rpx;}
+.sePayR{display: inline-block;width:25%;height: 100%;float: right; }
+.sePayR image{width: 50rpx;height: 50rpx;position: relative;top: 45rpx;}
+
+.seImg{margin-left: 10rpx;}
+
+
+
+
+.showImg{display: inline-block;}
+.hideImg{display: none}
+
+
+
+.depositFbtn label{font-size: 24rpx;}

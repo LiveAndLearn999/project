@@ -1,0 +1,140 @@
+<!--pages/personalCore/personalCore.wxml-->
+<view class='personalBackg'>
+
+  <view class='persponBg'></view>
+  <view class='personalTop'>
+    <view class='personalTopContent'>
+      <view class='personalLogo'>
+        <view class='personalImg' bindtap='toLoad'>
+          <image src='{{userinfo.headUrl}}'></image>
+        </view>
+        <view class='personalImgtit'>
+          <view class='personName'>{{userinfo.nickName}}</view>
+          <view class=' personNameW'>{{userinfo.depositFlag==0?'未认证':'已认证'}}</view>
+          <view class=' personNameW' wx:if="{{userinfo.mobile!=''}}">{{userinfo.mobile}}</view>
+
+          <button type='warn' class='bindphone' wx:else bindtap='bindmobile'>绑定</button>
+
+        </view>
+      </view>
+
+      <view class='personSetting' bindtap='setting'>设置</view>
+    </view>
+
+
+    <view class='personalLis'>
+      <!-- <view class='personalLisCont'>
+      <view class='personalLisContL'>
+            月卡
+            <view class='remind'>抢购中</view>
+            <view>
+                剩余<label>20</label>天
+            </view>   
+      </view>
+      <view class='personalLisContRbtn'>
+            <button type='warn'>购买月卡</button>
+      </view>
+    </view> -->
+      <view class='personalLisCont'>
+        <view class='personalLisContL'>
+          余额
+          <view class='personalLisContLW'>
+            <label>{{userinfo.accountBalance}}</label> 元
+            <!-- （其中充值余额{{userinfo.rechargeBalance}}元） -->
+          </view>
+
+        </view>
+        <view class=' personalLisContRbtn'>
+          <button type='warn' bindtap='chongzhi'>充值</button>
+        </view>
+      </view>
+      <!-- <view class='personalLisCont' bindtap='toCoupons'>
+      <view class='personalLisContL'>
+              优惠卷
+            <view class='personalLisContLW'>
+                <label>2</label>
+                张优惠卷
+            </view>   
+      </view>
+      <view class='personalLisContR personalLisContR2'>></view>
+    </view> -->
+      <!-- <view class='personalLisCont' bindtap="{{userinfo.mobile==''?'bindmobile':''}}">
+        <view class='personalLisContL personalLisContL2'>
+          {{userinfo.mobile==''?'绑定手机号':'手机号：'+userinfo.mobile}}
+        </view>
+        <view class='personalLisContR personalLisContR2'>></view>
+      </view> -->
+      <view class='personalLisCont' bindtap='toMyorder'>
+        <view class='personalLisContL personalLisContL2'>
+          全部订单
+        </view>
+        <view class='personalLisContR personalLisContR2'>></view>
+      </view>
+      <view class='personalLisCont'  bindtap='toappMi'>
+        <view class='personalLisContL personalLisContL2'>
+          常用联系人
+        </view>
+        <view class='personalLisContR personalLisContR2'>></view>
+      </view>
+      <view class='personalLisCont' bindtap='actioncnt2'>
+        <view class='personalLisContL personalLisContL2'>
+          联系客服
+        </view>
+        <view class='personalLisContR personalLisContR2'>></view>
+      </view>
+      <view class="personalLisCont personalLisCont2 perFot  {{userinfo.depositFlag==0? '':'unable' }} ">
+
+        <view class='personalLisContL  personalLisContL3'>
+          <image src="../../img/{{userinfo.depositFlag==0?'suo.png':'suo_1.png'}}" class='suo'></image>
+          <label class="{{userinfo.depositFlag==0? '':'unable' }}">{{userinfo.depositFlag==0?'未交押金，无法享受会员服务':'押金已缴纳,可享受会员服务'}}</label>
+        </view>
+        <view class="personalLisContR personalLisContR4 {{userinfo.depositFlag==0? '':'unable unableborder' }} " bindtap="{{userinfo.depositFlag==0? 'yajin':'yajinwatch' }}">
+          {{userinfo.depositFlag==0?'缴纳押金':'查看'}}
+
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+
+</view>
+<view class="container">
+  <view class="modal1 {{showAmountModal1.showModal}}">
+    <form>
+      <view class="modal1-content">
+        <view class='messageCale' bindtap='hideAmountModal'>
+          <view class='cale'>X</view>
+        </view>
+        <view class='caleTit'>
+          绑定手机号
+          <view>您尚未绑定手机号,验证后将自动绑定</view>
+        </view>
+        <view class='caleInpt'>
+          <view class='caleInptCot'>
+            <view class='caleInptCotL'>
+              手机号
+            </view>
+            <view class='caleInptCotR'>
+              <input type="number" placeholder='请输入手机号' bindinput='mobileinput' />
+            </view>
+          </view>
+          <view class='caleInptCot'>
+            <view class='caleInptCotL'>
+              验证码
+            </view>
+            <view class='caleInptCotR caleInptCotR2'>
+              <input type="number" placeholder='请输入验证码' bindinput='codeinput' />
+              <label bindtap="{{btncodeclass==''?'getcode':''}}" class='{{btncodeclass}}'>{{btncodename}}</label>
+            </view>
+          </view>
+
+          <view class='clleLogin' bindtap='submitbindmobile'>
+            <button type='warn'>绑定</button>
+          </view>
+        </view>
+      </view>
+    </form>
+  </view>
+  <view class="mask {{showAmountModal1.showMask}}" bindtap='hideAmountModal'></view>
+</view>

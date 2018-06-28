@@ -1,0 +1,9 @@
+<view class='pubPreBg'>
+  <block wx:for="{{pictures}}" wx:for-index="idx" wx:key="{{idx}}">
+    <view class="{{idx % 2==0?'pubpRreimgL':'pubpRreimgR'}}" data-picType='{{item.picType}}' bindtap='previewImage'>
+      <image src='{{item.picUrl}}' />
+      <view class='pubpRreimgBot'>{{item.picType}}</view>
+    </view>
+  </block>
+
+</view>

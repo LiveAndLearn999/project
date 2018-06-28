@@ -1,0 +1,53 @@
+<view class='header'>
+  <swiper indicator-dots='true' indicator-active-color='#ffa001' autoplay='true' duration='1000'>
+    <block wx:for="{{banners}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item.poster}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='v1'>
+    <view class='headerL' bindtap='chooselocation'>
+      <image src='../../img/icon-location.png'></image>
+      <text>定位</text>
+    </view>
+    <text class='headerC' bindtap='chooselocation'>{{localtion}}</text>
+    <image class='headerR jiantou'  src='../../img/jiantou.png'></image>
+    <text class='headerR' bindtap='selectdate'>{{date}}</text>
+
+  </view>
+</view>
+<scroll-view scroll-y="true" class='content' bindscrolltolower='loadmores'>
+  <block wx:for="{{nearHotels}}" wx:for-index="idx" wx:key="{{idx}}">
+    <navigator url='../pubDetail/pubDetail?hotelNo={{item.hotelNo}}' class="row">
+      <view class="col-3">
+        <image src="{{item.iconUrl}}" class="video-avatar" lazy-load='true' />
+      </view>
+      <view class="col-6">
+        <view class="video-title-div">
+          <text class="video-title">{{item.hotelName}}</text>
+        </view>
+        <view>
+          <text class="fenshu">{{item.totalScore}}</text>
+          <text class="pinglun">分/{{item.commentNum}}评论  {{item.hotelType}}</text>
+          <view class='juli'>距离你{{item.commentNum}}米，{{item.nearbyAddr}}</view>
+          <text class="duration">起</text>
+          <text class="jiage">￥{{item.lowPrice}}</text>
+        </view>
+      </view>
+    </navigator>
+  </block>
+  <view class="load-more-wrap">
+    <block wx:if="{{hasMore}}">
+      <view class="load-content">
+        <text class="weui-loading" />
+      </view>
+    </block>
+    <block wx:else>
+      <view class="load-content">
+        <text>没有更多内容了</text>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+<!--index.wxml-->

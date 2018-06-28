@@ -1,0 +1,34 @@
+
+<view class='meHead'>
+     <view class='meCotL meHeaL'>
+         <image src='../../img/quanyi.png'></image>
+     </view>
+     <view class='meCotR meHedR'>您当前正在享受以下权益</view>
+</view>
+
+
+<view class='meCot'>
+    <view class='meCotL'>
+        <image src='../../img/liwu.png'></image>
+    </view>
+    <view class='meCotR'>
+        <view class='meCotRbig'>获得奖励</view>
+        <view class='meCotRsmal'>红包房间无限入住，随时赚红包</view>
+    </view>
+</view>
+
+
+<view class='meCot'>
+    <view class='meCotL'>
+       <image src='../../img/baohu.png'></image>
+    </view>
+    <view class='meCotR'>
+        <view class='meCotRbig'>入住保险</view>
+        <view class='meCotRsmal'>每次入住均获赠平台购买的意外险</view>
+    </view>
+</view>
+
+
+
+<view class='meExit' bindtap='returndeposit'>退回押金</view>
+

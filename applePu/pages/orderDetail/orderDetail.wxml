@@ -1,0 +1,241 @@
+<view class='orderDetailTopBg'></view>
+
+<view class='orderDetailTop'>
+  <view class='orderDetailToptit'>
+    <label>{{data.orderStatus=='1'?'等待支付':data.orderStatus=='2'?'等待入住':data.orderStatus=='4'?'已完成':'已取消'}}</label>
+  </view>
+  <view class='orderDetailTopcont'>
+    <label>{{data.orderStatus=='4'||data.orderStatus=='2'?'入住人：'+data.person1+data.person2:data.orderStatus=='1'?orderDetailTilcit1:''}}</label>
+    <view>
+      <label>{{data.orderStatus=='4'||data.orderStatus=='2'?'入住时间：'+data.startDate+' '+data.startTime+'至'+data.endDate+' '+data.endTime:''}}</label>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+<!--++++++++  -->
+
+<view class='orderDetailBg'>
+
+  <view class='orderDetailList'>
+    <view class='orderDetailListL'>
+      在线支付
+      <label>¥ {{data.payPrice}}</label>
+    </view>
+    <view class='orderDetailListR' bindtap='paydetail'>
+      消费明细 >
+    </view>
+  </view>
+
+
+  <!-- <view class='goToorder'>
+     <button size='mini' type='warn' class='goToorderBtn1' bindtap='changeOrder' >{{data.orderStatus=='1'?"立即支付":data.orderStatus=='2'?"完成离店":data.orderStatus=='3'?"已取消":"已完成"}}</button> 
+    <button size='mini' type='warn' bindtap='doaction' class="goToorderBtn2 {{orderDilT1.cacel?'changCol1':'changCol2'}}">{{data.orderStatus=='1'?"立即支付":data.orderStatus=='2'?"入住完成":data.orderStatus=='3'?"已取消":"已完成"}}</button>
+  </view> -->
+
+
+  <view class="orderAddress">
+    <view class='orderAddressTittle'>{{data.hotelName}}</view>
+    <!-- <view class='orderAddressTittlecot'>南京雨润</view> -->
+
+    <view class='orderAddressName'>{{data.subjectName}}</view>
+    <view class='orderAddressNamecot'>
+      <view>{{data.subjectDesc1}}</view>
+      <text>{{data.subjectDesc2}}</text>
+      <view>{{data.subjectDesc3}}</view>
+      <view>{{data.address1}}</view>
+      <!-- <view>入住时间：{{data.startDate}} {{data.startTime}}至{{data.endDate}} {{data.endTime}}</view> -->
+
+      <view class='orderAddressNamecotline'></view>
+
+    </view>
+
+    <view class='goToorder orderservices'>
+      <view class='orderservicesL' bindtap='gohotel'>
+        <image src='../../img/location_gray.png'></image>
+        <label>导航</label>
+      </view>
+      <view class='orderservicesM'></view>
+      <view class='orderservicesR' bindtap='call'>
+        <image src='../../img/kefu.png'></image>
+        <label>客服</label>
+      </view>
+    </view>
+  </view>
+
+  <view class='orderInfor'>
+
+    <view>
+      订单信息
+    </view>
+
+    <view>
+      房　　间:
+      <label>{{data.orderStatus=='2'&&data.passwordShowFlag==''?data.roomNumber:'******'}}</label>
+    </view>
+    <view>
+      房间密码:
+      <label>{{data.orderStatus=='2'&&data.passwordShowFlag==''?data.roomPassword:'******'}}</label>
+    </view>
+
+    <view>
+      下单时间:
+      <label>{{data.submitTime}}</label>
+    </view>
+    <view>
+      订　　单:
+      <label>{{data.subOrderNo}}</label>
+    </view>
+
+
+  </view>
+  <!-- <button size='mini' type='warn' bindtap='doaction' class="goToorderBtn2 {{orderDilT1.cacel?'changCol1':'changCol2'}}">{{data.orderStatus=='1'?"立即支付":data.orderStatus=='2'?"入住完成":data.orderStatus=='3'?"已取消":"已完成"}}</button> -->
+  <view class='orderFooter'>
+    <!-- <view>订单确认或退款 请拨打</view> -->
+    <view class='call'>
+      <button size='mini' type='danger' bindtap="{{data.finishFlag=='1'&&data.orderStatus=='2'?'':'doaction'}}" class="goToorderBtn2 {{orderDilT1.cacel?'changCol1':'changCol2'}} {{data.finishFlag=='1'&&data.orderStatus=='2'?'unable':''}}">{{data.orderStatus=='1'?"立即支付":data.orderStatus=='2'?"入住完成":data.orderStatus=='3'?"已取消":"评价"}}</button>
+    </view>
+  </view>
+
+</view>
+
+
+
+
+
+
+<!--评分  -->
+<view class="container">
+  <view class="modal {{showAmountModal.showModal}}">
+    <form bindsubmit="widthdraws">
+      <view class="modal-content">
+        <view class='messageCale' bindtap='hideAmountModal'>
+          <view class='cale'>X</view>
+        </view>
+        <view class='evaluateTit'>评价</view>
+        <view class='star' bindtap='ffff'>
+          <!-- class="{{showView2?'bright789_view_hide':'bright789_view_show'}}"  -->
+          <image src='../../img/star1.png' class="{{showView?'bright789_view_show':'bright789_view_hide'}}"></image>
+          <image src='../../img/star2.png' class="{{showView?'bright789_view_hide':'bright789_view_show'}}"></image>
+          <!-- bindtap="onChangeShowState" -->
+          <image src='../../img/star1.png' class="{{showView2?'bright789_view_show':'bright789_view_hide'}}"></image>
+          <image src='../../img/star2.png' class="{{showView2?'bright789_view_hide':'bright789_view_show'}}"></image>
+
+          <image src='../../img/star1.png' class="{{showView3?'bright789_view_show':'bright789_view_hide'}}"></image>
+          <image src='../../img/star2.png' class="{{showView3?'bright789_view_hide':'bright789_view_show'}}"></image>
+
+          <image src='../../img/star1.png' class="{{showView4?'bright789_view_show':'bright789_view_hide'}}"></image>
+          <image src='../../img/star2.png' class="{{showView4?'bright789_view_hide':'bright789_view_show'}}"></image>
+
+          <image src='../../img/star1.png' class="{{showView5?'bright789_view_show':'bright789_view_hide'}}"></image>
+          <image src='../../img/star2.png' class="{{showView5?'bright789_view_hide':'bright789_view_show'}}"></image>
+
+
+
+
+
+
+
+        </view>
+
+        <view class="pingjiaMessage {{contss?'hhColor':'ssColor'}}">
+
+          {{dd}}
+        </view>
+
+
+        <view class="{{contss?'ss':'hh'}}">
+
+          <view class='pingjiaList'>
+            <view class="pingjiaListCot">
+              <view class="pingjiaListL  {{showColor?'showColor':'hideColor'}}" bindtap='showColor'>地图不准</view>
+              <view class="pingjiaListR {{showColor1?'showColor':'hideColor'}} " bindtap='showColor1'>服务态度恶劣</view>
+            </view>
+
+            <view class="pingjiaListCot">
+              <view class="pingjiaListL  {{showColor2?'showColor':'hideColor'}}" bindtap='showColor2'>地图不准</view>
+              <view class="pingjiaListR {{showColor3?'showColor':'hideColor'}} " bindtap='showColor3'>服务态度恶劣</view>
+            </view>
+
+            <view class="pingjiaListCot">
+              <view class="pingjiaListL  {{showColor4?'showColor':'hideColor'}}" bindtap='showColor4'>地图不准</view>
+              <view class="pingjiaListR {{showColor5?'showColor':'hideColor'}} " bindtap='showColor5'>服务态度恶劣</view>
+            </view>
+
+
+            <view class="pingjiaListCot">
+              <view class="pingjiaListL  {{showColor6?'showColor':'hideColor'}}" bindtap='showColor6'>地图不准</view>
+              <view class="pingjiaListR {{showColor7?'showColor':'hideColor'}} " bindtap='showColor7'>服务态度恶劣</view>
+            </view>
+          </view>
+
+
+
+          <view class='wantTalk'>
+            <!-- <textarea placeholder='其他想说的  （将匿名延迟告知）'></textarea> -->
+            <input placeholder='其他想说的  （将匿名延迟告知）'></input>
+          </view>
+
+
+
+          <view class='pingjiaBtn'>匿名提交</view>
+
+
+
+        </view>
+
+
+      </view>
+    </form>
+  </view>
+  <view class="mask {{showAmountModal.showMask}}" bindtap='hideAmountModal'></view>
+</view>
+
+
+<view class="container">
+  <view class="modal {{showAmountModal1.showModal}}">
+    <form bindsubmit="widthdraws">
+      <view class="modal-content">
+
+        <view class='modalTop'>
+          <view>
+            <view class='modalTopSL modalTopSL1'>
+              在线支付
+            </view>
+
+            <view class='modalTopSR modalTopSR1'>￥{{data.payPrice}}</view>
+          </view>
+          <view class='clear'></view>
+          <view>
+            <view class='modalTopSL modalTopSL2 '>
+              房费
+            </view>
+            <view class='modalTopSR'>￥{{data.roomPrice}}</view>
+          </view>
+          <view wx:if="{{data.couDiscountAmount !=0}}">
+            <view class='modalTopSL modalTopSL2'>
+              优惠卷
+            </view>
+            <view class='modalTopSR modalTopSR2'>￥-{{data.couDiscountAmount}}</view>
+          </view>
+          <view class='modalTopY ' wx:if="{{data.depositAmount !=0}}">
+            <view class='modalTopSL modalTopSL2'>
+              押金
+            </view>
+            <view class='modalTopSR'>￥{{data.depositAmount}}</view>
+          </view>
+          <view>
+            <view class='modalTopSL modalTopSL2'>
+              余额抵扣
+            </view>
+            <view class='modalTopSR'>-￥{{data.balanceDiscountAmount}}</view>
+          </view>
+        </view>
+      </view>
+    </form>
+  </view>
+  <view class="mask {{showAmountModal1.showMask}}" bindtap='hideAmountModal1'></view>
+</view>

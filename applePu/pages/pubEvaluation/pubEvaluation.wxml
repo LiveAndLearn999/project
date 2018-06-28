@@ -1,0 +1,79 @@
+<view class='evaluationTop'>
+          <view class='evaluationTopL'>
+              <label>4.7分</label>
+          </view>
+          <view class='evaluationTopR'>
+          卫生 4.7 环境  4.7 服务    4.6    设施    4.7
+          </view>
+</view>
+
+
+<view class='evaluationCot evaluationCotf'>
+        <view class='evaluationCotN'>
+                  <image src='../../img/33.jpg'></image>
+                  AAAAAA
+                  <label>5.0</label>
+        </view>
+        <view class='evaluationCotTime'>2017-12入住  2017-12发表</view>
+        <view class='evaluationCotW'>
+              特别高档特别高档特别高档特别高档特别高档特别高档特别高档特别高档特别高档
+        </view>
+        <!-- <view class='evaluationCotImg'>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                 <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+        </view> -->
+</view>
+
+
+<!--++++++++  -->
+
+<view class='evaluationCot'>
+        <view class='evaluationCotN'>
+        <image src='../../img/33.jpg'></image>
+        AAAAAA  <label>5.0</label>   
+        </view>
+        <view class='evaluationCotTime'>2017-12入住  2017-12发表</view>
+        <view class='evaluationCotW'>
+              特别高档特别高档特别高档特别高档特别高档特别高档特别高档特别高档特别高档
+        </view>
+        <!-- <view class='evaluationCotImg'>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                 <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+        </view> -->
+</view>
+
+
+
+<!--++++++++  -->
+<view class='evaluationCot'>
+        <view class='evaluationCotN'>
+        <image src='../../img/33.jpg'></image>
+              AAAAAA<label>5.0</label>
+        </view>
+        <view class='evaluationCotTime'>2017-12入住  2017-12发表</view>
+        <view class='evaluationCotW'>
+              特别高档特别高档特别高档特别高档特别高档特别高档特别高档特别高档特别高档
+        </view>
+        <!-- <view class='evaluationCotImg'>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                 <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+                <image src='../../img/33.jpg'></image>
+        </view> -->
+</view>

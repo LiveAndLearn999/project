@@ -1,0 +1,14 @@
+/* pages/depInstr/depInstr.wxss */
+.depInstrTop{width: 96%;height: 50rpx;margin-left: 2%;font-size: 36rpx;margin-top: 20rpx;color: black;line-height: 50rpx;}
+.depInstrTopLine{width: 98%;height: 3rpx;border-top: 1px solid #ececec;margin-left: 1%;margin-top: 15rpx;}
+
+.depInstrCot{width: 96%;height: auto;margin-left: 2%;font-size: 26rpx;color: #939393;margin-top: 10rpx;text-indent: 10rpx;word-wrap:break-word;}
+
+
+.depSeti{font-size: 30rpx;color: black;padding-left: 6rpx;}
+.depSecot{font-size: 28rpx;text-align: justify;margin-top: 10rpx;text-indent: -10rpx;}
+.depSeti2{font-size: 29rpx;color: black}
+.laBot{border-bottom: 1px solid black;color: black}
+.deMoy{margin-top: 10rpx;}
+
+.colBlack{color: black}

@@ -1,0 +1,144 @@
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.header {
+  top: 0;
+  width: 100%;
+  background: #fff;
+  position: fixed; /*这里一定要设置*/
+  z-index: 999999;
+}
+
+.headerC {
+  width: 60rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.v1 {
+  height: 70rpx;
+  line-height: 69rpx;
+  text-align: center;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.v1 image {
+  width: 25rpx;
+  height: 30rpx;
+}
+
+.v1 text {
+  font-size: 30rpx;
+  margin-left: 5rpx;
+}
+
+.v1 .headerL {
+  float: left;
+}
+
+.v1 .headerR {
+  float: right;
+  font-size: 28rpx;
+  margin-top: 3rpx;
+}
+.jiantou{
+  width: 16rpx!important;
+  height: 28rpx!important;
+  margin-left: 5rpx!important;
+  margin-top: 20rpx!important
+}
+
+.content {
+  background-color: #f4f0f1;
+  width: 100%;
+  height: 800rpx;
+  position: fixed;
+  top: 370rpx;
+}
+
+.col-3, .col-6 {
+  float: left;
+  overflow: hidden;
+}
+
+.col-3 {
+  width: 210rpx;
+}
+
+.col-6 {
+  width: 490rpx;
+  margin-left: 10rpx;
+}
+
+.video-title {
+  font-size: 33rpx;
+  font-weight: bold;
+}
+
+.duration {
+  font-size: 12px;
+  padding-right: 10px;
+  float: right;
+  margin-top: 3px;
+  color: #aaa;
+}
+
+.row {
+  margin: 15rpx 0rpx 0rpx 0rpx;
+  padding: 20rpx 10rpx 5rpx 20rpx;
+  clear: both;
+  box-shadow: 0 3px 8px -4px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  height: 190rpx;
+}
+
+.video-avatar {
+  width: 200rpx;
+  height: 170rpx;
+  border-radius: 10rpx;
+}
+
+.fenshu {
+  color: #f36201;
+  font-size: 30rpx;
+}
+
+.pinglun, .juli {
+  font-size: 25rpx;
+  color: #aaa;
+}
+
+.jiage {
+  font-size: 16px;
+  color: #f36201;
+  float: right;
+  margin-right: 5rpx
+}
+
+.content {
+  clear: both;
+}

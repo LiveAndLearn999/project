@@ -1,0 +1,52 @@
+<view class='depositBg'>
+
+  <view class='depositTop'>
+    <view class="deCard {{selectid==index? 'Bgcol' : 'noneBg'}} {{item.song == 0?'deCard2':''}}" wx:for="{{res}}" id="{{index}}" bindtap='givingThere'>
+      <view class="deCardL">
+        <view class='bigWord'>充{{item.rechargeAmount}}</view>
+        <view class='smallWord'>赠送{{item.giftAmount}}</view>
+      </view>
+      <view class='deCardR'>
+        <image src='../../img/HOT.png' wx:if="{{item.hotFlag==1}}"></image>
+      </view>
+    </view>
+    <view class='depositTopline'></view>
+  </view>
+
+  <view class='depositSele'>
+    <view class='depositSelecot'>
+      <view class='depositSelecotL'>
+        <view class='depositSelecotLImg'>
+          <image src='../../img/weixin.png'></image>
+        </view>
+        <view class='depositSelecotLW'>
+          微信
+        </view>
+      </view>
+
+      <view class='depositSelecotR'>
+        <view>
+          <image src='../../img/icon2.png' wx:if="{{iconShow}}" bindtap='iconShow'></image>
+          <image src='../../img/icon1.png' wx:if="{{iconShow2}}" bindtap='iconShow'></image>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+
+  <view class='depositFooter'>
+    <view class='careFore'>
+      点击去充值，即表示已阅读并同意
+      <label bindtap='gorechargeprotocol'>《充值协议》</label>
+    </view>
+    <view class='careFore careFore2'>
+      觅TA不会以任何形式要求您输入银行账户
+    </view>
+
+    <view class='depositFbtn'>
+      <button type='warn' bindtap='recharge'>去充值</button>
+    </view>
+  </view>
+
+</view>

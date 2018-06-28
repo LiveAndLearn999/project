@@ -1,0 +1,29 @@
+<view class='depInstrTop'>押金说明</view>
+<view class='depInstrTopLine'></view>
+
+
+<view class='depInstrCot'>
+     <view class='depSecot'>
+             <label class='depSeti'>1、 定义：</label>
+             押金是指用户绑定觅<label class='colBlack'>Ta</label>分时酒店账户后为享受会员服务所缴纳的一笔款项，其目的在于激励用户合法、规范及文明地使用觅<label class='colBlack'>Ta</label>分时酒店服务。押金可用于消费，除首次订房外，押金将优先抵扣为觅<label class='colBlack'>Ta</label>分时酒店房费。其收取标准如下：
+             <view class='deMoy'>
+                  人民币<label class='laBot'>333</label>    元
+             </view>
+     </view>
+
+     <view class='depSecot'>
+             <label class='depSeti'>2、 押金的缴纳：</label>
+             您可以选择如下方式支付押金：中国用户：微信钱包。您可以通过点击微信小程序或<label class='colBlack'>APP</label>客户端右下角的"我的"图标，进入个人中心，选择「缴纳押金」进行押金充值或在预订房间时与房费一同支付。
+     </view>
+
+
+     <view class='depSecot'>
+             <view class='depSeti'>3、押金的退还：</view>
+             <label class='depSeti2'>特别提示：</label>用户可随时申请退还押金（“退款”），觅<label class='colBlack'>Ta</label>酒店收到您的退款申请后会立即办理退款手续，但退款到账时间会以第三方支付的处理流程为准；通常情况下，退款到账需要<label class='colBlack'>2-7</label>个工作日。同时，请您谅解并理解，鉴于押金是您使用觅<label class='colBlack'>Ta</label>酒店服务的前提条件之一，如您未使用过觅<label class='colBlack'>Ta</label>分时酒店且选择退款，您将无法享受酒店会员服务；同时，您账户内的优惠券等优惠方案也将在押金退款成功后自动被清零。
+     </view>
+
+      <view class='depSecot'>
+             退款状态查询：您的退款将通过您所选择的用于支付押金的支付通道退回，您可通过登录个人微信查看「钱包」查询退款信息，即进入微信「钱包」，点击右上角菜单栏，选择「交易记录」进行查看。
+     </view>
+
+</view>

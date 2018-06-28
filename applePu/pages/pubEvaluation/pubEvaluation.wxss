@@ -1,0 +1,22 @@
+/* pages/pubEvaluation/pubEvaluation.wxss */
+.evaluationTop{width: 100%;height: 80rpx;border-bottom: 2px solid #f6ebee}
+.evaluationTopL{width: 18%;height: 100%;float: left;text-align: right}
+.evaluationTopL label{display: inline-block;width: 120rpx;height: 40rpx;background-color: #50b6fe;margin-top: 18rpx; border-radius: 30rpx;font-size: 24rpx;color: white;text-align: center;line-height: 40rpx;}
+.evaluationTopR{display: inline-block;width: 80%;height: 100%;float: right;font-size: 26rpx;color: #9a9a9a;line-height: 80rpx;}
+
+.evaluationCot{width: 100%;border-top: 2px solid #efeaec;height: 500rpx;margin-top: 0rpx;}
+.evaluationCotN{width: 90%;height: 40rpx;font-size: 24rpx;line-height: 40rpx;margin-left: 5%}
+
+.evaluationCotN  label{display: inline-block;width: 60rpx;height: 30rpx;background-color: #ff4a76;color: white;text-align: center;margin-top: 5rpx;line-height: 30rpx;}
+.evaluationCotTime{width: 90%;height: 40rpx;font-size: 20rpx;line-height: 40rpx;color: #8f8f8f;margin-left: 5%}
+.evaluationCotW{width: 90%;height: auto;font-size: 24rpx;margin-left: 5%;padding-bottom: 10rpx;box-sizing: border-box}
+.evaluationCotImg{width: 90%;height: 270rpx;margin-left: 5%}
+.evaluationCotImg image{width:20%;height:130rpx;margin-right: 10rpx;}
+
+
+/*1.8样式修改  */
+.evaluationCotN image{width: 60rpx;height: 60rpx;border-radius: 50%;position: relative;top: 10rpx;}
+.evaluationCot{height: auto;margin-top: 0rpx!important;}
+.evaluationCotTime{margin-top: 30rpx;}
+.evaluationCotf{border-top: none!important;}
+.evaluationCotW{text-indent: -8rpx;}

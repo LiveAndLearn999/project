@@ -1,0 +1,16 @@
+/* pages/dePrompt/dePrompt.wxss */
+.depImg{width: 100%;height: 120rpx;margin-top: 100rpx;text-align: center}
+.depImg image{width: 120rpx;height: 120rpx;}
+
+.depImgtit{width: 100%;height: 40rpx;line-height: 40rpx;text-align: center;font-size: 30rpx;color: #f36201;margin-top: 40rpx;}
+
+
+
+.depBesure{width: 100%;height: 60rpx;margin-top: 120rpx;}
+
+.depL{width: 40%;height: 100%;display: inline-block;float: left;text-align: center;font-size: 30rpx;color: gray;border: 1px solid gray;margin-left: 8%;line-height: 60rpx;}
+.depR{width: 40%;height: 100%;display: inline-block;float: right;border: 1px solid gray;text-align: center;font-size: 30rpx;color: gray;margin-right: 8%;line-height: 60rpx}
+/* .depBesure view:active{background: #f36201;color: white;border: none} */
+
+.act{border: none;background: #f36201;color: white;padding: 2rpx 0;}
+.noAct{border: 1px solid gray;color: gray;background: none;padding: 0;}

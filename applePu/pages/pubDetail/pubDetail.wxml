@@ -1,0 +1,117 @@
+<!--pages/pubDetail/pubDetail.wxml-->
+<view class='pubDetailTop' data-hotelNo='{{hotelinfo.hotelNo}}' bindtap="goTitImage">
+  <image src='{{hotelinfo.iconUrl}}'></image>
+  <view class='pubDetailImgtit'></view>
+  <view class='pubDetailImgtitW'>
+    {{hotelinfo.hotelName}}［{{hotelinfo.hotelType}}］
+    <label>
+      <!-- <image src='../../img/cirme.png'></image> -->
+         {{hotelinfo.pictureNum}}张
+    </label>
+  </view>
+</view>
+<view class='pubDetailGo'>
+  <view class='shEqually'>
+    <view class='shEquallyL shEquallyLfir' bindtap='pingfen'>
+      <view class='shEquallyLfen'>
+        {{hotelinfo.totalScore}}分 </view>
+      <view class='shEquallyLallfen'>
+        {{hotelinfo.commentNum}}条点评
+      </view>
+    </view>
+    <view class='shEquallyR'>
+      <image class='jiantou'  src='../../img/jiantou.png'></image>
+    </view>
+  </view>
+  <view class='shEqually shEquallyNbod' bindtap='goMap'>
+    <view class='shEquallyL  shEquallyLmdf '>
+      <label> {{hotelinfo.address1}}</label>{{hotelinfo.address2}}
+    </view>
+    <view class='shEquallyR shEquallyRmap shEquallyRmapmdf '>
+      <image class='jiantou jiantou2'   src='../../img/jiantou.png'></image>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='pubListBack'>
+  <view class='pubListTop' bindtap="bindViewTap">
+    <view class='pubListTopCon'>
+      入住
+      <label>{{date}}</label>
+      <!-- 12月30日 -->
+    </view>
+    <view class='pubListTopCon pubListTopConOut'>
+      {{xingqi}}
+      <!-- <label class='dropLab'> -->
+      <!-- <picker mode="selector" range="{{array}}" value="{{index}}" bindchange="listenerPickerSelected">
+        <text>{{array[index]}}</text>
+      </picker> -->
+
+
+
+      <!-- </label> -->
+      <!-- 22:00-8:00(次日) -->
+    </view>
+    <view class='pubListTopCon pubListTopConNight '>
+      <image class='jiantou'  src='../../img/jiantou.png'></image>
+    </view>
+  </view>
+
+
+  <block wx:for="{{subjectinfo}}" wx:for-index="idx" wx:key="{{idx}}">
+    <view class="pubListCont " data-subjectid='{{item.id}}' bindtap="{{item.roomFlag=='1'?'':'list'}}" id='{{idx}}'>
+      <view class='pubListContL'>
+        <image src='{{item.iconUrl}}' data-subjectid='{{item.id}}' bindtap="previewImage">
+        </image>
+        <label class="maLabel {{item.roomFlag=='1'?'showLabel':'hideLabel'}}" >满房</label>
+        <label class=" imgNum" >{{item.pictureNum}}张</label>
+
+      </view>
+      <view class='pubListContM'>
+        <view class='pubListContMtit'>{{item.subjectName}}</view>
+        <view class='pubListContMdet'>{{item.subjectDesc1}}
+        </view>
+         <view class="{{item.roomFlag=='1'?'showLabel':'hideLabel'}}" style='text-align:left;color:gray;line-height:30rpx;font-size:26rpx;'>暂无空房</view>
+      </view>
+      <view class='pubListContR'>
+        <label class="pubListContRlab {{item.roomFlag=='1'?'gray':''}}">￥{{item.startPrice}}元</label> 起
+        <view class='pubShowlist'>
+          <!-- <view class="nav">
+          <view class="nav-son borders" bindtap="list" id='1'>
+            <view class="content"></view>
+            <view class="icon"></view>
+          </view>
+        </view> -->
+          <image src='../../img/down.png' wx:if="{{opensubjectid!=idx}}"></image>
+          <image src='../../img/up.png' wx:if="{{opensubjectid==idx}}"></image>
+
+        </view>
+      </view>
+    </view>
+    <view class="page">
+      <view class="temp temp1 {{opensubjectid==idx ? 'slidown' : 'slidup'}} {{opensubjectid!=idx ? 'disappear':''}}">
+        <!-- {{nzopen1 ? 'slidown' : 'slidup'}} {{nzshow1 ? 'disappear':''}} -->
+        <view wx:for="{{subjecttimes}}"  class="tempList {{item.roomFlag=='1'?'gray':''}}" wx:key="{{idx}}">
+          <view class='tempListL'>
+            <view class='tempListLtime'>时间 {{item.startTime}}-{{item.endTime}}</view>
+            <view class='tempListLbot'>限时特惠-确认 </view>
+          </view>
+          <view class='tempListR'>
+            <view>
+              <label >￥{{item.payPrice}}</label>
+              <button  type='warn' data-subjectid='{{item.subjectId}}' data-starttime='{{item.startTime}}' data-endtime='{{item.endTime}}' bindtap="{{item.roomFlag=='1'?'':'orderPay'}}">
+                   <label style='font-size:30rpx;color:white' class="{{item.roomFlag=='1'? 'hideLabel2': 'showLabel2'}}">预订</label>
+                    <label style='font-size:30rpx;color:white;background:gray' class="{{item.roomFlag=='1'? 'showLabel2' : 'hideLabel2'}}">订完</label>
+              </button>
+            </view>
+          </view>
+
+          <!-- {{item}}  -->
+        </view>
+      </view>
+    </view>
+  </block>
+
+</view>

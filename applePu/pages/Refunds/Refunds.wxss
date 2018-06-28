@@ -1,0 +1,11 @@
+/* pages/Refunds/Refunds.wxss */
+
+.refunLog{width: 100%;height: 200rpx;text-align: center;margin-top: 60rpx;}
+.refunLog image{width: 200rpx;height: 200rpx;}
+
+.refunMony{width: 100%;height: 150rpx;text-align: center;line-height: 150rpx;margin-top: 20rpx;font-size: 40rpx;font-weight: bold}
+
+.refunSucc{width: 100%;height: 150rpx;text-align: center;line-height: 120rpx;color:#f36201;font-size: 40rpx;}
+
+.refunTure{width: 100%;height: 150rpx;margin-top: 50rpx;}
+.refunTure button{width: 96%;height: 100rpx;margin-left: 2%;background: #f36201;color: white;line-height: 100rpx;margin-top: 25rpx;font-size: 40rpx;}

@@ -1,0 +1,92 @@
+<view class='agreementTittle'>
+        《充值协议》
+</view>
+<view class='agreementTittleline'></view>
+<view class='agrTistr'>
+        尊敬的用户，为保障您的合法权益，请您在充值前仔细阅读本《充值协议》（“本协议”）以了解觅Ta分时酒店的充值及余额使用规则并避免产生任何误解。当您点击“去充值”按钮，即视为您已阅读、理解本协议，并同意按照本协议约定的规则进行充值及／或使用账户余额。
+</view>
+<view class='agreementContent'>
+      <view class='firstTittle'>
+     1. 定义
+                      <view class='themeContent'>
+                              <label class='sedTit'>  充值本金：</label> 您通过“觅Ta分时酒店”的微信小程序或app客户端向您已注册的用户帐号实际支付的金额。
+                      </view>  
+                      <view class='themeContent'>
+                               <label class='sedTit'>   账户余额：</label>您的用户帐号中显示的金额，包括1）充值本金，及2）觅Ta分时酒店通过“充值返利”活动赠送的返利金额。
+                      </view>   
+
+      </view>
+
+      <view class='firstTittle'>
+      2. 账户余额有效期：
+                      <view class='themeContent'>
+                               用户账户余额的有效期为自充值之日起至使用完毕为止。
+                      </view>   
+      </view>
+
+
+
+
+
+       <view class='firstTittle'>
+      3. 充值返利活动规则：
+              <view class='secondTittle'>
+             我们会通过充值页面及／或具体活动页面及时公布不同数额的充值本金可享受的一定数额的返利金额，例如，充值100元送10元，则您帐户可得金额为110元；您的充值本金为100元，返利金额为10元。具体活动详情，您可通过充值或关注我们的活动页面进行了解。
+              </view>
+      </view>
+
+
+
+
+       <view class='firstTittle'>
+   4. 账户余额的使用规则
+                      <view class='themeContent'>
+                               1) 账户余额仅可用于支付房费，不可用于支付押金、转移或转赠；
+                      </view>   
+                      <view class='themeContent'>
+                            2) 用户帐号使用期间，充值本金将会被优先使用；
+                      </view>
+                       <view class='themeContent'>
+                            3) 充值金额不支持退款，若您需要终止使用觅Ta分时酒店，且已经申请退还押金后，可拨打客服电话申请处理当前余额。客服操作退款时只能帮您退还未使用的真实充值余额，不支持部分退款，退还后对应的觅Ta分时酒店充值返利金额将全部失效。
+                      </view>
+                      <view class='themeContent'>
+                           4) 返利金额仅可用于支付房费，不可用于支付押金、转移、转赠或退款
+                      </view>
+                       <view class='themeContent'>
+                          5) 鉴于返利金额是以您账户可合法有效使用为前提条件，返利金额在如下情形下将会全部失效：
+                      </view>
+                       <view class='themeContent'>
+                          i. 您主动注销用户账号;
+                      </view>
+                      <view class='themeContent'>
+                        ii. 您选择退回押金或未使用的充值本金；
+                      </view>
+                       <view class='themeContent'>
+                       iii. 因涉嫌作弊导致您的用户账号被冻结或关闭；
+                      </view>
+                      <view class='themeContent'>
+                       iv. 其它根据用户协议、相关说明或规则导致我们无法向您提供或停用服务的情形。
+                      </view>
+      </view>
+      
+      
+
+       <view class='firstTittle'>
+5. 正当性保证
+              <view class='secondTittle'>
+                      您完全理解并同意，觅Ta分时酒店所提供的包括“充值返利”在内的所有优惠推广活动仅面向正当、合法按照《用户协议》使用觅Ta分时酒店服务的用户。一旦发现您的用户帐号存在任何利用前述规则或/和规则漏洞从事作弊行为以获取不正当经济利益的情形，觅Ta分时酒店有权冻结或关闭您的用户账号以及任何其他与作弊行为相关的用户帐号、收回或取消已赠送的返利金额及／或追回因作弊行为取得的所有不正当的经济利益，并且觅Ta分时酒店保留停止向您提供服务以及根据作弊行为的严重程度进一步追究法律责任的权利。
+              </view>
+      </view>
+
+
+
+       <view class='firstTittle'>
+      6. 特别说明
+            
+                      <view class='themeContent'>
+                              您完全理解并同意，觅Ta分时酒店有权随时修改本协议内容，届时将通过在官网或“觅Ta分时酒店”微信小程序或/和app客户端上公布修改后的协议，该公布将被视为觅Ta分时酒店已通知用户；同时，觅Ta分时酒店也可通过其他适当方式通知用户。如果您选择继续充值即表示您同意并接受修改后的协议并受其约束；如果您不同意我们对本协议的修改，请立即放弃充值或停止使用本服务。
+在适用法律法规允许的范围内，本协议下充值、返利及账户余额的使用规则的最终解释权归觅Ta分时酒店所有。
+                      </view>   
+      </view>
+
+</view>

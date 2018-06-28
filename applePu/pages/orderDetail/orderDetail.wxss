@@ -1,0 +1,129 @@
+/* pages/orderDetail/orderDetail.wxss */
+.orderDetailTopBg{width: 100%;height: 240rpx;background-color: #ffa001;position: fixed;top: 0rpx;z-index: -99}
+.orderDetailTop{width: 96%;height: 180rpx;margin-left: 2%;border-radius: 5rpx;margin-top: 0rpx;background-color: white;position: relative}
+
+.orderDetailBg{width: 100%;height: 1000rpx;background-color: #f4f0f1;margin-top: 0rpx;}
+
+
+
+.orderDetailToptit{font-size: 32rpx;padding:30rpx 20rpx 10rpx 10rpx;box-sizing: border-box;font-weight: bold;}
+.orderDetailToptit label{margin-left: 22rpx}
+.orderDetailTopcont{font-size: 26rpx;color: #9a9a9a;width: 100%;text-indent:-10rpx;padding: 20rpx;padding-top: 0rpx;box-sizing: border-box;margin-left: 20rpx }
+.orderDetailList{width: 100%;height: 80rpx;margin-top: 40rpx;background-color: white;padding-right: 20rpx;box-sizing: border-box}
+.orderDetailListL{width: 300rpx;height: 80rpx;float: left;line-height: 80rpx;text-align: center;font-size: 30rpx;font-weight: bold}
+.orderDetailListL label{color: #f36204;font-size: 36rpx;}
+.orderDetailListR{width: 200rpx;height: 80rpx;float: right;line-height: 80rpx;text-align: right;color: #9e9e9e;font-size: 24rpx;}
+
+.goToorder{width: 96%;height: 100rpx;margin-left: 2%;margin-top: 0rpx;line-height: 100rpx;}
+
+.goToorderBtn1{background-color:#ffc12e!important ;color: white!important;display: inline-block;width: 230rpx;height: 70rpx;line-height: 70rpx!important;font-size: 32rpx!important;padding: 0rpx!important;position: relative;float: left}
+.goToorderBtn2{background-color:#51aefe!important ;color: white!important;display: inline-block;width: 230rpx;height: 70rpx;line-height: 70rpx!important;font-size: 32rpx!important;padding: 0rpx!important;position: relative;float: right;}
+.changCol1{background-color:#ffc12e!important ;}
+.changCol2{background-color:#f36201!important ;}
+.unable{ background-color: #f3f3f3!important;
+color:#bebebe!important;}
+ .goToorder button{margin-top: 15rpx;margin-left: 50rpx;} 
+
+
+.orderAddress{width: 96%;height: 35%;margin-left: 2%;margin-top: 20rpx;font-size: 30rpx;background-color: white;border-radius: 10rpx;padding: 40rpx;box-sizing: border-box}
+
+
+.orderAddressTittle{font-size: 32rpx;font-weight: bold}
+.orderAddressTittlecot{font-size: 22rpx;color: #979797}
+.orderAddressName{font-size: 28rpx}
+.orderAddressNamecot{font-size: 22rpx;color: #979797}
+.orderAddressNamecotline{width: 100%;height: 2rpx;border-top: 2px dashed #e1e1e1;margin-top: 10rpx;}
+
+.orderservices{width: 100%;margin-left: 0px;height: 80rpx;margin-top: 10rpx;}
+.orderservicesL image{width: 50rpx;height: 50rpx; margin-top: 15rpx;}
+.orderservicesL label{width: 80rpx;height: 80rpx;display: inline-block;top: -10rpx;position: relative;color: #a9a9a9}
+.orderservicesR image{width: 50rpx;height: 50rpx; margin-top: 15rpx;}
+.orderservicesR label{width: 80rpx;height: 80rpx;display: inline-block;top: -10rpx;position: relative;color: #a9a9a9;}
+.orderservicesL{display: inline-block;width:50%;height: 100%;float: left;text-align: center;line-height: 80rpx;}
+.orderservicesR{display: inline-block;width:40%;height: 100%;float: right;text-align: center;line-height: 80rpx;}
+.orderservicesM{display: inline-block;width: 4rpx;height: 60rpx;background-color: #d3d3d3;margin-top: 10rpx;}
+
+.orderInfor{width: 96%;height: 26%;margin-top: 20rpx;margin-left: 2%;color: #656565;font-size: 30rpx;padding: 40rpx;box-sizing: border-box;border-radius: 10rpx;background-color: white}
+.orderInfor view{width: 100%;height: 40rpx;}
+.orderInfor label{display: inline-block;width: 500rpx;height: 40rpx;float: right;margin-top: 0rpx;}
+
+
+.orderFooter{width: 96%;height: auto;margin-left: 2%; padding: 20rpx;box-sizing: border-box;color: #a0a0a0;font-size: 28rpx;}
+.call{width: 80%;height: 130rpx;margin-left: 10%;}
+.call button{display: inline-block;width: 100%;height: 80rpx;line-height: 80rpx;background:#f36201;color: #ffa001;margin-top: 20rpx;}
+
+
+
+
+
+/*评价  */
+/* pages/messageL/messageL.wxss */
+.container{
+  font-family: "微软雅黑";
+  padding: 0rpx 20rpx;
+  padding-top: 1px;
+  box-sizing: border-box;
+}
+
+
+
+
+.modal-line-box{
+  margin: 30rpx 0rpx;
+}
+
+
+
+
+.mask{
+  position: fixed;
+  bottom: 120rpx;
+  left: 0px;
+  width: 100%;
+  height:100%;
+  z-index: 100;
+  background:rgba(0,0,0,0.5);
+}
+.showMask,.showModal{
+  display: block;
+}
+.hideMask,.hideModal{
+  display: none;
+}
+.messageCale{width: 100%;height: 30rpx;}
+.cale{width: 30rpx;height: 30rpx;font-size: 36rpx;line-height: 25rpx;color: #4f4e4e}
+.evaluateTit{width: 100%;height: 40rpx;text-align: center;font-size: 36rpx}
+/* .bright789_view_hide{display: none}
+.bright789_view_show{display: inline-block}   */
+.bright789_view_hide{display: none}
+.bright789_view_show{display: inline-block}
+
+
+.star{width: 90%;height: 100rpx;display: inline-block;text-align: center;margin-top: 30rpx;margin-left: 5%}
+.star image{width: 70rpx;height: 70rpx;margin: 0 20rpx;}
+
+.pingjiaMessage{width: 90%;height: 60rpx;text-align: center;line-height: 60rpx;color: #ffa001;font-size: 36rpx;margin-left: 5%}
+
+
+.pingjiaList{width: 90%;height: 330rpx;margin-left: 5%}
+.pingjiaListCot{width: 100%;height: 60rpx;margin-top: 20rpx;}
+.pingjiaListL{width: 49%;height: 60rpx;border: 1px solid #dcdcdc;display: inline-block;float: left;text-align: center;line-height: 60rpx;color: #9e9e9e}
+.pingjiaListR{width: 49%;height: 60rpx;border: 1px solid #dcdcdc;display: inline-block;float: right;text-align: center;line-height: 60rpx;color: #9e9e9e}
+.showColor{border: 1px solid #ffa001;color: #ffa001}
+.hideColor{border:1px solid dcdcdc;color: #9e9e9e }
+
+
+.wantTalk{width: 90%;height: 100rpx;margin-top: 10rpx;background-color: #f3f5f5;padding: 20rpx;box-sizing: border-box;padding-left: 50rpx;overflow: hidden;margin-left: 5%}
+.wantTalk textarea{width: 100%;height: 100%;overflow: hidden;position: relative}
+
+.pingjiaBtn{width: 90%;height: 90rpx;margin-top: 30rpx;text-align: center;line-height: 90rpx;background-color: #f36201;color: white;margin-left: 5%}
+
+
+
+.ss{display: block}
+.hh{display: none}
+.ssColor{color: #e4e4e4}
+.hhColor{color: #ffa001}
+
+
+.goToorderBtn2:active{background: #ffa001!important}

@@ -1,0 +1,65 @@
+<view class='setBg'>
+      <view class='setList'>
+
+          <view class='setListcot' bindtap='aboutus'>
+                <view class='setListcotL' >关于我们</view>
+                <view class='setListcotR'>></view>
+          </view>
+             <view class='setListcot' bindtap='userAgre'>
+                <view class='setListcotL'>用户协议</view>
+                <view class='setListcotR'>></view>
+          </view>
+             <view class='setListcot' bindtap='depInstr'>
+                <view class='setListcotL'>押金说明</view>
+                <view class='setListcotR'>></view>
+          </view>
+           <view class='setListcot' bindtap='topUpAgreement'>
+                <view class='setListcotL'>充值协议</view>
+                <view class='setListcotR'>></view>
+          </view>
+          
+      </view>
+
+      <view class='setExit' wx:if="{{userinfo.mobile!=''}}">
+              <button  bindtap='changemobile'>更换手机号</button>
+      </view>
+
+</view>
+<view class="container">
+  <view class="modal1 {{showAmountModal1.showModal}}">
+    <form>
+      <view class="modal1-content">
+        <view class='messageCale' bindtap='hideAmountModal'>
+          <view class='cale'>X</view>
+        </view>
+        <view class='caleTit'>
+          更换手机号
+        </view>
+        <view class='caleInpt'>
+          <view class='caleInptCot'>
+            <view class='caleInptCotL'>
+              手机号
+            </view>
+            <view class='caleInptCotR'>
+              <input type="number" placeholder='请输入新手机号' bindinput='mobileinput' />
+            </view>
+          </view>
+          <view class='caleInptCot'>
+            <view class='caleInptCotL'>
+              验证码
+            </view>
+            <view class='caleInptCotR caleInptCotR2'>
+              <input type="number" placeholder='请输入验证码' bindinput='codeinput' />
+              <label bindtap="{{btncodeclass==''?'getcode':''}}" class='{{btncodeclass}}'>{{btncodename}}</label>
+            </view>
+          </view>
+
+          <view class='clleLogin' bindtap='submitbindmobile'>
+            <button type='warn'>绑定</button>
+          </view>
+        </view>
+      </view>
+    </form>
+  </view>
+  <view class="mask {{showAmountModal1.showMask}}" bindtap='hideAmountModal'></view>
+</view>

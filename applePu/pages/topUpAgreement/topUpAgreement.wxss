@@ -1,0 +1,14 @@
+/* pages/topUpAgreement/topUpAgreement.wxss */
+.agreementTittle{width: 96%;height: 50rpx;font-size: 36rpx;margin-left: 2%;color: black;line-height: 50rpx;padding-top: 20rpx;text-indent: -25rpx}
+.agreementTittleline{width: 98%;height: 3rpx;border-top: 1px solid #ececec;margin-left: 1%;margin-top: 15rpx;}
+.agreementContent{width: 96%;height: auto;margin-left:2%;font-size: 28rpx;color: #9b9b9b}
+.firstTittle{width: 100%;margin-top: 10rpx;font-size: 30rpx;color: black}
+.secondTittle{width: 100%;width: 100%;height: auto;text-indent: -10rpx;margin-top: 0rpx;font-size: 28rpx;color: black;text-align: justify}
+.themeContent{display: inline-block;width: 100%;height: auto;text-indent: -10rpx;margin-top: 10rpx;padding: 0rpx;font-size: 28rpx;color: #9b9b9b;text-align: justify}
+
+
+
+
+.agrTistr{width: 96%;height: auto;font-size: 28rpx;margin-left: 2%;text-align: justify;text-indent: -8rpx;margin-top: 10px;}
+.themeContent{}
+.sedTit{color: black;font-size: 28rpx;padding-left: 8rpx;}

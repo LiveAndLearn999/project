@@ -1,0 +1,40 @@
+<view class='aboutUsBg'>
+
+        <view class='usLogo'>
+              <image class='usLogoImg' src='../../img/icon.png'></image> 
+              <view class='usLogoW'>
+                 <view class='usLogoW1'>觅TA分时酒店</view>
+                 <view class='usLogoW2'>V0.0.1</view>
+              </view>
+        </view>
+
+        <view class='callUs'>
+              <view class='callUscot'>
+                      <view class='callUscotL'>
+                            <image src='../../img/11.png'></image>  
+                            <label>微信公众号</label>                   
+                      </view>
+                       <view class='callUscotR'>南京彩果科技有限公司</view>
+              </view>
+
+                <view class='callUscot'>
+                      <view class='callUscotL'>
+                            <image src='../../img/11.png'></image>  
+                            <label>联系电话</label>                   
+                      </view>
+                       <view class='callUscotR'>4008117799</view>
+              </view>
+
+                 <view class='callUscot'>
+                      <view class='callUscotL'>
+                            <image src='../../img/11.png'></image>  
+                            <label>公司官网</label>                   
+                      </view>
+                       <view class='callUscotR'>maan.com</view>
+              </view>
+
+        </view>
+
+        <view class='aboutUsFot'>南京彩果科技有限公司</view>
+
+</view>

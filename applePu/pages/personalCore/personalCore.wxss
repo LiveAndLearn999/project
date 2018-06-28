@@ -1,0 +1,105 @@
+/* pages/personalCore/personalCore.wxss */
+.personalBackg{width: 100%;height: 1132rpx;background-color: #f4f0f1;position: fixed;overflow: hidden;}
+.persponBg{width: 100%;height: 180rpx;background-color: #ffa001;}
+.personalTop{width: 100%;height: auto;margin-top: -260rpx;z-index: 99;position: absolute;margin-top: -160rpx;overflow-x: hidden}
+.personalTopContent{width: 96%;height: 213rpx;margin-top: 0rpx;background-color: white;border-radius: 20rpx;margin-left: 2%}
+.personalLogo{width: 100%;height: 150rpx;margin-left: 50rpx;}
+.personalImg{width: 150rpx;height: 150rpx;display: inline-block;float: left;margin-top: 35rpx;border-radius: 40rpx;padding: 5rpx;box-sizing: border-box;background-color: lightgray}
+.personalImg image{width: 100%;height: 100%;border-radius: 40rpx}
+.personalImgtit{display: inline-block;width: 400rpx;height: 150rpx;float: left;margin-top: 35rpx;margin-left: 50rpx;}
+.personSetting{width: 50%;height: 50rpx;font-size: 24rpx;margin-top: 25rpx;position: relative;left: 630rpx;top: -10rpx;}
+.personName{width: 100%;height: 50rpx;margin-top: 16rpx;}
+.personNameW{color: #7c7c7c;font-size: 25rpx;font-family: 'Medium';margin-top: 10rpx;}
+
+.personalLis{width: 100%;height: 924rpx;margin-top: 14rpx;background-color: white;overflow: hidden;}
+.personalLisCont{width:86%;height: 122rpx;margin-top: 0rpx;border-bottom: 1px solid #ECECEC;font-size: 30rpx;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;margin-left: 7%}
+.personalLisContL{display: inline-block;width: 400rpx;height: 122rpx;float: left;line-height: 122rpx;}
+.personalLisContL label{color: #f36201;}
+.personalLisContL view{font-size: 20rpx;color: #666;color:  #7c7c7c;font-weight: normal;font-family:'Medium';margin-top: -75rpx}
+ .personalLisContR{display: inline-block;width: 200rpx;height: 60rpx;float:right;text-align: center;border: 1px solid red;margin-top: 30rpx;background-color: #ff4d77;line-height: 60rpx;border-radius: 40rpx;color: #fff;font-size: 36rpx;} 
+.personalLisContRbtn{display: inline-block;width: 200rpx;height: 122rpx;float:right;line-height: 60rpx;color: white;font-size: 24rpx;}
+.personalLisContRbtn button{background-color:#f36201;width: 140rpx;height: 60rpx;line-height: 60rpx;font-size: 28rpx;margin-top: 36rpx;border-radius: 30rpx;left: 35rpx;padding: 0rpx;}
+.personalLisContLW{font-size: 32rpx;color: gray}
+.personalLisContLW label{color: #f36201;font-size: 22rpx;margin-left: 10rpx}
+.personalLisContR2{background: none;border: none;font-size: 40rpx;text-align: right;color: #c3c3c3;line-height: 75rpx;}
+.personalLisContL3 label{color: #fff;float: left;margin-top: 7rpx;padding-left: 20rpx}
+.personalLisContL3{width:440rpx!important;color: #6e6e6e;padding-left: 35rpx;font-size: 28rpx;line-height: 122rpx;}
+.personalLisCont2{background-color: #f36201;}
+.personalLisContR4{border: 1px solid #fff;background: transparent;margin-top: 35rpx;margin-right: 40rpx;font-size: 30rpx;}
+
+.personalLisCont2{height: 120rpx;}
+.perFot{position: fixed;width: 100%;margin-left: 0rpx;height: 132rpx;bottom: 0;z-index: 9999}
+
+.remind{display: inline-block;width: 85rpx;height: 24rpx;border: 1px solid red;font-size: 16rpx;position: relative;line-height: 20rpx;top: -20rpx;background-color: #ff4d77;color: white!important;border-top-right-radius: 30rpx;border-top-left-radius: 20rpx;border-bottom-right-radius: 30rpx;border-bottom-left-radius: 0rpx;text-align: center}
+  .remind:before{position: absolute;content: "";width:0; height: 0; left: -1rpx;top: 12rpx;border-bottom: 10px solid transparent; border-left: 10px solid #ff4d77;}
+.modal1{
+  position: absolute;
+  left: 0rpx;
+  bottom:0rpx;
+  z-index: 200;
+  width:100%;
+   
+}
+.suo{
+  width: 50rpx;
+  height: 60rpx;
+  margin-top: 35rpx;
+  float: left
+}
+.clear{
+  clear: both
+}
+.bindphone {background-color:#f36201!important;width: 100rpx;height: 32rpx;line-height: 32rpx;font-size: 20rpx;margin-top: 15rpx;border-radius: 16rpx;float: left}
+.modal1-content{
+  width: 100%;
+  height: 600rpx;
+  margin: 0 auto;
+  background: #fff;
+  font-size: 30rpx;
+  font-family: "微软雅黑";
+  padding: 20rpx;
+  padding-left: 35rpx;
+  box-sizing: border-box;
+  text-align:justify;
+}
+
+.modal-line-box{
+  margin: 30rpx 0rpx;
+}
+
+.mask{
+  position: fixed;
+  bottom: 120rpx;
+  left: 0px;
+  width: 100%;
+  height:100%;
+  z-index: 100;
+  background:rgba(0,0,0,0.5);
+}
+.showMask,.showModal{
+  display: block;
+}
+.hideMask,.hideModal{
+  display: none;
+}
+.messageCale{width: 100%;height: 30rpx;}
+.cale{width: 30rpx;height: 30rpx;font-size: 36rpx;line-height: 25rpx;color: #bebebe}
+.caleTit{width: 100%;height: 180rpx; text-align: center;line-height: 100rpx;font-size: 48rpx;margin-top: 20rpx;}
+.caleTit view{width: 100%;height: 60rpx;text-align: center;line-height: 20rpx;font-size: 26rpx;}
+.caleInpt{width: 90%;height: 200rpx;margin-top: -20rpx;position: relative;top: -10rpx;margin-left: 5%;background: #fff}
+.caleInptCot{width: 100%;height: 100rpx;border-bottom: 2px solid #f6f6f6;line-height: 100rpx;}
+.caleInptCotL{width: 20%;height: 100%;display: inline-block;float: left}
+.caleInptCotR{width: 60%;height: 100%;display: inline-block;float: right;margin-right: 20%}
+.caleInptCotR input{position: relative;top: 30rpx;text-align: center!important;}
+.yanipt{width: 100%;text-align: center!important}
+.caleInptCotR label{display: inline-block;width: 150rpx;height: 50rpx;position: relative;top: -45rpx;left: 96%;text-align: center;line-height: 50rpx;background-color: #f36201;color: white;border-radius: 10rpx;font-size: 24rpx;}
+.unable{
+  background-color: #f3f3f3!important;
+color:#bebebe!important;
+
+}
+.unableborder{
+  border: 1px solid #bebebe!important
+}
+.clleLogin{width: 100%;height: 80rpx;margin-top: 40rpx;background: #fff;}
+.clleLogin button{width: 90%;height: 100%;background-color: #f36201;color: white }

@@ -1,0 +1,11 @@
+/* pages/allAppmi/allAppmi.wxss */
+.allAppmiList{width: 100%;height: auto;}
+.allAppmiCot{width: 100%;height: 80rpx;text-align: center;border-bottom:1px solid #ECECEC }
+.allAppmiCot view{line-height: 80rpx;}
+.allAppmiCotL{width: 20%;height: 100%;float: left;display: inline-block}
+
+.allAppmiCotR{width: 60%;height: 100%;float: right;display: inline-block}
+.allAppmiCotM{width: 20%;height: 100%;display: inline-block}
+
+.appMifooter{width: 100%;height: 100rpx;position: fixed;bottom: 40rpx;padding: 20rpx;box-sizing: border-box;}
+.appMifooter button{background-color: #f36201}

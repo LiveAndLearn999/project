@@ -1,0 +1,62 @@
+
+<view class='depositBg'>
+
+  <view class='payMyimg' bindtap='goTopup'>
+        <image src='../../img/1.jpg'></image>
+  </view>
+
+   <view class='payDetail'>
+        <view>￥ <label>{{payPrice}}</label></view>
+        <view class='grayWod'>订单号：{{orderno}}</view>
+   </view> 
+
+  <view class='depositTop'>
+    <view class="deCard {{selectid==index? 'Bgcol' : 'noneBg'}} {{item.song == 0?'deCard2':''}}" wx:for="{{res}}" id="{{index}}" bindtap='givingThere'>
+      <view class="deCardL">
+        <view class='bigWord'>充{{item.rechargeAmount}}</view>
+        <view class='smallWord'>赠送{{item.giftAmount}}</view>
+      </view>
+      <view class='deCardR'>
+        <image src='../../img/HOT.png' wx:if="{{item.hotFlag==1}}"></image>
+      </view>
+    </view>
+    <view class='depositTopline'></view>
+  </view>
+
+  <view class="moreMetd" bindtap='showMore'>
+        <view class='moreCot'>
+        更多支付方式  <image src='{{shouimg}}'  ></image>
+        </view>
+  </view>
+
+  <view class="seMetd {{ishang?'hideImg':'showImg'}}">
+        <view class='seMetdCot'>
+                   <view class='sePay'>
+                         <view class='sePayL'>
+                             <image src='../../img/weixin.png'></image>
+                         </view>
+                        <view class='sePayM'>
+                              <view class='sePtop'>微信支付</view>
+                              <!-- <view class='sePfoot'>
+                                   <label>充值即送</label>
+                                   <label>立减10元</label>
+                              </view> -->
+                        </view>
+                        <view class='sePayR'>
+                                
+                                 <image src="{{selectid==-1?'../../img/icon2.png':'../../img/icon1.png'}}" bindtap='showIco2'></image>
+                        </view>
+                   </view>        
+        </view>
+  </view>
+
+
+  <view class='depositFooter'>
+    <view class='depositFbtn'>
+      <button type='warn' bindtap='recharge'>支付￥  {{ordernum}}元
+           <label class="{{depositAmount==0?'hidden':''}}">(包含押金：{{depositAmount}}元)</label>
+      </button>
+    </view>
+  </view>
+
+</view>

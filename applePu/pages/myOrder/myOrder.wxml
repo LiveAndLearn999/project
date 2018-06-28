@@ -1,0 +1,50 @@
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待支付</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待入住</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">已取消</view>
+  <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">已完成</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300"  bindchange="bindChange">
+  <block wx:for="{{[1,2,3,4,5]}}" wx:key="{{index}}">
+    <swiper-item>
+      <scroll-view scroll-y="true" class='scrollview' bindscrolltolower='loadmores'>
+        <view class='orderContetn'>
+          <block wx:for="{{res}}" wx:key="{{index}}">
+            <view class='orderAddress' data-orderno='{{item.subOrderNo}}' bindtap='orderDetail'>
+              <view class='v_title'>
+                <image src='../../img/11.png' />
+                <view class='v2'> {{item.hotelName}}</view>
+                <view class='v3' style='color:#ffa001' wx:if="{{item.orderStatus ==1}}"> 等待支付</view>
+                <view class='v3' wx:if="{{item.orderStatus ==3}}" style='color:#7c7c7c'> 订单取消</view>
+                <view class='v3' wx:if="{{item.orderStatus ==2}}" style='color:#ff9024'> 预约成功</view>
+                <view class='v3' wx:if="{{item.orderStatus ==4}}" style='color:#ff9024'> 订单详情</view>
+              </view>
+              <view class='v_title v_time'>{{item.startDate}} {{item.startTime}}至{{item.endDate}} {{item.endTime}}</view>
+              <view class='adr Hottype'>
+                <view class='Hotleft'>
+                  {{item.subjectName}}
+                </view>
+                <view class='Hotright'>
+                  ￥ {{item.orderPrice}}</view>
+              </view>
+            </view>
+          </block>
+          <view class="load-more-wrap">
+            <block wx:if="{{hasMore}}">
+              <view class="load-content">
+                <text class="weui-loading" />
+              </view>
+            </block>
+            <block wx:else>
+              <view class="load-content">
+                <text>没有更多内容了</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </block>
+
+</swiper>

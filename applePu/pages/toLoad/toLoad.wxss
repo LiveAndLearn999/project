@@ -1,0 +1,86 @@
+/* pages/shouquan/shouquan.wxss */
+.givePowerBg{width: 100%;height: 1280rpx;}
+.giveImg{width: 100%;height: 220rpx;margin-top: 100rpx;text-align: center}
+.giveImg image{width: 140rpx;height: 140rpx;border-radius: 100%;border: 1px solid #f36201}
+.giveImgName{width: 100%;height: 40rpx;text-align: center;line-height: 40rpx;margin-top: 10rpx;font-size: 36rpx;}
+.givePcaref{width: 100%;height: 220rpx;text-align: center;padding: 45rpx 0rpx;box-sizing: border-box;color: black;font-size: 30rpx;line-height: 45rpx;font-weight: bold}
+.giveConfirm{width: 100%;height: 80rpx;}
+.giveConfirm button{width: 92%;height: 100%;background-color: #f36201;line-height: 80rpx; }
+.giveSwitch{width: 100%;height: 150rpx;text-align: center;color: #ffa001;line-height: 150rpx;font-size: 28rpx;}
+
+
+
+
+
+.container{
+  font-family: "微软雅黑";
+  padding: 0rpx 20rpx;
+  padding-top: 1px;
+  box-sizing: border-box;
+}
+
+
+.modal{
+  position: absolute;
+  left: 0rpx;
+  bottom:0rpx;
+  z-index: 200;
+  width:100%;
+   
+}
+
+.modal-content{
+  width: 100%;
+  height: 900rpx;
+  margin: 0 auto;
+  background: #fff;
+  font-size: 30rpx;
+  font-family: "微软雅黑";
+  padding: 20rpx;
+  padding-left: 35rpx;
+
+  box-sizing: border-box;
+  text-align:justify;
+  position: fixed;
+  bottom: 0rpx;
+}
+
+.modal-line-box{
+  margin: 30rpx 0rpx;
+}
+
+
+
+
+.mask{
+  position: fixed;
+  bottom: 120rpx;
+  left: 0px;
+  width: 100%;
+  height:100%;
+  z-index: 100;
+  background:rgba(0,0,0,0.5);
+}
+.showMask,.showModal{
+  display: block;
+}
+.hideMask,.hideModal{
+  display: none;
+}
+.messageCale{width: 100%;height: 30rpx;}
+.cale{width: 30rpx;height: 30rpx;font-size: 36rpx;line-height: 25rpx;color: #bebebe}
+.caleTit{width: 100%;height: 180rpx; text-align: center;line-height: 100rpx;font-size: 48rpx;margin-top: 20rpx;}
+.caleTit view{width: 100%;height: 60rpx;text-align: center;line-height: 20rpx;font-size: 26rpx;}
+.caleInpt{width: 90%;height: 200rpx;margin-top: -20rpx;position: relative;top: -10rpx;margin-left: 5%}
+.caleInptCot{width: 100%;height: 100rpx;border-bottom: 2px solid #f6f6f6;line-height: 100rpx;}
+.caleInptCotL{width: 20%;height: 100%;display: inline-block;float: left}
+.caleInptCotR{width: 60%;height: 100%;display: inline-block;float: right;margin-right: 20%}
+.caleInptCotR input{position: relative;top: 30rpx;text-align: center!important;}
+.yanipt{width: 100%;text-align: center!important}
+.caleInptCotR label{display: inline-block;width: 140rpx;height: 50rpx;position: relative;top: -45rpx;left: 96%;text-align: center;line-height: 50rpx;background-color: #ffa001;color: white;border-radius: 10rpx;font-size: 24rpx;}
+
+.clleLogin{width: 100%;height: 80rpx;margin-top: 40rpx;}
+.clleLogin button{width: 90%;height: 100%;background-color: #ffa001;color: white }
+
+
+

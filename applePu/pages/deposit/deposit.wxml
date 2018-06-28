@@ -1,0 +1,40 @@
+<view class='depositBg'>
+
+      <view class='depositTop'>
+    <view class='depositTop1'>充值金额</view>
+     <view class='depositTop2'>￥  {{res.payPrice}}</view>
+    <view class='depositTop3'>押金随心退,安全速到账</view>
+    <view class='depositTopline'></view>
+</view>
+
+<view class='depositSele'>
+           <view class='depositSelecot'>
+                  <view class='depositSelecotL'>
+                      <view class='depositSelecotLImg'>
+                              <image src='../../img/weixin.png'></image>
+                      </view>
+                      <view class='depositSelecotLW'>
+                           微信
+                           <label>充押金</label>
+                      </view>
+                  </view>
+
+                  <view class='depositSelecotR'>
+                                <view bindtap='iconShow' bindtap='iconShow'>
+                                           <image src='../../img/icon2.png' wx:if="{{iconShow}}" ></image>
+                                           <image src='../../img/icon1.png' wx:if="{{iconShow2}}"></image>
+                                </view>
+                              
+                  </view>
+           </view>
+</view>
+
+
+<view class='depositFooter'>
+        <view class='careFore'>觅TA不以任何形式要求您输入银行账号和密码</view>
+        <view class='depositFbtn'>
+            <button type='warn' bindtap='recharge'>去充值</button>
+        </view>
+</view>
+
+</view>

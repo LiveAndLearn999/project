@@ -1,0 +1,13 @@
+<view class='refunLog'>
+   <image src='../../img/tuikuan.png'></image>
+</view>
+
+
+<view class='refunMony'></view>
+
+<view class='refunSucc'>申请退款成功</view>
+
+
+<view class='refunTure'>
+   <button bindtap='back'>确定</button>
+</view>

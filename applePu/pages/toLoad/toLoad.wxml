@@ -1,0 +1,64 @@
+<view class='givePowerBg'>
+
+    <view class='giveImg'>
+             <image src='../../img/33.jpg'></image>
+             <view class='giveImgName'>1213****123</view>
+    </view>
+
+    <view class='givePcaref'>
+          近期您已经授权以上账户登陆过觅TA酒店
+          <view>点击确认可自动登陆</view>
+    </view>
+
+    <view class='giveConfirm'>
+         <button type='warn'>确认</button>
+    </view>
+
+    <view class='giveSwitch ' bindtap='showAmountModal'>
+           使用其他手机号登陆
+    </view>
+
+</view>
+
+
+
+
+<view class="container">
+  <view class="modal {{showAmountModal.showModal}}">
+    <form bindsubmit="widthdraws">
+              <view class="modal-content">
+                     <view class='messageCale' bindtap='hideAmountModal'>
+                          <view class='cale'>X</view>
+                     </view>
+                      <view class='caleTit'>
+                               短信验证码登陆
+                               <view>如手机号未注册,验证后将自动注册</view>
+                      </view>
+                      <view class='caleInpt'>
+                              <view class='caleInptCot'>
+                                          <view class='caleInptCotL'>
+                                                 手机号
+                                          </view>
+                                          <view class='caleInptCotR'>
+                                                 <input type="idcard" placeholder='请输入手机号' />
+                                          </view>
+                                 </view>
+                                 <view class='caleInptCot'>
+                                          <view class='caleInptCotL'>
+                                                 验证码
+                                          </view>
+                                          <view class='caleInptCotR caleInptCotR2'>
+                                                 <input type="idcard" placeholder='请输入验证码'/>
+                                                  <label>免费获取</label> 
+                                          </view>
+                                 </view>
+
+                                 <view class='clleLogin'>
+                                      <button type='warn'>登录</button>
+                                 </view>
+                     </view>
+             </view>
+    </form>
+  </view>
+  <view class="mask {{showAmountModal.showMask}}" bindtap='hideAmountModal'></view>
+</view>

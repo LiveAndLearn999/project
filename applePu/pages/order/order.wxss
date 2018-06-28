@@ -1,0 +1,495 @@
+.orderBg {
+  width: 100%;
+  height: 1200rpx;
+  background-color: #f5eff1;
+  overflow-x: hidden;
+}
+
+.orderTopBg {
+  width: 100%;
+  height: 220rpx;
+  background-color: #ffa001;
+  position: relative;
+}
+
+.orderTop {
+  width: 90%;
+  height: 180rpx;
+  background-color: white;
+  position: relative;
+  margin-left: 5%;
+  border-radius: 10rpx;
+  margin-top: -208rpx;
+  color: #767676;
+}
+
+.addApp {
+  width: 100%;
+  height: 60rpx;
+  background-color: white;
+  margin-top: 55rpx;
+  text-align: center;
+  color: #f36201;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  position: relative;
+}
+
+/* .addApp label{display: inline-block;width: 40rpx;height: 40rpx;border-radius: 100%;border: 1px solid #ff4a77;text-align: center;line-height: 32rpx;font-size: 40rpx;} */
+
+.addApp image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+}
+
+.addApp label {
+  position: relative;
+  display: inline-block;
+  height: 40rpx;
+  line-height: 40rpx;
+  top: -10rpx;
+  left: 10rpx;
+  font-weight: bold;
+}
+
+.orderTopR {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.orderTopline {
+  width: 96%;
+  height: 10rpx;
+  border-top: 2rpx dashed #ececec;
+  margin-top: 10rpx;
+  margin-left: 2%;
+}
+
+.orderTopR1 {
+  font-size: 30rpx;
+  padding: 5rpx 20rpx;
+  box-sizing: border-box;
+  color: black;
+}
+
+.orderTopR2 {
+  font-size: 24rpx;
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+}
+
+orderTopR21 {
+  font-size: 22rpx;
+}
+
+.orderTopR2 label {
+  float: right;
+  color: #ffa001;
+  font-size: 20rpx;
+}
+
+.coupons {
+  width: 100%;
+  height: 80rpx;
+  background-color: white;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+
+.couponsL {
+  width: 40%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.couponsL image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 15rpx;
+}
+
+.couponsL label {
+  font-size: 30rpx;
+  position: relative;
+  top: -15rpx;
+  left: 10rpx;
+}
+
+.couponsR {
+  width: 40%;
+  height: 100%;
+  display: inline-block;
+  float: right;
+  text-align: right;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  color: #ffa001;
+}
+
+.couponsR label {
+  color: #d0cfcf;
+}
+
+.orderList {
+  width: 96%;
+  height: 450rpx;
+  margin-left: 2%;
+  position: relative;
+  top: 0rpx;
+}
+
+.orderListcot {
+  width: 100%;
+  height: 140rpx;
+  margin-top: 10rpx;
+  background-color: white;
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+
+.orderListcotS {
+  height: 70rpx;
+}
+
+.singleW {
+  
+}
+
+.orderListcotL {
+  width: 20%;
+  height: 70rpx;
+  border-bottom: 1px solid #efefef;
+  display: inline-block;
+  float: left;
+  line-height: 70rpx;
+  color: #000;
+}
+
+.orderListcotR {
+  display: inline-block;
+  width: 80%;
+  float: right;
+  border-bottom: 1px solid #efefef;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.orderListcotR input {
+  margin-left: 20rpx;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 70rpx;
+}
+
+.topUpinst {
+  width: 96%;
+  height: 200rpx;
+  margin-top: 20rpx;
+  margin-left: 2%;
+  font-size: 24rpx;
+  padding: 0rpx 10rpx;
+  box-sizing: border-box;
+  color: #b3b1b2;
+}
+
+.topUpinst label {
+  font-size: 30rpx;
+  color: black;
+}
+
+.orderFooter {
+  width: 100%;
+  height: 120rpx;
+  background: white;
+  position: fixed;
+  bottom: 0rpx;
+}
+
+.orderFooterL {
+  width: 50%;
+  height: 70%;
+  float: left;
+  box-sizing: border-box;
+  font-size: 40rpx;
+  text-align: center;
+  color: #f36201;
+  margin-top: 30rpx;
+}
+
+.orderFooterLM {
+  color: #f36201;
+}
+
+.orderFooterLsmall {
+  color: #adabac;
+  font-size: 20rpx;
+  float: left;
+  margin-left: 70rpx;
+}
+
+.orderFooterR {
+  width: 40%;
+  height: 120rpx;
+  float: right;
+  line-height: 120rpx;
+}
+
+.orderDetail {
+  width: 40%;
+  height: 120rpx;
+  text-align: center;
+  color: #adabac;
+  font-size: 20rpx;
+  clear: both;
+}
+
+.mingxi {
+  margin-bottom: 120rpx;
+}
+
+.orderSubbtn {
+  width: 58%;
+  height: 120rpx;
+  text-align: center;
+  display: inline-block;
+  line-height: 120rpx;
+}
+
+.orderSubbtn button {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  display: inline-block;
+  background-color: #f36201;
+}
+
+.kouMoney {
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 20rpx;
+  height: 100rpx;
+  background-color: red;
+  position: relative;
+}
+
+.container {
+  font-family: "微软雅黑";
+  padding: 0rpx 20rpx;
+  padding-top: 1px;
+  box-sizing: border-box;
+}
+
+.mask {
+  position: fixed;
+  bottom: 120rpx;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.showMask, .showModal {
+  display: block;
+}
+
+.hideMask, .hideModal {
+  display: none;
+}
+
+.modelFooter {
+  margin-top: -10rpx;
+}
+
+.modalTop label {
+  display: inline-block;
+  float: right;
+  margin-right: 60rpx;
+  color: #fe5781;
+  font-size: 36rpx;
+}
+
+.modalTop view {
+  width: 100%;
+  height: 50rpx;
+  margin-top: 2rpx;
+}
+
+.modalTopY {
+  color: #ffa92e;
+}
+
+.unable {
+  background-color: #c3c3c3 !important;
+}
+
+/*1.10  */
+
+.orderDetail image {
+  width: 22rpx;
+  height: 13rpx;
+}
+
+.showDown {
+  display: inline-block;
+}
+
+.hideDown {
+  display: none;
+}
+
+.modal1 {
+  position: absolute;
+  left: 0rpx;
+  bottom: 0rpx;
+  z-index: 200;
+  width: 100%;
+}
+
+.modal1-content {
+  width: 100%;
+  height: 600rpx;
+  margin: 0 auto;
+  background: #fff;
+  font-size: 30rpx;
+  font-family: "微软雅黑";
+  padding: 20rpx;
+  padding-left: 35rpx;
+  box-sizing: border-box;
+  text-align: justify;
+  position: fixed;
+  bottom: 0px;
+}
+
+.modal-line-box {
+  margin: 30rpx 0rpx;
+}
+
+.mask {
+  position: fixed;
+  bottom: 120rpx;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.showMask, .showModal {
+  display: block;
+}
+
+.hideMask, .hideModal {
+  display: none;
+}
+
+.messageCale {
+  width: 100%;
+  height: 30rpx;
+}
+
+.cale {
+  width: 30rpx;
+  height: 30rpx;
+  font-size: 36rpx;
+  line-height: 25rpx;
+  color: #bebebe;
+}
+
+.caleTit {
+  width: 100%;
+  height: 180rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 48rpx;
+  margin-top: 20rpx;
+}
+
+.caleTit view {
+  width: 100%;
+  height: 60rpx;
+  text-align: center;
+  line-height: 20rpx;
+  font-size: 26rpx;
+}
+
+.caleInpt {
+  width: 90%;
+  height: 200rpx;
+  margin-top: -20rpx;
+  position: relative;
+  top: -10rpx;
+  margin-left: 5%;
+  background: #fff;
+}
+
+.caleInptCot {
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 2px solid #f6f6f6;
+  line-height: 100rpx;
+}
+
+.caleInptCotL {
+  width: 20%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+}
+
+.caleInptCotR {
+  width: 60%;
+  height: 100%;
+  display: inline-block;
+  float: right;
+  margin-right: 20%;
+}
+
+.caleInptCotR input {
+  position: relative;
+  top: 30rpx;
+  text-align: center !important;
+}
+
+.yanipt {
+  width: 100%;
+  text-align: center !important;
+}
+
+.caleInptCotR label {
+  display: inline-block;
+  width: 145rpx;
+  height: 50rpx;
+  position: relative;
+  top: -45rpx;
+  left: 96%;
+  text-align: center;
+  line-height: 50rpx;
+  background-color: #ffa001;
+  color: white;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+}
+
+.clleLogin {
+  width: 100%;
+  height: 80rpx;
+  margin-top: 40rpx;
+  background: #fff;
+}
+
+.clleLogin button {
+  width: 90%;
+  height: 100%;
+  background-color: #ffa001;
+  color: white;
+}

@@ -1,0 +1,17 @@
+<view class='allAppmiList'>
+  <checkbox-group bindchange='checkboxChange'>
+    <block wx:for="{{guofen}}" wx:for-index="idx" wx:key="{{idx}}">
+      <view class='allAppmiCot'>
+        <view class='allAppmiCotL'>
+          <checkbox checked='' value='{{idx}}' color='#ffa001' />
+        </view>
+        <view class='allAppmiCotM'>{{item.name}}</view>
+        <view class='allAppmiCotR'>{{item.idCardNum}}</view>
+      </view>
+    </block>
+  </checkbox-group>
+</view>
+
+<view class='appMifooter'>
+  <button type='warn' bindtap='select'>确定</button>
+</view>

@@ -1,0 +1,15 @@
+<view class='depImg'>
+   <image src='../../img/tuikuan.png'></image>
+</view>
+
+
+
+<view  class='depImgtit'>
+     是否申请退款？
+</view>
+
+
+<view class='depBesure'>
+     <view class="depL act" bindtap='seShow'>是</view>
+     <view class="depR noAct" bindtap='fouShow'>否</view>
+</view>

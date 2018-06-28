@@ -1,0 +1,13 @@
+/* pages/coupons/coupons.wxss */
+.couponsBg{width: 100%;height: 1280rpx;background-color: #f5f1f2}
+
+.couponsCot{width: 100%;height: 160rpx;background-color: transparent;position: relative;top: -160rpx;}
+.couponscOTBg{width: 100%;height: 160rpx;overflow: hidden}
+.couponscOTBg image{width: 100%;height: 160rpx;}
+.couponsCotL{width: 20%;height: 100%;display: inline-block;float: left;text-align: center;line-height: 140rpx;font-size: 50rpx;color: #ff4a77}
+.couponsCotR{width: 65%;height: 100%;display: inline-block;float: right;padding-right: 20rpx;box-sizing: border-box }
+.couponsCotRfort{width: 100%;height: 50%}
+.couponsCotRfortL{width:70%;height: 100%;display: inline-block;font-size: 24rpx;color: black;font-size: 30rpx;}
+.couponsCotRfortL view{color: #808080;font-size: 24rpx;}
+.couponsCotRfortR{width: 30%;height: 60%;display: inline-block;font-size: 20rpx;text-align: center;line-height: 48rpx;background-color:#ff4a77;border-radius: 20rpx;margin-top: -20%;position: relative;top: -20%;color: white;font-size: 26rpx}
+.couponsCotRforb{width: 100%;height:46%;border-top: 1px dashed #ECECEC;line-height: 60rpx; font-size: 24rpx;color: #808080;margin-top: 2%}

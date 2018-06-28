@@ -1,0 +1,266 @@
+<view class='orderBg'>
+
+  <view class='orderTopBg'></view>
+  <view class='orderTop'>
+
+    <view class='orderTopR'>
+      <view class='orderTopR1'>{{preorderinfo.subjectName}} （限时抢购）</view>
+      <view class='orderTopR2'></view>
+      <view class='orderTopR2 orderTopR21'>{{preorderinfo.subjectDesc2}}</view>
+      <view class='orderTopR2 orderTopR21'>{{preorderinfo.subjectDesc3}}</view>
+      <view class='orderTopline'></view>
+      <view class='orderTopR2'>入住: {{preorderinfo.startDate}} 时间： {{preorderinfo.startTime}} -{{preorderinfo.endTime}}
+        <!-- <label>修改 ></label> -->
+      </view>
+    </view>
+
+
+    <!-- <view class='coupons' bindtap='toCoupons'>
+      <view class='couponsL'>
+        <image src='../../img/jian.png'></image>
+        <label>优惠卷</label>
+      </view>
+      <view class='couponsR'>
+        一张可用
+        <label>></label>
+      </view>
+    </view> -->
+
+  </view>
+
+
+
+  <view class='addApp' bindtap='selectAppmi'>
+    <image src='../../img/add.png'></image>
+    <label>常用联系人</label>
+  </view>
+
+  <form bindsubmit='submitOrder'>
+    <view class='orderList'>
+
+
+      <view class='orderListcot'>
+        <view class='orderListcotL'>
+          入住人1
+        </view>
+        <view class='orderListcotR'>
+          <input type="text" maxlength="4" value="{{person1}}" name='person1' placeholder="请输入姓名" />
+        </view>
+        <view class='orderListcotL'>
+          身份证
+        </view>
+        <view class='orderListcotR'>
+          <input type="idcard" maxlength="18" bindinput="checkIphone" value="{{cardno1}}" name='cardno1'placeholder="请输入身份证号"  />
+
+        </view>
+      </view>
+
+      <view class='orderListcot'>
+        <view class='orderListcotL'>
+          入住人2
+        </view>
+        <view class='orderListcotR'>
+          <input type="text" maxlength="4" value="{{person2}}" name='person2' placeholder="请输入姓名" />
+        </view>
+        <view class='orderListcotL'>
+          身份证
+        </view>
+        <view class='orderListcotR'>
+          <input type="idcard" maxlength="18" value="{{cardno2}}" name='cardno2'placeholder="请输入身份证号"  />
+        </view>
+      </view>
+
+      <view class='orderListcot '>
+        <view class='orderListcotL'>
+          手机号
+        </view>
+        <view class='orderListcotR'>
+          <input type="idcard" maxlength="11" name='mobile' placeholder="请输入手机号码" />
+        </view>
+          <view class='orderListcotL singleW'>
+     提   示
+        </view>
+        <view class='orderListcotR'>
+          <label>请提前15分钟办理入住</label>
+        </view>
+      </view>
+
+      <!-- <view class='orderListcot orderListcotS' >
+        <view class='orderListcotL singleW'>
+          提 示
+        </view>
+        <view class='orderListcotR'>
+          <label>请提前15分钟办理入住</label>
+        </view> -->
+        <!-- <view class='orderListcotL singleW'>
+          发 票
+        </view>
+        <view class='orderListcotR'>
+          <label>请下载觅TA客户端领取</label> -->
+        <!-- </view> -->
+      <!-- </view> -->
+
+    </view>
+
+
+
+
+    <view class='topUpinst'>
+      <label>扣款说明</label>{{preorderinfo.debitDesc1}}
+      <label style='color:red;font-size:26rpx'>{{preorderinfo.debitDesc2}}</label>
+      {{preorderinfo.debitDesc3}}
+    </view>
+
+
+
+    <view class='orderFooter'>
+      <view class='orderFooterL'>
+        <view style='float:left;margin-left:15rpx'>在线支付
+          <label class='orderFooterLM'>￥{{preorderinfo.payPrice}}</label>
+        </view>
+        <view class='orderFooterLsmall' wx:if="{{preorderinfo.depositAmount !='0'}}">(可退押金：{{preorderinfo.depositAmount}})</view>
+      </view>
+      <view class='orderFooterR'>
+        <view class="orderDetail {{showDown?'showDown':'hideDown'}}" bindtap='showAmountModal'>
+          明细
+          <image src='../../img/down.png'></image>
+        </view>
+        <view class="orderDetail {{!showDown?'showDown':'hideDown'}}" bindtap='hideAmountModal'>
+          明细
+          <image src='../../img/up.png'></image>
+        </view>
+        <view class='orderSubbtn'>
+          <button type="warn" form-type='submit'>提交订单</button>
+        </view>
+      </view>
+    </view>
+  </form>
+
+
+
+</view>
+
+
+
+
+
+
+<!-- <view class='kouMoney'>
+
+    <view class="container" class="zn-uploadimg">  
+    
+    <button type="primary"bindtap="actioncnt">操作菜单</button>   
+</view>
+
+</view> -->
+
+
+<view class="container mingxi">
+  <view class="modal {{showAmountModal.showModal}}">
+    <form bindsubmit="widthdraws">
+      <view class="modal-content">
+
+        <view class='modalTop'>
+          <view>
+            <view class='modalTopSL modalTopSL1'>
+              在线支付
+            </view>
+
+            <view class='modalTopSR modalTopSR1'>￥{{preorderinfo.payPrice}}</view>
+          </view>
+          <view class='clear'></view>
+          <view>
+            <view class='modalTopSL modalTopSL2 '>
+              房费
+            </view>
+            <view class='modalTopSR'>￥{{preorderinfo.roomPrice}}</view>
+          </view>
+          <view wx:if="{{preorderinfo.couDiscountAmount !=0}}">
+            <view class='modalTopSL modalTopSL2'>
+              优惠卷
+            </view>
+            <view class='modalTopSR modalTopSR2'>￥-{{preorderinfo.couDiscountAmount}}</view>
+          </view>
+          <view class='modalTopY clear' wx:if="{{preorderinfo.depositAmount !=0}}">
+            <view class='modalTopSL modalTopSL2'>
+              押金
+            </view>
+            <view class='modalTopSR'>￥{{preorderinfo.depositAmount}}</view>
+          </view>
+           <view class='clear' >
+            <view class='modalTopSL modalTopSL2'>
+              余额抵扣
+            </view>
+            <view class='modalTopSR'>-￥{{preorderinfo.balanceDiscountAmount}}</view>
+          </view>
+        </view>
+
+
+
+        <!-- <view class='modelFooter'>
+
+               <view class='orderFooter'>
+                    <view class='orderFooterL'>
+                        <view>总额:<label class='orderFooterLM'>￥880</label></view>
+                        <view class='orderFooterLsmall'>(可退押金：449)</view>
+                    </view>
+                    <view class='orderFooterR'>
+                            <view class='orderDetail' bindtap='hideAmountModal'>
+                                明细
+                            </view>
+                            <view class='orderSubbtn'>
+                                      <button type="primary"bindtap="actioncnt">提交订单</button>  
+                            </view>
+                    </view>
+          </view>
+
+         </view> -->
+
+
+
+
+      </view>
+    </form>
+  </view>
+  <view class="mask {{showAmountModal.showMask}}" bindtap='hideAmountModal'></view>
+</view>
+
+<view class="container mingxi">
+  <view class="modal1 {{showAmountModal1.showModal}}">
+    <form>
+      <view class="modal1-content">
+        <view class='messageCale' bindtap='hideAmountModal1'>
+          <view class='cale'>X</view>
+        </view>
+        <view class='caleTit'>
+          绑定手机号
+          <view>您尚未绑定手机号,验证后将自动绑定</view>
+        </view>
+        <view class='caleInpt'>
+          <view class='caleInptCot'>
+            <view class='caleInptCotL'>
+              手机号
+            </view>
+            <view class='caleInptCotR'>
+              <input type="number" placeholder='请输入手机号' bindinput='mobileinput' />
+            </view>
+          </view>
+          <view class='caleInptCot'>
+            <view class='caleInptCotL'>
+              验证码
+            </view>
+            <view class='caleInptCotR caleInptCotR2'>
+              <input type="number" placeholder='请输入验证码' bindinput='codeinput' />
+                  <label bindtap="{{btncodeclass==''?'getcode':''}}" class='{{btncodeclass}}'>{{btncodename}}</label>
+            </view>
+          </view>
+
+          <view class='clleLogin' bindtap='submitbindmobile'>
+            <button type='warn'>绑定</button>
+          </view>
+        </view>
+      </view>
+    </form>
+  </view>
+  <view class="mask {{showAmountModal1.showMask}}" bindtap='hideAmountModal1'></view>
+</view>

@@ -1,0 +1,132 @@
+/* pages/setting/setting.wxss */
+
+.setBg {
+  width: 100%;
+  height: 1210rpx;
+  background-color: #f4f0f1;
+}
+
+.setList {
+  width: 100%;
+  height: 400rpx;
+  background-color: white;
+  overflow: hidden;
+}
+
+.setListcot {
+  width: 90%;
+  height: 100rpx;
+  border-bottom: 1px solid #f5f1f0;
+  margin-left: 5%;
+}
+
+.setListcotL {
+  width: 70%;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  text-align: left;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: black;
+
+}
+
+.setListcotR {
+  width: 25%;
+  height: 100%;
+  display: inline-block;
+  float: right;
+  text-align: right;
+  line-height: 100rpx;
+  color: #b8b8b8;
+  font-size: 48rpx;
+}
+
+.setExit {
+  width: 96%;
+  height: 100rpx;
+  margin-top: 80rpx;
+  margin-left: 2%;
+}
+
+.setExit button {
+  background: none;
+  color: #ffa001;
+  border: 1px solid #ffa001;
+  display: inline-block;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-synthesis: 32rpx;
+}
+.modal1{
+  position: absolute;
+  left: 0rpx;
+  bottom:0rpx;
+  z-index: 200;
+  width:100%;
+   
+}
+.suo{
+  width: 50rpx;
+  height: 60rpx;
+  margin-top: 35rpx;
+  float: left
+}
+.clear{
+  clear: both
+}
+.modal1-content{
+  width: 100%;
+  height: 550rpx;
+  margin: 0 auto;
+  background: #fff;
+  font-size: 30rpx;
+  font-family: "微软雅黑";
+  padding: 20rpx;
+  padding-left: 35rpx;
+  box-sizing: border-box;
+  text-align:justify;
+}
+
+.modal-line-box{
+  margin: 30rpx 0rpx;
+}
+
+.mask{
+  position: fixed;
+  bottom: 120rpx;
+  left: 0px;
+  width: 100%;
+  height:100%;
+  z-index: 100;
+  background:rgba(0,0,0,0.5);
+}
+.showMask,.showModal{
+  display: block;
+}
+.hideMask,.hideModal{
+  display: none;
+}
+.messageCale{width: 100%;height: 30rpx;}
+.cale{width: 30rpx;height: 30rpx;font-size: 36rpx;line-height: 25rpx;color: #bebebe}
+.caleTit{width: 100%;height: 120rpx; text-align: center;line-height: 100rpx;font-size: 48rpx;margin-top: 20rpx;}
+.caleTit view{width: 100%;height: 60rpx;text-align: center;line-height: 20rpx;font-size: 26rpx;}
+.caleInpt{width: 90%;height: 200rpx;margin-top: -20rpx;position: relative;top: -10rpx;margin-left: 5%;background: #fff}
+.caleInptCot{width: 100%;height: 100rpx;border-bottom: 2px solid #f6f6f6;line-height: 100rpx;}
+.caleInptCotL{width: 20%;height: 100%;display: inline-block;float: left}
+.caleInptCotR{width: 60%;height: 100%;display: inline-block;float: right;margin-right: 20%}
+.caleInptCotR input{position: relative;top: 30rpx;text-align: center!important;}
+.yanipt{width: 100%;text-align: center!important}
+.caleInptCotR label{display: inline-block;width: 150rpx;height: 50rpx;position: relative;top: -45rpx;left: 96%;text-align: center;line-height: 50rpx;background-color: #f36201;color: white;border-radius: 10rpx;font-size: 24rpx;}
+.unable{
+  background-color: #f3f3f3!important;
+color:#bebebe!important;
+
+}
+.unableborder{
+  border: 1px solid #bebebe!important
+}
+.clleLogin{width: 100%;height: 80rpx;margin-top: 40rpx;background: #fff;}
+.clleLogin button{width: 90%;height: 100%;background-color: #f36201;color: white }

@@ -1,0 +1,5 @@
+<loading hidden="{{loadingHidden}}">
+       <view> 加载中...</view>
+</loading>
+  <map longitude="23.099994" latitude="113.324520" markers="{{markers}}"  scale="1" style="width: 375px; height: 100px;"></map>
+
