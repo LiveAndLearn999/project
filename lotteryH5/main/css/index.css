@@ -1,0 +1,209 @@
+body{margin: 0px;padding: 0px;background: #f3f3f3}
+
+
+.lotHead{width: 100%;height: 0.6rem;margin: 0px;padding: 0px;font-size: 0.3rem;text-align: center;line-height: 0.6rem;background: #f36201;color: white}
+.lotHead span{display: inline-block;width: 33.3%;height: 100%;float: left}
+.lotHead span:first-child{text-align: left;}
+.lotHead img{width: 0.3rem;height: 0.4rem;margin-top: 0.1rem;margin-left: 0.2rem}
+
+.lotLogo{width: 100%;border-bottom: 1px solid #f3f3f3;height: 2rem;text-align: center;padding-top: 0.3rem;box-sizing: border-box}
+.lotLognL{width: 28%;height: 100%;float: left;display: inline-block;padding-left: 0.8rem;box-sizing: border-box}
+.lotLognM{width: 43%;height: 100%;display: inline-block;padding-top: 0.3rem;box-sizing: border-box}
+.lotLognR{width: 28%;height: 100%;float: right;display: inline-block;padding-right: 0.8rem;box-sizing: border-box}
+
+.lotLognImg{width: 0.8rem;height: 0.8rem;display: inline-block;border-radius: 50%}
+.lotLognName{width: 100%;height: 0.3rem;font-size: 0.22rem;display: block;color: black;}
+.lotLognfen{width: 100%;height: 0.3rem;font-size: 0.18rem;display: block;color: gray}
+
+.lotLognVs{width: 100%;height: 0.6rem;display: inline-block;font-size: 0.36rem;position: relative;top: -0.1rem;font-weight: bold}
+.lotLognTime{width: 100%;height: 0.4rem;display: block;position: relative;top: 0rem;font-size: 0.18rem;color: gray}
+.lotLognZu{width: 100%;height: 0.4rem;position: relative;top: -0.1rem;font-size: 0.18rem;display: block;color: gray}
+
+
+/* 亚盘 */
+.lotBar{width: 100%;height: 0.6rem;}
+.lotBar ul{width: 100%;height: 100%;margin: 0px;padding: 0px;font-size: 0px;text-align: center}
+.lotBar ul li{display: inline-block;width: 15%;height: 0.6rem; list-style: none;font-size: 0.24rem;text-align: center;line-height: 0.6rem;color: black;font-weight: 350}
+
+
+.banner{width: 100%;height: 3rem;background: #f3f3f3}
+.bannerCot{width: 96%;height: 2.8rem;background: #f9f9f9;position: relative;top: 0.1rem;margin-left: 2%}
+.bannerTit{width: 100%;height: 0.3rem;text-align: center;font-size: 0.2rem;color: black;font-weight: bold;margin-top: 0.1rem}
+
+.berImgcot{width: 100%;height: 2rem;/* grid-row-end:  */}
+.berImgcotL{width: 50%;height: 2rem;display: inline-block;float: left;text-align: right}
+.berImgcotR{width: 50%;height: 2rem;display: inline-block;float: right;}
+
+.lotTabSed{width: 100%;height: 0.6rem;margin-top: 0.3rem}
+.lotTabSed ul{width: 90%;height: 0.6rem;font-size: 0px;margin-left: 5%;font-size: 0px;text-align: center;}
+.lotTabSed ul li{display: inline-block;list-style: none;width: 24%;height: 0.6rem;border-left: 1px solid lightgray;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;text-align: center;line-height: 0.6rem;font-size: 0.2rem}
+.lotTabSed ul li:first-child{border-top-left-radius: 0.1rem;border-bottom-left-radius: 0.1rem;}
+.lotTabSed ul li:last-child{border-right: 1px solid lightgray;border-bottom-right-radius: 0.1rem;border-top-right-radius: 0.1rem}
+
+
+.batAc1{border-bottom: 2px solid #f36201;color: #f36201!important}
+.batAc2{background: #f36201;color: white;border: none!important;padding: 1px;}
+
+
+
+/* 独家 */
+.lotExclu{width: 100%;height: auto;margin-top: -0.2rem;background: #f3f3f3}
+
+.lotExcluCot{width: 100%;height: auto;background: white;position: relative;top: 0.15rem}
+.lotExcluTit{color:black;width: 100%;height: 0.8rem;/* margin-top: 0.2rem; */font-size: 0.23rem;text-align: left;line-height: 0.8rem;text-indent: 0.1rem;background: #f3f3f3}
+.lotEx2{margin-top: 0.2rem}
+
+
+.excTab1 td{font-size: 0.2rem;padding: 0.1rem 0;}
+.excTab1 tr{border-top: 1px solid #f3f3f3;}
+.nobd{border:none!important;padding: 0!important;border-bottom: 1px solid #f3f3f3!important}
+.excTab1 thead td{color: gray}
+.excTab1 tbody{font-size: 0.23rem;color: black}
+
+.lotExcluMes{width: 100%;height: 2.5rem;background: #f3f3f3}
+.lotExcluMes1{width: 100%;height: 0.8rem;line-height: 0.8rem;font-size: 0.24rem;text-indent: 0.1rem;}
+.lotExcluMes2{width: 100%;height: 2.8rem;font-size: 0.22rem;text-indent: 0.1rem;background: #f3f3f3}
+
+
+/* 欧赔开始  */
+.eupRate{width: 100%;height: auto;margin-top: 0rem;background: #f3f3f3}
+.eupRateEchar{width: 30%;height: 1rem;display: inline-block;margin-top: 0.3rem;line-height: 0.6rem}
+.ercFot{width: 100%;height: 0.2rem;font-size: 0.2rem;text-align: center;position: relative;bottom: 0px;}
+
+
+.eupRateTab{width: 100%;height: 1rem;background: white}
+.eupRateTab ul{width: 80%;height: 0.6rem;margin: 0;padding: 0;font-size: 0px;/* background: #f3a001; */margin-left: 10%;top: 0.2rem;position: relative}
+.eupRateTab ul li{width: 48%;height: 0.6rem;list-style: none;display: inline-block;border: 1px solid lightgray;font-size: 0.22rem;text-align: center;line-height: 0.6rem}
+#eupRata1{border-top-left-radius: 0.05rem;border-bottom-left-radius: 0.05rem;border-right: none}
+#eupRata2{border-top-right-radius: 0.05rem;border-bottom-right-radius: 0.05rem;}
+
+
+.eRatle1{width: 100%;text-align: center;}
+.eRatle1{background: white;}
+.eR2{width: 100%;background: white}
+
+.bigFot{font-size: 0.3rem}
+
+
+/* 赛事 */
+.match{width: 100%;height: auto;margin-top: 0rem;background: #f3f3f3}
+.heEchati{width: 100%;height: 0.2rem;text-align: center;line-height: 0.2rem;margin-top: 0.1rem;color: black}
+.heEchacos{width: 100%;height: 0.2rem;font-size: 0.18rem;text-align: center;margin-top: 0.2rem}
+
+.heEchaby{width: 100%;height: 1.5rem;text-align: center;margin-top: 0.2rem}
+
+.heEchabyL{width: 40%;height: 100%;display: inline-block;float: left;}
+.heEchabyti{width: 100%;height: 0.2rem;text-align: right;line-height: 0rem;font-size: 0.2rem;}
+.heEchabyti progress{width: 100%!important;height: 0.1rem!important;}
+
+.heEchabyM{width: 18%;height: 100%;display: inline-block;}
+.heEchmt{width: 100%;height: 0.4rem;font-size: 0.2rem;color: black;text-align: center;line-height: 0.4rem;margin-top: 0.1rem}
+.heEchmt2{margin-top: 0.1rem;}
+.heEchmt3{margin-top: 0.1rem;}
+
+.heEchabyR{width: 40%;height: 100%;display: inline-block;float: right}
+.heEchabyR .heEchabyti{text-align: left}
+
+.matchTab{width: 100%;height: 1rem;background: white}
+.matchTab ul{width: 80%;height: 0.6rem;margin: 0;padding: 0;font-size: 0px;/* background: #f3a001; */margin-left: 10%;position: relative;top: 0.2rem}
+.matchTab ul li{width: 24%;height: 0.6rem;list-style: none;display: inline-block;border: 1px solid lightgray;font-size: 0.22rem;text-align: center;line-height: 0.6rem;margin: 0px;}
+.matchTab ul li:first-child{border-top-left-radius: 0.1rem;border-bottom-left-radius: 0.1rem;}
+.matchTab ul li:last-child{border-right: 1px solid lightgray;border-bottom-right-radius: 0.1rem;border-top-right-radius: 0.1rem}
+
+
+.matchCot{width: 100%;height: auto; background: white}
+.matchCotti{width: 100%;height: 0.6rem;background: white;font-size: 0.2rem;text-indent: 0.15rem;line-height: 0.6rem;border-bottom: 1px solid #f3f3f3}
+.matchCotby{width: 100%;height: auto}
+.matchCord{width:40%;height: 1.5rem;border: 1px solid #ff7701;border-radius: 0.1rem }
+
+.matchCord1{margin-left: 30%;margin-top: 0.2rem}
+.matchCordtit{width: 100%;height: 0.3rem;background: #ff7701;border-top-left-radius: 0.1rem;border-top-right-radius: 0.1rem;font-size: 0.24rem;text-align: center;line-height: 0.3rem;color: white}
+.matchCordtime{width: 100%;height: 0.2rem;background: transparent;text-align: center;font-size: 0.2rem;color: gray;}
+.matchCordName{width: 100%;height: 0.2rem;background: transparent;text-align: center;font-size: 0.22rem;color: black;line-height: 0.4rem}
+.matchCordLine{width: 60%;height: 0.01rem;background: #ff7701;margin-left: 20%;margin-top: 0.13rem}
+
+.matchCordLine2{width: 100%;height: 0.2rem;text-align: center}
+.matchCordLine2 span{display: inline-block;width: 0.02rem;height: 100%;background: #f3f3f3}
+.matchCordLine3{width: 32%;height: 0.4rem;margin-left: 34%;border:1px solid #f3f3f3;border-bottom: none}
+
+.matchCord2{width: 90%;margin: 0;margin-left: 5%;border:1px solid lightgreen;}
+.matchCordoub .matchCordtit{background: lightgreen}
+.matchCord3{width: 90%;margin:0;margin-left: 5%;border:1px solid lightgreen;}
+.matchCordoub{width: 100%;height: 1.5rem;padding-bottom: 0.2rem}
+.matchCordoubL{display: inline-block;width: 50%;height: 100%;float: left;}
+.matchCordoubR{display: inline-block;width: 50%;height: 100%;float: right}
+.matchCordoub .matchCordLine{height: 0.02rem;background: lightgreen}
+
+.matchTble{width: 100%;height: auto}
+.matchAb1{width: 100%;text-align:center;background: white;border-top: 1px solid #f3f3f3}
+.matchAb1 thead{color: gray}
+.matchAb1 tbody td{color: black}
+.matchAb1 td{font-size: 0.2rem;padding: 0.05rem 0;}
+.matchAb1 tr{border-bottom: 1px solid #f3f3f3}
+
+.matchMsg{width: 100%;height: auto;background: #f3f3f3;}
+
+
+/* 对阵 */
+.agist{width: 100%;height: auto;margin-top: 0rem;}
+.agistTal{width: 100%;height: 0.6rem;margin-top: 0.3rem;background: white;margin-top: 0.2rem}
+.agistTal ul{width: 90%;height: 0.6rem;font-size: 0px;margin-left: 5%;font-size: 0px;text-align: center;}
+.agistTal ul li{display: inline-block;list-style: none;width: 24%;height: 0.6rem;border-left: 1px solid lightgray;border-top: 1px solid lightgray;border-bottom: 1px solid lightgray;text-align: center;line-height: 0.6rem;font-size: 0.24rem}
+.agistTal ul li:first-child{border-top-left-radius: 0.1rem;border-bottom-left-radius: 0.1rem;}
+.agistTal ul li:last-child{border-right: 1px solid lightgray;border-bottom-right-radius: 0.1rem;border-top-right-radius: 0.1rem}
+
+.agistLis{width: 100%;height: auto;margin-top: 0.3rem}
+.agistLi{width: 100%;height: 0.6rem;border: 1px solid #f3f3f3}
+.agistLiL{display: inline-block;width: 80%;height: 0.6rem;line-height: 0.6rem;font-size: 0.23rem;color: black;float: left;text-indent: 0.2rem}
+.agistLiR{display: inline-block;width: 15%;height: 0.6rem;line-height: 0.6rem;font-size: 0.2rem;color: black;float: right;text-align: right;padding-right: 0.2rem;}
+.agtlitop{border-top: 1px solid #f3f3f3}
+
+.agistabl1{width: 100%;text-align: center}
+.agistabl1 td{color: black}
+.agistabl1 tr:nth-child(even)>td{color: gray}
+.agistabl1 td{padding: 0.1rem 0;}
+.tdLine{border-right: 1px solid #f3f3f3}
+.zhenRtbl tbody tr{border-top: 1px solid #f3f3f3}
+.zhenRtbl thead td{color: gray}
+.zhenRtb2 tr:first-child>td{color: gray}
+.zhenRtb2 td{color: black}
+.zhenRtb2 tr:nth-child(even)>td{color: black}
+.zhenRtb3{background: #f9f9f9}
+.zhenRtb3 tr{border-bottom: 1px solid #f3f3f3}
+.zhenRtb2 tr{border-bottom: 1px solid #f3f3f3}
+.zhenRtb2 tr:last-child{border:none;}
+
+
+.direCas{border-top: 4px solid #f3f3f3}
+
+.colBlu{color: #66b0e6!important;}
+.colRed{color: red!important}
+.colGray{color: gray!important;}
+.agIcot{position: relative;top: 0.08rem}
+.colBlack{color: black!important}
+.colGreen{color: #56d16d!important}
+
+
+
+.ltoWin{width: 100%;height: auto;background: #f3f3f3}
+.ltoWintit{width: 100%;height: 0.6rem;margin-top: 0.2rem;font-size: 0.23rem;line-height: 0.6rem;background: white;text-indent: 0.2rem}
+
+.winTab1{background: white}
+.winTab1 td{padding: 0.05rem 0;}
+.winTab1 thead td{font-size: 0.2rem;color: gray}
+.winTab1 tbody td{font-size: 0.22rem;color: black}
+.winTab1 tr{border-top: 1px solid #f3f3f3}
+
+.ltoWinjie{width: 100%;height: 0.8rem;background: transparent;font-size: 0.2rem;}
+
+
+
+
+
+
+
+
+
+
+/* 3.23修改 */
+.heEchabyti{line-height: 0px;}

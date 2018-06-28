@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="js/commom.js"></script>
+	<script src="js/jquery.js"></script>
+    <style>
+		body{margin: 0;padding: 0;}
+        /* background: url('images/bg.jpg');background-size: 100% 100% */
+        .header{width: 100%;height: 0.8rem;background: #3a3a3a}
+
+        .goBack{display: inline-block;width: 20%;height: 100%;font-size: 0.5rem;color: white;position: absolute;line-height: 0.8rem;padding-left: 0.15rem;box-sizing: border-box}
+        .hedTit{display: inline-block;width: 1.5rem;position: absolute;left: 50%;font-size: 0.36rem;color: white;margin-left: -0.75rem;text-align: center;line-height: 0.8rem;font-family: 'PingFang-SC-Bold'}
+
+
+        .formCont{width: 100%;height: auto;position: absolute;margin-top: 9.6rem}
+
+        .phoneNum{width: 90%;height: 0.8rem;margin-left: 5%;background: url('images/shoujihao_bg.png') no-repeat;background-size: 100% 100%}
+        .phoneNumle{display: inline-block;width: 10%;height: 0.8rem;float: left;}
+        .phoneNumle img{width: 0.45rem;position: absolute;top: 0.13rem;left: 8%}
+        .phoneNumrg{display: inline-block;width: 90%;height: 0.8rem;float: right}
+        .phoneNumrg input{width: 70%;height: 0.6rem;position: absolute;outline: none;border: none;background: none;color: #4f932b;font-size: 0.26rem;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);line-height: 0.6rem;text-indent: 0.1rem;}
+        ::-webkit-input-placeholder { 
+           color:#4f932b;
+        }
+        :-moz-placeholder {
+           color:#4f932b;
+        }
+        ::-moz-placeholder { 
+          color:#4f932b;
+        }
+        :-ms-input-placeholder { 
+          color:#4f932b;
+        }
+
+        .ideCode{width: 90%;height: 0.8rem;margin-left: 5%;margin-top: 0.4rem;}
+        .ideCodele{width: 60%;height: 0.8rem;background:#E7E3E3;float: left;background: url('images/yanzhengma_bg.png') no-repeat;background-size: 100% 100%}
+        .ideCodele1{width: 18%;height: 100%;float: left;}
+        .ideCodele1 img{width: 0.5rem;position: absolute;top: 1.3rem;left: 8%;}
+
+        .ideCoderg1{width: 82%;height: 100%;float: right;}
+        .ideCoderg1 input{position: absolute;width: 34%;height: 0.6rem;background: none;border: none;outline: none;font-size: 0.26rem; -webkit-tap-highlight-color:rgba(0, 0, 0, 0);line-height: 0.6rem;color: #4f932b;text-indent: 0.1rem;}
+
+        .ideCoderg{width: 35%;height: 0.8rem;float: right;background: url('images/miaoshu_bg.png') no-repeat;background-size: 100% 100%}
+        .ideCoderg input{position: absolute;width: 31%;height: 0.7rem;background: none;border: none;outline: none;color: #c43517;font-size: 0.2rem;text-align: center; -webkit-tap-highlight-color:rgba(0, 0, 0, 0);line-height: 0.65rem;}
+
+
+        .onSubmite{width: 90%;height: 0.8rem;margin-left: 5%;background: #EF2C1D;margin-top: 0.6rem;border-radius: 0.3rem;font-size: 0.4rem;text-align:center;line-height: 0.7rem;color: #f5de94;background: url('images/hongseanniu_bg.png') no-repeat;background-size: 100% 100%}
+
+	</style>
+</head>
+<body id="bod">
+    <div class="header">
+        <div class="goBack"><</div>
+        <div class="hedTit">注册</div>
+    </div>
+
+    <img src="images/bg.png" alt="" style="width: 100%;position: absolute;">
+
+    <form action="index4_submit" method="get" accept-charset="utf-8" class="formCont">
+
+        <div class="phoneNum">
+            <div class="phoneNumle">
+                <img src="images/shoujihao.png" alt="">
+            </div>
+            <div class="phoneNumrg">
+                <input type="text" name="phNumber" placeholder="请输入11位手机号">
+            </div>
+        </div>
+
+        <div class="ideCode">
+            <div class="ideCodele">
+                <div class="ideCodele1">
+                    <img src="images/yanzhengma.png" alt="">
+                </div>
+                <div class="ideCoderg1">
+                    <input type="text" name="ideNumber" placeholder="请输入短信验证码">
+                </div>
+            </div>
+            <div class="ideCoderg">
+                <input type="button" name="getCode" value="获取验证码" onclick="time(this)">
+            </div>
+        </div>
+
+        <div class="onSubmite">登陆</div>
+    </form>
+
+
+    </div>
+
+	<script>
+
+        var wait = 60;
+        function time(btn) {
+            if (wait == 0) {
+                btn.removeAttribute("disabled");
+                btn.value = "重新获取验证码";
+                wait = 60;
+            } else {
+                btn.setAttribute("disabled", true);
+                btn.value = wait + "秒";
+                wait--;
+                setTimeout(function () {
+                    time(btn);
+                },
+                1000)
+            }
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,2656 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+	<title></title>
+	<!-- <script src="js/jquery.js"></script>
+	<script src="js/commom.js"></script>
+	 -->
+	
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/front.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/banner/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/banner/percircle.css">
+	<script src="js/swiper.min.js"></script>
+	<script src="js/highcharts.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/commom.js"></script>
+	<style>
+		body{overflow-x: hidden}
+		.swiper-container {margin-top: 0px;width: 100%;height: 100%;}
+		.swiper-container2 {margin-top: 0px;width: 100%;height: 100%;}S
+	    .swiper-slide {text-align: left;font-size: 16px;height: 100%;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-direction: column;}
+        .swiper-pagination-bullet{width: 0.1rem;height: 0.1rem;margin-top: 0.4rem!important}
+        .swiper-pagination-bullet-active{background: #f36201;}
+        .vv{margin-bottom: -0.15rem;}
+
+		ul.chart {padding: 0;margin: 0;list-style: none;height: 60%;font-size: 9pt;width: 100%;}
+		ul.chart p {padding: 0;margin: 0}
+		ul.chart .title {text-align: center;height: 25px;line-height: 25px;}
+		ul.chartL li {width: 0.8rem;float: right;padding: 0;}
+		ul.chartL .total {height: 1rem;position: relative;}
+		ul.chartL .percent {background: #f0f;width: 0.5rem;position: absolute;right: 0.8rem;bottom: 0rem;}
+
+		ul.chartR li {width: 0.8rem;float: left;padding: 0;}
+		ul.chartR .total {height: 1rem;position: relative;}
+		ul.chartR .percent {background: #f0f;width: 0.5rem;position: absolute;left: 0.8rem;bottom: 0rem;}
+
+		.echar1{width: 80px;position: relative;top: 0.2rem;float: right;margin-right: 20%;height: 110px;}
+		.echarFot1{width: 100%;height: 30px;margin-top: 80px;font-size: 0.2rem;text-align: center;color: black}
+        .echar2{width: 80px;position: relative;top: 0.2rem;left: 20%;height: 110px;}
+		.echarFot2{width: 100%;height: 0.2rem;margin-top: -0.2rem;font-size: 0.2rem;color: black;text-align: center;position: relative;top: -0.1rem;}
+
+		.echar3Tit{width: 100%;height: 0.6rem;text-align: center;font-size: 0.2rem;line-height: 0.6rem;font-weight: bold;}
+ 		.echar3Wod{position: relative;top: -0.25rem;display: inline-block;width: 100%;height: 20px;text-align: center}
+ 		.echar3Fot{width: 100%;height: 0.4rem;text-align: center;font-size: 0.2rem;line-height: 0.2rem;bottom: -0.2rem;position: relative;}
+
+ 		#bt1{padding: 1px;border: none}
+	    .tabCot{width: 100%;height: auto;margin-top: 0.3rem;}
+
+	    .cc{border-bottom: 1px solid lightgray}
+  		.cc tr{border-top: 1px solid lightgray;}
+  		.cc td{font-size: 0.18rem;padding: 0.08rem 0;color: black;}
+  		.cc thead td{color: gray;font-size: 0.2rem}
+
+  		.dd{border-bottom: 1px solid lightgray}
+  		.dd tbody tr{border-top: 1px solid lightgray;}
+  		.dd td{font-size: 0.18rem;padding: 0.08rem 0;color: black;}
+  		.dd thead td{color: gray;font-size: 0.2rem}
+  		.dd thead{border-top: 1px solid lightgray}
+
+  		.echar3Zhu{width: 70%;height: 0.3rem;margin-left: 15%;margin-top: 0rem;text-align: center;font-size: 0.2rem}
+	    .echar3sp{display: inline-block;width: 0.05rem;height: 0.2rem;background: #f77a8b;position: relative;top: 0.04rem}
+	    .echar3sp2{display: inline-block;width: 0.05rem;height: 0.2rem;background: #66b0e8;position: relative;top: 0.04rem}
+
+
+	    .echar3bot{position: relative;bottom: -1rem;width: 100%;height: 0.3rem;display: inline-block;font-size: 0.2rem;text-align: center}
+
+
+     .heEchabyL progress{border:none;background:#f67987;width: 90%;margin: 0px;margin-left: 10%;height: 0.15rem;position: relative;top: -0.15rem}
+    .heEchabyL progress::-webkit-progress-bar{background:#f67987;}
+    .heEchabyL progress::-webkit-progress-value{background-color:lightgray;}
+    .heEchabyL progress::-moz-progress-bar{background:lightgray;}
+
+	.heEchabyR progress{border:none;background:#66b0e6;width: 90%;margin: 0px;margin-right: 10%;height: 0.15rem;position: relative;top: -0.15rem}
+    .heEchabyR progress::-webkit-progress-bar{background:lightgray;}
+    .heEchabyR progress::-webkit-progress-value{background-color:#66b0e6;}
+    .heEchabyR progress::-moz-progress-bar{background:#66b0e6;}
+
+
+     
+     .heEchabyLred progress{border:none;background:lightgray;width: 90%;margin: 0px;margin-left: 10%;height: 0.15rem;position: relative;top: -0.15rem}
+    .heEchabyLred progress::-webkit-progress-bar{background:lightgray;}
+    .heEchabyLred progress::-webkit-progress-value{background-color:#f67987;}
+    .heEchabyLred progress::-moz-progress-bar{background:#f67987;}
+
+
+	</style>
+</head>
+<body id="bd" style="visibility: hidden;">
+<!-- 头部 -->
+	<div class="lotHead">
+		<span><img src="img/fanhui.png" alt=""></span>
+		<span>德甲</span>
+	</div>
+
+
+
+<!-- 头部比赛导报 -->
+	<div class="lotLogo">
+		<div class="lotLognL">
+			<span class="lotLognImg">
+				<img src="http://odds.500.com/static/soccerdata/images/TeamPic/teamsignnew_542.png" alt="">
+			</span>
+			<span class="lotLognName">大阪樱花</span>
+			<span class="lotLognfen">主 1 客 2</span>
+		</div>
+		<div class="lotLognM">
+			<span class="lotLognVs">VS</span>
+			<span class="lotLognTime">2018-03-14 17/18 02：45：00</span>
+			<span class="lotLognZu">第4组 G组</span>
+		</div>
+		<div class="lotLognR">
+			<span class="lotLognImg">
+				<img src="http://odds.500.com/static/soccerdata/images/TeamPic/teamsignnew_673.png" alt="">
+			</span>
+			<span class="lotLognName">大阪樱花</span>
+			<span class="lotLognfen">主 1 客 2</span>
+		</div>
+	</div>
+
+<!-- 一级tab -->
+	<div class="lotBar">
+		<ul>
+			<li id="lb1">对阵</li>
+			<li id="lb2">赛事</li>
+			<li id="lb3">欧赔</li>
+			<li id="lb4">亚盘</li>
+			<li id="lb5">盈亏</li>
+			<!-- <li id="lb6">独家</li> -->
+		</ul>
+	</div>
+
+
+<!-- 对阵开始 -->
+<!-- 对阵开始 -->
+<!-- 对阵开始 -->
+<!-- 对阵开始 -->
+	<div class="agist">
+
+    <!-- 对阵轮播开始 -->
+		<div class="banner">
+		<div class="bannerCot">
+				<div class="swiper-container" id="swiper0">	
+					<div class="swiper-wrapper">
+					    <div class="swiper-slide">
+					    	<div class="heEchati">主客场表现</div>
+					    	<div class="heEchacos">
+					    		<span class="echar3sp"></span>  主场近10场
+				    		&nbsp;&nbsp;&nbsp;&nbsp;
+				    		<span class="echar3sp2"></span>  客场近10场
+					    	</div>
+					    	<div class="heEchaby">
+					    		<div class="heEchabyL heEchabyLred">
+					    			<div class="heEchabyti">5</div>
+					    			<progress value="50" max="100"></progress>
+					    			<div class="heEchabyti">1</div>
+					    			<progress value="10" max="100"></progress>
+					    			<div class="heEchabyti">0</div>
+					    			<progress value="0" max="100"></progress>
+					    		</div>
+					    		<div class="heEchabyM">
+					    			<div class="heEchmt">胜</div>
+					    			<div class="heEchmt heEchmt2">平</div>
+					    			<div class="heEchmt heEchmt3">负</div>
+					    		</div>
+					    		<div class="heEchabyR">
+					    			<div class="heEchabyti">1</div>
+					    			<progress value="50" max="100"></progress>
+					    			<div class="heEchabyti">3</div>
+					    			<progress value="80" max="100"></progress>
+					    			<div class="heEchabyti">2</div>
+					    			<progress value="20" max="100"></progress>
+					    		</div>
+					    	</div>
+					    </div>
+	 
+	 
+					    <div class="swiper-slide">
+					    	<div class="heEchati">近10场表现</div>
+					    	<div class="heEchacos">
+					    		<span class="echar3sp"></span>  主队
+				    		&nbsp;&nbsp;&nbsp;&nbsp;
+				    		<span class="echar3sp2"></span>  客队
+					    	</div>
+					    	<div class="heEchaby">
+					    		<div class="heEchabyL">
+					    			<div class="heEchabyti">5</div>
+					    			<progress value="50" max="100"></progress>
+					    			<div class="heEchabyti">8</div>
+					    			<progress value="80" max="100"></progress>
+					    			<div class="heEchabyti">2</div>
+					    			<progress value="20" max="100"></progress>
+					    		</div>
+					    		<div class="heEchabyM">
+					    			<div class="heEchmt">胜</div>
+					    			<div class="heEchmt heEchmt2">平</div>
+					    			<div class="heEchmt heEchmt3">负</div>
+					    		</div>
+					    		<div class="heEchabyR">
+					    			<div class="heEchabyti">5</div>
+					    			<progress value="50" max="100"></progress>
+					    			<div class="heEchabyti">2</div>
+					    			<progress value="80" max="100"></progress>
+					    			<div class="heEchabyti">8</div>
+					    			<progress value="20" max="100"></progress>
+					    		</div>
+					    	</div>
+					    </div>
+					</div>
+					<div class="swiper-pagination pagination0 vv" ></div>
+		 		</div>
+			</div>
+		</div>
+
+	<!-- 对阵轮播结束 -->
+
+	<!-- 对阵二级tab -->
+		<div class="agistTal">
+			<ul>
+				<li id="agbt1">战绩</li>
+				<li id="agbt2">阵容</li>
+				<li id="agbt3">直播</li>
+				<li id="agbt4">内参</li>
+			</ul>
+		</div>
+
+		<div class="agistLis" id="agistLis">
+
+
+			<style>
+				.agistLi{width: 99%;margin-left: 0.5%}
+			</style>
+
+	<!-- 战绩-历史交锋开始 -->		
+			<div class="agistLi" style="width: 98%;margin-left: 1%">
+				<div class="agistLiL">历史交锋</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi1" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi1" onclick="hideIco('agistLi1')" id="agistLi1h">
+				</div>
+			</div>
+
+			<div id="agistLi1c">
+				<table class="agistabl1" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td width="25%">德乙</td>
+							<td class="colBlu" width="25%">菲尔特</td>
+							<td width="15%">2:1</td>
+							<td class="colRed" width="20%">奥厄</td>
+							<td  width="15%">胜</td>
+						</tr>
+						<tr class="colGray">
+							<td>18-03-09</td>
+							<td>半场</td>
+							<td>1:0</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="agtlitop">
+							<td>德乙</td>
+							<td class="colRed">菲尔特</td>
+							<td>2:1</td>
+							<td class="colBlu">奥厄</td>
+							<td>胜</td>
+						</tr>
+						<tr class="colGray">
+							<td>18-03-09</td>
+							<td>半场</td>
+							<td>1:0</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="agistLi">
+					<div class="agistLiL" style="width: 50%">主队队名: <label class="colRed">0胜</label><label class="colBlu">0平</label><label class="colGreen">0负</label></div>
+				</div>
+			</div>
+
+		<!-- 战绩-历史交锋结束 -->		
+
+		<!-- 战绩-近期1 -->
+			<div class="agistLi">
+				<div class="agistLiL">近期：奥厄</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi2" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi1" onclick="hideIco('agistLi2')" id="agistLi2h">
+				</div>
+			</div>
+             
+             <div id="agistLi2c">
+             	<table class="agistabl1" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td width="25%">德乙</td>
+							<td class="colBlu" width="25%">菲尔特</td>
+							<td width="15%">2:1</td>
+							<td class="colRed" width="20%">奥厄</td>
+							<td  width="15%">胜</td>
+						</tr>
+						<tr class="colGray">
+							<td>18-03-09</td>
+							<td>半场</td>
+							<td>1:0</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="agtlitop">
+							<td>德乙</td>
+							<td class="colRed">菲尔特</td>
+							<td>2:1</td>
+							<td class="colBlu">奥厄奥厄</td>
+							<td >胜</td>
+						</tr>
+						<tr class="colGray">
+							<td>18-03-09</td>
+							<td>半场</td>
+							<td>1:0</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="agistLi">
+					<div class="agistLiL" style="width: 50%">主队队名: <label class="colRed">0胜</label><label class="colBlu">0平</label><label class="colGreen">0负</label></div>
+				</div>
+             </div>
+		<!-- 战绩-近期1结束 -->
+
+		
+		<!-- 战绩-近期2 -->
+			<div class="agistLi">
+				<div class="agistLiL">近期：莱红牛</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi3" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi3" onclick="hideIco('agistLi3')" id="agistLi3h">
+				</div>
+			</div>
+ 			
+ 			<div id="agistLi3c">
+             	<table class="agistabl1" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td width="25%">德乙</td>
+							<td class="colBlu" width="25%">菲尔特</td>
+							<td width="15%">2:1</td>
+							<td class="colRed" width="20%">奥厄</td>
+							<td width="15%">胜</td>
+						</tr>
+						<tr class="colGray">
+							<td>18-03-09</td>
+							<td>半场</td>
+							<td>1:0</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="agtlitop">
+							<td width="25%">德乙</td>
+							<td class="colRed" width="25%">菲尔特</td>
+							<td width="15%">2:1</td>
+							<td class="colBlu" width="20%">奥厄</td>
+							<td  width="15%">胜</td>
+						</tr>
+						<tr class="colGray">
+							<td>18-03-09</td>
+							<td>半场</td>
+							<td>1:0</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="agistLi">
+					<div class="agistLiL" style="width: 50%">主队队名: <label class="colRed">0胜</label><label class="colBlu">0平</label><label class="colGreen">0负</label></div>
+				</div>
+             </div>
+
+		<!-- 战绩-未来赛程1 -->
+			<div class="agistLi">
+				<div class="agistLiL">未来赛程：奥厄</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi4" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi4" onclick="hideIco('agistLi4')" id="agistLi4h">
+				</div>
+			</div>
+
+			<div id="agistLi4c">
+             	<table class="agistabl1" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td width="25%">德乙</td>
+							<td rowspan="2" width="25%">雷根斯堡</td>
+							<td rowspan="2" width="15%">VS</td>
+							<td rowspan="2" class="colRed" width="20%">奥厄</td>
+							<td rowspan="2" width="15%">隔13天</td>
+						</tr>
+						<tr class="colGray">
+							<td>18-03-09</td>
+						</tr>
+					</tbody>
+				</table>
+             </div>
+
+        <!-- 战绩-未来赛程1结束 -->     
+
+
+		<!-- 战绩-未来赛程2 -->
+			<div class="agistLi">
+				<div class="agistLiL">未来赛程：菲尔特</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi5" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi5" onclick="hideIco('agistLi5')" id="agistLi5h">
+				</div>
+			</div>
+			
+			<div id="agistLi5c">
+             	<table class="agistabl1" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td width="25%">德乙</td>
+							<td rowspan="2" class="colBlu" width="25%">菲尔特</td>
+							<td rowspan="2" width="15%">VS</td>
+							<td rowspan="2" width="20%">泽尼特</td>
+							<td rowspan="2" width="15%">隔2天</td>
+						</tr>
+						<tr class="colGray">
+							<td>18-03-09</td>
+						</tr>
+					</tbody>
+				</table>
+             </div>
+
+		</div>
+    <!-- 战绩-未来赛程2结束 -->
+
+    <!-- 对阵-战绩结束 -->
+
+     <!-- 对阵-阵容开始 -->
+        <div class="agistLis" style="display: none;" id="lineup">
+
+        	<!-- 阵容-阵容概述 -->
+			<div class="agistLi">
+				<div class="agistLiL">阵容概述</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi6" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi6" onclick="hideIco('agistLi6')" id="agistLi6h">
+				</div>
+			</div>
+
+			<div id="agistLi6c" >
+
+				<style>
+					.zhenRtbl{table-layout: fixed;}
+					.zhenRtbl td{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;padding: 0.1rem}
+
+				</style>
+				<table class="agistabl1 zhenRtbl" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<td >主队</td>
+							<td width="30%">类型</td>
+							<td >客队</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>8470万</td>
+							<td class="colGray">身价（&pound;）3333333333333333333333333333333</td>
+							<td>1200万ddddddddddddddddddddddddddddddddddd</td>
+						</tr>
+						<tr>
+							<td>-</td>
+							<td class="colGray">球场</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>-</td>
+							<td class="colGray">头牌</td>
+							<td>-</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	    <!-- 阵容-阵容概述结束 -->
+
+
+		<!-- 阵容-平均年龄 -->
+			<div class="agistLi">
+				<div class="agistLiL">平均年龄身价（首发）</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi7" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi7" onclick="hideIco('agistLi7')" id="agistLi7h">
+				</div>
+			</div>
+             
+             <div id="agistLi7c" >
+				<table class="agistabl1 zhenRtbl" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<td>年龄（岁）</td>
+							<td>身高（）</td>
+							<td>位置</td>
+							<td>身价（）</td>
+							<td>年龄（岁）</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>24</td>
+							<td>583万</td>
+							<td class="colGray">前锋</td>
+							<td>1400万</td>
+							<td>21</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		<!-- 阵容-平均年龄结束 -->
+
+		<!-- 阵容-首发阵型 -->
+			<div class="agistLi">
+				<div class="agistLiL">首发阵型</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi8" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi8" onclick="hideIco('agistLi8')" id="agistLi8h">
+				</div>
+			</div>
+ 			
+ 			<div id="agistLi8c">
+ 				<div style="width: 100%;height: 0.4rem;text-align: center;font-size: 0.3rem">
+             		暂无数据
+             	</div>
+             	<!-- <table class="agistabl1" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td>俄超</td>
+							<td>罗斯托夫</td>
+							<td>2:1</td>
+							<td>泽尼特</td>
+							<td rowspan="2">平胜</td>
+						</tr>
+						<tr>
+							<td>18-03-09</td>
+							<td>半场</td>
+							<td>0:0</td>
+							<td>泽尼特</td>
+						</tr>
+					</tbody>
+				</table> -->
+				<!-- <div class="agistLi">
+					<div class="agistLiL" style="width: 50%">主队 0胜0平0负</div>
+					<div class="agistLiR" style="width: 40%">主队 主场 0胜0平0负</div>
+				</div> -->
+             </div>
+
+        <!-- 阵容-首发阵型结束 -->
+
+			<div class="agistLi">
+				<div class="agistLiL">两队预测首发</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi9" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi9" onclick="hideIco('agistLi9')" id="agistLi9h">
+				</div>
+			</div>
+
+			<div id="agistLi9c">
+             	<table class="agistabl1 zhenRtb2" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td class="tdLine">主场</td>
+							<td>客场</td>
+						</tr>
+						<tr>
+							<td class="tdLine">阿德伦</td>
+							<td>阿德伦</td>
+						</tr>
+						<tr>
+							<td class="tdLine">阿德伦</td>
+							<td>阿德伦</td>
+						</tr>
+						<tr>
+							<td class="tdLine">阿德伦</td>
+							<td>阿德伦</td>
+						</tr>
+					</tbody>
+				</table>
+             </div>
+
+			<div class="agistLi">
+				<div class="agistLiL">两队伤停</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi10" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi10" onclick="hideIco('agistLi10')" id="agistLi10h">
+				</div>
+			</div>
+			
+			<div id="agistLi10c">
+             	<table class="agistabl1" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td>主场</td>
+							<td>客场</td>
+						</tr>
+						<tr>
+							<td class="colBlack">-</td>
+							<td class="colBlack">-</td>
+						</tr>
+					</tbody>
+				</table>
+             </div>
+
+		</div>
+
+    <!-- 对阵-阵容结束 -->
+
+
+     <!-- 对阵-直播开始 -->
+        <div class="agistLis" style="display: none" id="broadcast">
+			<div class="agistLi">
+				<div class="agistLiL">比赛事件</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi11" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi11" onclick="hideIco('agistLi11')" id="agistLi11h">
+				</div>
+			</div>
+
+			<div id="agistLi11c">
+				<div style="width: 100%;height: auto;text-align: center;font-size: 0.3rem;padding-bottom: 0.1rem;box-sizing: border-box;">
+                   <style>
+                   	   .zhibo{width: 100%;height: 0.4rem;border-top: 1px solid #eee;}
+                   	   .zhibo ul{font-size: 0px;padding: 0;margin: 0;width: 100%;height: 100%;text-align: left}
+                   	   .zhibo ul li{display: inline-block;list-style: none;font-size: 0.16rem;width: 12%;height: 100%;line-height: 0.6rem}
+                   	   .zhibo ul li img{width: 0.3rem;position: relative;top: 0.05rem}
+
+                       
+
+                       .timeBase{width: 100%;height: 2rem;text-align: center}
+				       .timeBasele{display: inline-block;width: 43%;height: 2rem;position: absolute;left: 0px;}
+				       .timeBasemd{width: 0.6rem;height: 2rem;display: inline-block;position: absolute;left: 50%;margin-left: -0.3rem}
+				       .timeBaserg{width: 43%;height: 100%;display: inline-block;float: right;text-align: left}
+				       .cirle{width: 0.4rem;height: 0.4rem;background: #eee;margin: 0 auto;font-size: 0.2rem;color: #f36201;border-radius: 100%;line-height: 0.4rem;text-align: center}
+       
+
+				        .messLeft{display: inline-block;background: #eee;font-size: 0.2rem;position: absolute;right: 0px;border-radius: 0.1rem;padding: 0.1rem 0.1rem 0.1rem 0.1rem;margin-top: 0.01rem}
+				    	.messRight{display: inline-block;background: #eee;font-size: 0.2rem;border-radius: 0.1rem;padding: 0.1rem 0.1rem 0.1rem 0.1rem;position: absolute;}
+				    	.angle{position: absolute;width: 0;height: 0;left: 99%;top: 0.11rem;border-left: 16px solid #eee;border-top: 8px solid transparent;border-bottom:8px solid transparent;}
+				    	.angle2{width: 0;height: 0;right: 42%;margin-top:0.1rem;border-right: 16px solid #eee;border-top: 8px solid transparent;border-bottom:8px solid transparent;position: absolute}
+				    	
+				    	.timeLine{width: 1px;height: 1.6rem;background: #eee;margin: 0 auto}
+				     </style>
+
+                   <div class="timeBase">
+						<div class="timeBasele">
+							<div class="messLeft">
+								<label>222dddddd</label>
+								<img src="img/6.png" alt="" style="width: 0.4rem;margin-top: -0.05rem;display: block;margin: 0 auto">
+								<label>222dddddd</label>
+								
+							</div>
+							<div class="angle"></div>
+						</div>
+						<div class="timeBasemd">
+							<div class="cirle">
+							   69&apos;	
+							</div>
+							<div class="timeLine"></div>
+						</div>
+						<div class="timeBaserg"></div>
+					</div>
+
+
+				<div class="timeBase">
+					<div class="timeBasele"></div>
+					<div class="timeBasemd">
+						<div class="cirle">
+						   69&apos;	
+						</div>
+						<div class="timeLine"></div>
+					</div>
+					<div class="timeBaserg">
+						<div class="messRight">
+							<!-- http://odds.500.com/static/soccerdata/images/TeamPic/teamsignnew_542.png -->
+							<img src="img/1.png" alt="" style="width: 0.4rem;float: left;margin-top: -0.05rem">
+							<label style="">222dddddddddffffff</label>
+						</div>
+						<div class="angle2"></div>
+					</div>
+				</div>
+
+
+ 				
+                   <div class="timeBase">
+						<div class="timeBasele">
+							<div class="messLeft">
+								<label>222dddddd</label>
+								<img src="img/3.png" alt="" style="width: 0.4rem;float: right;margin-top: -0.05rem">
+								
+							</div>
+							<div class="angle"></div>
+						</div>
+						<div class="timeBasemd">
+							<div class="cirle">
+							   69&apos;	
+							</div>
+							<div class="timeLine"></div>
+						</div>
+						<div class="timeBaserg"></div>
+					</div>
+                
+
+
+                   <div class="zhibo">
+                   	   <ul>
+                   	   	<li>
+                   	   		<img src="img/1.png" alt="">
+                   	   		进球
+                   	   	</li>
+                   	   	<li>
+                   	   		<img src="img/2.png" alt="">
+                   	   		点球
+                   	   	</li>
+                   	   	<li>
+                   	   		<img src="img/3.png" alt="">
+                   	   		乌龙
+                   	   	</li>
+                   	   	<li>
+                   	   		<img src="img/4.png" alt="" style="width: 0.25rem;">
+                   	   		红牌
+                   	   	</li>
+                   	   	<li>
+                   	   		<img src="img/5.png" alt="" style="width:0.25rem">
+                   	   		黄牌
+                   	   	</li>
+                   	   	<li>
+                   	   		<img src="img/6.png" alt="">
+                   	   		换人
+                   	   	</li>
+                   	   	<li style="width: 20%">
+                   	   		<img src="img/7.png" alt="" style="position: relative;top: 0.08rem">
+                   	   		两黄变红
+                   	   	</li>
+                   	   </ul>
+                   </div>
+				</div>
+				<!-- <table class="agistabl1" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<td>主队</td>
+							<td>类型</td>
+							<td>客队</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>8470万</td>
+							<td>身价（）</td>
+							<td>1200万</td>
+						</tr>
+					</tbody>
+				</table> -->
+
+            
+
+
+
+
+
+
+                   <style>
+        	.tegyStis{width: 100%;height: 0.6rem;border-top: 0.06rem solid #eee}
+        	.tegyStisL{width: 30%;height: 100%;font-size: 0.23rem;float: left;display: inline-block;line-height: 0.6rem;padding-left: 0.2rem;box-sizing: border-box}
+        	.tegyStisR{width: 50%;height: 100%;display: inline-block;float: right;text-align: right;padding-right: 0.3rem;box-sizing: border-box;}
+        	/* .tegyStisR img{position: absolute;margin-top: 0.1rem;margin-top: 0.2rem} */
+        	.tegyStisImg{position: relative;top: 0.15rem}
+
+        	.tegyStisTb{width: 100%;font-size: 0.2rem}
+        	.tegyStisTb table{width: 100%;text-align: center;background: #f9f9f9;table-layout: fixed;}
+        	/* .tegyStisTb table{table-layout: fixed;} */
+        	.tegyStisTb table td{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;padding: 0.1rem;border-top: 1px solid #eee;padding: 0.1rem 0}
+
+        </style>
+
+
+		<div class="tegyStis">
+				<div class="tegyStisL">技术统计</div>
+				<div class="tegyStisR">
+					<img src="img/down.png" alt="" id="tegyStisImg2" class="tegyStisImg">
+					<img src="img/up.png" alt="" id="tegyStisImg1" class="tegyStisImg">
+			</div>
+		</div>
+
+
+		 <div class="tegyStisTb" >
+				<table  cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td>44%</td>
+							<td>控球时间</td>
+							<td>56%</td>
+						</tr>
+						<tr>
+							<td>44%</td>
+							<td>控球时间</td>
+							<td>56%</td>
+						</tr>
+						<tr>
+							<td>44%</td>
+							<td>控球时间</td>
+							<td>56%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+             
+
+
+
+<script>
+	$(function(){
+		$('#tegyStisImg2').hide();
+
+		$('#tegyStisImg1').click(function(){
+			$(this).hide();
+		    $('#tegyStisImg2').show();
+		    $('.tegyStisTb').hide();
+		});
+		$('#tegyStisImg2').click(function(){
+			$(this).hide();
+		    $('#tegyStisImg1').show();
+		    $('.tegyStisTb').show();
+		})
+	})
+</script>
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="agistLi direCas">
+				<div class="agistLiL">技术统计</div>
+				<div class="agistLiR">
+					<img src="img/down.png" alt="" class="agIcot" id="agistLi12" onclick="showIco(this.id)">
+					<img src="img/up.png" alt="" class="agIcot" class="agistLi12" onclick="hideIco('agistLi12')" id="agistLi12h">
+				</div>
+			</div>
+             
+             <div id="agistLi12c" >
+				<table class="agistabl1 zhenRtb3" cellpadding="0" cellspacing="0">
+					<tbody>
+						<tr>
+							<td>44%</td>	
+							<td>控球时间</td>
+							<td>56%</td>
+						</tr>
+						<tr>
+							<td>44%</td>
+							<td>控球时间</td>
+							<td>56%</td>
+						</tr>
+						<tr>
+							<td>44%</td>
+							<td>控球时间</td>
+							<td>56%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+		</div>
+
+		<!-- 对阵-内参开始 -->
+	    <div style="width: 100%;height: auto;margin-top: 0.3rem;display: none" id="references">
+	    	
+
+         <style>
+    body{padding: 0;margin: 0}
+   .preview-panel{
+      position: relative;
+      background: #2f3857;
+      padding: 0.08rem 0.14rem 0.08rem 0.12rem;
+      font-size: 0.2rem;
+      color: #fff;
+      /* display: none;
+      box-sizing: border-box */
+    }
+
+
+
+
+ .magic-count {
+    width: 100%;
+    position: relative;
+    display: table;
+    padding: 0px;
+   /*  padding-right:5px */
+ /*    display: none; */
+}
+
+.magic-count .magic-title {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    font-size: 0.24rem;
+    color: #fff;
+    font-weight: 500;
+    z-index: 4;
+    top: 0;
+    left: 0
+}
+
+.magic-count .home-team-magic {
+    width: 50%;
+    background: #904442;
+    display: table-cell;
+    position: relative
+}
+
+ .magic-count .home-team-magic .team-title {
+    background: #793d3f;
+    height: 0.5rem;
+    padding-left: 0.2rem
+}
+
+ .magic-count .home-team-magic .team-title h3 {
+    line-height: 0.5rem;
+    font-size: 0.2rem;
+    color: #fff;
+    font-weight: 600;
+    display: table-column;
+    position: absolute;
+    margin: 0
+}
+
+ .magic-count .home-team-magic .team-title span {
+    font-size: 0.2rem;
+    color: #fff;
+    font-weight: 500;
+    float: right;
+    line-height: 0.5rem
+}
+
+ .magic-count .home-team-magic .home-percent {
+    padding-left: 0.2rem;
+    padding-top: 0.82rem;
+    font-size: 0.3rem;
+    color: #fff;
+    font-weight: 600
+}
+
+.magic-count .home-team-magic .home-dec {
+    padding-left: 0.2rem
+}
+
+.magic-count .home-team-magic .home-dec h3 {
+    font-size: 0.3rem;
+    color: #fff;
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5rem;
+    margin: 0
+}
+
+ .magic-count .home-team-magic .percent-home-bar {
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+    float: right;
+    padding-right: 0.2rem;
+    bottom: 0;
+    right: 0
+}
+
+.magic-count .home-team-magic .percent-home-bar span {
+    display: block
+}
+
+.magic-count .home-team-magic .percent-home-bar span:nth-child(1) {
+    width: 0.8rem;
+    height: 0.04rem;
+    background: #f1c452
+}
+
+.magic-count .home-team-magic .percent-home-bar span:nth-child(2) {
+    width: 0.8rem;
+    background: #c2874d
+}
+
+.magic-count .away-team-magic {
+    width: 50%;
+    background: #3d4d74;
+    display: table-cell;
+    position: relative
+}
+
+.magic-count .away-team-magic .team-title {
+    background: #364467;
+    height: 0.5rem;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+ .magic-count .away-team-magic .team-title h3 {
+    line-height: 0.5rem;
+    font-size: 0.2rem;
+    color: #fff;
+    font-weight: 600;
+    float: right;
+    padding-right: 0.2rem;
+    margin: 0
+}
+
+ .magic-count .away-team-magic .team-title span {
+    font-size: 0.2rem;
+    color: #fff;
+    font-weight: 500;
+    line-height: 0.5rem
+}
+
+ .magic-count .away-team-magic .away-percent {
+    padding-right: 0.2rem;
+    padding-top: 48px;
+    font-size: 0.3rem;
+    color: #fff;
+    font-weight: 600;
+    text-align: right
+}
+
+ .magic-count .away-team-magic .away-dec {
+    padding-left: 0.2rem
+}
+
+ .magic-count .away-team-magic .away-dec h3 {
+    font-size: 0.3rem;
+    color: #fff;
+    font-weight: 600;
+    display: inline-block;
+    float: right;
+    padding-right: 0.2rem;
+    vertical-align: bottom;
+    line-height: 1.5rem;
+    margin:  0;
+}
+
+ .magic-count .away-team-magic .away-dec .percent-away-bar {
+    display: inline-block;
+    position: absolute;
+    vertical-align: bottom;
+    bottom: 0
+}
+
+ .magic-count .away-team-magic .away-dec .percent-away-bar span {
+    display: block
+}
+
+ .magic-count .away-team-magic .away-dec .percent-away-bar span:nth-child(1) {
+    width: 0.8rem;
+    height: 0.04rem;
+    background: #f1c452
+}
+
+ .magic-count .away-team-magic .away-dec .percent-away-bar span:nth-child(2) {
+    width: 0.8rem;
+    background: #978963
+}
+
+
+
+
+
+.team-power {
+    width: 100%;
+    position: relative;
+    padding-top: 0.04rem;
+    background: #fff;
+    display: table;
+    display: none
+}
+.team-power .magic-title {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 0.5rem;
+    line-height: 0.6rem;
+    font-size: 0.24rem;
+    color: #fff;
+    font-weight: 500;
+    z-index: 4;
+    top: 0;
+}
+.team-power .home-team-magic {
+    width: 50%;
+    background: #904442;
+    display: table-cell
+}
+.team-power .home-team-magic .team-title {
+    background: #793d3f;
+    height: 0.5rem;
+    padding-left: 0.2rem
+}
+
+.team-power .home-team-magic .team-title h3 {
+    line-height: 0.5rem;
+    font-size: 0.2rem;
+    color: #fff;
+    font-weight: 600;
+    display: table-column;
+    height: 0.5rem;
+    position: absolute;
+    margin: 0
+}
+.team-power .home-team-magic .team-title span {
+    font-size: 0.2rem;
+    color: #fff;
+    font-weight: 500;
+    float: right;
+    line-height: 0.5rem
+}
+
+.mf-page-content .team-power .home-team-magic .home-dec {
+    padding: 15px 15px 18px 18px;
+}
+.team-power .home-team-magic .home-dec p {
+    font-size: 0.2rem;
+    color: #fff;
+    margin: 0;
+    line-height: 0.29rem;
+    margin-bottom: 0.04rem;
+}
+.team-power .away-team-magic {
+    width: 50%;
+    background: #3d4d74;
+    display: table-cell;
+    position: relative
+}
+.team-power .away-team-magic .team-title {
+    background: #364467;
+    height: 0.5rem;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+.team-power .away-team-magic .team-title h3 {
+    line-height: 0.5rem;
+    font-size: 0.2rem;
+    color: #fff;
+    font-weight: 600;
+    float: right;
+    padding-right: 0.2rem;
+    margin: 0
+}
+.team-power .away-team-magic .team-title span {
+    font-size: 0.2rem;
+    color: #fff;
+    font-weight: 500;
+    line-height: 0.5rem
+}
+.team-power .away-team-magic .away-dec {
+    padding: 15px 15px 18px 18px;
+}
+.team-power .away-team-magic .away-dec p {
+    font-size: 0.2rem;
+    color: #fff;
+    margin: 0;
+    line-height: 0.29rem;
+    margin-bottom: 0.04rem;
+}
+
+.preview-icon {
+    width: 16px;
+    height: 16px;
+    background: url(img/preview-icon.png) no-repeat;
+    background-size: 16px 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px
+}
+</style>
+
+<div class="mf-page-content" style="margin-top:0px;">
+    
+
+
+
+
+     <div id="preview" class="preview-panel" style="display:block;">
+    <div class="preview-info1">
+        <i class="preview-icon"></i> 利物浦联赛遇冷欧冠底蕴深厚，罗马空中强势客战表现不佳。
+    </div>
+</div>
+<div style="display:block">
+    <div id="magic" class="magic-count" style="display: table;width: 99%;margin-left: 0.4%">
+        <div class="magic-title">赛果概率</div>
+        <div class="home-team-magic">
+            <div class="team-title">
+                <h3>利物浦</h3>
+            </div>
+            <div class="home-percent">
+                61%
+            </div>
+            <div class="home-dec">
+                <h3>胜</h3>
+            </div>
+            <div class="percent-home-bar">
+                <span></span>
+                <span style="height: 30.5px;"></span>
+            </div>
+        </div>
+        <div class="away-team-magic">
+            <div class="team-title">
+                <h3>罗马</h3>
+            </div>
+            <div class="away-percent">
+                39%
+            </div>
+            <div class="away-dec">
+                <div class="percent-away-bar">
+                    <span></span>
+                    <span style="height: 19.5px;"></span>
+                </div>
+                <h3>不败</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="team" class="" style="display:block;">
+    <div class="team-power" style="display: table;width: 99%;margin-left: 0.4%">
+        <div class="magic-title">实力战意</div>
+        <div class="home-team-magic">
+            <div class="team-title">
+                <h3>51%</h3>
+            </div>
+            <div class="home-dec">
+                <p>1.英超上游球队利物浦联赛35轮过后积71分暂列第3，上轮欧冠两回合5-1战胜英超豪门曼城晋级4强。</p>
+                <p>2.在本届欧冠射手榜前10中，利物浦有3人上榜，分别是菲尔米诺、萨拉赫均打入8球并列第2，以及马内打入7球并列第5。</p>
+                <p>3.在欧冠历史中，利物浦7次闯入决赛5次夺冠，夺冠次数并列第3多；而罗马仅1次打入决赛是在遥远的1983-84赛季。</p>
+            </div>
+        </div>
+        <div class="away-team-magic">
+            <div class="team-title">
+                <h3>49%</h3>
+            </div>
+            <div class="away-dec">
+                <p>1.意甲劲旅罗马联赛34轮过后积67分暂列第3，上轮欧冠两回合4-4依靠客场进球多淘汰西甲豪门巴萨晋级4强。</p>
+                <p>2.在欧足联俱乐部排名中，罗马位列第21，高于位列第25的利物浦。</p>
+                <p>3.罗马本赛季欧冠打出58%的争顶成功率，位列四强球队之首。</p>
+            </div>
+        </div>
+    </div>
+    <div class="team-power" style="display: table;width: 99%;margin-left: 0.4%">
+        <div class="magic-title">状态伤停</div>
+        <div class="home-team-magic">
+            <div class="team-title">
+                <h3>52%</h3>
+            </div>
+            <div class="home-dec">
+                <p>1.利物浦最近6个主场5胜1平仅丢一球，其中包括在欧冠3-0大胜英超新科冠军曼城。</p>
+                <p>2.罗马本季欧冠5场客战场场丢球共丢12球，最近3场更是全败，其中包括1-4惨败西甲豪门巴塞罗那。</p>
+            </div>
+        </div>
+        <div class="away-team-magic">
+            <div class="team-title">
+                <h3>48%</h3>
+            </div>
+            <div class="away-dec">
+                <p>1.罗马上轮意甲客场3-0大胜升班马费拉拉SPAL，最近4场各项赛事3胜1平保持不败。</p>
+                <p>2.利物浦上轮英超客战副班长西布朗，结果在2球领先的情况下被对手扳平比分，结束此前各项赛事2连胜。
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="team-power" style="display: table;width: 99%;margin-left: 0.4%">
+        <div class="magic-title">足彩数据</div>
+        <div class="home-team-magic">
+            <div class="team-title">
+                <h3>48%</h3>
+            </div>
+            <div class="home-dec">
+                <p>1.欧洲主流公司Bet365为本场比赛开出 1.53 4.33 5.50 的初赔组合，该公司相同初赔下的最近6场比赛主队5胜1负，胜率83%。</p>
+            </div>
+        </div>
+        <div class="away-team-magic">
+            <div class="team-title">
+                <h3>52%</h3>
+            </div>
+            <div class="away-dec">
+                <p>1.竞彩亚盘为本场比赛开出主让一球高水的初盘，鉴于主队实力状态优势均有限，初盘过深，受注后主队水位反降到中低水，谨防主队过热。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+
+
+<style>
+.news-content {
+    margin-top: 0.1rem;
+    background: #fafafa;
+    padding-bottom: 0.1rem;
+    /* width: 98%;
+    margin-left: 1%; */
+}
+.news-content .news-title {
+    padding-top: 0.08rem;
+    padding-bottom: 0.08rem
+}
+.news-content .news-title .news-span {
+    width: 0.06rem;
+    height: 0.28rem;
+    background: #d2504b;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.08rem
+}
+.news-content .news-title h3 {
+    display: inline-block;
+    font-size: 0.18rem;
+    color: #5b637e;
+    margin: 0
+}
+.news-content .news-title h3 .news-count {
+    font-size: 0.18rem;
+    color: #9299b2
+}
+.news-content .news-title h3 .news-count span {
+    color: #ea4b35
+}
+.news-content .jbm-box {
+    margin: 0.18rem 0.2rem 0;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    padding: 0.18rem
+}
+.news-content .jbm-box h3 {
+    font-size: 0.24rem;
+    color: #2f3857;
+    margin: 0.1rem 0 0;
+    padding-bottom: 8px;
+    font-weight: 600;
+    text-align: center
+}
+.news-content .jbm-box .meet-title {
+    font-size: 0.2rem;
+    color: #5b637e;
+    padding: 0.2rem 0 0 0.14rem
+}
+.news-content .jbm-box .neican-progress {
+    width: 100%;
+    height: 0.05rem;
+    background: #5a6fb1;
+    display: inline-block;
+    position: relative
+}
+.news-content .jbm-box .neican-progress span {
+    width: 50%;
+    display: block;
+    height: 0.05rem;
+    background: #e34444
+}
+.news-content .jbm-box .match-content {
+    padding: 0.15rem 0 0.18rem;
+    width: 100%;
+    position: relative;
+    display: table
+}
+.news-content .jbm-box .match-content p {
+    font-size: 0.18rem;
+    color: #5b637e;
+    margin-bottom: 0.1rem;
+    margin: 0
+}
+.news-content .jbm-box .match-content p span {
+    color: #d2504b;
+    margin: 0 0.1rem
+}
+.news-content .jbm-box .match-content .match-home-content {
+    display: table-cell;
+    width: 50%;
+    border-right: 1px solid #e5e5e5
+}
+.news-content .jbm-box .match-content .match-home-content p {
+    font-size: 0.2rem;
+    color: #5b637e;
+    margin-bottom: 0.1rem;
+    margin: 0;
+    padding: 0 8px 4px 0
+}
+.news-content .jbm-box .match-content .match-home-content p span {
+    color: #d2504b;
+    margin: 0 0.1rem
+}
+.news-content .jbm-box .match-content .match-away-content {
+    display: table-cell
+}
+.news-content .jbm-box .match-content .match-away-content p {
+    font-size: 0.2rem;
+    color: #5b637e;
+    margin-bottom: 8px;
+    margin: 0;
+    padding: 0 0 0.06rem 0.1rem
+}
+.news-content .jbm-box .medium {
+    margin-top: 10px
+}
+.news-content .jbm-box .medium p {
+    font-size: 0.2rem;
+    color: #5b637e;
+    margin-bottom: 0.1rem;
+    margin: 0
+}
+.open-down {
+    width: 20px;
+    height: 20px;
+    background: url(img/icon_xia.png) no-repeat;
+    background-size: 20px 20px;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    margin-right: 12px;
+    cursor: pointer
+}
+
+.open-up{
+     width: 20px;
+    height: 20px;
+    background: url(img/icon_shang.png) no-repeat;
+    background-size: 20px 20px;
+     display: inline-block;
+    vertical-align: middle;
+    float: right;
+    margin-right: 12px;
+    cursor: pointer
+}
+</style>
+
+<div class="news-content">
+    <div class="news-title">
+        <span class="news-span"></span>
+        <h3>内参<span>(2条)</span></h3><i class="open-down"></i>
+        <i class="open-up"></i>
+    </div>
+    
+    
+    <div class="showNes">
+          <div class="jbm-box">
+        <h3>临场速递</h3>
+        <div class="neican-progress"><span></span></div>
+        <div class="match-content">
+            <div class="match-home-content">
+                <p>【罗马主要伤停】
+                    <br> 卡斯多普（替补边卫，1/0）
+                    <br> 德弗雷（替补右边锋，15/1）
+                </p>
+            </div>
+            <div class="match-away-content">
+                <p>【利物浦主要伤停】
+                    <br> 拉拉纳（替补中场，11/0）
+                    <br> 马蒂普（前主力中卫，25/1）
+                    <br> 埃姆雷詹（轮换中场，26/3）
+                    <br> 克莱因（替补边卫，1/0，存疑）
+                </p>
+            </div>
+        </div>
+        <div class="medium">
+        </div>
+    </div>
+    <div class="jbm-box">
+        <h3>内参</h3>
+        <div class="neican-progress"><span></span></div>
+        <div class="match-content">
+            <div class="match-home-content">
+                <p>【轮换情况】
+                    <br> 为备战本场比赛，利物浦在上周末的联赛中轮休了菲尔米诺、罗伯逊、阿诺德、洛夫伦、张伯伦5名主力
+                    <br>
+                    <br> 【队长复出】
+                    <br> 因累积黄牌停赛而错过上轮欧冠次回合的队长亨德森，本场复出重新上阵
+                    <br>
+                    <br> 【法老见故人】
+                    <br> 本赛季初从罗马转投红军的埃及前锋萨拉赫已成球队大腿，最近6次代表红军上阵场场进球贡献10球2助攻，状态如日中天的他本场将迎战老东家
+                    <br>
+                    <br> 【一进一出】
+                    <br> 利物浦本季欧冠主场6战中最近4次全部零封对手，而罗马本季欧冠5场客战场场丢球
+                    <br>
+                    <br> 【火力十足】
+                    <br> 利物浦最近8场欧冠有7场打出全场大球，这7战红军单场都至少进2球，其中6场更是单场至少进3球，同时球队本季欧冠已入33球是各队之首
+                </p>
+            </div>
+            <div class="match-away-content">
+                <p>【有过预演】
+                    <br> 罗马在本季欧冠小组赛曾对阵上季英超冠军切尔西，结果客场3-3全身而退，回到主场又3-0横扫对手，沙拉维、哲科、科拉罗夫均有传射表现
+                    <br>
+                    <br> 【轮换情况】
+                    <br> 罗马在上周末的联赛中轮休了科拉罗夫、弗洛伦齐、德罗西、哲科4名主力
+                    <br>
+                    <br> 【左翼复出】
+                    <br> 罗马左翼佩罗蒂在伤缺3周后在上周末的联赛中替补登场宣告复出，他在小组赛对阵切尔西的两战中场场首发表现惊艳，有一球入账
+                    <br>
+                    <br> 【高人一等】
+                    <br> 罗马前锋哲科本季欧冠打出恐怖的74%争顶成功率，以超大优势领跑所有前锋
+                    <br>
+                    <br> 【最爱单数】
+                    <br> 罗马最近5场欧冠全部打出单数赛果
+                </p>
+            </div>
+        </div>
+        <div class="medium">
+            <p>【主裁信息】
+                <br> 本场比赛将由43岁的德国主裁布吕希执法，在他此前10个赛季的欧冠执法中场均出示4.04张黄牌0.32张红牌，尺度极其严格
+            </p>
+            <p>【独家/来者何人】德国主裁布吕希此前共4次执法利物浦比赛均在欧冠之中，利物浦收获2胜1平1负，其中主场2战均获得胜利；值得一提的是他本赛季此前已经执法过利物浦2次欧冠比赛，可谓一路见证利物浦闯入4强；
+                <br>
+                <br> 首场是在小组赛中利物浦客战塞维利亚，红军在上半场收获3球领先结果被主队下半场连进3球扳平，这场比赛正是塞维利亚主帅贝里佐公开自己癌症的比赛，布吕希在执法中不失时机地为这一背景增添色彩，下半场在主队扳回一球后不久就再给主队送上点球；布吕希执法的第二战是利物浦主场与曼城的较量，最终利物浦3-0意外大胜曼城；
+                <br>
+                <br> 可以看见，布吕希的吹罚总能够代表欧足联的最高意志，为欧冠赛事的精彩程度铺路搭桥
+            </p>
+            <p>【独家/利物浦欧冠正赛对阵意甲球会战绩】利物浦此前总共10次在欧冠正赛对阵意甲球会最终收获5胜2平3负，其中4次主场出战收获3胜1负，比分分别为2-0/2-0/2-1/1-2（与AC米兰在决赛中的2次相遇均在中立场故不算入主客场）</p>
+            <p>【独家/罗马欧冠正赛对阵英超球会战绩】罗马此前总共18次在欧冠正赛对阵英超球队，最终收获3胜6平9负，其中9次客战仅得3平6负，不过仅2次输到1球以上</p>
+            <p>【球员数据/左右为难】哲科在球员生涯共11次对阵利物浦收获3胜4平4负；但是在他进球的3战中他所在的球队（曼城）从无胜绩</p>
+            <p>【爷爷奶奶行行好】如果您觉得魔方APP内容不错，或者有浏览更多收费魔方、收费讲堂等内容的意愿，推荐您点击加入会员。会员期间APP内收费内容全免，近期因魔方6周年还推出冲会员赠送魔豆彩金的活动（最高可达4288彩金），新会员送下赛季全季英超转播活动，更有机会抽俄罗斯世界杯门票（中奖概率1/16），如果您有兴趣的话，可点击本条链接查看详情（会员最低只要138魔币）</p>
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+
+
+
+
+<script>
+    $('.open-up').hide();
+    $('.open-down').click(function(){
+        $('.showNes').hide();
+        $('.open-down').hide();
+        $('.open-up').show();
+    });
+    $('.open-up').click(function(){
+        $('.showNes').show();
+        $('.open-down').show();
+        $('.open-up').hide();
+    })
+</script>
+
+
+
+
+
+
+
+  
+
+	    </div>
+
+	</div>
+
+
+<!-- 对阵结束 -->
+<!-- 对阵结束 -->
+<!-- 对阵结束 -->
+<!-- 对阵结束 -->
+
+
+<!-- 赛事开始 -->
+<!-- 赛事开始 -->
+<!-- 赛事开始 -->
+<!-- 赛事开始 -->
+	<div class="match" style="display: none">
+
+		<!-- 赛事轮播开始 -->
+		<div class="banner">
+			<div class="bannerCot">
+				<div class="swiper-container" id="swiper1">	
+					<div class="swiper-wrapper">
+					    
+
+					    <div class="swiper-slide">
+					    	<div class="echar3Tit">
+					    		澳A胜，平，负
+					    	</div>
+
+					    	<div class="echar3Zhu">
+					    		<span class="echar3sp"></span>  2017-2018赛季
+					    		&nbsp;&nbsp;&nbsp;&nbsp;
+					    		<span class="echar3sp2"></span>  2016-2017赛季
+					    	</div>
+							<div class="berImgcot">
+								<div class="berImgcotL">
+						    		<ul class="chart chartL">
+			                             <li>
+			                                 <div class=total>
+				                                 <p class=percent style="height:43%;background: #f36201">
+				                	                 <span class="echar3Wod">43%</span>
+				                	 
+				                	             </p>
+				                	           <span class="echar3bot" style="bottom: -0.5;left: -0.65rem">胜</span>
+			                                 </div>
+			                              </li>
+			                            <li>
+			         
+								            <div class="total">
+								                <p class=percent style="height:28%;background: #f36201">
+								                	<span class="echar3Wod">28%</span>
+								                	
+								                	
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: -0.65rem">平</span>
+								               
+								            </div>
+								        </li>
+								        <li>
+								            <div class="total">
+								                <p class=percent style="height:29%;background: #f36201">
+								                	<span class="echar3Wod">29%</span>
+								                	
+								                	
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: -0.65rem">负</span>
+								            </div>
+								        </li>
+		    						</ul>
+		    						<div class="echar3Fot">
+		    							2017-2018已赛222场
+		    						</div>
+					    		</div>
+
+					    		<div class="berImgcotR">
+						    		<ul class="chart chartR">
+			                             <li>
+			                                 <div class="total">
+				                                 <p class="percent" style="height:10%;background: #307bbb">
+				                	                 <span class="echar3Wod">22</span>
+				                	                 
+				                	             </p>
+				                	             <span class="echar3bot" style="bottom: -0.5;left: 0.65rem">胜</span>
+			                                 </div>
+			                              </li>
+			                            <li>
+								            <div class="total">
+								                <p class="percent" style="height:60%;background: #307bbb">
+								                	<span class="echar3Wod">2</span>
+								                	
+								                	
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: 0.65rem">平</span>
+								            </div>
+								        </li>
+								        <li>
+								            <div class="total">
+								                <p class="percent" style="height:60%;background: #307bbb">
+								                	<span class="echar3Wod">2</span>
+								                	
+								                	
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: 0.65rem">负</span>
+								            </div>
+								        </li>
+		    						</ul>
+		    						<div class="echar3Fot">
+		    							2016-2017已赛222场
+		    						</div>
+					    		</div>
+							</div>
+					    </div>
+	 
+	 
+					    <div class="swiper-slide">
+					    	<div class="echar3Tit">
+					    		澳A联赛均进球数
+					    	</div>
+
+					    	<div class="echar3Zhu">
+					    		<span class="echar3sp"></span>  2017-2018赛季
+					    		&nbsp;&nbsp;&nbsp;&nbsp;
+					    		<span class="echar3sp2"></span>   2016-2017赛季
+					    	</div>
+							<div class="berImgcot">
+								<div class="berImgcotL">
+						    		<ul class="chart chartL">
+			                             <li>
+			                                 <div class="total">
+				                                 <p class="percent" style="height:0%;background: #f36201">
+				                	                 <span class="echar3Wod">0场</span>
+				                	             </p>
+				                	             <span class="echar3bot" style="bottom: -0.5;left: -0.65rem">均场</span>
+			                                 </div>
+			                              </li>
+			                            <li>
+								            <div class="total">
+								                <p class="percent" style="height:40%;background: #f36201">
+								                	<span class="echar3Wod">4场</span>
+								                	
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: -0.65rem">主场</span>
+								            </div>
+								        </li>
+								        <li>
+								            <div class="total">
+								                <p class="percent" style="height:40%;background: #f36201">
+								                	<span class="echar3Wod">4场</span>
+								                	
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: -0.65rem">客场</span>
+								            </div>
+								        </li>
+		    						</ul>
+		    						<div class="echar3Fot">
+		    							2017-201赛季已赛22场
+		    						</div>
+					    		</div>
+
+					    		<div class="berImgcotR">
+						    		<ul class="chart chartR">
+			                             <li>
+			                                 <div class="total">
+				                                 <p class="percent" style="height:10%;background: #307bbb">
+				                	                 <span class="echar3Wod">1场</span>
+				                	             </p>
+				                	             <span class="echar3bot" style="bottom: -0.5;left: 0.65rem">均场</span>
+			                                 </div>
+			                              </li>
+			                            <li>
+								            <div class="total">
+								                <p class="percent" style="height:60%;background: #307bbb">
+								                	<span class="echar3Wod">6场</span>
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: 0.65rem">主场</span>
+								            </div>
+								        </li>
+								        <li>
+								            <div class="total">
+								                <p class="percent" style="height:60%;background: #307bbb">
+								                	<span class="echar3Wod">6场</span>
+								                	
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: 0.65rem">客场</span>
+								            </div>
+								        </li>
+		    						</ul>
+		    						<div class="echar3Fot">
+		    							2016-2017赛季已赛22场
+		    						</div>
+					    		</div>
+							</div>
+					    </div>
+					</div>
+					<div class="swiper-pagination pagination1 vv" ></div>
+		 		</div>
+			</div>
+		</div>
+    
+    <!-- 赛事轮播结束 -->
+ 
+		<div class="lotExcluMes1" style="text-align: center;height: 0.4rem;line-height: 0.4rem">总积分</div>
+       <div class="matchTble">
+       	  <table class="matchAb1" id="matal1">
+       	  	<thead>
+       	  		<tr>
+       	  			<td>排名</td>
+       	  			<td>球队</td>
+       	  			<td>赛</td>
+       	  			<td>胜</td>
+       	  			<td>平</td>
+       	  			<td>负</td>
+       	  			<td>进球</td>
+       	  			<td>失球</td>
+       	  			<td>积分</td>
+       	  		</tr>
+       	  	</thead>
+       	  	<tbody>
+       	  		<tr>
+       	  			<td>1</td>
+       	  			<td>杜塞多夫</td>
+       	  			<td>27</td>
+       	  			<td>16</td>
+       	  			<td>5</td>
+       	  			<td>6</td>
+       	  			<td>46</td>
+       	  			<td>34</td>
+       	  			<td>53</td>
+       	  		</tr>
+       	  		<tr>
+       	  			<td>1</td>
+       	  			<td>杜塞多夫</td>
+       	  			<td>27</td>
+       	  			<td>16</td>
+       	  			<td>5</td>
+       	  			<td>6</td>
+       	  			<td>46</td>
+       	  			<td>34</td>
+       	  			<td>53</td>
+       	  		</tr>
+       	  	</tbody>
+       	  </table>
+
+
+       	   
+
+
+       	  
+
+       	  
+       </div>
+
+       
+
+         <div class="matchMsg">
+						<div class="lotExcluMes1">
+							赛事介绍
+						</div>
+						<div class="lotExcluMes2">
+							<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+							<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+							
+						</div>
+					</div>
+
+	</div>
+
+<!-- 赛事结束 -->
+<!-- 赛事结束 -->
+<!-- 赛事结束 -->
+<!-- 赛事结束 -->
+
+
+
+<!-- 欧赔开始 -->
+<!-- 欧赔开始 -->
+<!-- 欧赔开始 -->
+<!-- 欧赔开始 -->
+    <div class="eupRate" style="display: none">
+
+    <!-- 欧赔轮播开始 -->
+    	<div class="banner">
+			<div class="bannerCot">
+				<div class="swiper-container" id="swiper2">	
+					<div class="swiper-wrapper">
+					    
+
+					    <div class="swiper-slide">
+					    	<div class="bannerTit">概率转换</div>
+					    	<div class="berImgcot" style="text-align: center">
+					    	    <div class="eupRateEchar">
+					    	    	<label class="bigFot">22%
+										<label class="colBlu">-</label>
+					    	    	</label>
+					    	    	
+					    	    	<div class="ercFot">胜</div>
+					    	    </div>
+					    	    <div class="eupRateEchar">
+					    	    	<label class="bigFot">
+					    	    		27%
+										<label class="colRed">↓</label>
+					    	    	</label>
+					    	    	<div class="ercFot">平</div>
+					    	    </div>
+					    	    <div class="eupRateEchar">
+					    	    	<label class="bigFot">51%
+   										<label class="colGreen">↑</label>
+					    	    	</label>
+					    	    	<div class="ercFot">负</div>
+					    	    </div>
+					    	</div>
+					    	<div class="echarFot2">平局，客胜近期调整幅度较大。当前赔率客胜概率最大</div>
+					    </div>
+	 
+	 
+					    <div class="swiper-slide">
+					    	<div class="echar3Tit">
+					    		极限
+					    	</div>
+
+					    	<div class="echar3Zhu">
+					    		<span class="echar3sp"></span>  当前连续
+					    		&nbsp;&nbsp;&nbsp;&nbsp;
+					    		<span class="echar3sp2"></span>  历史最长
+					    	</div>
+							<div class="berImgcot">
+								<div class="berImgcotL">
+						    		<ul class="chart chartL">
+			                             <li>
+			                                 <div class="total">
+				                                 <p class="percent" style="height:0%;background: #f36201">
+				                	                 <span class="echar3Wod">0场</span>
+				                	             </p>
+				                	             <span class="echar3bot" style="bottom: -0.5;left: -0.65rem">555</span>
+			                                 </div>
+			                              </li>
+			                            <li>
+								            <div class="total">
+								                <p class="percent" style="height:40%;background: #307bbb">
+								                	<span class="echar3Wod">4场</span>
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: -0.65rem">555</span>
+								            </div>
+								        </li>
+								        <li>
+								            <div class="total">
+								                <p class="percent" style="height:40%;background: #307bbb">
+								                	<span class="echar3Wod">4场</span>
+								                	
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: -0.65rem">555</span>
+								            </div>
+								        </li>
+		    						</ul>
+		    						<div class="echar3Fot">
+		    							主场赢盘
+		    						</div>
+					    		</div>
+
+					    		<div class="berImgcotR">
+						    		<ul class="chart chartR">
+			                             <li>
+			                                 <div class="total">
+				                                 <p class="percent"  style="height:10%;background: #f36201">
+				                	                 <span class="echar3Wod">1场</span>
+				                	             </p>
+				                	             <span class="echar3bot" style="bottom: -0.5;left: 0.65rem">555</span>
+			                                 </div>
+			                              </li>
+			                            <li>
+								            <div class="total">
+								                <p class="percent" style="height:60%;background: #307bbb">
+								                	<span class="echar3Wod">6场</span>
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: 0.65rem">555</span>
+								            </div>
+								        </li>
+								        <li>
+								            <div class="total">
+								                <p class="percent" style="height:60%;background: #307bbb">
+								                	<span class="echar3Wod">6场</span>
+								                	
+								                </p>
+								                <span class="echar3bot" style="bottom: -0.5;left: 0.65rem">555</span>
+								            </div>
+								        </li>
+		    						</ul>
+		    						<div class="echar3Fot">
+		    							客场赢盘
+		    						</div>
+					    		</div>
+							</div>
+					    </div>
+					</div>
+					<div class="swiper-pagination vv pagination2" ></div>
+		 		</div>
+			</div>
+		</div>
+
+		 <!-- 欧赔轮播结束 -->
+
+		<!-- 欧赔二级tab -->
+		<div class="eupRateTab">
+			<ul>
+				<li id="eupRata1">赔率</li>
+				<li id="eupRata2">凯莉</li>
+			</ul>
+		</div>
+	
+
+	<!-- 欧赔赔率 -->
+		<div class="eupRatable1">
+			<table class="cc eRatle1 eR1" cellpadding="0" cellspacing="0" style="width: 100%;text-align:center;">
+			      <thead>
+			      	<tr>
+			      		<td>公司</td>
+			      		<td colspan="3">初始赔率</td>
+			      		<td colspan="4">及时赔率</td>
+			      	</tr>
+			      </thead>
+			      <tbody>
+			      	<tr>
+			      		<td>百家平均</td>
+			      		<td>2.50</td>
+			      		<td>3.28</td>
+			      		<td>2.76</td>
+			      		<td >2.62</td>
+			      		<td>3.38</td>
+			      		<td style="color: green">2.64↓</td>
+			      		<td width="6%"></td>
+			      	</tr>
+			      	<tr>
+			      		<td>竞彩官网</td>
+			      		<td>2.50</td>
+			      		<td>3.28</td>
+			      		<td>2.76</td>
+			      		<td >2.62</td>
+			      		<td>3.38</td>
+			      		<td style="color: green">2.64↓</td>
+			      		<td width="6%">></td>
+			      	</tr>
+	      </tbody>
+	  </table>
+	</div>
+
+
+	<!-- 欧赔凯利 -->
+     <div class="eupRatable2" style="width: 100%;display: none">
+     	<table class="dd eR2" cellpadding="0" cellspacing="0" style="width: 100%;text-align:center;">
+     		<thead>
+     			<tr>
+     				<td rowspan="2">公司</td>
+			      	<td colspan="3">最新概率</td>
+			      	<td colspan="3">最新凯莉指数</td>
+			      	<td rowspan="2">返还率</td>
+     			</tr>
+     			<tr>
+     				
+     				<td>胜</td>
+     				<td>平</td>
+     				<td>负</td>
+     				<td>胜</td>
+     				<td>平</td>
+     				<td>负</td>
+     				
+     			</tr>
+
+     		</thead>
+     		<tbody>
+     			<tr>
+     				<td>百家平均</td>
+     				<td>36.1%</td>
+     				<td>28.0%</td>
+     				<td>35.9</td>
+     				<td>0.95</td>
+     				<td>0.95</td>
+     				<td>0.95</td>
+     				<td>94.7%</td>
+     			</tr>
+     		</tbody>
+     	</table>
+     </div>
+		
+
+    </div>
+
+<!-- 欧赔结束 -->
+<!-- 欧赔结束 -->
+<!-- 欧赔结束 -->
+<!-- 欧赔结束 -->
+
+
+
+
+
+<!-- 亚盘开始 -->
+<!-- 亚盘开始 -->
+<!-- 亚盘开始 -->
+<!-- 亚盘开始 -->
+<!-- 亚盘轮播图表 -->
+<div style="display: none" class="yaPan">
+
+   <!-- 亚盘轮播开始 -->
+	<div class="banner">
+		<div class="bannerCot">
+			<div class="swiper-container" id="swiper3">	
+				<div class="swiper-wrapper">
+				    <div class="swiper-slide">
+				    	<div class="bannerTit">近期赢盘率</div>
+				    	<div class="berImgcot">
+				    		<div class="berImgcotL">
+				    		     <div class="htmleaf-container">
+								     <div class="page">
+						                  <div class="clearfix mt echar1">
+						                    <div id="dgreencircle" class="c100 p20 small orange">
+												<span>20%</span>
+												<div class="slice">
+													<div class="bar"></div>
+													<div class="fill"></div>
+												</div>
+											</div>
+											<div class="echarFot1">主场近 10 场</div>
+									      </div>
+								    </div>
+								</div>
+
+				    	    </div>
+				    	<div class="berImgcotR">
+				    		<div class="page">
+						                  <div class="clearfix mt echar2">
+						                    <div id="lightcircle" class="c100 p60 small red">
+												<span>60%</span>
+												<div class="slice">
+													<div class="bar"></div>
+													<div class="fill"></div>
+												</div>
+											</div>
+											<div class="echarFot1">主场近 10 场</div>
+									      </div>
+						    </div>
+				    	</div>
+				    	</div>
+				    	<div class="echarFot2">两队近期大球率偏高</div>
+				    </div>
+
+				    <div class="swiper-slide">
+				    	<div class="bannerTit">近期大球率</div>
+				    	<div class="berImgcot">
+				    		<div class="berImgcotL">
+				    		     <div class="htmleaf-container">
+								     <div class="page">
+						                  <div class="clearfix mt echar1">
+						                    <div id="pinkcircle" class="c100 p30 small orange">
+												<span>30%</span>
+												<div class="slice">
+													<div class="bar"></div>
+													<div class="fill"></div>
+												</div>
+											</div>
+											<div class="echarFot1">主场近 10 场</div>
+									      </div>
+								    </div>
+								</div>
+
+				    	    </div>
+				    	<div class="berImgcotR">
+				    		<div class="page">
+						                  <div class="clearfix mt echar2">
+						                    <div  class="c100 p30 small red">
+												<span>30%</span>
+												<div class="slice">
+													<div class="bar"></div>
+													<div class="fill"></div>
+												</div>
+											</div>
+											<div class="echarFot1">主场近 10 场</div>
+									      </div>
+						    </div>
+				    	</div>
+				    	</div>
+				    	<div class="echarFot2">两队近期大球率偏高</div>
+				    </div>
+ 
+ 
+				    <div class="swiper-slide">
+				    	<div class="echar3Tit">
+				    		极限
+				    	</div>
+
+				    	<div class="echar3Zhu">
+				    		<span class="echar3sp"></span>  当前连续
+				    		&nbsp;&nbsp;&nbsp;&nbsp;
+				    		<span class="echar3sp2"></span>  历史最长
+				    	</div>
+						<div class="berImgcot">
+							<div class="berImgcotL">
+					    		<ul class="chart chartL">
+		                             <li>
+		                                 <div class="total">
+			                                 <p class="percent" style="height:0%;background: #f36201">
+			                	                 <span class="echar3Wod">0场</span>
+			                	             </p>
+		                                 </div>
+		                              </li>
+		                            <li>
+							            <div class="total">
+							                <p class="percent" style="height:40%;background: #307bbb">
+							                	<span class="echar3Wod">4场</span>
+							                	
+							                </p>
+							            </div>
+							        </li>
+	    						</ul>
+	    						<div class="echar3Fot">
+	    							主场赢盘
+	    						</div>
+				    		</div>
+
+				    		<div class="berImgcotR">
+					    		<ul class="chart chartR">
+		                             <li>
+		                                 <div class="total">
+			                                 <p class="percent" style="height:10%;background: #f36201">
+			                	                 <span class="echar3Wod">1场</span>
+			                	             </p>
+		                                 </div>
+		                              </li>
+		                            <li>
+							            <div class="total">
+							                <p class="percent" style="height:60%;background: #307bbb">
+							                	<span class="echar3Wod">6场</span>
+							                	
+							                </p>
+							            </div>
+							        </li>
+	    						</ul>
+	    						<div class="echar3Fot">
+	    							客场赢盘
+	    						</div>
+				    		</div>
+						</div>
+				    </div>
+				</div>
+				<div class="swiper-pagination vv pagination3" ></div>
+	 		</div>
+		</div>
+	</div>
+    
+     <!-- 亚盘轮播结束 -->
+
+
+
+
+<!-- 二级tab -->
+		<div class="lotTabSed">
+			<ul class="bat2">
+				<li id="bt1">赔率数据</li>
+				<li id="bt2">凯利指数</li>
+				<li id="bt3">大小球</li>
+				<li id="bt4">欧亚转换</li>
+			</ul>
+		</div>
+
+
+<!-- rateData 开始 -->
+        <div id="rateData" >
+
+  		<div class="tabCot">
+		  	  <table class="cc" cellpadding="0" cellspacing="0" style="width: 100%;text-align:center;">
+			      <thead>
+			      	<tr>
+			      		<td>公司</td>
+			      		<td colspan="3">初始盘口</td>
+			      		<td colspan="4">及时盘口</td>
+			      	</tr>
+			      </thead>
+			      <tbody>
+			      	<tr>
+			      		<td>澳门</td>
+			      		<td>1.80</td>
+			      		<td>受平手/半球</td>
+			      		<td>2.00</td>
+			      		<td style="color: red">1.68↑</td>
+			      		<td>受平手/半球</td>
+			      		<td style="color: green">2.12↓</td>
+			      		<td width="6%">></td>
+			      	</tr>
+	      </tbody>
+		</table>
+  	</div>
+
+	</div>
+<!-- rateData 结束 -->
+
+
+
+
+<!-- keliIndx 开始 -->
+     <div id="keliIndx" class="tabCot" style="display: none;">
+     	<table class="dd" cellpadding="0" cellspacing="0" style="width: 100%;text-align:center;">
+     		<thead>
+     			<tr>
+     				<td rowspan="2">公司</td>
+			      	<td colspan="2">最新概率</td>
+			      	<td colspan="2">最新凯莉指数</td>
+			      	<td rowspan="2">返还率</td>
+     			</tr>
+     			<tr>
+     				
+     				<td>胜</td>
+     				<td>负</td>
+     				<td>胜</td>
+     				<td>负</td>
+     				
+     			</tr>
+
+     		</thead>
+     		<tbody>
+     			<tr>
+     				<td>澳门</td>
+     				<td>49.47%</td>
+     				<td>50.53%</td>
+     				<td>0.91</td>
+     				<td>0.98</td>
+     				<td>94.98%</td>
+     			</tr>
+     		</tbody>
+     	</table>
+     </div>
+<!-- keliIndx 结束 -->
+
+
+<!-- someBall 开始 -->
+     <div id="someBall" class="tabCot" style="display: none">
+     	<table class="cc" cellpadding="0" cellspacing="0" style="width: 100%;text-align:center;">
+     		<thead>
+     			<tr>
+     				<td>公司</td>
+     				<td colspan="3">初始盘口</td>
+     				<td colspan="4">及时盘口</td>
+     			</tr>
+     		</thead>
+     		<tbody>
+     			<tr>
+     				<td>澳门</td>
+     				<td>1.92</td>
+     				<td>2/2.5</td>
+     				<td>1.78</td>
+     				<td style="color: red">2.00↑</td>
+     				<td>2/2.5</td>
+     				<td style="color: red">1.7↓</td>
+     				<td width="6%">></td>
+     			</tr>
+     		</tbody>
+     	</table>
+     </div>
+<!-- someBall 结束 -->
+
+     <div id="convert" class="tabCot" style="text-align: center;display: none;">
+     	暂无数据
+     	
+     </div>
+</div>
+
+<!-- 亚盘结束 -->
+<!-- 亚盘结束 -->
+<!-- 亚盘结束 -->
+<!-- 亚盘结束 -->
+
+
+
+
+
+<!-- 独家开始 -->
+<!-- 独家开始 -->
+<!-- 独家开始 -->
+<!-- 独家开始 -->
+	<!-- <div class="lotExclu" style="display: none">
+
+		<div class="lotExcluCot">
+			<div class="lotExcluTit lotEx2">
+				<span style="display: inline-block;width: 3px;height: 0.25rem;background: red;position: relative;top: 0.05rem"></span>  胜平负
+			</div>
+			<table class="excTab1" cellpadding="0" cellspacing="0" style="width: 100%;text-align:center;">
+				<tbody>
+					<tr>
+						<td class="colRed">4.00</td>
+						<td class="colGray">3.16</td>
+						<td class="colGreen">1.78</td>
+					</tr>
+					<tr class="nobd">
+						<td class="colBlack">胜</td>
+						<td class="colGray">平</td>
+						<td class="colBlack">负</td>
+					</tr>
+					<tr>
+						<td class="colRed">4.00</td>
+						<td class="colGray">3.16</td>
+						<td class="colGreen">1.78</td>
+					</tr>
+					<tr class="nobd">
+						<td class="colBlack">胜</td>
+						<td class="colGray">平</td>
+						<td class="colBlack">负</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<div class="lotExcluTit">
+				<span style="display: inline-block;width: 3px;height: 0.25rem;background: #f36201;position: relative;top: 0.05rem"></span>  亚盘指数
+			</div>
+			<table class="excTab1" cellpadding="0" cellspacing="0" style="width: 100%;text-align:center;">
+				<tbody>
+					<tr>
+						<td class="colRed">4.00</td>
+						<td class="colGray">3.16</td>
+						<td class="colGreen">1.78</td>
+					</tr>
+					<tr class="nobd">
+						<td class="colBlack">胜</td>
+						<td class="colBlack">平</td>
+						<td class="colBlack">负</td>
+					</tr>
+					<tr>
+						<td class="colRed">4.00</td>
+						<td class="colGray">3.16</td>
+						<td class="colGreen">1.78</td>
+					</tr>
+					<tr class="nobd">
+						<td class="colBlack">胜</td>
+						<td class="colBlack">平</td>
+						<td class="colBlack">负</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<div class="lotExcluTit">
+				<span style="display: inline-block;width: 3px;height: 0.25rem;background: #f36201;position: relative;top: 0.05rem"></span>  大小盘指数
+			</div>
+			<table class="excTab1" cellpadding="0" cellspacing="0" style="width: 100%;text-align:center;">
+				<tbody>
+					<tr>
+						<td class="colRed">4.00</td>
+						<td class="colGray">3.16</td>
+						<td class="colGreen">1.78</td>
+					</tr>
+					<tr class="nobd">
+						<td class="colBlack">胜</td>
+						<td class="colBlack">平</td>
+						<td class="colBlack">负</td>
+					</tr>
+					<tr>
+						<td class="colRed">4.00</td>
+						<td class="colGray">3.16</td>
+						<td class="colGreen">1.78</td>
+					</tr>
+					<tr class="nobd">
+						<td class="colBlack">胜</td>
+						<td class="colBlack">平</td>
+						<td class="colBlack">负</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<div class="lotExcluTit">
+				<span style="display: inline-block;width: 3px;height: 0.25rem;background: #f36201;position: relative;top: 0.05rem"></span>  比分指数
+			</div>
+			<table class="excTab1" cellpadding="0" cellspacing="0" style="width: 100%;text-align:center;">
+				<tbody>
+					<tr>
+						<td class="colRed">4.00</td>
+						<td class="colGray">3.16</td>
+						<td class="colGreen">1.78</td>
+					</tr>
+					<tr class="nobd">
+						<td class="colBlack">胜</td>
+						<td class="colBlack">平</td>
+						<td class="colBlack">负</td>
+					</tr>
+					<tr>
+						<td class="colRed">4.00</td>
+						<td class="colGray">3.16</td>
+						<td class="colGreen">1.78</td>
+					</tr>
+					<tr class="nobd">
+						<td class="colBlack">胜</td>
+						<td class="colBlack">平</td>
+						<td class="colBlack">负</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+
+			<div class="lotExcluMes">
+				<div class="lotExcluMes1">
+					要点解读
+				</div>
+				<div class="lotExcluMes2">
+					<p>1,xxxxxxxx</p>
+					<p>1,xxxxxxxx</p>
+				</div>
+			</div>
+		</div>
+
+	</div> -->
+
+<!-- 独家结束 -->
+<!-- 独家结束 -->
+<!-- 独家结束 -->
+<!-- 独家结束 -->
+
+
+
+<!-- 盈亏开始 -->
+<!-- 盈亏开始 -->
+<!-- 盈亏开始 -->
+<!-- 盈亏开始 -->
+<div class="ltoWin" style="display: none;width: 100%;">
+	<div class="banner">
+			<div class="bannerCot" style="text-align: center">
+				 <div id="container4" style="width: 100%;height: 150px"></div>
+			</div>
+	</div>
+
+	<div class="ltoWintit">
+				必发盈亏（成交量：--港币）第--名
+	</div>
+	<table style="width: 100%;text-align: center" cellpadding="0" cellspacing="0" class="winTab1">
+		<thead>
+			<tr>
+				<td>选项</td>
+				<td>成交量</td>
+				<td>成交量</td>
+				<td>庄家盈亏</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>主胜</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>平局</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>主负</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="ltoWinjie"></div>
+
+	<div class="ltoWintit">
+				多要素对比
+	</div>
+	<table style="width: 100%;text-align: center" cellpadding="0" cellspacing="0" class="winTab1">
+		<thead>
+			<tr>
+				<td>要素</td>
+				<td>胜</td>
+				<td>平</td>
+				<td>负</td>
+				<td>倾向</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>交锋</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>人气</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>交易</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- 盈亏结束 -->
+<!-- 盈亏结束 -->
+<!-- 盈亏结束 -->
+<!-- 盈亏结束 -->
+
+
+
+
+
+
+
+    <script src="js/percircle.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+	<script>
+
+			$(function () {
+
+            
+                chart = new Highcharts.Chart({
+                chart: {
+                	backgroundColor: '#f9f9f9',
+                    renderTo: 'container4',          //放置图表的容器
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    defaultSeriesType: 'spline'   //图表类型line, spline, area, areaspline, column, bar, pie , scatter 
+                },
+                title: {
+                    text: null
+                }, 
+                legend: 
+                {
+                	enabled: false   
+   
+                },
+                credits:{
+                     enabled: false // 禁用版权信息
+                },
+                xAxis: {
+                    categories: ['10:00', '11:00', '12:00', '13:00', '14:00'],
+                    labels: {
+                        align: 'right',
+                        style: { font: 'normal 13px 宋体' },
+
+                    },
+                    lineWidth :0,
+            		tickWidth:0
+                },
+                yAxis: {
+                    title: null,
+                    tickPositions: [0, 26666, 53332, 80000] 
+                },
+                tooltip: {
+                    enabled: false,
+                },
+                plotOptions: {
+                    column: {
+                        dataLabels: {
+                            enabled: false
+                        },
+                        enableMouseTracking: true
+                    }
+                },
+                series: [{
+                    name: null,
+                    data: [11111, 11115, 11118, 14259, 23564]
+                }, {
+                    name: '江西',
+                    data: [23564, 14259, 11118, 11115, 11111]
+                }, {
+                    name: '湖南',
+                    data: [11118, 11115, 11111, 23564, 14259]
+                }]
+              });
+    
+            });
+
+	</script>
+</body>
+</html>
