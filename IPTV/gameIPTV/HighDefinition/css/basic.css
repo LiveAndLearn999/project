@@ -1,0 +1,150 @@
+@CHARSET "UTF-8";
+body{padding:0;margin:0;font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",SimHei,tohoma,sans-serif;}
+
+/*电竞首页*/
+.bord{width: 1280px;height: 720px;background: url('../img/background1.png') 0px 0px no-repeat}
+.nav{position: absolute;width: 1034px;height: 83px;left: 252px;top: 43px;/* background: lightgray */}
+.nav a{position: absolute;display: inline-block;width: 150px;height: 83px;/* background: gray */top: -7px}
+.spanRecommend{background: url('../img/nav/spanRecommendA.png') 10px 17px no-repeat;left: 5px;}
+.trend{left: 150px;/* background: lightgray; */}
+.kingMan{left: 292px;/* background: lightgray; */}
+.gameLakes{left: 437px;/* background: lightgray */}
+.spanActive{left: 582px;/* background: lightgray */}
+.individual{left: 800px;/* background: lightgray */}
+.vid{position: absolute;top:152px;width: 1280px;height: 292px;}
+.mid-left{position: absolute;top:0px;left:98px;width: 505px;height: 292px;background-size: 505px 292px;}
+.v-mid{position: absolute;top:5px;width: 505px;height: 282px;}
+.banner1{position: absolute;width: 275px;height: 292px;left: 649px;display: inline-block;}
+.banner1 img{position: absolute;top: 5px;left: 5px;}
+#ad2,#ad3,#ad4{display: none}
+.right-state1,.right-state2{position: absolute;left: 943px;width: 275px;height: 136px;}
+.img-top{position: absolute;top: 5px;left: 5px;}
+.img-word{position: absolute;left: 211px;top:5px;width: 62px;height: 62px;}
+.right-state2{top: 158px}
+.footer{position: absolute;width: 1280px;height:192px;/* border: 1px solid red; */top: 493px;}
+/* .footer>a{border: 1px solid green;} */
+.antiTerrorism{position: absolute;width: 275px;height: 192px;left:59px;}
+.hero{position: absolute;width: 275px;height: 192px;left:354px;}
+.survival{position: absolute;width: 275px;height: 192px;left:649px;}
+.keepWatch{position: absolute;width: 275px;height: 192px;left:943px;}
+.antiTerrorism-img,.hero-img{position: absolute;top: -30px;left: 6px;}
+.survival-img{position: absolute;top: -42px;left: -2px;}
+.keepWatch-img{position: absolute;top: -42px;left: 5px;}
+
+/*热门赛事*/
+.bord2{background: url('../img/background2.png')}
+.trendRecommend{background: none;}
+.trengActive{background: url('../img/nav/trendContestActive.png') 5px 17px no-repeat;}
+.trendRecommend{position: absolute;width: 1280px;height: 293px;top: 152px}
+.trendRecommend1{position: absolute;width: 276px;height: 293px;left:69px;}
+.trendRecommend2{position: absolute;width: 276px;height: 293px;left:363px;}
+.trendRecommend3{position: absolute;width: 276px;height: 293px;left:647px;}
+.trendRecommend4{position: absolute;width: 276px;height: 293px;left:941px;}
+.Recommend-img1,.Recommend-img4{position: absolute;top: -20px;left: 6px}
+.trendRecommend2-1,.trendRecommend2-2,.trendRecommend4-1,.trendRecommend4-2{position: absolute;width: 276px;height: 135px;left:363px;}
+.trendRecommend2-2,.trendRecommend4-2{top: 157px;}
+.Recommend-img4{top: -25px}
+.trendRecommend4-1,.trendRecommend4-2{left: 941px}
+.Recommend-small{position: absolute;top:5px;left: 6px}
+.antiTerrorism-img2{top: -20px}
+.footer2>a>img{top: 14px;left: 11px;width: 256px;height: 192px}
+.footer2>a{top: -30px;height: 220px}
+
+/*王者风云*/
+.kingManA{background: url('../img/nav/kingManActive.png') 8px 17px no-repeat;}
+
+/*竞技江湖*/
+.gameLakesA{background: url('../img/nav/gameLakesActive.png') 7px 17px no-repeat;}
+
+/*玩家真人秀*/
+.bord5{background: url('../img/background5.png')}
+.spanActiveA{background: url('../img/nav/spanActiveActive.png') 7px 17px no-repeat;}
+.footer5>a{top: -12px;}
+.footer5>a>img{height: 172px;top: 22px}
+.banner2{position: absolute;width: 1280px;height: 300px;border: 1px solid red;top: 156px;}
+.flip-left,.flip-right{position: absolute;width: 40px;height: 300px;border: 1px solid green;left: 60px;}
+.banner-game{position: absolute;width: 1073px;height: 300px;border: 1px solid red;left: 102px}
+.flip-right{left: 1175px;}
+.banner-img>a>img{width: 230px;height: 280px;left: 10px;top: 10px;position: absolute}
+.banner-img>a{position: absolute;width: 250px;height: 300px;}
+.anchor1{left: 0px!important;}
+.anchor2{left: 272px}
+.anchor3{left: 547px;}
+.anchor4{left: 820px;}
+.left-btn,.right-btn{position: absolute;width: 40px;height: 50px;top:125px;border: none;outline: none}
+.left-btn{background: url('../img/Flippage/left1.png') 0px 0px no-repeat}
+.right-btn{left: 20px;}
+.right-btn{background: url('../img/Flippage/right1.png') 0px 0px no-repeat}
+
+
+/*个人中心*/
+.individualBord{width: 	1280px;height: 720px;background: url('../img/back-individual.png')}
+.recentBrowse,.myCollect{position: absolute;width: 187px;height: 58px;left: 121px;top: 177px}
+.myCollect{top:255px;}
+.individualRecommend{position: absolute;width: 216px;height: 248px;left: 105px;top: 340px;}
+.individualRecommend>img{position: absolute;left: 10px;top: 10px;}
+.allPlay,.allDelete{position: absolute;width: 138px;height: 40px;left: 430px;top:186px;}
+.allDelete{left: 599px;}
+.number{position: absolute;width: 60px;height: 36px;left: 1090px;top: 190px;}
+.recentList,.myCollectList{position: absolute;width: 738px;height: 346px;border: 1px solid green;left: 430px;top: 245px;/* background: url('../img/individual/background.png') -10px 0px no-repeat; background-size: 732px 50px; */}
+.recentList button{position: absolute;width: 722px;height: 50px;color: white;text-decoration: none;border: none;outline: none;}
+.myCollectList button{position: absolute;width: 722px;height: 50px;color: white;text-decoration: none;border: none;outline: none;}
+.recentList1{  background: url('../img/individual/background.png') -10px 0px no-repeat;background-size: 732px 50px; }
+.recentList2{top: 58px;background:url('../img/individual/background.png') -10px 0px no-repeat;background-size: 732px 50px;}
+.recentList3{top: 118px;background: url('../img/individual/background.png') -10px 0px no-repeat;background-size: 732px 50px;}
+.recentList4{top: 178px;background: url('../img/individual/background.png') -10px 0px no-repeat;background-size: 732px 50px;}
+.recentList5{top: 238px;background: url('../img/individual/background.png') -10px 0px no-repeat;background-size: 732px 50px;}
+.recentList6{top: 298px;background: url('../img/individual/background.png') -10px 0px no-repeat;background-size: 732px 50px;}
+.word{width: 400px;height: 50px;line-height: 50px;text-align: left;top: 0px;left: 30px;position: absolute;}
+.col,.pl,.del{width: 40px;height: 50px;display: inline-block;left: 554px;position: absolute;} 
+.pl{top: -2px;/* background: url('../img/individual/play/playActive.png') 12px 15px no-repeat */;}
+.col{left: 603px;top:-2px;/* background: url('../img/individual/play/heartActive.png') 10px 14px no-repeat;background-size: 25px 21px; */}
+.del{left: 660px;top: -2px;/* background: url('../img/individual/play/garbageActive.png') 8px 14px no-repeat */}
+.recentList{display: none!important;}
+.flipage{position: absolute;width: 100px;height: 40px;border: 1px solid red;left: 304px;top: 351px;}
+.myCollectList .col{background: url('../img/individual/play/heartActive.png') 10px 14px no-repeat;background-size: 26px 22px;}
+
+/*三级页面*/
+.bordThirdPage{background: url('../img/thirdPage/background.png')}
+.inviteImg{position: absolute;width: 570px;height: 323px;top: 152px;left: 60px;}
+.inviteImg img{position: absolute;top: 10px;left: 7px}
+.rightPage{position: absolute;width: 569px;height: 323px;top: 152px;left: 649px}
+.rightPage1{position: absolute;width: 569px;height: 273px;}
+.rightPage1 a{position: absolute;width: 549px;height: 50px;line-height: 55px;text-decoration: none;padding-left: 20px;/* background: url('../img/individual/background.png') */color: white}
+.rightPageList2{top: 55px!important}
+.rightPageList3{top: 110px!important}
+.rightPageList4{top: 165px!important}
+.rightPageList5{top: 220px!important}
+.reversePage{position: absolute;width: 200px;height: 50px;left: 175px;top: 271px;}
+.btn1,.btn2{position: absolute;width: 50px;height: 50px;border: none;left: 28px}
+.num{position: absolute;width: 52px;height: 50px;border: 1px solid red;top: -17px;left: 81px;}
+.btn2{left: 139px;background: url('../img/Flippage/righttop1.png') -10px 3px no-repeat}
+.btn1{background: url('../img/Flippage/lefttop1.png') -10px 3px no-repeat}
+#rightPage2,#rightPage3{display: none}
+
+
+/*订购页*/
+.orderBord{width: 1280px;height: 720px;background: url('../img/order/background.png') no-repeat}
+.orderDay,.orderMonth,.back{position: absolute;width: 261px;height: 78px;left: 951px;top: 91px}
+.orderMonth{top: 196px}
+.back{top: 300px;}
+
+/*弹窗*/
+.popoverBord{width: 1280px;height: 720px;background: url('../img/popover/background.png') no-repeat}
+.wait,.reject{position: absolute;width: 171px;height: 50px;left: 385px;top: 501px;}
+.reject{left: 694px}
+
+
+/*专题页*/
+.thematicBord{width: 1280px;height: 720px;background: url('../img/thematic/background.png') no-repeat}
+.btnBack,.btnMore{position: absolute;width: 129px;height: 47px;left: 1061px;top: 62px;}
+.btnMore{top: 140px;}
+.imgs{position: absolute;width: 1087px;height: 311px;border: 1px solid red;left: 104px;top: 238px;}
+.imgs a{position: absolute;width: 195px;height: 290px;border: 1px solid red;background: url('../img/thematic/imgHover.png') -9px -4px no-repeat;top: 5px;}
+.img2{left: 175px;}
+.img3{left: 350px;}
+.img4{left: 525px}
+.img5{left: 700px}
+.img6{left: 875px;width: 220px}
+.imgs>a>img{position: absolute;left: 3px;top: 10px}
+.img2,.img3,.img4,.img5,.img6,.img1{visibility: hidden;}

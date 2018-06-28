@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>天使宝贝首页</title>
+	<link rel="stylesheet" href="../css/baby.css">
+	<script>
+         window.onload=function(){
+			show();
+			_focus('babyHome_1','../img/title_top.png','babyHome_1');
+		};
+		var max=3;
+		var now=1;
+		var timer;
+		function show(id){
+			if(id){
+				now=id;
+				clearTimeout(timer);
+			}
+			for(var i=1;i<=3;i++){
+				if(i==now){
+					$("c"+now).style.display="block";
+					$("cire"+now).style.background="#2bb4ec";
+				}else{
+					$("c"+i).style.display="none";
+					$("cire"+i).style.background="none";
+				}
+			}
+
+			if(now==max){
+				now=1;
+			}else{
+				now++;
+			}
+			timer=setTimeout(show,2000);
+		}
+		
+		function $(id){
+			return document.getElementById(id);
+		}
+		
+
+
+		function _focus(obj, img, thisId) {
+			if (img) {
+				document.getElementById(obj).style.background = "url(" + img + ")";
+				document.getElementById(obj).style.backgroundRepeat = 'no-repeat';
+				document.getElementById(obj).style.backgroundPosition = 'center center'
+			} else {
+				document.getElementById(obj).style.background = "none";
+			}
+		}
+		function _blur(obj) {
+			document.getElementById(obj).style.background = "none";
+		}
+
+		function goTab(obj){
+			document.getElementById(obj).href = 'babySedpage.html';
+			localStorage.setItem('onTittle',obj);
+		}	
+	</script>
+</head>
+<body>
+	<div class="babyHomeBg">
+		
+        <div class="babyHomeNav">
+        	<a href="#" class="babyRecommended" onblur="_blur('babyHome_1')" onfocus="_focus('babyHome_1','../img/title_top.png','babyHome_1')" id="babyHome_1" onclick="goTab(this.id)"></a>
+        	<a href="#" class="babySong" onblur="_blur('babyHome_2')" onfocus="_focus('babyHome_2','../img/title_sing.png','babyHome_2')" id="babyHome_2" onclick="goTab(this.id)"></a>
+        	<a href="#" class="babyStory" onblur="_blur('babyHome_3')" onfocus="_focus('babyHome_3','../img/title_store.png','babyHome_3')" id="babyHome_3" onclick="goTab(this.id)"></a>
+        	<a href="#" class="babyEducation" onblur="_blur('babyHome_4')" onfocus="_focus('babyHome_4','../img/title_education.png','babyHome_4')" id="babyHome_4" onclick="goTab(this.id)"></a>
+        	<a href="#" class="babyAnime" onblur="_blur('babyHome_5')" onfocus="_focus('babyHome_5','../img/title_cartoon.png','babyHome_5')" id="babyHome_5" onclick="goTab(this.id)"></a>
+        </div>
+
+        <div class="babyHomeTab1">
+        	<div class="byFoolmse">
+        		<a href="#"  onblur="_blur('babyHome_6')" onfocus="_focus('babyHome_6','../img/img_1_1.png','babyHome_6')" id="babyHome_6"></a>
+        	</div>
+        	<div class="babyStysong">
+        		<img src="../img/img_2.png" alt="" id="c1">
+        		<img src="../img/img_2.png" alt="" id="c2">
+        		<img src="../img/img_2.png" alt="" id="c3">
+        		<span style="display: inline-block;width: 15px;height: 15px;border: 1px solid #2bb4ec;position: relative;top: -38px;left: 365px;border-radius: 10px;" id="cire1"></span>
+        		<span style="display: inline-block;width: 15px;height: 15px;border: 1px solid #2bb4ec;position: relative;top: -38px;left: 364px;border-radius: 10px;" id="cire2"></span>
+        		<span style="display: inline-block;width: 15px;height: 15px;border: 1px solid #2bb4ec;position: relative;top: -38px;left: 364px;border-radius: 10px;" id="cire3"></span>
+
+        		<a href="#"  onblur="_blur('babyHome_7')" onfocus="_focus('babyHome_7','../img/img_2_2.png','babyHome_7')" id="babyHome_7" style="margin-left: -60px"></a>
+        	</div>
+        	<div class="babyTabStore">
+        		<a href="#"  onblur="_blur('babyHome_8')" onfocus="_focus('babyHome_8','../img/img_3_3.png','babyHome_8')" id="babyHome_8"></a>
+        	</div>
+        </div>
+
+        <div class="babyHomeTab2">
+        	<div class="babyTab2Sinum">
+        		<a href="#"  onblur="_blur('babyHome_9')" onfocus="_focus('babyHome_9','../img/img_4_4.png','babyHome_9')" id="babyHome_9"></a>
+        	</div>
+        	<div class="babyTenWhy">
+        		<a href="#"  onblur="_blur('babyHome_10')" onfocus="_focus('babyHome_10','../img/img_5_5.png','babyHome_10')" id="babyHome_10"></a>
+        	</div>
+        	<div class="babyT2figer">
+        		<a href="#"  onblur="_blur('babyHome_11')" onfocus="_focus('babyHome_11','../img/img_6_6.png','babyHome_11')" id="babyHome_11"></a>
+        	</div>
+        	<div class="babyTfree"></div>
+        </div>
+
+	</div>
+</body>
+</html>

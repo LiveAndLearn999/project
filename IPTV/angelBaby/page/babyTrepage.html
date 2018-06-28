@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>三级页面</title>
+	<link rel="stylesheet" href="../css/baby.css">
+	<script>
+		function _focus(obj, img, thisId) {
+			if (img) {
+				document.getElementById(obj).style.background = "url(" + img + ")";
+				document.getElementById(obj).style.backgroundRepeat = 'no-repeat';
+				document.getElementById(obj).style.backgroundPosition = 'center center'
+			} else {
+				document.getElementById(obj).style.background = "none";
+			}
+		}
+		function _blur(obj) {
+			document.getElementById(obj).style.background = "none";
+		}
+		var img = [
+                        {nums:4}, { id:1, url:'../img/threePage/three_1.png', pageNum:1 }, { id:2, url:'../img/threePage/three_1.png', pageNum:1 }, { id:3, url:'../img/threePage/three_1.png', pageNum:1 }, { id:4, url:'../img/threePage/three_1.png', pageNum:1 }, { id:5, url:'../img/threePage/three_1.png', pageNum:1 }, { id:6, url:'../img/threePage/three_1.png', pageNum:1 }, { id:7, url:'../img/threePage/three_2.png', pageNum:2 }, { id:8, url:'../img/threePage/three_2.png', pageNum:2}, { id:9, url:'../img/threePage/three_3.png', pageNum:3 }, { id:10, url:'../img/threePage/three_3.png', pageNum:3 }, { id:11, url:'../img/threePage/three_3.png', pageNum:3 }, { id:12, url:'../img/threePage/three_3.png', pageNum:3}, { id:13, url:'../img/threePage/three_4.png', pageNum:4 }, { id:14, url:'../img/threePage/three_4.png', pageNum:4 }, { id:15, url:'../img/threePage/three_4.png', pageNum:4 }, { id:16, url:'../img/threePage/three_4.png', pageNum:4 }
+                ];
+         var cont =1;
+                 window.onload = function(){
+                        document.getElementById("pagNums").innerHTML = img[0].nums;
+                    for(var i in img){
+                        if(img[i].pageNum == 1){
+                         document.getElementById('nowPage').innerHTML = img[i].pageNum;
+                          var parent = document.getElementById("cont1");
+                        　var div = document.createElement("div");
+                          div.setAttribute("id", img[i].id+i);
+                          parent.appendChild(div);
+                          var divParent = document.getElementById(img[i].id+i);
+                          var img2 = document.createElement("img");
+                          img2.setAttribute("src", img[i].url);
+                          divParent.appendChild(img2);
+
+                          var a = document.createElement("a");
+                          a.setAttribute("href", "#");
+                          a.setAttribute("id", img[i].id);
+                          var img3 = '../img/threePage/frame_violet.png';
+                          a.onfocus = function(){
+                             document.getElementById(this.id).style.background = "url(" + img3 + ")";
+                                document.getElementById(this.id).style.backgroundRepeat = 'no-repeat';
+                                document.getElementById(this.id).style.backgroundPosition = 'center center' 
+                          }
+                          a.onblur = function(){
+                                document.getElementById(this.id).style.background = "none";
+                          }
+                          divParent.appendChild(a);
+                        }
+                     }
+                }
+
+
+
+
+
+
+		 function pageLeft(){
+                   if(cont<4){
+                       cont = cont+1;
+                var parent = document.getElementById("cont1");
+                                var childs = parent.childNodes; 
+                                for(var i = childs.length - 1; i >= 0; i--) { 
+                                  parent.removeChild(childs[i]); 
+                                }
+                                for(var i in img){
+                      if(img[i].pageNum == cont){
+                        document.getElementById('nowPage').innerHTML = img[i].pageNum;
+                        　var parent = document.getElementById("cont1");
+                        　var div = document.createElement("div");
+                          div.setAttribute("id", img[i].id+i);
+                          parent.appendChild(div);
+                          var divParent = document.getElementById(img[i].id+i);
+                          var img2 = document.createElement("img");
+                          img2.setAttribute("src", img[i].url);
+                          divParent.appendChild(img2);
+
+                          var a = document.createElement("a");
+                          a.setAttribute("href", "#");
+                          a.setAttribute("id", img[i].id);
+                          var img3 = '../img/threePage/frame_violet.png';
+                          a.onfocus = function(){
+                             document.getElementById(this.id).style.background = "url(" + img3 + ")";
+                                document.getElementById(this.id).style.backgroundRepeat = 'no-repeat';
+                                document.getElementById(this.id).style.backgroundPosition = 'center center' 
+                          }
+                          a.onblur = function(){
+                                document.getElementById(this.id).style.background = "none";
+                          }
+                          divParent.appendChild(a);
+                      }
+                                }    
+                   }else{
+                       document.getElementById('babyTrcotLfot_1').style.background = "none";
+                   }
+                        
+                                
+                        
+
+                }
+		function pageRight(){
+                   if(cont>1){
+                       cont = cont-1;
+                var parent = document.getElementById("cont1");
+                                var childs = parent.childNodes; 
+                                for(var i = childs.length - 1; i >= 0; i--) { 
+                                  parent.removeChild(childs[i]); 
+                                }
+                                for(var i in img){
+                      if(img[i].pageNum == cont){
+                        document.getElementById('nowPage').innerHTML = img[i].pageNum;
+                        　var parent = document.getElementById("cont1");
+                        　var div = document.createElement("div");
+                          div.setAttribute("id", img[i].id+i);
+                          parent.appendChild(div);
+                          var divParent = document.getElementById(img[i].id+i);
+                          var img2 = document.createElement("img");
+                          img2.setAttribute("src", img[i].url);
+                          divParent.appendChild(img2);
+
+                          var a = document.createElement("a");
+                          a.setAttribute("href", "#");
+                          a.setAttribute("id", img[i].id);
+                          var img3 = '../img/threePage/frame_violet.png';
+                          a.onfocus = function(){
+                             document.getElementById(this.id).style.background = "url(" + img3 + ")";
+                                document.getElementById(this.id).style.backgroundRepeat = 'no-repeat';
+                                document.getElementById(this.id).style.backgroundPosition = 'center center' 
+                          }
+                          a.onblur = function(){
+                                document.getElementById(this.id).style.background = "none";
+                          }
+                          divParent.appendChild(a);
+                      }
+                                }    
+                   }else{
+                       document.getElementById('babyTrcotLfot_2').style.background = "none";
+                   }
+                        
+                                
+                        
+
+                }
+	</script>
+</head>
+<body>
+	<div class="babyTrpageBg">
+		
+       <div class="babyTrcotL">
+       		<div class="babyTrcotLcot" id="cont1">
+       			<!-- <div>
+	       			<img src="../img/threePage/three_1.png" alt="">
+	       			<a href="#" onfocus="_focus('babyTre_1','../img/threePage/frame_violet.png','babyTre_1')" id="babyTre_1" onblur="_blur('babyTre_1')"></a>
+	       		</div>
+	       		<div>
+	       			<img src="../img/threePage/three_2.png" alt="">
+	       			<a href="#" onfocus="_focus('babyTre_2','../img/threePage/frame_violet.png','babyTre_2')" id="babyTre_2" onblur="_blur('babyTre_2')"></a>
+	       		</div>
+	       		<div>
+	       			<img src="../img/threePage/three_3.png" alt="">
+	       			<a href="#" onfocus="_focus('babyTre_3','../img/threePage/frame_violet.png','babyTre_3')" id="babyTre_3" onblur="_blur('babyTre_3')"></a>
+	       		</div>
+	       		<div>
+	       			<img src="../img/threePage/three_4.png" alt="">
+	       			<a href="#" onfocus="_focus('babyTre_4','../img/threePage/frame_violet.png','babyTre_4')" id="babyTre_4" onblur="_blur('babyTre_4')"></a>
+	       		</div>
+	       		<div>
+	       			<img src="../img/threePage/three_5.png" alt="">
+	       			<a href="#" onfocus="_focus('babyTre_5','../img/threePage/frame_violet.png','babyTre_5')" id="babyTre_5" onblur="_blur('babyTre_5')"></a>
+	       		</div>
+	       		<div>
+	       			<img src="../img/threePage/three_6.png" alt="">
+	       			<a href="#" onfocus="_focus('babyTre_6','../img/threePage/frame_violet.png','babyTre_6')" id="babyTre_6" onblur="_blur('babyTre_6')"></a>
+	       		</div> -->
+       		</div>
+
+       		<!-- 左右箭 -->
+            <div class="babyTrcotLfot">
+            	<img src="../img/threePage/zuo.png" class="trcotBtnl"></img>
+            	<a href="#" onfocus="_focus('babyTrcotLfot_1','../img/threePage/zuoX.png','babyTrcotLfot_1')" id="babyTrcotLfot_1" onblur="_blur('babyTrcotLfot_1')" onclick="pageLeft()"></a>
+            	 <label id="nowPage">1</label>
+                  <label class="xieLine">/</label>
+            <label id="pagNums">2</label>
+            	<img src="../img/threePage/you.png"  class="trcotBtnr" onclick="pageR()"></img>
+            	<a href="#" onfocus="_focus('babyTrcotLfot_2','../img/threePage/youx.png','babyTrcotLfot_2')" id="babyTrcotLfot_2" onblur="_blur('babyTrcotLfot_2')" onclick="pageRight()"></a>
+            </div>
+       </div>
+
+       <div class="babyTrcotR">
+       		<img src="../img/threePage/three_big.png" alt="">
+       </div>
+
+	</div>
+</body>
+</html>

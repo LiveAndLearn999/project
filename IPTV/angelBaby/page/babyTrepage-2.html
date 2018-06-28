@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>三级页面-2</title>
+	<link rel="stylesheet" href="../css/baby.css">
+	<script>
+		function _focus(obj, img, thisId) {
+			if (img) {
+				document.getElementById(obj).style.background = "url(" + img + ")";
+				document.getElementById(obj).style.backgroundRepeat = 'no-repeat';
+				document.getElementById(obj).style.backgroundPosition = 'center center'
+			} else {
+				document.getElementById(obj).style.background = "none";
+			}
+		}
+		function _blur(obj) {
+			document.getElementById(obj).style.background = "none";
+		}
+		function _focus2(obj, img, thisId){
+			 document.getElementById(obj).style.background = "url(" + img + ")";
+			 document.getElementById(obj).style.color = "white";
+		}
+		function _blur2(obj){
+			 document.getElementById(obj).style.background = "none";
+			 document.getElementById(obj).style.color = "black";
+		}
+		function cc(obj){
+			 for(var i = 1;i<=6;i++){
+			 	var ob = 'babyTretab'+i;
+			 	if(ob == obj){
+			 		document.getElementById(ob).style.display = "block";
+			 	}else{
+			 		document.getElementById(ob).style.display = "none";
+			 	}
+			 }
+		}
+	</script>
+</head>
+<body>
+	<div class="babyTretBg">
+		<div class="babyTretLa1">
+			<div class="babyTretLa1t">
+				<img src="../img/threePage2/rukoujieshaotu.png" alt="">
+				<!-- <img src="../img/threePage2/rukouytu.png" alt="">
+				<a href="#" id="babyTret_1" onfocus="_focus('babyTret_1','../img/threePage2/kaung.png'),'babyTret_1'" onblur="_blur('babyTret_1')"></a> -->
+			</div>
+			<!-- <div class="babyTretLa1w">
+				<img src="../img/threePage2/jishao.png" alt="">
+			</div> -->
+		</div>
+
+		<div class="babyTretLa2">
+			<div id="babyTretab1">
+				<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span1" onfocus="_focus2('span1','../img/threePage2/jishu.png')" onblur="_blur2('span1')">1</a>
+				</span>
+				<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span2" onfocus="_focus2('span2','../img/threePage2/jishu.png')" onblur="_blur2('span2')">2</a>
+				</span>
+				<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span3" onfocus="_focus2('span3','../img/threePage2/jishu.png')" onblur="_blur2('span3')">3</a>
+				</span>
+				<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span4" onfocus="_focus2('span4','../img/threePage2/jishu.png')" onblur="_blur2('span4')">4</a>
+				</span>
+				<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span5" onfocus="_focus2('span5','../img/threePage2/jishu.png')" onblur="_blur2('span5')">5</a>
+				</span>
+
+
+				<!-- <span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span6" onfocus="_focus2('span6','../img/threePage2/jishu.png')" onblur="_blur2('span6')">6</a>
+				</span>
+				<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span7" onfocus="_focus2('span7','../img/threePage2/jishu.png')" onblur="_blur2('span7')">7</a>
+				</span>
+				<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span8" onfocus="_focus2('span8','../img/threePage2/jishu.png')" onblur="_blur2('span8')">8</a>
+				</span>
+				<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span9" onfocus="_focus2('span9','../img/threePage2/jishu.png')" onblur="_blur2('span9')">9</a>
+				</span>
+				<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span10" onfocus="_focus2('span10','../img/threePage2/jishu.png')" onblur="_blur2('span10')">10</a>
+				</span> -->
+            </div>
+            <div id="babyTretab2">
+            	<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span21" onfocus="_focus2('span21','../img/threePage2/jishu.png')" onblur="_blur2('span21')">21	</a>
+				</span>
+            </div>
+            <div id="babyTretab3">
+            	<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span31" onfocus="_focus2('span31','../img/threePage2/jishu.png')" onblur="_blur2('span31')">31	</a>
+				</span>
+            </div>
+            <div id="babyTretab4">
+            	<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span41" onfocus="_focus2('span41','../img/threePage2/jishu.png')" onblur="_blur2('span41')">41	</a>
+				</span>
+            </div>
+            <div id="babyTretab5">
+            	<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span51" onfocus="_focus2('span51','../img/threePage2/jishu.png')" onblur="_blur2('span51')">51	</a>
+				</span>
+            </div>
+            <div id="babyTretab6">
+            	<span>
+					<img src="../img/threePage2/jishu1.png" alt="">
+					<a href="#"  id="span61" onfocus="_focus2('span61','../img/threePage2/jishu.png')" onblur="_blur2('span61')">61	</a>
+				</span>
+            </div>
+		</div>
+
+		<div class="babyTretLa3">
+	         <span class="babyTretab1" onclick="cc('babyTretab1')">
+	         	<img src="../img/threePage2/xuaji.png" alt="">
+	         	<a href="#" id="babyTretLa3_1" onfocus="_focus2('babyTretLa3_1','../img/threePage2/xuanji2.png')" onblur="_blur2('babyTretLa3_1')">1~20</a>
+	         </span>
+	         <span class="babyTretab2" onclick="cc('babyTretab2')">
+	         	<img src="../img/threePage2/xuaji.png" alt="">
+	         	<a href="#" id="babyTretLa3_2" onfocus="_focus2('babyTretLa3_2','../img/threePage2/xuanji2.png')" onblur="_blur2('babyTretLa3_2')">21~30</a>
+	         </span>
+	         <span class="babyTretab3" onclick="cc('babyTretab3')">
+	         	<img src="../img/threePage2/xuaji.png" alt="">
+	         	<a href="#" id="babyTretLa3_3" onfocus="_focus2('babyTretLa3_3','../img/threePage2/xuanji2.png')" onblur="_blur2('babyTretLa3_3')">31~40</a>
+	         </span>
+	         <span class="babyTretab4" onclick="cc('babyTretab4')">
+	         	<img src="../img/threePage2/xuaji.png" alt="">
+	         	<a href="#" id="babyTretLa3_4" onfocus="_focus2('babyTretLa3_4','../img/threePage2/xuanji2.png')" onblur="_blur2('babyTretLa3_4')">41~50</a>
+	         </span>
+	         <span class="babyTretab5" onclick="cc('babyTretab5')">
+	         	<img src="../img/threePage2/xuaji.png" alt="">
+	         	<a href="#" id="babyTretLa3_5" onfocus="_focus2('babyTretLa3_5','../img/threePage2/xuanji2.png')" onblur="_blur2('babyTretLa3_5')">51~60</a>
+	         </span>
+	         <span class="babyTretab6" onclick="cc('babyTretab6')">
+	         	<img src="../img/threePage2/xuaji.png" alt="">
+	         	<a href="#" id="babyTretLa3_6" onfocus="_focus2('babyTretLa3_6','../img/threePage2/xuanji2.png')" onblur="_blur2('babyTretLa3_6')">61~70</a>
+	         </span>
+		</div>
+	</div>
+</body>
+</html>

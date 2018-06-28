@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>二级页面2</title>
+	<link rel="stylesheet" href="../css/baby.css">
+	<script>
+		function _focus(obj, img, thisId) {
+			if (img) {
+				document.getElementById(obj).style.background = "url(" + img + ")";
+				document.getElementById(obj).style.backgroundRepeat = 'no-repeat';
+				document.getElementById(obj).style.backgroundPosition = 'center center'
+			} else {
+				document.getElementById(obj).style.background = "none";
+			}
+		}
+		function _blur(obj) {
+			document.getElementById(obj).style.background = "none";
+		}
+
+        var img = [
+                    {nums:4}, 
+                    { id:1, url:'../img/sedPage2/xiaoguotu.png', pageNum:1 }, 
+                    { id:2, url:'../img/sedPage2/xiaoguotu.png', pageNum:1 }, 
+                    { id:3, url:'../img/sedPage2/xiaoguotu.png', pageNum:1 }, 
+                    { id:4, url:'../img/sedPage2/xiaoguotu.png', pageNum:1 }, 
+                    { id:5, url:'../img/sedPage2/xiaoguotu.png', pageNum:1 }, 
+                    { id:6, url:'../img/sedPage2/xiaoguotu.png', pageNum:1 }, 
+                    { id:7, url:'../img/sedPage2/xiaoguotu.png', pageNum:2 }, 
+                    { id:8, url:'../img/sedPage2/xiaoguotu.png', pageNum:2}, 
+                    { id:9, url:'../img/sedPage2/xiaoguotu.png', pageNum:3 }, 
+                    { id:10, url:'../img/sedPage2/xiaoguotu.png', pageNum:3 }, 
+                    { id:11, url:'../img/sedPage2/xiaoguotu.png', pageNum:3 }, 
+                    { id:12, url:'../img/sedPage2/xiaoguotu.png', pageNum:3}, 
+                    { id:13, url:'../img/sedPage2/xiaoguotu.png', pageNum:4 }, 
+                    { id:14, url:'../img/sedPage2/xiaoguotu.png', pageNum:4 }, 
+                    { id:15, url:'../img/sedPage2/xiaoguotu.png', pageNum:4 }, 
+                    { id:16, url:'../img/sedPage2/xiaoguotu.png', pageNum:4 }
+                ];
+        var cont = 1;
+        window.onload = function(){
+            document.getElementById("pagNums").innerHTML = img[0].nums;
+            for(var i in img){
+                if(img[i].pageNum == 1){
+                    document.getElementById('nowPage').innerHTML = img[i].pageNum;
+                    var parent = document.getElementById("pagetBanner");
+                    var div = document.createElement("div");
+                    div.setAttribute("id", img[i].id+i);
+                    parent.appendChild(div);
+                    var divParent = document.getElementById(img[i].id+i);
+                    var img2 = document.createElement("img");
+                    img2.setAttribute("src", img[i].url);
+                    divParent.appendChild(img2);
+                    var a = document.createElement("a");
+                    a.setAttribute("href", "#");
+                    a.setAttribute("id", img[i].id);
+                    var img3 = '../img/sedPage2/classify_selector_two_img.png';
+                    a.onfocus = function(){
+                        document.getElementById(this.id).style.background = "url(" + img3 + ")";
+                        document.getElementById(this.id).style.backgroundRepeat = 'no-repeat';
+                        document.getElementById(this.id).style.backgroundPosition = 'center center' 
+                    }
+                    a.onblur = function(){
+                        document.getElementById(this.id).style.background = "none";
+                    }
+                    divParent.appendChild(a);
+                }
+            }
+        }
+
+        function pageLeft(){
+            if(cont<4){
+                cont = cont+1;
+                var parent = document.getElementById("pagetBanner");
+                var childs = parent.childNodes; 
+                for(var i = childs.length - 1; i >= 0; i--) { 
+                    parent.removeChild(childs[i]); 
+                }
+                for(var i in img){
+                    if(img[i].pageNum == cont){
+                    document.getElementById('nowPage').innerHTML = img[i].pageNum;
+                    var parent = document.getElementById("pagetBanner");
+                    var div = document.createElement("div");
+                    div.setAttribute("id", img[i].id+i);
+                    parent.appendChild(div);
+                    var divParent = document.getElementById(img[i].id+i);
+                    var img2 = document.createElement("img");
+                    img2.setAttribute("src", img[i].url);
+                    divParent.appendChild(img2);
+                    var a = document.createElement("a");
+                    a.setAttribute("href", "#");
+                    a.setAttribute("id", img[i].id);
+                    var img3 = '../img/sedPage/jiaodiankuang.png';
+                    a.onfocus = function(){
+                        document.getElementById(this.id).style.background = "url(" + img3 + ")";
+                        document.getElementById(this.id).style.backgroundRepeat = 'no-repeat';
+                        document.getElementById(this.id).style.backgroundPosition = 'center center' 
+                    }
+                    a.onblur = function(){
+                        document.getElementById(this.id).style.background = "none";
+                    }
+                    divParent.appendChild(a);
+                }
+            }    
+            }else{
+                document.getElementById('babySedtBanL_1').style.background = "none";
+            }
+                        
+        }
+        function pageRight(){
+            if(cont>1){
+                cont = cont-1;
+                var parent = document.getElementById("pagetBanner");
+                var childs = parent.childNodes; 
+                for(var i = childs.length - 1; i >= 0; i--) { 
+                    parent.removeChild(childs[i]); 
+                }
+                for(var i in img){
+                    if(img[i].pageNum == cont){
+                        document.getElementById('nowPage').innerHTML = img[i].pageNum;
+                        var parent = document.getElementById("pagetBanner");
+                        var div = document.createElement("div");
+                        div.setAttribute("id", img[i].id+i);
+                        parent.appendChild(div);
+                        var divParent = document.getElementById(img[i].id+i);
+                        var img2 = document.createElement("img");
+                        img2.setAttribute("src", img[i].url);
+                        divParent.appendChild(img2);
+                        var a = document.createElement("a");
+                        a.setAttribute("href", "#");
+                        a.setAttribute("id", img[i].id);
+                        var img3 = '../img/sedPage/jiaodiankuang.png';
+                        a.onfocus = function(){
+                            document.getElementById(this.id).style.background = "url(" + img3 + ")";
+                            document.getElementById(this.id).style.backgroundRepeat = 'no-repeat';
+                            document.getElementById(this.id).style.backgroundPosition = 'center center' 
+                        }
+                        a.onblur = function(){
+                            document.getElementById(this.id).style.background = "none";
+                        }
+                        divParent.appendChild(a);
+                    }
+                }
+                }else{
+                    document.getElementById('babySedtBanR_1').style.background = "none";
+            }  
+        }	
+	</script>
+</head>
+<body>
+	<div class="babySedpatBg">
+		
+		<div class="babySedtNav">
+            <div class="babySdtselect">
+            	<img src="../img/sedPage2/jinxuan.png" alt="">
+            	<a href="#" id="babySedtNav_1" onfocus="_focus('babySedtNav_1','../img/sedPage2/jinxuan1.png','babySedtNav_1')" onblur="_blur('babySedtNav_1')"></a>
+            </div>
+            <div class="babySedtsong">
+            	<img src="../img/sedPage2/ertonggeyao.png" alt="">
+            	<a href="#" id="babySedtNav_2" onfocus="_focus('babySedtNav_2','../img/sedPage2/ertonggeyao1.png','babySedtNav_2')" onblur="_blur('babySedtNav_2')"></a>
+            </div>
+            <div class="babySedtstore">
+            	<img src="../img/sedPage2/huibengushi.png" alt="">
+            	<a href="#" id="babySedtNav_3" onfocus="_focus('babySedtNav_3','../img/sedPage2/huibengushi1.png','babySedtNav_3')" onblur="_blur('babySedtNav_3')"></a>
+            </div>
+            <div class="babySedteducat">
+            	<img src="../img/sedPage2/yizhizaojiao.png" alt="">
+            	<a href="#" id="babySedtNav_4" onfocus="_focus('babySedtNav_4','../img/sedPage2/yizhizaojiao1.png','babySedtNav_4')" onblur="_blur('babySedtNav_4')"></a>
+            </div>
+            <div class="babySedtanime">
+            	<img src="../img/sedPage2/youerdongman.png" alt="">
+            	<a href="#" id="babySedtNav_5" onfocus="_focus('babySedtNav_5','../img/sedPage2/youerdongman1.png','babySedtNav_5')" onblur="_blur('babySedtNav_5')"></a>
+            </div>
+        </div>
+
+
+        <div class="babySedtBan">
+        	<div class="babySedtBanL">
+        		<button type="button" class="babySedtBanLbtn"></button>
+                <a href="#" id="babySedtBanL_1" onfocus="_focus('babySedtBanL_1','../img/sedPage/zuoX.png','babySedtBanL_1')" onblur="_blur('babySedtBanL_1')" onclick="pageLeft()"></a>
+        	</div>
+        	<div class="babySedtBanM">
+        		<div class="babySedtBanMcot" id="pagetBanner">
+        			<!-- <div>
+        				<img src="../img/sedPage2/xiaoguotu.png" alt="">
+        				<a href="#" id="babySedt_1" onfocus="_focus('babySedt_1','../img/sedPage2/classify_selector_two_img.png'),'babySedt_1'" onblur="_blur('babySedt_1')"></a>
+        			</div>
+        			<div>
+        				<img src="../img/sedPage2/xiaoguotu.png" alt="">
+        				<a href="#" id="babySedt_2" onfocus="_focus('babySedt_2','../img/sedPage2/classify_selector_two_img.png'),'babySedt_2'" onblur="_blur('babySedt_2')"></a>
+        			</div>
+        			<div>
+        				<img src="../img/sedPage2/xiaoguotu.png" alt="">
+        				<a href="#" id="babySedt_3" onfocus="_focus('babySedt_3','../img/sedPage2/classify_selector_two_img.png'),'babySedt_3'" onblur="_blur('babySedt_3')"></a>
+        			</div>
+
+
+
+        			<div>
+        				<img src="../img/sedPage2/xiaoguotu.png" alt="">
+        				<a href="#" id="babySedt_4" onfocus="_focus('babySedt_4','../img/sedPage2/classify_selector_two_img.png'),'babySedt_4'" onblur="_blur('babySedt_4')"></a>
+        			</div>
+        			<div>
+        				<img src="../img/sedPage2/xiaoguotu.png" alt="">
+        				<a href="#" id="babySedt_5" onfocus="_focus('babySedt_5','../img/sedPage2/classify_selector_two_img.png'),'babySedt_5'" onblur="_blur('babySedt_5')"></a>
+        			</div>
+        			<div>
+        				<img src="../img/sedPage2/xiaoguotu.png" alt="">
+        				<a href="#" id="babySedt_6" onfocus="_focus('babySedt_6','../img/sedPage2/classify_selector_two_img.png'),'babySedt_6'" onblur="_blur('babySedt_6')"></a>
+        			</div> -->
+                </div>
+                <div class="babySedtBanMfot">
+                     <label id="nowPage"></label>
+            /
+            <label id="pagNums"></label>
+                </div>
+        	</div>
+        	<div class="babySedtBanR">
+        		<button type="button" class="babySedtBanRbtn"></button>
+                 <a href="#" id="babySedtBanR_1" onfocus="_focus('babySedtBanR_1','../img/sedPage/youX.png','babySedtBanR_1')" onblur="_blur('babySedtBanR_1')" onclick="pageRight()"></a>
+        	</div>
+        </div>
+       
+
+	</div>
+</body>
+</html>

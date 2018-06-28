@@ -1,0 +1,82 @@
+@CHARSET "UTF-8";
+body{padding:0;margin:0;font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",SimHei,tohoma,sans-serif;}
+
+
+/*电竞首页*/
+.bord{width: 640px;height: 530px;background: url('../img/background1.png') 0px 0px no-repeat}
+.nav{position: absolute;width: 517px;height: 63px;left: 122px;top: 27px;}
+.nav a{position: absolute;display: inline-block;width: 72px;height: 63px;top: -1px;}
+.spanRecommend{background: url('../img/nav/spanRecommendActive.png') 0px 11px no-repeat;left: 5px;}
+.trend{left: 77px;}
+.kingMan{left: 150px;}
+.gameLakes{left: 222px;}
+.spanActive{left: 294px;}
+.individual{left: 395px;width: 90px!important;}
+.vid{position: absolute;top:111px;width: 640px;height: 216px;}
+.mid-left{position: absolute;top:0px;left:42px;width: 263px;height: 216px;}
+.v-mid{position: absolute;width: 259px;height: 212px;top: 2px;left: 2px;}
+#ad2,#ad3,#ad4{display: none}
+.banner1{position: absolute;width: 155px;height: 216px;left: 309px;display: inline-block;}
+.banner1 img{position: absolute;top: 5px;left: 18px;}
+.right-state1,.right-state2{position: absolute;left: 470px;width: 159px;height: 120px;}
+.img-top{position: absolute;top: 5px;left: 3px;}
+.img-word{position: absolute;left: 98px;top:5px;width: 38px;height: 38px;}
+.right-state2{top: 115px}
+.footer{position: absolute;width: 640px;height:144px;top: 361px;}
+.antiTerrorism{position: absolute;width: 144px;height: 144px;left:27px;}
+.hero{position: absolute;width: 144px;height: 144px;left:178px;}
+.antiTerrorism-img,.hero-img{position: absolute;top: -18px;left: 6px;}
+.hero-img{left: 2px;top: -22px}
+.survival{position: absolute;width: 144px;height: 144px;left:322px;}
+.survival-img{position: absolute;top: -32px;left: -1px;}
+.keepWatch{position: absolute;width: 144px;height: 144px;left:471px;}
+.keepWatch-img{position: absolute;top: -32px;left: 2px;}
+
+
+/*热门赛事*/
+.bord2{background: url('../img/background2.png')}
+ .trendRecommend{background: none;}
+.trengActive{background: url('../img/nav/trendContestActive.png') 4px 12px no-repeat;}
+.trendRecommend1{position: absolute;width: 640px;height: 216px;top: 112px;}
+.trendRecommend1-1{position: absolute;width: 136px;height: 216px;left:36px;}
+.Recommend-img1,.Recommend-img4{position: absolute;top: -16px;left: 2px}
+.trendRecommend2{position: absolute;width: 136px;height: 216px;left:182px;}
+.trendRecommend2-1,.trendRecommend2-2,.trendRecommend4-1,.trendRecommend4-2{position: absolute;width: 138px;height: 100px;left:182px;}
+.trendRecommend2-2,.trendRecommend4-2{top: 116px;}
+.Recommend-small{position: absolute;top:4px;left: 3px}
+.trendRecommend3{position: absolute;width: 136px;height: 216px;left:325px;}
+.Recommend-img4{top: -18px}
+.trendRecommend4{position: absolute;width: 138px;height: 100px;left:500px;}
+.trendRecommend4-1,.trendRecommend4-2{left: 472px}
+.antiTerrorism-img2{top: -15px}
+.footer2>a>img{top: 8px;left: 6px;/* width: 136px;height: 100px */}
+.footer2>a{top: -20px;height: 180px;}
+.footer2>a>.hero-img{left: 4px}
+.footer2>a>.keepWatch-img{left: 3px}
+.footer2>.hero{left: 176px}
+
+
+
+
+
+/*玩家真人秀*/
+.bord5{background: url('../img/background5.png')}
+.spanActiveA{background: url('../img/nav/spanActiveActive.png') 5px 10px no-repeat;}
+.footer5>a{top: -2px;}
+
+.banner2{position: absolute;width: 640px;height: 240px;border: 1px solid red;top: 110px;}
+.flip-left,.flip-right{position: absolute;width: 20px;height: 240px;border: 1px solid green;left: 10px;}
+.flip-right{left: 587px;}
+.banner-game{position: absolute;width: 577px;height: 240px;border: 1px solid cyan;left: 30px}
+.banner-img>a>img{width: 150px;height: 220px;left: 10px;top: 10px;position: absolute}
+.banner-img>a{position: absolute;width: 155px;height: 280px;}
+.anchor1{left: -15px!important;}
+.anchor2{left: 130px}
+.anchor3{left: 275px;}
+.anchor4{left: 425px;}
+.left-btn,.right-btn{position: absolute;width: 20px;height: 30px;top:100px;border: none;outline: none}
+.left-btn{background: url('../img/Flippage/left1.png') 0px -10px no-repeat}
+.right-btn{left: 20px;}
+.right-btn{background: url('../img/Flippage/right1.png') 0px -10px no-repeat}
+ 
+ 

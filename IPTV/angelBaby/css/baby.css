@@ -1,0 +1,143 @@
+body{padding: 0px;margin: 0px;}
+.clearfix:after{content:"";display:block;clear:both;}
+
+.babyHomeBg{width: 1280px;height: 720px;background: url('../img/bg_homepage.png') no-repeat}
+.babyHomeNav{position: absolute;width: 860px;height: 84px;margin-left:98px;margin-top:55px;}
+.babyHomeNav a{display: inline-block;position: absolute;width: 180px;height: 53px;}
+.babyRecommended{margin-left: 8px;margin-top: 12px;}
+.babySong{margin-left: 175px;margin-top: 12px;}
+.babyStory{margin-top: 12px;margin-left: 342px;}
+.babyEducation{margin-top: 12px;margin-left: 510px;}
+.babyAnime{margin-top: 12px;margin-left: 676px;}
+
+.babyHomeTab1{position: absolute;width: 1080px;height: 281px;margin-left: 70px;margin-top: 142px;}
+.babyHomeTab1 a{display: inline-block;position: absolute;width: 280px;height: 230px;}
+.babyHomeTab1 div{display: inline-block;position: absolute;}
+.byFoolmse{width: 280px;height: 230px;margin-top:14px;margin-left: 20px;background: url('../img/img_1.png') no-repeat}
+.babyStysong{width: 481px;height: 269px;margin-left: 328px;margin-top: 5px;/* background: url('../img/img_2.png') no-repeat */}
+.babyStysong a{width: 481px;height: 269px;position: absolute;margin-top: -270px;}
+#c1,#c2,#c3,#c4{display: none}
+
+.babyTabStore{width: 169px;height: 173px;margin-left: 822px;margin-top: 75px;background: url('../img/img_3.png') no-repeat}
+.babyTabStore a{width: 169px;height: 173px;}
+
+.babyHomeTab2{position: absolute;width: 1080px;height: 194px;margin-left: 70px;margin-top: 460px;}
+.babyHomeTab2 div{display: inline-block;position: absolute}
+.babyHomeTab2 a{display: inline-block;position: absolute}
+.babyTab2Sinum{width: 174px;height: 154px;margin-left: 63px;background: url('../img/img_4.png') no-repeat;margin-top: 3px;}
+.babyTab2Sinum a{width: 174px;height: 154px;}
+.babyTenWhy{width: 402px;height: 167px;margin-left: 282px;margin-top:10px;background: url('../img/img_5.png') no-repeat}
+.babyTenWhy a{width: 402px;height: 167px;}
+.babyT2figer{width: 174px;height: 154px;margin-left: 735px;margin-top: 5px;background: url('../img/img_6.png') no-repeat}
+.babyT2figer a{width: 174px;height: 154px;}
+
+.babyTfree{position: absolute;width: 58px;height: 136px;margin-left: 1000px;margin-top:-5px;}
+
+
+/* 二级页面 */
+.babySedBg{position:absolute;width: 1280px;height: 720px;border: 1px solid red;background: url('../img/sedPage/beijing.png') no-repeat}
+
+.babySedNav{position: absolute;width: 945px;height: 100px;margin-left: 194px;margin-top: 25px;}
+.babySedNav div{position: absolute;display: inline-block;width: 189px;height: 100px;}
+.babySdselect{background: url('../img/sedPage/jingxuan.png') no-repeat}
+.babySedsong{background: url('../img/sedPage/ertong.png') no-repeat;margin-left: 173px;}
+.babySedstore{background: url('../img/sedPage/huiben.png') no-repeat;margin-left: 338px;}
+.babySededucat{background: url('../img/sedPage/yizhi.png') no-repeat;margin-left: 502px }
+.babySedanime{background: url('../img/sedPage/youer.png') no-repeat;margin-left: 656px;}
+.babySedNav div a{display: inline-block;width: 189px;height: 100px;}
+
+.babySedBan{position: absolute;width: 1180px;height:530px;margin-left: 50px;margin-top: 160px; /* text-align: center; */}
+.babySedBan div{display: inline-block;}
+.babySedBanL{width: 60px;height: 100%;float: left;line-height: 620px;text-align: right;}
+.babySedBanM{width: 1056px;height: 100%;}
+.babySedBanR{width: 60px;height: 100%;float: right;line-height: 620px;}
+.babySedBanLbtn{width: 80px;height: 100px;outline:none;border:none;background: url('../img/sedPage/zuo.png') no-repeat;background-position: center left}
+.babySedBanRbtn{width: 80px;height: 100px;border:none;outline:none;background: url('../img/sedPage/you.png') no-repeat;background-position: center left; }
+.babySedBanMcot{width: 100%;height: 100%;/* background: #666; */text-align: justify}
+.babySedBanMcot div{width: 350px;height: 250px;display: inline-block;text-align: center;}
+.babySedBanMcot a{display: inline-block;width:330px;height:274px;text-align: center;line-height: 274px;position: absolute;margin-left: -305px;}
+.babySedBanMcot  img{position: relative;top: 25px;margin-left: 12px}
+.babySedBanMcotL{float: left}
+.babySedBanMcotM{}
+.babySedBanMcotR{float: right}
+
+.babySedBanL a{display: inline-block;width: 80px;height: 80px;position: relative;left: -6px;top: -628px;}
+.babySedBanR a{display: inline-block;width: 80px;height: 80px;position: relative;left: -6px;top: -628px;}
+
+
+.babySedFot{position: absolute;width: 200px;height: 30px;margin-left: 540px;margin-top: 673px;text-align: center;line-height: 30px;color: #0699ef;font-size: 24px;}
+
+/* 二级页面2 */
+.babySedpatBg{position: absolute;width: 1280px;height: 720px;background: url('../img/sedPage2/beijngg.jpg') no-repeat}
+.babySedtNav{position: absolute;width: 1000px;height:80px;margin-left: 230px;margin-top: 50px; }
+.babySedtNav div{display: inline-block;width: 162px;height: 80px;position: absolute;}
+.babySedtNav a{display: inline-block;width: 162px;height: 80px;position: absolute;margin-top: -85px;}
+.babySedtsong{margin-left: 172px;}
+.babySedtstore{margin-left: 344px}
+.babySedteducat{margin-left: 516px;}
+.babySedtanime{margin-left: 688px;}
+
+.babySedtBan{position: absolute;width: 1180px;height:530px;margin-left: 50px;margin-top: 160px; text-align: center;}
+.babySedtBan div{display: inline-block}
+.babySedtBanL{width: 60px;height: 100%;float: left;line-height: 620px;}
+.babySedtBanM{width: 1056px;height: 100%;}
+.babySedtBanR{width: 60px;height: 100%;float: right;line-height: 620px;}
+.babySedtBanLbtn{width: 80px;height: 100px;outline:none;border:none;background: url('../img/sedPage/zuo.png') no-repeat;background-position: center left}
+.babySedtBanRbtn{width: 80px;height: 100px;border:none;outline:none;background: url('../img/sedPage/you.png') no-repeat;background-position: 14px 15px;}
+
+.babySedtBanL a{display: inline-block;width: 80px;height: 80px;position: relative;left: -6px;top: -630px;}
+.babySedtBanR a{display: inline-block;width: 80px;height: 80px;position: relative;left: 10px;top: -630px;}
+
+.babySedtBanMcot{width: 100%;height: 540px;margin-top: -20px;text-align: center;position: relative}
+.babySedtBanMcot div{display: inline-block;width: 331px;height: 243px;text-align: center;line-height: 273px;}
+.babySedtBanMcot a{display: inline-block;width: 331px;height: 273px;position: absolute;margin-left: -333px;text-align: center;line-height: 273px;}
+.babySedtBanMcot  img{position: relative;}
+
+.babySedtBanMfot{width: 1015px;height: 30px;text-align: center;line-height: 30px;color: #58bee8;position: relative;bottom: 30px;font-size: 24px;}
+
+/*  三级页面 */
+.babyTrpageBg{position: absolute;width: 1280px;height: 720px;background: url('../img/threePage/three_bg.png') no-repeat}
+.babyTrcotL{position: absolute;width: 371px;height: 488px;margin-top: 159px;margin-left: 240px;}
+
+.babyTrcotL a{display: inline-block;width:166px;height: 137px;position: absolute; margin-left: -166px;}
+.babyTrcotLcot div{display: inline-block;width: 175px;height: 137px;}
+.babyTrcotLcot{height: 420px;}
+
+.babyTrcotLfot{width:100%;height: auto;position: absolute;margin-top: 0px;text-align: center;line-height: 20px;font-size: 22px;color: #58bee8;margin-left: -18px;}
+.trcotBtnl{display: inline-block;width: 41px;height:33px;border: none;outline: none;}
+.trcotBtnr{display: inline-block;width: 41px;height:33px;border: none;outline: none;}
+
+.babyTrcotR{position: absolute;margin-top: 150px;display: inline-block;width: 400px;height: 470px;margin-left: 682px;	}
+.babyTrcotRtopc{width: 100%;height: }
+
+.babyTrcotLfot label{margin: 0px;position: relative;}
+.babyTrcotLfot a{display: inline-block;position: absolute;width: 43px;height: 40px;left: 280px;top: -4px}
+#babyTrcotLfot_2{left: 380px;}
+#nowPage{left: 10px;top: -6px;}
+#pagNums{left: -7px;top: -6px;}
+.xieLine{top: -6px;}
+/* #cont1,#cont2{display: none} */
+
+
+/* 三级页面2 */
+.babyTretBg{width: 1280px;height: 720px;background: url('../img/threePage2/beijing.jpg') no-repeat}
+.babyTretLa1{position: absolute;width: 372px;height: 400px;margin-left: 348px;margin-top: 30px;}
+.babyTretLa1t{width: 372px;height:400px;position: absolute;margin-top: -6px;}
+.babyTretLa1w{position: absolute;width: 244px;height: 90px;margin-top: 261px;margin-left: 66px;}
+.babyTretLa1t a{display: inline-block;width: 372px;height: 315px;position: absolute;margin-top: -320px;}
+
+.babyTretLa2{position: absolute;width: 400px;height: 310px;margin-left: 810px;margin-top: 8px;}
+.babyTretLa2 span{display: inline-block;width: 74px;height: 74px;padding: 0px;}
+.babyTretLa2 a{display: inline-block;width: 74px;height: 74px;position: absolute;margin-top: -78px;text-align: center;line-height: 74px;font-size: 30px;text-decoration: none;color: black}
+
+.babyTretLa3{position: absolute;width: 512px;height: 101px;margin-left: 750px;margin-top: 306px;}
+.babyTretLa3 span{display: inline-block;width: 106px;height: 101px;position: absolute;}
+.babyTretLa3 img{margin-left: 10px;margin-top: 10px;}
+.babyTretLa3 a{display: inline-block;position: absolute;width: 106px;height: 101px;margin-left: -97px;margin-top: 3px;z-index:99;text-align: center;line-height: 101px;font-size: 24px;text-decoration: none}
+.babyTretab2{margin-left: 84px;}
+.babyTretab3{margin-left: 169px;}
+.babyTretab4{margin-left: 254px;}
+.babyTretab5{margin-left: 339px;}
+.babyTretab6{margin-left:424px;}
+
+#babyTretab2,#babyTretab3,#babyTretab4,#babyTretab5,#babyTretab6{display: none}

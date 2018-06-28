@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>三级页面</title>
+	<link rel="stylesheet" href="../css/basic.css">
+	<script src="../js/main.js"></script>
+	<script>
+		var num =1;
+		var max = 3;
+		var nums = document.getElementsByClassName("rightPage1");
+		var btn1 =  document.getElementsByClassName("btn1");
+		var btn2 =  document.getElementsByClassName("btn2");
+		// var pagenow = document.getElementsByClassName("pagenow");
+		var fn = function(){
+			btn1[0].style.visibility = "visible";
+			num++;
+			console.log(num);
+			if(num  >= max){
+				num = max;
+				btn2[0].style.visibility = "visible";
+				btn1[0].style.visibility = "hidden";
+			}
+			var sh = "rightPage"+num;
+			for(var i = 0;i<nums.length;i++){
+				if(nums[i].id == sh){
+					nums[i].style.display = 'block';
+				}else{
+					nums[i].style.display = 'none';
+				} 
+			}
+			// pagenow.value = num;
+		};
+		function fn2(){
+			btn2[0].style.visibility = "visible";
+			num--;
+			if(num  == 1){
+				btn1[0].style.visibility = "visible";
+				btn2[0].style.visibility = "hidden";
+			}
+			var sh = "rightPage"+num;
+			for(var i = 0;i<nums.length;i++){
+				if(nums[i].id == sh){
+					nums[i].style.display = 'block';
+				}else{
+
+					nums[i].style.display = 'none';
+				} 
+			}
+		}
+		window.onload = function(){
+			btn2[0].style.visibility = "hidden";
+			btn1[0].style.visibility = "visible";
+		}	
+	</script>
+</head>
+<body>
+	<div class="bord bordThirdPage">
+		<div class="nav">
+			<a class="spanRecommend trendRecommend" href="index.html" id="spanRecommend" onblur="blur1(this.id)" onfocus="fouc(this.id)"></a>
+			<a href="#" class="trend trengActive" id="trend" onblur="blur1(this.id)" onfocus="fouc(this.id)"></a>
+			<a href="kingMan.html" class="kingMan" id="kingMan" onfocus="fouc(this.id)" onblur="blur1(this.id)"></a>
+			<a href="gameLakes.html" class="gameLakes" id="gameLakes" onfocus="fouc(this.id)" onblur="blur1(this.id)"></a>
+			<a href="spanActive.html" class="spanActive" id="spanActive" onfocus="fouc(this.id)" onblur="blur1(this.id)"></a>
+			<a href="individual.html" class="individual" id="individual" onfocus="fouc2()" onblur="blur2()"></a> 
+		</div>
+		<a href="#" class="inviteImg">
+			<img src="../img/thirdPage/bigImg.png" alt="">
+		</a>
+		<div class="rightPage">
+			<div class="rightPage1" id="rightPage1">
+				<a href="#" class="rightPageList1" id="rightPageList1" onfocus="fouc22(this)" onblur="blur22(this)">
+					111111
+				</a>
+				<a href="#" class="rightPageList2" id="rightPageList2" onfocus="fouc22(this)" onblur="blur22(this)">
+					222222
+				</a>
+				<a href="#" class="rightPageList3" id="rightPageList3" onfocus="fouc22(this)" onblur="blur22(this)">
+					333333
+				</a>
+				<a href="#" class="rightPageList4" id="rightPageList4" onfocus="fouc22(this)" onblur="blur22(this)">
+					444444
+				</a>
+				<a href="#" class="rightPageList5" id="rightPageList5" onfocus="fouc22(this)" onblur="blur22(this)">
+					555555
+				</a>
+			</div>
+			<div class="rightPage1" id="rightPage2">
+				<a href="#" class="rightPageList1" id="rightPageList1" onfocus="fouc22(this)" onblur="blur22(this)">
+					222222
+				</a>
+				<a href="#" class="rightPageList2" id="rightPageList2" onfocus="fouc22(this)" onblur="blur22(this)">
+					222222
+				</a>
+				<a href="#" class="rightPageList3" id="rightPageList3" onfocus="fouc22(this)" onblur="blur22(this)">
+					222222
+				</a>
+				<a href="#" class="rightPageList4" id="rightPageList4" onfocus="fouc22(this)" onblur="blur22(this)">
+					222222
+				</a>
+				<a href="#" class="rightPageList5" id="rightPageList5" onfocus="fouc22(this)" onblur="blur22(this)">
+					222222
+				</a>
+			</div>
+			<div class="rightPage1" id="rightPage3">
+				<a href="#" class="rightPageList1" id="rightPageList1" onfocus="fouc22(this)" onblur="blur22(this)">
+					333333
+				</a>
+				<a href="#" class="rightPageList2" id="rightPageList2" onfocus="fouc22(this)" onblur="blur22(this)">
+					333333
+				</a>
+				<a href="#" class="rightPageList3" id="rightPageList3" onfocus="fouc22(this)" onblur="blur22(this)">
+					333333
+				</a>
+				<a href="#" class="rightPageList4" id="rightPageList4" onfocus="fouc22(this)" onblur="blur22(this)">
+					333333
+				</a>
+				<a href="#" class="rightPageList5" id="rightPageList5" onfocus="fouc22(this)" onblur="blur22(this)">
+					333333
+				</a>
+			</div>
+			<div class="reversePage">
+				<button class="btn1" onclick="fn()" onfocus="fouc24(this)" onblur="blur24(this)"></button>
+				 <p class="num">
+					<!-- <span class="page-now">1</span>
+					<span>/</span>
+					<span class="page-number">2</span> -->
+				</p>
+				<button class="btn2" onclick="fn2()" onfocus="fouc23(this)" onblur="blur23(this)"></button> 
+			</div>
+		</div>
+		
+		<div class="footer footer2 footer5">
+			<a href="#" class="antiTerrorism" id="antiTerrorism" onfocus="fouc7(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/antiTerrorism.png" alt="" class="antiTerrorism-img antiTerrorism-img2">
+			</a>
+			<a href="#" class="hero" id="hero5" onfocus="fouc7(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/hero5.png" alt="" class="hero-img">
+			</a>
+			<a href="#" class="survival" id="survival" onfocus="fouc7(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/survival.png" alt="" class="survival-img">
+			</a>
+			<a href="#" class="keepWatch" id="keepWatch" onfocus="fouc7(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/keepWatch.png" alt="" class="keepWatch-img">
+			</a>
+		</div>
+	</div>
+</body>
+</html>

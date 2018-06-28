@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>专题页</title>
+	<link rel="stylesheet" href="../css/basic.css">
+	<script src="../js/main.js"></script>
+	<script>
+		function fouc30(){
+			document.getElementById('btnBack').style.background = "url('../img/thematic/back.png') 1px 2px no-repeat";
+		}
+		function fouc31(){
+			document.getElementById('btnMore').style.background = "url('../img/thematic/more.png') 1px 2px no-repeat";
+		}
+		function fouc32(d){
+			document.getElementById(d).style.visibility = "visible";
+		}
+	</script>
+</head>
+<body>
+	<div class="thematicBord">
+		<a href="#" class="btnBack" id="btnBack" onfocus="fouc30()" onblur="blur6(this.id)"></a>
+		<a href="#" class="btnMore" id="btnMore" onfocus="fouc31()" onblur="blur6(this.id)"></a>
+		<div class="imgs">
+			<a href="#" class="img1" id="img1" ">
+				<img src="../img/thematic/img1.png" alt="">
+			</a>
+			<a href="#" class="img2" id="img2" onfocus="fouc32(this.id)>
+				<img src="../img/thematic/img2.png" alt="">
+			</a>
+			<a href="#" class="img3">
+				<img src="../img/thematic/img3.png" alt="">
+			</a>
+			<a href="#" class="img4">
+				<img src="../img/thematic/img4.png" alt="">
+			</a>
+			<a href="#" class="img5">
+				<img src="../img/thematic/img5.png" alt="">
+			</a>
+			<a href="#" class="img6">
+				<img src="../img/thematic/img6.png" alt="">
+			</a>
+		</div>
+	</div>
+</body>
+</html>

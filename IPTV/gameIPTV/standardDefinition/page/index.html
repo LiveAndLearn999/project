@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>电竞首页</title>
+	<link rel="stylesheet" href="../css/basic.css">
+	<script src="../js/main.js"></script>
+	<script>
+		window.onload=function(){
+			show();
+		};
+		var max=4;
+		var now=1;
+		var timer;
+		function show(id){
+			if(id){
+				now=id;
+				clearTimeout(timer);
+			}
+			for(var i=1;i<=4;i++){
+				if(i==now){
+					$("ad"+now).style.display="block";
+				}else{
+					$("ad"+i).style.display="none";
+				}
+			}
+
+			if(now==max){
+				now=1;
+			}else{
+				now++;
+			}
+			timer=setTimeout(show,2000);
+		}
+		
+		function $(id){
+			return document.getElementById(id);
+		}
+		function fouc(d){
+			document.getElementById(d).style.background="url('../img/nav/hover.png') -5px 3px no-repeat";
+		}
+		function blur1(c){
+			console.log(1111);
+			document.getElementById(c).style.background="none";
+			
+		}
+		function fouc2(){
+			document.getElementById("individual").style.background="url('../img/nav/individualHover.png') 16px 14px no-repeat";
+		}
+		function blur2(){
+			document.getElementById("individual").style.background="none";
+		}
+		function fouc3(){
+			document.getElementById("vid").style.background="url('../img/playHover.png') 0px 0px no-repeat";
+			document.getElementById("vid").style.backgroundSize = "263px 217px";
+		}
+		function blur3(){
+			document.getElementById("vid").style.background= "none";
+		}
+		function fouc4(){
+			document.getElementById("banner1").style.background="url('../img/banner/bannerHover1.png') 12px -4px no-repeat";
+			document.getElementById("banner1").style.backgroundSize = "145px 224px";
+		}
+		function blur4(){
+			document.getElementById("banner1").style.background="none";
+		}
+		function fouc5(d){
+			document.getElementById(d).style.background="url('../img/newAndhot/hover.png') -4px -6px no-repeat";
+		}
+		function blur5(d){
+			document.getElementById(d).style.background="none";
+			
+		}
+		function fouc6(d){
+			document.getElementById(d).style.background="url('../img/footer/hover.png') -5px -5px no-repeat";
+			document.getElementById("antiTerrorism").style.backgroundSize = "149px 154px";
+		}
+		function blur6(d){
+			document.getElementById(d).style.background="none";
+		}
+	</script>
+</head>
+<body>
+	<div class="bord">
+		<div class="nav">
+			<a class="spanRecommend" href="#"></a>
+			<a href="#" class="trend" id="trend" onblur="blur1(this.id)" onfocus="fouc(this.id)"></a>
+			<a href="#" class="kingMan" id="kingMan" onfocus="fouc(this.id)" onblur="blur1(this.id)"></a>
+			<a href="#" class="gameLakes" id="gameLakes" onfocus="fouc(this.id)" onblur="blur1(this.id)"></a>
+			<a href="#" class="spanActive" id="spanActive" onfocus="fouc(this.id)" onblur="blur1(this.id)"></a>
+			<a href="#" class="individual" id="individual" onfocus="fouc2()" onblur="blur2()"></a> 
+		</div>
+		<div class="vid">
+			 <a class="mid-left"  id="vid"  onfocus="fouc3()" href="#" onblur="blur3()">
+				<img src="../img/play.png" alt="" class="v-mid">
+			</a>
+			<a href="#" class="banner1" id="banner1" onfocus="fouc4()" onblur="blur4()">
+				<img src="../img/banner/banner1.png" alt="" id="ad1">
+				<img src="../img/banner/banner1.png" alt="" id="ad2">
+				<img src="../img/banner/banner1.png" alt="" id="ad3">
+				<img src="../img/banner/banner1.png" alt="" id="ad4">
+			</a>
+			<a href="#" class="right-state1" onfocus="fouc5(this.id)" id="state1" onblur="blur5(this.id)">
+				 <img src="../img/newAndHot/new.png" alt="" class="img-top">
+				<img src="../img/newAndhot/forNew.png" alt="" class="img-word"> 
+			</a>
+			<a href="#" class="right-state2" id="state2" onfocus="fouc5(this.id)" onblur="blur5(this.id)"	>
+				<img src="../img/newAndHot/hot.png" alt="" class="img-top">
+				<img src="../img/newAndhot/forHot.png" alt="" class="img-word">
+			</a> 
+		</div>
+		<div class="footer">
+			 <a href="#" class="antiTerrorism" id="antiTerrorism" onfocus="fouc6(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/anti-terrorismY.png" alt="" class="antiTerrorism-img">
+			</a>
+			<a href="#" class="hero" id="hero" onfocus="fouc6(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/heroY.png" alt="" class="hero-img">
+			</a>
+			<a href="#" class="survival" id="survival" onfocus="fouc6(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/survivalY.png" alt="" class="survival-img">
+			</a>
+			<a href="#" class="keepWatch" id="keepWatch" onfocus="fouc6(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/keepWatchY.png" alt="" class="keepWatch-img">
+			</a> 
+		</div>
+
+	</div>
+</body>
+</html>

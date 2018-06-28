@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>玩家真人秀</title>
+	<link rel="stylesheet" href="../css/basic.css">
+	<script src="../js/main.js"></script>
+	<script>
+		window.onload = function(){
+			lebtn[0].style.visibility = "hidden";
+			ribtn[0].style.visibility = "visible";
+		};
+		var num = 1;
+		var max = 4;
+		var ribtn = document.getElementsByClassName("right-btn");
+		var lebtn = document.getElementsByClassName("left-btn");
+		var all = document.getElementsByClassName("banner-img");
+		var fn = function(){
+			lebtn[0].style.visibility = "visible";
+			num++;
+			if(num  >= max){
+				num = max;
+				ribtn[0].style.visibility = "hidden";
+				lebtn[0].style.visibility = "visible";
+			}
+			var sh = "ad"+num;
+			for(var i = 0;i<all.length;i++){
+				if(all[i].id == sh){
+					all[i].style.display = 'block';
+				}else{
+					all[i].style.display = 'none';
+				} 
+			}
+		};
+		function fn2(){
+			ribtn[0].style.visibility = "visible";
+			num--;
+			if(num  == 1){
+				lebtn[0].style.visibility = "hidden";
+				ribtn[0].style.visibility = "visible";
+			}
+			var sh = "ad"+num;
+			for(var i = 0;i<all.length;i++){
+				if(all[i].id == sh){
+					all[i].style.display = 'block';
+				}else{
+
+					all[i].style.display = 'none';
+				} 
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="bord bord5">
+		<div class="nav">
+			<a class="spanRecommend trendRecommend" id="spanRecommend" href="index.html" onblur="blur1(this.id)" onfocus="fouc(this.id)"></a>
+			<a href="trendContest.html" class="trend" id="trend" onblur="blur1(this.id)" onfocus="fouc(this.id)"></a>
+			<a href="kingMan.html" class="kingMan" id="kingMan" onfocus="fouc(this.id)" onblur="blur1(this.id)"></a>
+			<a href="gameLakes.html" class="gameLakes" id="gameLakes" onfocus="fouc(this.id)" onblur="blur1(this.id)"></a>
+			<a href="#" class="spanActive spanActiveA" id="spanActive" ></a>
+			<a href="individual.html" class="individual" id="individual" onfocus="fouc2()" onblur="blur2()"></a> 
+		</div>
+		<div class="banner2">
+			<div class="flip-left">
+				<button class="left-btn" onclick="fn2()" id="lebtn" onfocus="fonle()"></button>
+		 	</div> 
+		 	<div class="banner-game">
+		 		<div class="banner-img" id="ad1">
+		 			<a href="#" class="anchor1" style="left: 50px;" id="anchor1" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor1.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor2" id="anchor2" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor2.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor3" id="anchor3" id="anchor3" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor3.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor4" id="anchor4" id="anchor4" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor4.png" alt="">
+		 			</a>
+				</div>
+				<div class="banner-img" id="ad2">
+		 			<a href="#" class="anchor1" style="left: 50px;" id="anchor8" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor3.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor2" id="anchor5" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor2.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor3" id="anchor6" id="anchor3" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor3.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor4" id="anchor7" id="anchor4" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor4.png" alt="">
+		 			</a>
+				</div>
+				<div class="banner-img" id="ad3">
+		 			<a href="#" class="anchor1" style="left: 50px;" id="anchor9" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor2.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor2" id="anchor10" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor2.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor3" id="anchor11" id="anchor3" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor3.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor4" id="anchor12" id="anchor4" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor4.png" alt="">
+		 			</a>
+				</div>
+				<div class="banner-img" id="ad4">
+		 			<a href="#" class="anchor1" style="left: 50px;" id="anchor13" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor4.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor2" id="anchor14" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor2.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor3" id="anchor15" id="anchor3" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor3.png" alt="">
+		 			</a>
+		 			<a href="#" class="anchor4" id="anchor16" id="anchor4" onfocus="fouc10(this.id)" onblur="blur6(this.id)">
+		 				<img src="../img/banner/anchor4.png" alt="">
+		 			</a>
+				</div>
+		 	</div>
+		 	<div class="flip-right">
+				<button class="right-btn" onclick="fn()" onfocus="fonrig()" id="rigbtn"></button>
+			</div>
+		</div>
+		<div class="footer footer2 footer5">
+			<a href="#" class="antiTerrorism" id="antiTerrorism" onfocus="fouc7(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/antiTerrorism.png" alt="" class="antiTerrorism-img antiTerrorism-img2">
+			</a>
+			<a href="#" class="hero" id="hero5" onfocus="fouc7(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/hero5.png" alt="" class="hero-img">
+			</a>
+			<a href="#" class="survival" id="survival" onfocus="fouc7(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/survival.png" alt="" class="survival-img">
+			</a>
+			<a href="#" class="keepWatch" id="keepWatch" onfocus="fouc7(this.id)" onblur="blur6(this.id)">
+				<img src="../img/footer/keepWatch.png" alt="" class="keepWatch-img">
+			</a>
+		</div>
+	</div>
+</body>
+</html>
