@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>map</title>
+<link rel="stylesheet" href="../../css/index.css" />
+</head>
+<body>
+	<div class="map" id="map">
+        <div id="ditu"></div>
+    </div>
+
+    <script type="text/javascript" src="../../js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        (function($){
+            $.fn.boxVertical = function(settings){
+                settings = jQuery.extend({
+                    position: 'auto',
+                    height: 'auto',
+                    maxHeight: false,
+                    topOffset: 0
+                },settings);
+                var $this = this,
+                    $box = $this.children().first(),
+                    boxH = $box.innerHeight(),
+                    boxW = $box.innerWidth(),
+                    winH,
+                    newH,
+                    maxH;
+                var verticalHandle = function(){
+                    if(settings.height != 'auto'){
+                        winH = settings.height + settings.topOffset;
+                    }else{
+                        winH = $(window).innerHeight();
+                        if(settings.maxHeight)
+                        {
+                            winH = winH < settings.maxHeight ? winH : settings.maxHeight 
+                        }
+                        winH = winH + settings.topOffset
+                    }
+                    newH = winH > boxH ? winH : boxH;
+                    boxW = $box.innerWidth()
+                    $this.height(newH);
+                    if(settings.position == 'auto'){
+                        
+                    }
+                    if(settings.position == 'top'){
+                        $box.css({'top':'0','left':'50%','margin-left':-(boxW*0.5),'margin-top':0});
+                    }
+                    if(settings.position == 'bottom'){
+                        $box.css({'top':'100%','left':'50%','margin-left':-(boxW*0.5),'margin-top':-boxH});
+                    }
+                    if(settings.position == 'left'){
+                        $box.css({'top':'50%','left':'0','margin-left':0,'margin-top':-(boxH*0.5)});
+                    }
+                    if(settings.position == 'right'){
+                        $box.css({'top':'50%','left':'100%','margin-left':-boxW,'margin-top':-(boxH*0.5)});
+                    }
+                    if(settings.position == 'topleft'){
+                        $box.css({'top':'0','left':'0','margin-left':0,'margin-top':0});
+                    }
+                    if(settings.position == 'topright'){
+                        $box.css({'top':'0','left':'100%','margin-left':-boxW,'margin-top':0});
+                    }
+                    if(settings.position == 'bottomleft'){
+                        $box.css({'top':'100%','left':'0','margin-left':0,'margin-top':-boxH});
+                    }
+                    if(settings.position == 'bottomright'){
+                        $box.css({'top':'100%','left':'100%','margin-left':-boxW,'margin-top':-boxH});
+                    }
+                }
+                $this.css({'position':'relative'});
+                $box.css({'position':'absolute'});
+                verticalHandle();
+                $(window).bind("resize",verticalHandle);
+            }
+        })(jQuery);
+    </script>
+    
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <script type="text/javascript">
+        function initMap(){
+            createMap();
+            setMapEvent();
+            addMapControl();
+            addMarker();
+        }
+        
+       
+        function createMap(){
+            var map = new BMap.Map("ditu");
+           
+            var point = new BMap.Point(118.7473311172,31.9999316653);
+           
+            map.centerAndZoom(point,6);
+            window.map = map;
+        }
+      
+        function setMapEvent(){
+            map.enableDragging();
+            
+            map.enableDoubleClickZoom();
+            map.enableKeyboard();
+        }
+        
+       
+        function addMapControl(){
+           
+            var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+            map.addControl(ctrl_nav);
+          
+            var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+            map.addControl(ctrl_sca);
+        }
+        
+        
+        var markerArr = [{title:"第七大道",content:"",point:"118.7475311272|32.0021",isOpen:0,icon:{w:49,h:45,l:0,t:0,x:0,lb:0},openIcon:{w:49,h:45,l:0,t:0,x:0,lb:0}}];
+       
+        function addMarker(){
+            for(var i=0;i<markerArr.length;i++){
+                var json = markerArr[i];
+                var p0 = json.point.split("|")[0];
+                var p1 = json.point.split("|")[1];
+                var point = new BMap.Point(p0,p1);
+                var iconImg = createIcon(json.icon);
+                var marker = new BMap.Marker(point,{icon:iconImg});
+                var iw = createInfoWindow(i);
+               
+                map.addOverlay(marker);
+                
+               
+            }
+        }
+      
+        function createInfoWindow(i){
+            var json = markerArr[i];
+            var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+            return iw;
+        }
+      
+        function createIcon(json){
+            var icon = new BMap.Icon("images/map-point.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+25,0),offset:new BMap.Size(json.x*0.5,json.h*0.5)})
+            return icon;
+        }
+        
+        
+        function mapCenter(i){ 
+         
+            initMap();
+            
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            map.centerAndZoom(point,107);
+            var iconImg = createIcon(json.openIcon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            map.addOverlay(marker);
+            map.setCenter(point);
+        }
+            
+        initMap();
+    </script>
+    <script>
+        $(function(){
+            mapCenter('0');
+            $('#map').boxVertical({topOffset: -100, maxHeight: 1000});
+        });
+    </script>
+</body>
+</html>
