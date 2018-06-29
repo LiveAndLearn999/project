@@ -1,0 +1,690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>微信支付 支付宝</title>
+	<meta name="renderer" content="webkit"><!-- 针对多内核浏览器 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="Shortcut Icon" href="../img/logoSml.png" />
+	<link rel="stylesheet"  href="../Common/css/base.css"/>
+
+<style type="text/css">
+
+/*轮播海报*/
+.view-poster{background: url(../img/bannerB.png); background-repeat: no-repeat; background-position: center center; height: 564px;padding-top: 20px; border-bottom: 1px solid #a0a0a0;width: 100%}
+.swiper-container{width:1030px;height:500px;text-align: center;}
+.swiper-slide{margin: 0 auto;}
+.swiper-slide img{width: 710px;padding-left: 30px;padding-top: 30px;}
+/*相关信息*/
+.hotnews{height: 86px;width: 620px;margin: 0 auto;}
+.hotnews .hotlogo{float: left; width: 90px; height: 20px; text-align: left;}
+.hotnews .newszone{float: left;width: 530px; height: 18px;position: relative;overflow: hidden;}
+.hotnews .newszone p{padding: 0;margin: 0;font-weight: normal; font-size: 18px;line-height: 18px;position: relative;top: 0;cursor: pointer; text-overflow:ellipsis;white-space:nowrap;height: 18px;overflow:hidden;}
+.hotnews .newszone p:hover{}
+.hotnews .newszone p a{color: #595757;}
+
+.linezone{width:800px; border-bottom:1px solid #595757; margin: 0 auto;  line-height: 0; font-size: 0;}
+
+.norzone{text-align: center;}
+.norzone h1{ padding: 150px 0 20px 0; margin: 0; line-height: 42px; width: 100%; font-size: 42px; color: #f08300; font-weight: normal;}
+.norzone p{ padding: 0; margin: 0; line-height: 16px; width: 100%; font-size: 16px; color: #595757; font-weight: normal;}
+
+.norzone .selectzone{width: 900px; margin: 0 auto;}
+.norzone .selectzone .selecttitle{height: 72px; color: #fff; font-size: 18px; line-height: 60px;}
+.norzone .selectzone .selecttitle .clickzone{background-color: #aaa; width: 160px; height: 60px; float: left; margin-right: 25px; cursor: pointer;}
+.norzone .selectzone .selecttitle .clickzone.click{background: url(../Common/image/home/second-2.png); background-repeat: no-repeat; width: 160px; height: 72px;}
+.norzone .selectzone .selectcont{color: #595757; height: 770px; text-align: center;}
+.norzone .selectzone .selectcont .scleft,.norzone .selectzone .selectcont .scright{width: 426px; text-align: left;}
+.scleft{float: left;}
+.scright{float: right;}
+.norzone .selectzone .selectcont img{border: none; padding-top: 30px;}
+.norzone .selectzone .selectcont h2{font-weight: normal; line-height: 20px; font-size: 14px; padding: 30px 0 0 0; margin: 0;width: 100%;}
+.scleft h3,.scright h3{font-weight: normal; line-height: 20px; font-size: 20px; padding: 30px 0 7px 0; margin: 0;}
+.scleft h4,.scright h4{font-weight: normal; line-height: 20px; font-size: 14px; padding: 0; margin: 0;}
+
+.norzone .payway{width: 960px; margin: 0 auto; padding-bottom: 110px;}
+.norzone .payway .paylogo{width: 120px; float: left;margin-left: 240px;margin-top: -30px;}
+.norzone .payway .paylogo h2{padding: 10px 0 40px 0; margin: 0; font-weight: normal; color: #333; font-size: 16px; line-height: 16px;}
+
+.norzone .spservice{width: 904px;margin: 0 auto;}
+.norzone .spservice .servicezone{width: 224px; height: 228px; border: 1px solid #595757; float: left; position: relative; overflow: hidden;}
+.norzone .spservice .servicezone img{border: none; padding-top: 42px;}
+.norzone .spservice .servicezone h2{padding: 30px 0 0 0; margin: 0; font-weight: bold; color: #595757; font-size: 16px; line-height: 16px;}
+.norzone .spservice .servicezone .exserzone{background: url(../Common/image/home/spbg.png); background-repeat: repeat; width: 226px; height: 230px;  position: absolute; left: 0; top: 0; text-align: left;}
+.norzone .spservice .servicezone .exserzone h3{padding: 30px 5px 20px 8px; margin: 0; font-weight: normal; color: #fff; font-size: 14px; line-height: 24px;}
+.norzone .spservice .servicezone .exserzone .learnmore{background: url(../Common/image/home/fifth-1.png); background-repeat: no-repeat;
+width: 100px; height: 30px; cursor: pointer; margin: 0 auto; text-align: center; line-height: 30px; color: #fff;}
+.br-gray{background-color: #eee;}
+
+/*合作伙伴*/
+.cooperation{width: 903px;margin:0 auto;}
+.cooperation h1{ padding: 150px 0 30px 0; margin: 0; line-height: 42px; width: 100%;text-align: center;font-size: 42px;color: #f08300;font-weight: normal;}
+.cooperation .cplogo{height: 30px; padding-top: 20px; width: 100%;text-align: center}
+.cooperation .cplogo a {width: 129px; display: inline; list-style: none;}
+.cooperation .cplogo a .leftimg{width: 112px; float: left; border:none;margin-left: 90px;}
+.cooperation .cplogo a .midimg{width: 112px;border:none;}
+.cooperation .cplogo a .rightimg{width: 112px; float: right; text-align: right;border:none;margin-right: 100px}
+
+.cooperation .gamelogo{margin: 0 auto; display: block;margin-top: 30px;width: 900px;}
+/*友情链接*/
+.cplink{width: 900px;margin:0 auto; padding-bottom: 150px;}
+.cplink h1{ padding: 150px 0 30px 0; margin: 0; line-height: 42px; width: 100%; text-align: center; font-size: 42px; color: #f08300; font-weight: normal;}
+.cplink .cplogo{height: 30px; padding-top: 20px;width: 100%;}
+.cplink .cplogo a {width: 150px;display: inline; list-style: none; float: left;}
+.cplink .cplogo a img{width: 120px; height: 35px; overflow: hidden; float: left;margin-right: 15px;padding-left: 15px;border:none;}
+
+.cplink .cplogo .cpimg{ margin: 0 auto;}
+.cplink .cplogo .cpimg:hover{width:124px; height: 39px; background-position: 0 0; margin: 0 auto;}
+.cplink .cplogo .cplogo1{background: url(../Common/image/home/cplink-1.png) no-repeat; background-position: -3px -2px; width:119px; height: 34px;}
+.cplink .cplogo .cplogo2{background: url(../Common/image/home/cplink-2.png) no-repeat; background-position: -3px -2px; width:119px; height: 34px;}
+.cplink .cplogo .cplogo3{background: url(../Common/image/home/cplink-3.png) no-repeat; background-position: -3px -2px; width:119px; height: 34px;}
+.cplink .cplogo .cplogo4{background: url(../Common/image/home/cplink-4.png) no-repeat; background-position: -3px -2px; width:119px; height: 34px;}
+.cplink .cplogo .cplogo5{background: url(../Common/image/home/cplink-5.png) no-repeat; background-position: -3px -2px; width:119px; height: 34px;}
+.cplink .cplogo .cplogo6{background: url(../Common/image/home/cplink-6.png) no-repeat; background-position: -3px -2px; width:119px; height: 34px;}
+
+
+.bg-poster2{background: url(../Common/image/home/sixth-3.png) center center no-repeat;height: 654px; margin: 0 auto;}
+.bg-poster2 .haboutus{width: 780px;height: 304px;background: url(../Common/image/home/spbg.png); background-repeat: repeat; margin: 0 auto; padding: 50px 60px 0 60px; text-align: center;}
+.bg-poster2 .haboutus .hableft,.bg-poster2 .haboutus .habright{height: 16px; width: 310px; border-bottom: 1px solid #fff; font-size: 0; line-height: 0;}
+.hableft{float: left;}
+.habright{float: right;}
+.bg-poster2 .haboutus .habtitle{font-size: 32px;line-height: 32px;color: #fff;font-weight: normal;}
+
+.bg-poster2 .haboutus .habimg{float: left;width: 180px;}
+.bg-poster2 .haboutus .habimg p{padding: 5px 0 0 0;margin: 0;font-size: 16px; line-height: 26px; color: #fff;}
+.bg-poster2 .haboutus .habfont{float: right;text-align: left;width: 570px;}
+.bg-poster2 .haboutus .habfont p{padding: 0;margin: 0;font-size: 18px; line-height: 30px; color: #fff;}
+.bg-poster2 .haboutus .habfont h2{padding: 0;margin: 0;font-size: 28px; line-height: 28px; color: #f08300;font-weight: normal;}
+/*home 轮播样式*/
+.pl img{border:none; padding-bottom: 20px;}
+.list,.list li{margin:0;padding:0;}
+.list{list-style:none;}
+.scroll_horizontal{position:relative;width:900px;height:136px;padding:10px;}
+.scroll_horizontal .box{overflow:hidden;position:relative;width:828px;height:136px;margin:0 auto;}
+.scroll_horizontal .list{overflow:hidden;width:9999px;}
+.scroll_horizontal .list li{float:left;width:138px;text-align: center;}
+.scroll_horizontal .list li p{padding:0; margin: 0; font-size: 16px; line-height: 16px; color: #595757;}
+
+.scroll_horizontal .prev,.scroll_horizontal .next{position:absolute;top:50%;margin-top:-20px;width:20px;height:28px;background-repeat:no-repeat;font:0/0 Arial;cursor:pointer;}
+.scroll_horizontal .prev{background:url(../Common/image/home/second-24.png) no-repeat;left:10px;top:60px;}
+.scroll_horizontal .next{background:url(../Common/image/home/second-25.png) no-repeat;right:6px;top:60px;}
+
+
+
+/* film_focus 轮播 */
+
+.film_focus{width:920px; height:560px; overflow:hidden; position:relative; margin:20px auto;}
+.film_focus ul.film_focus_imgs{height:560px; height:9999em; position:absolute; right:10px; top:-20px; overflow:hidden; margin:0; padding:0;}
+.film_focus ul.film_focus_imgs li{height:560px; overflow:hidden;}
+.film_focus ul.film_focus_imgs li a{border:0;}
+.film_focus ul.film_focus_imgs li .postzone{width:900px; height:547px;}
+.postzone .plfont{float: left;}
+.postzone .plfont>h1{padding: 14px 0 8px 0; margin: 0; font-size: 42px; line-height: 54px; font-weight: bold;}
+.postzone .plfont>h2{padding: 0; margin: 0; font-size: 24px; line-height: 24px; font-weight: bold; color: #fff;}
+.postzone .plfont>p{padding: 0 0 20px 0; margin: 0; font-size: 20px; line-height: 32px}
+.postzone .primg{float: right;}
+
+.film_focus ul.film_focus_nav{width:15px; height:70px; position:absolute; right:0; top:35%;}
+.film_focus ul.film_focus_nav li{width:15px; height:15px; display:inline-block; border-radius:100%; background:url(../img/circle.png) center no-repeat; position:relative; padding-bottom:5px; cursor: pointer; cursor: hand; list-style: none; position: relative;}
+
+.film_focus ul.film_focus_nav li.cur{width:15px; height:15px; display:inline-block; border-radius:100%; background:url(../img/sign-circle.png) center no-repeat; position:relative; padding-bottom:5px; cursor: pointer; cursor: hand; list-style: none; position: relative;}
+
+
+.film_focus ul.film_focus_nav li b{display:none}
+.film_focus ul.film_focus_nav li b span{display:block}
+.film_focus ul.film_focus_nav li.cur b{display:block; vertical-align: middle; display: table-cell;}
+.film_focus ul.film_focus_nav li.cur span{display:none}
+
+.homesplink{background:url(../Common/image/home/homesplink.png) no-repeat;width: 160px;height: 50px;margin: 0 auto; line-height: 50px; font-size: 24px; color: #f08300;margin-top: 40px;}
+
+
+
+</style>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  // var hm = document.createElement("script");
+  // hm.src = "//hm.baidu.com/hm.js?4145d90e49dbe037bcf85455f6ca21ec";
+  // var s = document.getElementsByTagName("script")[0]; 
+  // s.parentNode.insertBefore(hm, s);
+})();
+
+
+</script>
+<!--百度统计代码 end-->
+
+</head>
+
+<body>
+	<div class="head">
+		<div class="headzone">
+			<div class="logo">
+      			<img src="../img/logo.png" style="width: 157px;height: 53px">
+  			</div>
+			<div class="title">
+				<div class="ltitle">
+					<div class="lftitle">
+						<span class="item checked" id="home">首页</span>
+						<span class="item" id="product">解决方案</span>
+						<span class="item" id="guide">接入指南</span>
+						<span class="item" id="tnewscenter">新闻动态</span>
+					</div>
+					<div class="product-ch">
+						<!-- <span id="product-domc">聚合收银台</span>
+						<span id="product-verify">认证服务</span>
+						<span id="product-h5pay">H5收银台</span>
+						<span id="product-qkpay">快付2.0</span>
+						<span id="product-open">OpenID</span>
+						<span id="product-qrcode">线下支付</span>
+						<span id="product-forc">海外市场</span>
+						<span id="product-o2o">O2O解决方案</span>
+						<span id="product-app">APP开发</span>
+						<span id="product-sms">短信平台</span> -->
+					</div>
+					<div class="etc-ch">
+						<span id="etc-joinus">加入我们</span>
+						<span id="etc-about">关于我们</span>
+						<span id="etc-media">媒体关注</span>
+					</div>
+				</div>
+				<div class="rtitle">
+					<div class="loginsel">登录</div>
+					<div class="signup">注册</div>
+					<span class="vline">|</span>
+					<div class="clear-b"></div>
+				<!-- 	<div class="lselzone hide">
+						<div style="width:100%;height:5px;"></div>
+						<p class="cplogin">商户登录</p>
+						<p class="userlogin">支付账号登录</p>
+						<p class="gamelogin" style="border:none;">游戏帐号登录</p>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="width:100%;height:110px;clear:both;"></div>
+
+<!-- 轮播宣传图 begin-->
+	<div class="view-poster">
+		<div class="film_focus">
+			<div class="film_focus_desc">
+				<ul class="film_focus_nav">
+					<li class="cur"></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="film_focus_imgs_wrap">
+				<ul class="film_focus_imgs">
+					<li>
+						<div class="postzone" style="position: relative;">
+							<div class="primg">
+								<img src="../img/banner1.png" style="padding:80px 45px 0 0;width: 100%" >
+							</div>
+							<div class="clear-b"></div>
+						</div>
+					</li>
+					<li>
+						<div class="postzone">
+							<div class="primg">
+								<img src="../img/banner2.png" style="padding:0 50px 0 0;width: 100%;" >
+							</div>
+							<div class="clear-b"></div>
+						</div>
+					</li>
+					<li>
+						<div class="postzone">
+							<div class="primg">
+								<img src="../img/banner3.png" style="padding:0 50px 0 0;width: 100%;" >
+							</div>
+							<div class="clear-b"></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<!-- 轮播宣传图 end-->
+
+	<div class="norzone">
+		<h1>解锁商业成功第一步</h1>
+		<p style="padding-bottom:50px;">全面、强大的交易平台，15000+企业级客户首选</p>
+
+		<div class="selectzone">
+			<div class="selecttitle">
+				<div id="h-domc" class="clickzone click">极速接入</div>
+				<div id="h-h5" class="clickzone">聚合收银</div>
+				<div id="h-qpay" class="clickzone">安全免费</div>
+				<div id="h-openid" class="clickzone">极速打款</div>
+				<div id="h-halo" class="clickzone" style="margin-right:0;float:right;">案例展示</div>
+				<div class="clear-b"></div>
+			</div>
+
+			<div class="selectcont h-domc">
+				<img src="../img/selectcont1.jpg" style="width: 900px;height: 484px">
+				<h2>极速接入SDK，让渠道及用户触手可得！</h2>
+				<a href="#" style="display:block;width:160px;margin:0 auto;">
+					<div class="homesplink">了解更多</div>
+				</a>
+			</div>
+			<div class="selectcont hide h-h5">
+					<img src="../img/selectcont2.jpg" style="width: 900px;height: 484px;">
+					<h2>全面覆盖的聚合支付，让企业获利更加便捷简单。</h2>
+					<a href="domc.html" style="display:block;width:160px;margin:0 auto;">
+							<div class="homesplink">了解更多</div>
+					</a>
+			</div>
+			<div class="selectcont hide h-qpay">
+					<img src="../img/selectcont3.jpg" style="width: 900px;height: 484px">
+					<h2 style="text-align:center">T+1打款，到账迅速及时，账目清楚一目了然。</h2>
+					<a href="domc.html" style="display:block;width:160px;margin:0 auto;">
+							<div class="homesplink">了解更多</div>
+					</a>
+			</div>
+			<div class="selectcont hide h-openid">
+					<img src="../img/selectcont4.jpg" style="width: 900px;height: 484px">
+					<h2 style="text-align:center">千万款游戏应用已接入，您还在等什么？</h2>
+					<a href="domc.html" style="display:block;width:160px;margin:0 auto;">
+							<div class="homesplink">了解更多</div>
+					</a>
+			</div>
+			<div class="selectcont hide h-halo">
+				<img src="../img/selectcont5.jpg" style="width: 900px;height: 484px">
+				<h2>APP&PC&HTML5全球支付能力一键接入，HaloPay，让应用出海再无障碍</h2>
+				<a href="domc.html" style="display:block;width:160px;margin:0 auto;">
+					<div class="homesplink">了解更多</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="norzone br-gray">
+		<h1 style="padding-top:150px;">支持主流的支付通道</h1>
+		<p style="color:#333;padding:20px 0 50px 0;font-size:16px;line-height:16px;">支持微信，支付宝等主流支付通道</p>
+		<div class="payway">
+			<div class="paylogo"><img src="../Common/image/home/third-1.png"><h2>微信支付</h2></div>
+			<div class="paylogo"><img src="../Common/image/home/third-2.png"><h2>支付宝</h2></div>
+		</div>
+	</div>
+
+	<div class="norzone">
+		<h1>为您提供及简的交流流程</h1>
+		<img src="../Common/image/home/fourth.png">
+		<a href="guide.html" style="display:block;width:160px;margin:0 auto;">
+			<div class="homesplink">立即接入</div>
+		</a>
+	</div>
+	
+	<div class="norzone" style="height:655px;">
+		<h1>我们很适合你</h1>
+		<div class="spservice">
+			<div class="servicezone">
+				<img src="../Common/image/home/fifth-2.png">
+				<h2>交易管理</h2>
+				<div class="exserzone hide">
+					<h3>合作开发者可在云端配置各方（开发者、发行商、分销渠道、联运方）分账信息，自动生成各方分润报表，账务一目了然。</h3>
+					<a href="domc.html">
+						<div class="learnmore">
+							了解更多
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="servicezone">
+				<img src="../Common/image/home/fifth-3.png">
+				<h2>7*24h客服</h2>
+				<div class="exserzone hide">
+					<h3>为了帮您减负，我们专门成立了<br>客服中心，7天*24小时在线，<br>负责处理您的用户所有关于付费<br>的问题。</h3>
+					<a href="domc.html">
+						<div class="learnmore">
+							了解更多
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="servicezone">
+				<img src="../Common/image/home/fifth-4.png">
+				<h2>数据分析</h2>
+				<div class="exserzone hide">
+					<h3>云端数据库，提供实时数据、运营报表、用户行为、KPI统计等功能，掌握第一手用户行为数据，随时随地，想查就查。</h3>
+					<a href="bmcp.html">
+						<div class="learnmore">
+							了解更多
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="servicezone">
+				<img src="../Common/image/home/fifth-5.png">
+				<h2>电信级安全标准</h2>
+				<div class="exserzone hide">
+					<h3>岸联支付是我们自主研发的集成各主流支付通道的聚合SDK，进行多重
+					数据加密，严控访问权限，充分保障交 易安全，兼容多种场景，实现支付、
+					交易管理、数据分析等多重功能
+一步到位。
+</h3>
+					<a href="domc.html">
+						<div class="learnmore">
+							了解更多
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="clear-b"></div>
+		</div>
+	</div>
+
+	<div style="width:100%;background-color: #eeefef;">
+		<div class="bg-poster2">
+			<div style="width:100%;height:150px;"></div>
+
+			<div class="haboutus">
+				<div class="hableft"></div>
+				<div class="habright"></div>
+				<span class="habtitle">关于我们</span>
+				<div class="clear-b" style="height:30px;width:100%;"></div>
+
+				<div class="habimg">
+					<img src="../img/sixth-1.png">
+					<p>玛岸微信号：NJMA2016<br>扫一扫关注</p>
+				</div>
+				<div class="habfont">
+					<p style="padding-bottom:6px;line-height:18px;">
+						岸联支付是南京玛岸网络科技有限公司自主研发的集成
+					</p>
+					<p>各主流支付通道的聚合SDK，目前已完备H5支付，APP<br>支付，支付宝优支付等多种支付方式，支付场景广泛全面<br>，能够为企业提供专业的聚合支付功能及服务，并为企业<br>提供量身定制的解决方案，助力企业茁壮成长，让商业
+						<br>变现更加简单便捷。</p>
+				</div>
+				<div class="clear-b"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="cooperation">
+		<h1>合作伙伴</h1>
+		<div class="cplogo">
+			<a><img class="leftimg" src="../img/timg.jpg" /></a>
+			<a><img class="midimg" src="../img/timg1.jpg" /></a>
+			<a><img class="midimg" src="../img/timg2.jpg" /></a>
+			<a><img class="midimg" src="../img/timg3.jpg" /></a>
+			<a><img class="midimg" src="../img/timg4.jpg" /></a>
+			<a><img class="rightimg" src="../img/timg5.jpg" /></a>
+		</div>
+	</div>
+
+<!-- 公用底部 begin-->
+	<div class="foot">
+		<table>
+			<tr>
+				<td>
+					<div class="info pointer"><span class="icon-foot about"></span><span id="about">关于我们</span></div>
+					<div class="info pointer"><span class="icon-foot flow"></span><span id="newscenter">新闻动态</span></div>
+					<div class="info pointer"><span class="icon-foot invite"></span><span id="invite">加入我们</span></div>
+				</td>
+				<td>
+					<div class="info"><span class="icon-foot phone"></span><span>400-1001320</span></div>
+					<div class="info"><span class="icon-foot qq"></span><span>776713681</span></div>
+					<div class="info">
+						<span class="icon-foot email"></span>
+						<span class="noremail">yangleilei@nanjingmaan.com</span>
+					</div>
+				</td>
+				<td style="width: 33%;">
+				</td>
+				<td style="width: 17%;">
+					<img src="../img/sixth-1.png" style="width: 90px" />
+					<div style="height:8px;"></div>
+					<span class="weixinnum">微信订阅号：NJMA2016</span>
+				</td>
+			</tr>
+		</table>
+		<div class="copyright">
+			<div style="float:left;">增值电信业务经营许可证：苏B2-20170312</div>
+			<div style="float:right;">Copyright [2017.11] by [南京玛岸网络科技有限公司].All rights reserved.</div>
+			<div class="clear-b"></div>
+		</div>
+		<div class="leavezone">
+			<div class="clear-b"></div>
+		</div>
+	</div>
+<!-- 公用底部 end-->
+
+	
+<script src="../Common/js/jquery.js"></script>
+<script src="../Common/js/base.js"></script>
+<script src="../Common/js/newsjs.js"></script>
+
+<!-- 轮播图引入js -->
+<script src="../Common/js/jquery.cxscroll.min.js"></script>
+<script type="text/javascript">
+
+//新闻初始化
+// if (typeof(news) == "undefined") { 
+// 	view ='<p><a href="News/200c5f19d809cf8697b66c73dd86d699.html" target="_blank">深聊变现，一场移动时代的定制化狂欢</a></p>'+
+// 			'<p><a href="News/92e19ea799bcadbe3a4d3d2fb6eaa3c7.html" target="_blank">“冷冰冰”的电子交易背后，有哪些温暖的支付服务设计？</a></p>'+
+// 			'<p><a href="News/272a94ab1f31b407b9e9dcf70924f81d.html" target="_blank">爱贝：华为小米入局，支付场景战烽烟再起</a></p>'+
+// 			'<p><a href="News/1b05509deb8d2dd0997a379ee7020078.html" target="_blank">扫码支付脱离灰色地带，移动支付战一触即发</a></p>'+
+// 			'<p><a href="News/b0223bd5d8711a8b2b67736ca5a09ec5.html" target="_blank">助力开发者实现实名认证 爱贝推出一站式鉴权解决方案</a></p>';
+
+// 	$(".newszone").html(view);	
+// }
+// else{
+// 	if(news.length!=0 && news.length>=5){
+// 		var view = "";
+
+// 		for (var i = 0; i < 5; i++) {
+// 			view +=	'<p>'+
+// 						'<a href="News/'+news[i].sign+'.html" target="_blank">'+news[i].title+'</a>'+
+// 					'</p>';
+// 		}
+// 		$(".newszone").html(view);	
+// 	}
+// }
+
+//gamelogo轮播初始化   //方向  轮播个数
+$('#cycle_gamelogo').cxScroll({
+	direction: 'right',
+	step: 6
+});
+
+var leave = 1;   //新闻滚动条件  1 true 0 false
+var num = 0;		//新闻高度计算
+var newsnum = 0; //新闻计数器
+
+num = parseInt(num);
+newsnum = parseInt(newsnum);
+
+(function(A){
+	A.fn.th_video_focus=function(E){	
+		var G={
+			actClass:"cur",
+			navContainerClass:".focus_pic_preview",
+			focusContainerClass:".focus_pic",
+			animTime:500,
+			delayTime:1000
+		};
+		
+		if(E){
+			A.extend(G,E)
+		}
+		
+		var C=G.actClass, D=G.navContainerClass, B=G.focusContainerClass, F=G.animTime, H=G.delayTime, I=null;
+		
+		return this.each(function(){
+			
+			var O=A(this), M=A(D+" li",O), P=A(B+" li",O), L=M.length, K=O.height();
+			
+			function N(R){
+				var V=K*R*-1;
+				var U=A(B+" li",O), W=null, T=null;
+				for(var S=0;S<=R;S++){
+					W=U.eq(S);
+					T=W.find('script[type="text/templ"]');
+					if(T.length>0){
+						W.html(T.html())
+					}
+				}
+				A(B,O).stop().animate({top:V},F,function(){
+					var Y=O.find("h3"), X=Y.height();
+					Y.height(0).html(A(B+" li").eq(R).find("img").attr("alt")).animate({height:X},600)
+				});
+				A(D+" li").eq(R).addClass(C).siblings().removeClass(C)
+			}
+			
+			function Q(){
+				if(I){
+					clearInterval(I)
+				}
+				I=setInterval(function(){
+					var R=A(D+" li."+C).index();
+					N((R+1)%L)
+				},H)
+			}
+			
+			O.hover(function(){
+				if(I){
+					clearInterval(I)
+				}
+			},function(){
+				Q()
+			});
+		
+			var J=null;
+			
+			M.hover(function(){
+				
+				var R=A(this).index();
+				
+				if(I){
+					clearInterval(I)
+				}
+				J=setTimeout(function(){
+					N(R)
+				},300)
+			},function(){
+				if(J){
+					clearTimeout(J)
+				}
+				Q()
+			}).click(function(T){
+				var R=A(this).index(), S=P.eq(R).find("a");
+				if(document.uniqueID||window.opera){
+					S[0].click();
+					T.stopPropagation();
+					T.preventDefault()
+				}
+			});
+			
+			Q()
+			
+		})
+	}
+	
+})(jQuery);
+
+$(function(){
+	$(".film_focus").th_video_focus({
+		navContainerClass:".film_focus_nav",
+		focusContainerClass:".film_focus_imgs",
+		delayTime:2000  //自动轮播间隔
+	});
+
+//获取url参数分类
+	var value = getQueryString("id");
+	
+	var _czc = _czc || [];
+	_czc.push(["_setAccount", "1256269906"]);
+//百度统计自定义参数
+	if(value==1){
+		_hmt.push(['_setCustomVar', 1, '手机', 'mob', 3]);
+		_czc.push(["_setCustomVar", "手机", "mob", "1"]);
+	}else if(value==2){
+		_hmt.push(['_setCustomVar', 2, '彩页', 'page', 3]);
+		_czc.push(["_setCustomVar", "彩页", "page", "1"]);
+	}else if(value==3){
+		_hmt.push(['_setCustomVar', 3, '引导', 'lead', 3]);
+		_czc.push(["_setCustomVar", "引导", "lead", "1"]);
+	}else if(value==4){
+		_hmt.push(['_setCustomVar', 4, '礼品', 'gift', 3]);
+		_czc.push(["_setCustomVar", "礼品", "gift", "1"]);
+	}else if(value==5){
+		_hmt.push(['_setCustomVar', 5, '官网', 'web', 3]);
+		_czc.push(["_setCustomVar", "官网", "web", "1"]);
+	}
+
+//超值服务显示效果
+	$('.servicezone').hover(function() {
+		$(this).children(".exserzone").show();
+	});
+	$('.servicezone').mouseleave(function() {
+		$(this).children(".exserzone").hide();
+	});
+
+//解决方案切换事件
+	$('.clickzone').click(function() {
+		$s = $(this);
+
+		$('.clickzone').removeClass('click');
+		$s.addClass('click');
+
+		$('.selectcont').hide();
+		var a = $s.attr("id");
+		$("."+a).show();
+	});
+
+//新闻滚动开关
+	$('.newszone').hover(function() {
+		leave = 0;
+	});	
+	$('.newszone').mouseleave(function() {
+		leave = 1;
+	});	
+});
+
+//获取url参数
+function getQueryString(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
+}
+
+
+window.onload=function(){
+	//新闻计时器
+	setInterval(newsscroll,3000);
+}
+
+//新闻滚动
+function newsscroll(){
+
+	if(leave==1){
+		newsnum++;
+		if(newsnum==5){
+			$('.newszone').children('p').animate(
+				{top : '0'},
+				1000,'swing',function(){
+				}
+			);
+			num = 0;
+			newsnum = 0;
+		}else{
+			num = num - 18;
+			$('.newszone').children('p').animate(
+				{top : num+'px'},
+				1000,'swing',function(){
+				}
+			);
+		}
+	}else{
+
+	}	
+}
+
+</script>
+
+</body>
+</html>

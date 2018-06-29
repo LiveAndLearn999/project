@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>接入指南</title>
+	<meta name="renderer" content="webkit"><!-- 针对多内核浏览器 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="Shortcut Icon" href="../../img/logoSml.png" />
+	<link rel="stylesheet"  href="../Common/css/base.css"/>
+	<link rel="stylesheet"  href="../Common/css/leftbar.css"/>
+	
+<style type="text/css">
+
+
+/*.rtsign{background-color: #00a0e7;width: 100px; height: 24px;float: right;display: inline;margin-top: 9px;}*/
+.rmainzone .rleftz1{float: left;padding-left: 30px;width: 200px;}
+.rmainzone .rleftz1 .bg1{height:35px;width:37px;background: url(../Common/image/guide/icon14.png) no-repeat;margin: 50px 0 0 35px;}
+.rmainzone .rleftz1 h1{font-size: 16px;width: 106px;text-align: center;color: #595757;font-weight: normal;padding: 7px 0 12px 0;margin: 0;}
+.rmainzone .rleftz1 .bg2{height:140px;width:45px;border: 1px solid #898989;color:#898989;margin-left: 22px;padding: 5px 5px 5px 9px;line-height: 16px;}
+.rmainzone .rleftz1 .bg3{margin: 20px 0 0 50px;height:598px;width:146px;background: url(../Common/image/guide/icon21.png) no-repeat;background-size: 146px 380px;}
+
+.rmainzone .rleftz2{float: left;width: 540px;margin-left: 20px;}
+.rmainzone .rleftz2 .r2zone{clear: both;}
+.r2zone .rbg1{width: 64px;margin: 0;float: left;text-align: center;}
+
+.r2zone .rbg2{height:12px;margin: 0;padding: 18px 0 0 24px; float: left;text-align: center;}
+.r2zone .rbg2 .gray-tip{width: 0px;height: 0px;border-top: 12px solid #444; border-left: 6px solid transparent;border-right: 6px solid transparent;margin:0;}
+.r2zone .rbg1 p{margin: 0;padding-top: 7px;font-size: 16px;color: #595757;}
+.r2zone .rfont{float: left;margin-left:10px;border: 1px solid #595757;line-height: 16px;padding: 5px 0 5px 10px;color: #595757;width: 300px;}
+
+.gblue{color:#f08300;}
+
+.rmainzone h1{padding: 60px 0 0 50px;margin: 0;font-size: 16px;line-height: 16px;font-family: "宋体","SimSun","Blod";}
+
+</style>
+
+<!-- 百度统计代码 start -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  // var hm = document.createElement("script");
+  // hm.src = "//hm.baidu.com/hm.js?4145d90e49dbe037bcf85455f6ca21ec";
+  // var s = document.getElementsByTagName("script")[0]; 
+  // s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!--百度统计代码 end-->
+
+
+</head>
+
+<body>
+	<div class="head">
+		<div class="headzone">
+			<div class="logo">
+      			<img src="../img/logo.png" style="width: 157px;height: 53px">
+  			</div>
+			<div class="title">
+				<div class="ltitle">
+					<div class="lftitle">
+						<span class="item" id="home">首页</span>
+						<span class="item" id="product">解决方案</span>
+						<span class="item checked" id="guide">接入指南</span>
+						<span class="item" id="tnewscenter">新闻动态</span>
+						<!-- <span class="item" id="bmcp">BMCP管理平台</span>
+						<span class="item" id="etc">更多</span> -->
+					</div>
+					<div class="product-ch">
+						<!-- <span id="product-domc">聚合收银台</span>
+						<span id="product-verify">认证服务</span>
+						<span id="product-h5pay">H5收银台</span>
+						<span id="product-qkpay">快付2.0</span>
+						<span id="product-open">OpenID</span>
+						<span id="product-qrcode">线下支付</span>
+						<span id="product-forc">海外市场</span>
+						<span id="product-o2o">O2O解决方案</span>
+						<span id="product-app">APP开发</span>
+						<span id="product-sms">短信平台</span> -->
+					</div>
+					<div class="etc-ch">
+						<span id="etc-joinus">加入我们</span>
+						<span id="etc-about">关于我们</span>
+						<span id="etc-media">媒体关注</span>
+					</div>
+				</div>
+				<div class="rtitle">
+					<div class="loginsel">登录</div>
+					<div class="signup">注册</div>
+					<span class="vline">|</span>
+					<div class="clear-b"></div>
+					<div class="lselzone hide">
+						<div style="width:100%;height:5px;"></div>
+						<p class="cplogin">商户登录</p>
+						<p class="userlogin">支付账号登录</p>
+						<p class="gamelogin" style="border:none;">游戏帐号登录</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	清除ie7文档模式悬浮bug -->
+	<div style="width:100%;height:110px;clear:both;"></div>
+<!-- 	清除ie7文档模式悬浮bug -->
+	<div class="mainzone">
+		<div class="leftzone">
+			<div class="lefttop">
+				<div  class="spzone">
+					<!-- id="dlSDK" -->
+					<div class="spimgzone spimg1"></div>
+					<p>SDK下载</p>
+					<div class="clear-b"></div>
+				</div>
+				<div  class="spzone">
+					<!-- id="trydemo" -->
+					<div class="spimgzone spimg3"></div>
+					<p>体验DEMO</p>
+					<div class="clear-b"></div>
+				</div>
+			</div>
+			<div class="leftmain" style="float: left">
+				<div id="g-guide" class="leftdomf checked">
+					<div class="fdomimg fimg1 checked"></div>
+					<div class="fdomtr">如何接入岸联</div>
+					<div class="clear-b"></div>
+				</div>
+<!-- 
+				<div id="userguide" class="leftdomf">
+					<div class="fdomimg fimg2"></div>
+					<div class="fdomtr">商户后台指南</div>
+					<div class="signimg"></div>
+					<div class="clear-b"></div>
+				</div>
+				<div class="leftdomc userguide hide">
+					<p id="createapp">创建应用</p>
+					<p id="selecttra">交易查询</p>
+					<p id="cpadmin">商户管理</p>
+				</div>
+
+				<div id="exeguide" class="leftdomf">
+					<div class="fdomimg fimg3"></div>
+					<div class="fdomtr">客户端接入指南</div>
+					<div class="signimg"></div>
+					<div class="clear-b"></div>
+				</div>
+				<div class="exeguide hide">
+					<div id="androidpay" class="leftdomc">
+						<p>Android聚合支付</p>
+					</div>
+					<div class="leftdomc2 androidpay hide">
+						<p id="ardsdk">- 参数及SDK获取</p>
+						<p id="ardenv">- 开发环境搭建</p>
+						<p id="arddvp">- 接口说明</p>
+						<p id="ardfaq">- 注意事项(FAQ)</p>
+					</div>
+					<div id="iospay" class="leftdomc">
+						<p>iOS聚合支付</p>
+					</div>
+					<div class="leftdomc2 iospay hide">
+						<p id="iossdk">- 参数及SDK获取</p>
+						<p id="iosxcode">- Xcode工程环境配置</p>
+						<p id="iosdvp">- 接口说明及注意事项</p>
+						<p id="iosfaq">- 常见问题</p>
+					</div>
+					<div id="webpay" class="leftdomc">
+						<p>网页版支付</p>
+					</div>
+					<div class="leftdomc2 webpay hide">
+						<p id="webres">- 接口说明</p>
+						<p id="webdvp">- 网页端接入</p>
+					</div>
+				</div>
+
+				<div id="serveguide" class="leftdomf">
+					<div class="fdomimg fimg4"></div>
+					<div class="fdomtr">服务端接入指南</div>
+					<div class="signimg"></div>
+					<div class="clear-b"></div>
+				</div>
+
+				<div class="serveguide hide">
+					<div class="leftdomc">
+						<p id="introduction">简介及注意事项</p>
+					</div>
+				
+					<div class="leftdomc">
+						<p id="apilist">API接口列表</p>
+					</div>
+
+					<div class="leftdomc2 apilist hide">
+						<p id="token">- 登录令牌认证</p>
+						<p id="book">- 下单</p>
+						<p id="resultmsg">- 交易结果回调通知</p>
+						<p id="findresult">- 交易结果主动查询</p>
+						<p id="selectdeed">- 契约查询</p>
+						<p id="deedinfo">- 契约鉴权</p>
+						<p id="deedunsub">- 契约退订</p>
+					</div>		
+				</div>
+				<div id="chafunc" class="leftdomf">
+					<div class="fdomimg fimg5"></div>
+					<div class="fdomtr">渠道分包功能</div>
+					<div class="clear-b"></div>
+				</div>
+
+				<div id="quest" class="leftdomf">
+					<div class="fdomimg fimg6"></div>
+					<div class="fdomtr">常见问题</div>
+					<div class="clear-b"></div>
+				</div>
+
+				<div id="ecode" class="leftdomf">
+					<div class="fdomimg fimg7"></div>
+					<div class="fdomtr">错误码</div>
+					<div class="clear-b"></div>
+				</div>-->
+			</div> 
+		</div>
+
+		<div class="rightzone" style="right">
+			<div class="rtopzone">
+				<div class="rtmsg">
+					<h2 style="*float:left;">如何接入岸联？</h2>
+<!-- 					<a href="javascript:;" onclick="$('#register').submit()">
+						<div class="rtsign">
+							<span style="color:white;line-height:24px;padding-left:15px;float:left;">马上合作</span>
+							<div class="czimg13"></div>
+						</div>
+					</a> -->
+					<div class="clear-b"></div>
+				</div>
+			</div>
+			<div class="rmainzone">
+				<div>
+					<div class="rleftz1">
+						<div class="bg1"></div>
+						<h1>商务签约</h1>
+						<div class="bg2">联系岸联支付获取合作协议，请务必在结算前完成签约。</div>
+						<div class="bg3"></div>
+					</div>
+					<div class="rleftz2">
+						<div class="r2zone" style="padding-top:50px;">
+							<div class="rbg1">
+								<img src="../Common/image/guide/icon15.png">
+								<p>商务洽谈</p>
+							</div>
+							<div class="rfont">
+								双方商务进行合作洽谈。
+								<!-- <br/>
+								确保填写信息与您即将签约的信息一致。<br/>
+								我们会尽快完成审核。<a class="gblue" href="javascript:;" onclick="$('#register').submit()">立即注册</a> -->
+							</div>
+						</div>
+						<div class="r2zone" style="height:50px;">
+							<div class="rbg2">
+								<div class="gray-tip"></div>
+							</div>
+						</div>
+						<div class="r2zone">
+							<div class="rbg1">
+								<img src="../Common/image/guide/icon16.png">
+								<p>提交资料</p>
+							</div>
+							<div class="rfont" style="height:36px;padding:12px 0 12px 10px;">
+								提交资料进行审核，审核通过后，岸联支付人员会第一时间通知您进行接入。
+								<!-- <br/>
+								<a class="gblue" href="g-createapp.html" target="_blank">不会创建？查看文档说明</a> -->
+							</div>
+						</div>
+						<div class="r2zone" style="height:50px;">
+							<div class="rbg2">
+								<div class="gray-tip"></div>
+							</div>
+						</div>
+						<div class="r2zone">
+							<div class="rbg1">
+								<img src="../Common/image/guide/icon17.png">
+								<p>接入联调</p>
+							</div>
+							<div class="rfont">
+								针对ANDROID、IOS聚合支付sdk进行一对一接<br>
+								入联调，接入迅速，收益立竿见影。接入完成后<br>
+								或接入中遇到问题，请联系岸联支付客服，以便<br>
+								我们为您提供更好的服务。
+								<!-- 1. ANDROID聚合支付 SDK:参考<a href="g-ardenv.html" class="gblue" target="_blank">ANDROID聚<br>合支付接入文档</a><br><br>
+								2. IOS&nbsp;&nbsp;聚合支付SDK:参考<a href="g-iossdk.html" class="gblue" target="_blank">IOS聚合支付接入<br>文档</a><br><br>
+								3. 网页版聚合支付（支持移动/PC端网页、APP）：请参考 "<a href="g-webres.html" class="gblue" target="_blank">网页版支付</a>"<br><br>
+								4. <a href="g-introduction.html" class="gblue" target="_blank">服务端接入指南</a>中的所有模块适用于上<br>述所有版本，请注意：H5 版本没有OPENID<br>流程。<br><br>
+								5．接入完成后或接入中遇到问题请联系爱贝<br>支持<span class="gblue">QQ：2808222908</span>，以便更好的合作。<br><br> -->
+							</div>
+						</div>
+						<div class="r2zone" style="height:50px;">
+							<div class="rbg2">
+								<div class="gray-tip"></div>
+							</div>
+						</div>
+						<div class="r2zone">
+							<div class="rbg1">
+								<img src="../Common/image/guide/icon18.png">
+								<p>验证测试</p>
+							</div>
+							<div class="rfont">
+								SDK接入完成您需要测试其功能确保可用，您也<br>
+								可以将游戏或应用给岸联专业测试人员体验，我<br>
+								们会给你很好的优化建议。
+							<!-- 	SDK接入完成您需要测试其功能确保可用。<br/>
+								您也可以将游戏给爱贝人员体验，我们会给您<br/>
+								一些优化建议。 -->
+							</div>
+						</div>
+						<div class="r2zone" style="height:50px;">
+							<div class="rbg2">
+								<div class="gray-tip"></div>
+							</div>
+						</div>
+						<div class="r2zone">
+							<div class="rbg1">
+								<img src="../Common/image/guide/icon19.png">
+								<p>上线运营</p>
+							</div>
+							<div class="rfont" style="height:25px;padding:20px 0 15px 10px;">
+								测试完成即可上线运营。
+							</div>
+						</div>
+						<div class="r2zone" style="height:50px;">
+							<div class="rbg2">
+								<div class="gray-tip"></div>
+							</div>
+						</div>
+						<div class="r2zone" style="">
+							<div class="rbg1">
+								<img src="../Common/image/guide/icon20.png">
+								<p>收入结算</p>
+							</div>
+							<div class="rfont">
+								岸联支付T+1结算，周期短，效率高，收益立竿见影。
+								您可以在岸联支付后台查看账单并确认。
+								<!-- 到达结算账期，您可在爱贝后台查看账单（月<br/>
+								初10个工作日内可出账单）并确认结算。<br/>
+								如有问题请联系：<br/>
+								——<span class="gblue">爱贝结算QQ：2815044355</span><br/>
+								——<span class="gblue">邮箱：jiesuan@iapppay.com</span> -->
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="clear-b"></div>
+
+
+			</div>
+		</div>
+
+		<div class="clear-b"></div>
+
+		<div class="rightspace"></div>
+	</div>
+	
+
+	<!-- 公用底部 begin-->
+
+	<!-- 公用底部 end-->
+
+
+<script src="../Common/js/jquery.js"></script>
+<script src="../Common/js/base.js"></script>
+<script src="../Common/js/leftbar.js"></script>
+
+<!--引入滚动条js -->
+<script src="../Common/js/jquery.nicescroll.js"></script>
+<script type="text/javascript">
+	//滚动条替换js
+	$(".leftzone").niceScroll({  
+		cursorcolor:"#a0a0a0",  
+		cursoropacitymax:1,  
+		touchbehavior:false,  
+		cursorwidth:"0",  
+		cursorborder:"0",  
+		cursorborderradius:"0"  
+	});
+</script>
+</body>
+</html>
