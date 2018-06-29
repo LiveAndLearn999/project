@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+</head>
+<body><br /><br /><br />
+<form action="?do=login" method="post" name="login" style="width:350px;margin:auto;font:normal 12px 'Microsoft Yahei','Tahoma';color:#bbb">
+<div style="padding:5px"></div>
+账　号：
+<input type="text" name="admin_name" style="width:200px;border:4px solid #4b751d;padding:3px;background:#fff;font-size:14px;"/>
+<div style="padding:3px"></div>
+密　码：
+<input type="password" name="admin_password" style="width:200px;border:4px solid #4b751d;padding:3px;background:#fff;font-size:14px;"/>
+<div style="padding:3px"></div>
+验证码：
+<input type="text" name="authcode" style="width:50px;border:4px solid #4b751d;padding:3px;background:#fff;font-size:14px;"/>
+<img src="authcode.php" alt="" align="absmiddle" onclick="this.src+='?'+Math.random()"/>
+<div style="padding:5px"></div>
+&nbsp;　　　　<input type="submit" value="登  陆" style="border:none;padding:3px 10px;background:#4b751d;color:#fff"/>
+</form>
+</body>
+</html>

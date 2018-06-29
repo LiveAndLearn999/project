@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title><!--{$game_info.title}--></title>
+<style>
+html,body {margin:0px;overflow:hidden;}
+p {margin: 0;}
+img {border: 0 none;}
+a, a:link, a:visited, a:active, a:hover {text-decoration:none;}
+.header{width:100%;height:32px;background:url("templates/kele/topbar/bg.gif");left:0;top:0 !important;text-align:left;font-family:Tahoma;z-index:8000;overflow:hidden;}
+.barlogo{float:left; padding-left:24px;}
+.barlink{font-size:14px;float:right;position:absolute;right:10px;margin:7px 0 0 0;white-space:nowrap;overflow:hidden;}
+.barlink a{display:inline-block;height:13px;line-height:13px !important;overflow:visible !important;*line-height:normal !important;color:#464646 !important;text-decoration:none;}
+.barlink a:hover{color:#0096D0 !important;}
+.stit{color:#464646; font-weight:bold;}
+.sred{color:#FF0000; font-weight:bold;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="topbar" class="header">
+    <p class="barlogo"></p>
+	<p class="barlink"><span class="stit"><!--{$game_info.title}--></span>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<!--{$game_info.game_url}-->" target="_blank">游戏官网</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<!--{$game_info.card_url}-->" target="_blank">领取新手卡</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<!--{$game_info.pay_url}-->" title="充值到<!--{$game_info.title}-->" target="_blank"><span class="sred">账号充值</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="<!--{$game_info.bbs_url}-->" target="_blank">玩家论坛</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0);" onclick="addFavorite()">加入收藏</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0);" onclick="getopbar()" title="隐藏工具栏">隐藏</a>&nbsp;&nbsp;</p>
+  </div>
+  <div id="contBox">
+    <iframe id="game" name="game" style="margin: 0px auto; width: 100%; height: 777px; text-align: center;" src="<!--{$game_url}-->" allowTransparency="true" marginWidth="0" marginHeight="0" frameBorder="no" scrolling="auto"></iframe>
+  </div>
+  <div style="display:none;">
+        <iframe scrolling="auto" id="q9wanus" frameborder="0" marginwidth="0" marginheight="0" height="100%" width="100%" src="http://api.9qwan.com/api/pay/user.php?user=<!--{$gameuser}-->&site=920wan"></iframe>
+        </div>
+</div>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript">
+	function gameResize(){
+		var rframe = $("#game");
+		//ie7默认情况下会有上下滚动条，去掉上下15像素
+		var h = $(window).height() - rframe.offset().top;
+		rframe.height(h);
+	}
+	function getopbar(){
+		$("#topbar").hide();
+		$("#retopbar").show();
+		gameResize();
+	}
+    function addFavorite(){
+        if (document.all) window.external.addFavorite('<!--{$game_info.game_url}-->', '<!--{$game_info.title}-->');
+        else if (window.sidebar) window.sidebar.addPanel('<!--{$game_info.title}-->', '<!--{$game_info.game_url}-->', "");
+    }
+	$(document).ready(function(){
+		gameResize();
+	});
+	
+	window.onresize = function(){  
+		gameResize();
+	}
+	$(window).resize();
+</script>
+</body>
+</html>

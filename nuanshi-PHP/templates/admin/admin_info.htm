@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+				<a href="?action=config&do=admin_list"><!--{$language.admin_list}--></a>
+&raquo;&nbsp;<!--{if $mode=='insert'}--><!--{$language.admin_add}--><!--{else}--><!--{$language.admin_edit}--><!--{/if}-->	
+					
+				</h1>
+				
+				<div class="stat-container">
+				
+				<div class='item'>
+	<table width="100%">
+	<form action="?action=config&do=admin_<!--{$mode}-->" method="post" name="admin_info">
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_admin_name}--></td>
+		<td><!--{if $mode=='insert'}--><input type="text" name="admin_name" size="40" value="<!--{$admin.name|escape:html}-->" class="input"/>
+		<!--{else}-->
+		<input type="hidden" name="admin_name" value="<!--{$admin.name|escape:html}-->" />
+		<!--{$admin.name|escape:html}-->
+		<!--{/if}--></td>
+		</tr>
+
+		<tr>
+		<td align="right"  height="30"><!--{$language.form_admin_password}--></td>
+		<td><input type="password" name="admin_password" size="40" value="" class="input"/></td>
+		</tr>
+		<!--{if $smarty.session.admin_name!=$admin.name}-->
+		<tr>
+		<td align="right"  height="30"><!--{$language.form_admin_permissions}--></td>
+		<td>
+			<input type="radio" name="admin_permissions" onclick="display_permissions(false)" value="all" {if $admin.permissions=='all'}checked{/if} /> <!--{$language.form_admin_permissions_all}-->
+			<input type="radio" name="admin_permissions" onclick="display_permissions(true)" id="admin_permissions_normal" value="<!--{$admin.permissions}-->" {if $admin.permissions!='all'}checked{/if} /> <!--{$language.form_admin_permissions_other}-->
+
+		</td>
+		</tr>
+
+		<tr id="permissionss"  {if $admin.permissions=='all'}style="display:none"{/if}>
+		<td align="right">&nbsp;</td>
+		<td>
+		<table bgcolor="#cccccc" cellpadding="1" cellspacing="1" style="float:left">
+		<tr>
+		<td width="80" bgcolor="#f4f4f4"  height="25">&nbsp;</td>
+		<td width="70"   ><!--{$language.form_admin_permissions_read}--></td>
+		<td width="70"   ><!--{$language.form_admin_permissions_write}--></td>
+		<td width="70"   ><!--{$language.form_admin_permissions_delete}--></td>
+		</tr>
+	
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25"><!--{$language.form_admin_permissions_1}--></td>
+		<td  align="center"><input type="checkbox" value="menu_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="menu_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="menu_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">新闻频道管理</td>
+		<td  align="center"><input type="checkbox" value="channel_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="channel_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="channel_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">新闻内容管理</td>
+		<td  align="center"><input type="checkbox" value="content_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="content_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="content_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">游戏管理</td>
+		<td  align="center"><input type="checkbox" value="game_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="game_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="game_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+
+
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">服务器管理</td>
+		<td  align="center"><input type="checkbox" value="server_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="server_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="server_delete" onclick="push_permissions(this)"/></td>
+		</tr>		
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">充值管理</td>
+		<td  align="center"><input type="checkbox" value="pay_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="pay_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="pay_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">新手卡管理</td>
+		<td  align="center"><input type="checkbox" value="card_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="card_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="card_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">会员管理</td>
+		<td  align="center"><input type="checkbox" value="member_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="member_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="member_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">模板管理</td>
+		<td  align="center"><input type="checkbox" value="template_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="template_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="template_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">友情链接管理</td>
+		<td  align="center"><input type="checkbox" value="link_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="link_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="link_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+
+		<tr>
+		<td bgcolor="#f4f4f4" align="center" height="25">推广分析管理</td>
+		<td  align="center"><input type="checkbox" value="sp_read" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="sp_write" onclick="push_permissions(this)"/></td>
+		<td  align="center"><input type="checkbox" value="sp_delete" onclick="push_permissions(this)"/></td>
+		</tr>
+	
+		</table>
+		</td>
+		</tr>
+		<tr>
+		<td align="right" height="30"><!--{$language.form_admin_state}--></td>
+		<td>
+		
+		<input type="radio" name="admin_state" value="1" {if $admin.state==1}checked{/if} /> <!--{$language.form_admin_state_1}-->
+		<input type="radio" name="admin_state" value="0" {if $admin.state==0}checked{/if} /> <!--{$language.form_admin_state_0}-->
+		</td>
+		</tr>
+		<!--{else}-->
+		<input type="hidden" name="admin_permissions" value="<!--{$admin.permissions}-->" />
+		<input type="hidden" name="admin_state" value="<!--{$admin.state}-->" />
+		<!--{/if}-->
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="btn"/>
+		</td>
+		</tr>
+		<input type="hidden" name="admin_id" value="<!--{$admin.id}-->"/>
+	</form>
+	</table>
+</div>
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+</body>
+</html>
+<script type="text/javascript">
+check_permissions('<!--{$admin.permissions}-->');
+
+function display_permissions(mode){
+	if (mode){
+		$('#permissionss').show();
+	}else{
+		$('#permissionss').hide();
+	}
+}
+
+function push_permissions(obj){
+	if (obj.checked){
+		var $array=[];
+		if ($("#admin_permissions_normal").val()!=""){
+			var $admin_permissions_value=$("#admin_permissions_normal").val();
+			var $admin_permissions_value_split=$admin_permissions_value.replace(/ /g,"").split(",");	
+			if ($admin_permissions_value_split.length>0){
+				for (var $i=0;$i<$admin_permissions_value_split.length;$i++){
+					$array.push($admin_permissions_value_split[$i]);
+				}
+			}
+		}
+		$array.push(obj.value);
+		$("#admin_permissions_normal").val($array.join(","));
+	}else{
+		var $array=[];
+		if ($("#admin_permissions_normal").val()!=""){
+			var $admin_permissions_value=$("#admin_permissions_normal").val();
+			var $admin_permissions_value_split=$admin_permissions_value.replace(/ /g,"").split(",");	
+			if ($admin_permissions_value_split.length>0){
+				for (var $i=0;$i<$admin_permissions_value_split.length;$i++){
+					if (obj.value!=$admin_permissions_value_split[$i]){
+						$array.push($admin_permissions_value_split[$i]);
+					}
+				}
+			}
+		}
+		$("#admin_permissions_normal").val($array.join(","));
+	}
+}
+function check_permissions(permissions){
+	var l=permissions.split(",");
+	var f=document.forms['admin_info'];
+		for (var i=0;i<f.elements.length ;i++ ){
+			if (f.elements[i].type=='checkbox'){
+				for (var j=0;j<l.length ;j++ ){
+					if (f.elements[i].value==l[j]){
+						f.elements[i].checked=true;
+					}
+				}
+			}
+		}
+}
+</script>

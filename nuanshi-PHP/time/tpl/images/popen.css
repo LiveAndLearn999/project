@@ -1,0 +1,154 @@
+@charset "gb2312";
+/*这是后台右测的css特效*/
+*
+{
+	font:normal 12px "Tahoma","Arial","serif","sans-serif";
+}
+body
+{
+	font:normal 12px "Tahoma","Arial","serif","sans-serif";
+	margin:0px;
+	padding:0px;
+	overflow:none;
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+a
+{
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+a:link
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+a:visited
+{
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #ff0000;
+	text-decoration: underline;
+}
+table,tr,td
+{
+	font:normal 12px "Tahoma","Arial","serif","sans-serif";
+	word-wrap:break-word;
+	word-break:break-all;
+}
+input
+{
+	height:20px;
+	vertical-align: middle;
+}
+textarea
+{
+	font:normal 12px "Tahoma","Arial","serif","sans-serif";
+	background-color: #ECE9D8;
+}
+select
+{
+	vertical-align: middle;
+}
+.Top
+{
+    position:relative;
+    width:100%;
+    height:25px;
+    background:#FFFFE1;
+    border-top:1px #7F9DB9 solid;
+    border-bottom:1px #716F64 solid;
+	line-height:120%;
+}
+.short_input
+{
+	width:70px;
+	height:20px;
+	vertical-align: middle;
+}
+.long_input
+{
+	width:400px;
+	height:20px;
+	vertical-align: middle;
+}
+.css_input
+{
+	width:400px;
+	height:20px;
+	vertical-align: middle;
+}
+.root
+{
+    position:relative;
+	height:27px;
+	line-height:27px;
+	padding-left:12px;
+}
+
+.hs_notice
+{
+	border:1px #2693FF solid;
+	background:#CAE4FF;
+	padding:5px;
+	text-align:center;
+	color:red;
+}
+
+.table
+{
+	position:relative;
+	width:99%;
+	margin-left:1px;
+	margin-right:1px;
+	border:1px #FFFFFF solid;
+	height:22px;
+}
+
+.table1
+{
+	border:1px #2693FF solid;
+	background:#CAE4FF;
+	height:22px;
+}
+
+/*分页样式*/
+.pagelist
+{
+	margin:3px;
+	padding:3px;
+	border:0px;
+}
+.pagelist .n
+{
+	border:1px #D2DFE6 solid;
+	padding-left:5px;
+	padding-right:5px;
+	*padding-top:3px;
+	*padding-bottom:3px;
+	background:#FFFFFF;
+	font-size:12px;
+	font-family:"宋体","Tahoma","Arial";
+}
+.pagelist .m
+{
+	border:1px #D2DFE6 solid;
+	padding-left:5px;
+	padding-right:5px;
+	background:#E7EEF1;
+	color:red;
+	font-size:12px;
+	font-family:"宋体","Tahoma","Arial";
+}
+.pagelist a
+{
+	font-size:12px;
+	font-family:"宋体","Tahoma","Arial";
+}

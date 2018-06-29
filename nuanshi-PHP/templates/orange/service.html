@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$config.site_name}--></title>
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->">
+<meta name="description" content="<!--{$config.site_description|escape:html}-->">
+<link href="/templates/orange/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/templates/orange/css/service.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end--> 
+<div class="w990 auto layout">
+
+<ul id="help_tag" class="help_tag"><li class="current per_help" style="margin-left:0px">客服中心</li></ul>
+  <div class="clear"></div>
+  <div class="help_box">
+  	<div style="display: block;" id="per0">
+      <div class="fleft hot_position">
+        <h3 class="c3 f14">热门问题</h3>
+				        <ul class="fleft faqlist">
+						<!--{foreach from=$faq item=news}-->
+		          <li><a href=" <!--{$news.url}-->" target="_blank" title="<!--{$news.content_title}-->"><!--{$news.content_title}--></a></li>
+				  <!--{/foreach}-->	
+						        
+		        </ul>
+						     
+				        <div class="clear"></div>
+      </div>
+      <div class="vertical_line"></div>
+      <div class="per_service fleft">
+      <h3 class="c3 f14">个人自助服务</h3>
+      <ul>
+							<li><span class="ser_lef"></span><a target="_blank" href="#">找回密码</a><span class="ser_rig"></span></li>
+							<li><span class="ser_lef"></span><a target="_blank" href="#">申请手机认证</a><span class="ser_rig"></span></li>
+							<li><span class="ser_lef"></span><a target="_blank" href="#">游戏充值</a><span class="ser_rig"></span></li>
+							<li><span class="ser_lef"></span><a target="_blank" href="#">申请密保卡</a><span class="ser_rig"></span></li>
+							<li><span class="ser_lef"></span><a target="_blank" href="#">取消密保卡</a><span class="ser_rig"></span></li>
+							<li><span class="ser_lef"></span><a target="_blank" href="#">锁定IP登陆</a><span class="ser_rig"></span></li>
+        </ul>
+      </div>
+    </div>
+    
+		
+    <div class="clear"></div>
+  </div>
+  <div class="kf_ts phone_kf" title="电话客服">
+    <div class="fleft mr20"><img src=" /templates/orange/images/01.png"></div>
+    <div class="fleft">
+     <h2 class="f20">电话客服</h2>
+     <p class="mt20 lh20">7x24小时客服热线<br>4001-588-988</p>
+     <p class="kf_yd mt20"><a href=" #">电话客服引导</a></p>
+    </div>
+  </div>
+  <div class="kf_ts" title="在线客服">
+  	<div class="fleft mr20"><img src=" /templates/orange/images/03.png"></div>
+    <div class="fleft">
+     <h2 class="f20">在线客服</h2>
+     <p class="mt20 lh20 wid">实时聊天，无需安装，直接交谈。</p>
+     <p class="kf_yd mt20"><a href=" #">在线客服引导</a></p>
+    </div>
+  </div>
+  <div class="kf_ts" title="邮件客服">
+  	<div class="fleft mr20"><img src="/templates/orange/images/02.png"></div>
+    <div class="fleft">
+     <h2 class="f20">邮件客服</h2>
+     <p class="mt20 lh20 wid">提出您的建议，我们会做的更好！</p>
+     <p class="kf_yd mt20"><a href="#">提出意见建议</a></p>
+    </div>
+  </div>
+  <div class="kf_ts" title="客户投诉">
+  	<div class="fleft mr20"><img src="/templates/orange/images/04.png"></div>
+    <div class="fleft">
+     <h2 class="f20">客户投诉</h2>
+     <p class="mt20 lh20 wid">说出您的困惑，我们第一时间帮您解决！</p>
+     <p class="kf_yd mt20"><a href=" #">立即投诉</a></p>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+
+      
+    
+
+<div id="content_4"><!--footer str-->
+<div class="footer">
+    <!--{include file="footer.html"}--></div>
+</body>
+</html>

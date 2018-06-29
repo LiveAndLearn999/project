@@ -1,0 +1,262 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><!--{$config.site_name}--></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->" />
+<meta name="description" content="<!--{$config.site_description|escape:html}-->" /><link href="/favicon.ico" rel="bookmark" />
+<link type="text/css" rel="stylesheet" href="/templates/ali/style/global.css" />
+<link type="text/css" rel="stylesheet" href="/templates/ali/style/layout.css" />
+<link type="text/css" rel="stylesheet" href="/templates/ali/style/pop.css" />
+<link type="text/css" rel="stylesheet" href="/templates/ali/style/uc.css" />
+<script type="text/javascript" src="/templates/ali/js/jquery.js"></script>
+<script type="text/javascript" src="/templates/ali/js/jquery.xdomainajax.js?domain=.7711.com"></script>
+
+<script type="text/javascript" src="/templates/ali/js/J7711.Common.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="http://www.7711.com/js/fixPNG.js"></script>
+<script>
+  DD_belatedPNG.fix('*');
+</script>
+<![endif]--><script type="text/javascript" src="/templates/ali/js/WdatePicker.js"></script>
+<script type="text/javascript" src="/templates/ali/js/city.js"></script>
+<script type="text/javascript" src="/templates/ali/js/J7711.Member.js"></script>
+<script type="text/javascript" src="scripts/jquery.calendar.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#member_birthday").cld();
+});
+</script>
+</head>
+
+<body>
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+
+<div class="sbg01" id="page_profile">
+    <!--begin:wrap-->
+    <div class="swrap">
+               <!--{include file="header.html"}-->
+                        <!--begin:uccenter-->
+    <div class="ucMod clearfix">
+        <div class="photo" id="userphoto"><a href="user.php?action=setuser"><!--{if $member.photo}--><img src="/uploads/<!--{$member.photo}-->" alt="" align="absmiddle" /><!--{else}--><img src="/templates/ali/images/avata.jpg" /><!--{/if}--><div style="display:none;" class="modifyphoto">修改头像</div></a>        </div>
+        <dl>
+           <dt class="clearfix">
+           <span><font id="todayStr"></font>，<em><!--{insert name="get_login_name"}--></em>，祝您游戏愉快~</span>
+               <strong><a href="user.php?action=logout">【退出登录】</a></strong>
+           </dt>
+           <dd class="clearfix">
+               <div class="ua">
+                   <span>
+                                              <var>温馨提示：</var>您的推广链接：
+                                                      <a class="u1" href="<!--{$sp_link}-->"><!--{$sp_link}--></a>
+                                                                               
+                 </span>
+
+                   <p>上次登录：<!--{insert name="get_last_time"}--></p>
+                   <ul>
+                       <li>
+                           <a href="user.php?action=card">我的小卡箱</a>
+                           <a href="user.php?action=setpass">修改密码</a>
+                           <a href="user.php?action=setcer">防沉迷设置</a>
+                          <a href="user.php?action=setuser">资料完善</a>
+						  <a href="user.php?action=sp">我的推广</a>
+                           <a href="user.php?action=paylog">充值记录</a>
+                       </li>
+                   </ul>
+               </div>
+               <div class="ub">
+                   <a href="#" target="_blank"><img src="http://www.7711.com/images/game/tianjie_join.jpg" /></a>               </div>
+           </dd>
+        </dl>
+    </div>
+    <!--end:uccenter-->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var dateList = [
+                ['00:00:00', '03:01:00', '晚上好'],
+                ['03:01:00', '09:01:00', '早上好'],
+                ['09:01:00', '12:01:00', '上午好'],
+                ['12:01:00', '13:01:00', '中午好'],
+                ['13:01:00', '18:01:00', '下午好'],
+                ['18:01:00', '23:59:59', '晚上好']];
+            var ODate = new Date();
+            var today = ODate.getFullYear() + '/' + (ODate.getMonth()+1) + '/' + ODate.getDate();
+            var timestamp = ODate.getTime();
+            var startDate,endDate;
+            var todayStr = '晚上好';
+            for (var i=0,len=dateList.length; i<len; i++) {
+                startDate = new Date(today + ' ' +dateList[i][0]).getTime();
+                endDate   = new Date(today + ' ' +dateList[i][1]).getTime();
+                if (timestamp >= startDate && timestamp < endDate) {
+                    todayStr = dateList[i][2];
+                    break;
+                }
+            }
+            $('#todayStr').html(todayStr);
+
+            
+        });
+    </script>
+
+        <!--begin:main-->
+        <div class="main clearfix">
+            <!--begin:left左侧内容区域{{{-->
+            <div class="col3 fl">
+                <div class="ucBox">
+                                            <!--begin:uctitle-->
+    <!--{include file="usernav.html"}-->
+   <!--end:uctitle-->                    <!--begin:ucMain用户中心内容区域{{{-->
+                    <!--begin:ucRecord-->
+						<div class="cBox ucRecord">
+							<!--begin:recordList-->
+							<div class="recordList">
+								<table width="100%" border="0" cellspacing="2" cellpadding="2">
+				  <!--{foreach from=$cashlog item=log}-->
+				  <tr>
+					<td width="20%" align="right"><!--{$log.log_time}--></td>
+					<td>&nbsp;申请提现<!--{$log.cash}-->元。</td>
+				  </tr>
+				  <!--{/foreach}-->
+				</table>
+							</div>  
+							<!--end:recordList-->
+
+							
+								<!--page-->
+								<div class="pagnation clearfix">推广数据：注册用户<span style="color:red"><!--{$reg_count}--></span>人，付费用户<span style="color:red"><!--{$pay_count}--></span>人，付费金额<span style="color:red"><!--{$pay_money}--></span>元。  
+				<input type="button" name="b1" class="upBtn" value="申请提现" onclick="javascript:location.href='user.php?action=cash';" />  
+			    <!--{$pagebar}--></div>                                         
+								<!--end page-->
+							
+
+						</div>
+						<!--begin:ucRecord-->
+					</div>
+				</div>
+
+             <!--}}}end:left-->
+
+           <!--begin:right右侧区域{{{-->
+           <div class="col2 fr">
+              <div class="box3">
+                                   <!--begin:newserverlists-->
+<h3 class="serTh">
+    <span>最新开服</span></h3>
+<div class="cBox newSer">
+   <ul class="list clearfix">
+     <li class="title">
+        <span class="sort">游戏名称</span> 
+        <span class="serName">服务器名称</span> 
+        <span class="date">日期</span> 
+     </li>
+          <!--{include file="part_game_news.html"}-->
+        </ul>
+</div>
+<!--end:newserverlists-->
+
+                                   
+                     <h3 class="zTh">
+                        <span>周边资讯</span>
+                        <a class="more" href="/news.php" target="_blank">更多</a>                     </h3>
+                     <div class="cBox newZixun">
+                        <div class="zxContent">
+                           <ul class="clearfix">
+                              <li class="clearfix">
+							                               <!--{foreach from=$allnews item=news}-->
+							   <a href="<!--{$news.url}-->" target="_blank"><!--{$news.content_title}--></a>
+							   <!--{/foreach}-->
+                             </li>
+                           </ul>
+                       </div>
+                     </div>
+               
+             </div>
+           </div>
+           
+       </div>
+       <!--end:main-->
+
+    </div>
+    <!--begin footer-->
+<!--{include file="footer.html"}-->
+<!--end footer-->
+
+    
+   </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        J7711.Common.init();
+        $('.scrollBanner .show').tabswitch({
+            triggerType: 'click',
+            contentCls : 'show_container',
+            navCls     : 'pagination',
+            activeTriggerCls: 'current',
+            effect     : 'scrollx',
+            delay      : 5000
+        });
+        $('.fillcity').each(function(){
+            var val = $(this).attr('data-value');
+            if (val && val.length == 4) {
+                var pv = val.substring(0,2);
+                var cv = val.substring(2,4);
+                var pv_name = city.provinces[pv];
+                var cv_name = city.city[pv][cv];
+                $(this).html(pv_name+cv_name);
+            }
+        });
+        $('.bellelist .tabSwitch').tabswitch({
+            triggerType: 'click',
+            effect: 'scrolly',
+            delay: 12000
+        });
+        $('.bellelist .tabSwitch .tab1,.bellelist .tabSwitch .tab2').tabswitch({
+            navCls: 'featureNav',
+            contentCls: 'featureUL',
+            effect: 'scrollx',
+            prevBtnCls: 'prev',
+            nextBtnCls: 'next',
+            circular: 2,
+            autoplay: true,
+            viewSize: [226,0],
+            screen: [680,0]
+        });
+        $('.sendflower').click(function(){
+            var ppid = $(this).attr('ppid');
+            $.ajax({
+                type: "POST",
+                url: '/pretty_index/op/sendflower/',
+                data: 'id='+ppid,
+                success: function(result){
+                    if (result) {
+                        var notice ="";
+                        switch(result) {
+                            case "unlogin":
+                                alert('请先登陆！');
+                                break;
+                            default:
+                                alert(result);
+                                break;
+                        }
+                    }
+                    return false;
+                }
+            });
+        });
+        $('.tjGame ul li').hover(
+            function(){
+                $(this).children('a').addClass('hover');
+                $(this).find("div").slideDown("fast");
+            },
+            function(){
+                $(this).children('a').removeClass('hover');
+                $(this).find("div").slideUp("fast");
+            }
+        );
+    });
+</script>
+</body>
+</html>

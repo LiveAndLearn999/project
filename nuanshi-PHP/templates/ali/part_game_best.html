@@ -1,0 +1,25 @@
+<!--{foreach from=$game_best item=game}-->
+
+ <a onclick="getServer(<!--{$game.game_id}-->)" id="i<!--{$game.i}-->"  class="tabs" href="javascript:void(0)"><span><!--{$game.game_name}--></span></a>
+           <div class="tabcon" style="height:136px">
+              <ul id="server_id<!--{$game.game_id}-->">
+			
+										
+              </ul>
+           </div><!--{/foreach}-->
+		   <script type="text/javascript">
+		   function getServer(id){
+		
+		$.ajax({
+			url:'gameajax.php',
+			data:"id=get_server&game_id="+id,
+			type:'get',
+			dataType:'text',
+			success:function(result){
+				//alert(result);
+				$("#server_id"+id).empty();
+				$("#server_id"+id).append(result);
+			}
+		});
+	}
+	</script>

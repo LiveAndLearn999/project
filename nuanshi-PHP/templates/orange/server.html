@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$config.site_name}--></title>
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->">
+<meta name="description" content="<!--{$config.site_description|escape:html}-->">
+<link href="/templates/orange/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/templates/orange/css/serverlist.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+
+<script type="text/javascript" src="/templates/orange//js/jquery.pack.js"></script>
+<script type="text/javascript" src="/templates/orange//jQuery.blockUI.js"></script>
+<script type="text/javascript" src="/templates/orange//js/jquery.SuperSlide.js"></script>
+<script>
+function setTab1(m,n){
+var tli=document.getElementById("menu1"+m).getElementsByTagName("li"); 	
+var mli=document.getElementById("main1"+m).getElementsByTagName("ul");
+for(i=0;i<tli.length;i++){
+   tli[i].className=i==n?"hover":"";
+   mli[i].style.display=i==n?"block":"none";
+}
+}
+</script>
+
+</head>
+
+<body>
+<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end-->
+
+
+     <div id="content_3">
+     
+     
+  <div id="content_3_left">
+       <div class="container">       <!--{include file="part_login.html"}--></div>        
+       <div class="wrap"><div class="left">          <div class="plate">
+              <div class="top"><span>最新开服表</span><strong><em><a href="#" target="_blank">VIP新服送礼</a></em></strong></div>
+              <div class="cont">
+                  <dl>
+    			 <!--{foreach from=$game_news item=game}-->
+            	    <dt>
+            	    	            	    	<span><em><!--{$game.server_trunon_date}--></em></span>
+            	    						
+            	    	<b><!--{$game.server_trunon_hour}-->:00</b><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank"><strong><!--{$game.game_name}--></strong></a>
+            	    </dt>
+                    <dd><a href="game.php?action=play&game_id=<!--{$game.game_id}-->&server_id=<!--{$game.server_id}-->" target="_blank "><!--{$game.server_name}--></a></dd>
+		 <!--{/foreach}-->
+				
+                 </dl>
+              </div>
+              <div class="foot"></div>
+          </div>
+</div></div>
+  </div>
+        
+        
+        <div id="content_3_right">
+        
+
+
+<div id="tabs1">
+<div class="xinfuru">
+  <ul class="menu11" id="menu11">
+    <li class="font_bt"> <!--{$game_name}-->开服表</li>
+    <li class="font_ss"><div class="fwq_ss"><span>快速进入服务器<input id="inserver" type="text" class="in" value="" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') "/>服</span>
+	<a href="javascript:void(0)" class="shoust" onclick="quickJoinBtn()">进入</a></div></li>
+  </ul>
+</div>
+<script type="text/javascript">
+function quickJoinBtn(){
+  var serverlogin = document.getElementById("inserver").value;
+  window.open("game.php?action=play&game_id=<!--{$game_id}-->&server_id="+serverlogin);
+  //alert(serverlogin);
+}
+</script>
+
+
+<div class="main11" id="main11">
+   <ul class="block">
+   <!--{foreach from=$server_list item=server}-->
+	         
+   <li class="s<!--{$server.server_state}-->"><a href="game.php?action=play&game_id=<!--{$server.game_id}-->&server_id=<!--{$server.server_id}-->"target="_blank"><span>[<!--{$server.server_name}-->]</span><b><em>服：<!--{$server.server_id}--></em><var></var></b></a></li>
+        <!--{/foreach}-->
+   
+   
+   </ul>
+   
+   <div id="pages"> </div>
+
+
+</div>
+</div>
+        </div>
+        
+        
+        
+     </div>
+</div>
+    
+
+
+<div id="content_4"><!--footer str-->
+<div class="footer">
+      <!--{include file="footer.html"}-->
+<!--footer end--></div>
+<script type="text/javascript">
+
+</script>
+</body>
+
+</html>

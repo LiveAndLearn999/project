@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					<a href="?action=other&do=link_list"><!--{$language.link_list}--></a>
+&raquo;&nbsp;<!--{if $mode=='insert'}--><!--{$language.link_add}--><!--{else}--><!--{$language.link_edit}--><!--{/if}-->
+					
+				</h1>
+				
+				<div class="stat-container">
+				<table width="100%">
+	<form action="?action=other&do=link_<!--{$mode}-->" method="post" name="link_info" enctype="multipart/form-data">
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_link_name}--></td>
+		<td><input type="text" name="link_name" class="input" size="60" value="<!--{$link.name|escape:html}-->" />		</td>
+		</tr>
+
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_link_text}--></td>
+		<td><input type="text" name="link_text" class="input" size="60" value="<!--{$link.text|escape:html}-->" />		</td>
+		</tr>
+
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_link_url}--></td>
+		<td><input type="text" name="link_url" class="input" size="60" value="<!--{$link.url|escape:html}-->" />		</td>
+		</tr>
+		<tr>
+		<td height="30"  align="right"><!--{$language.form_link_logo}--></td>
+		<td><input type="file" name="link_logo" size="40" value="<!--{$link.logo}-->" class="input"/>
+		<!--{if $link.logo}-->
+		<a href="uploads/<!--{$link.logo}-->" target="_blank"><img src="uploads/<!--{$link.logo}-->" alt="" align="absmiddle" style="width:88px;height:31px;border:none"/></a>
+		<input type="checkbox" name="link_logo_delete" value="<!--{$link.logo}-->" /> <!--{$language.delete}-->
+		<input type="hidden" name="link_logo_old" value="<!--{$link.logo}-->"/>
+		<!--{/if}-->
+		</td>
+		</tr>
+		<tr>
+		<td align="right" height="30"><!--{$language.form_link_sort}--></td>
+		<td><input type="text" name="link_sort" class="input" size="5" value="<!--{$link.sort}-->" />	
+		</td>
+		</tr>		
+		<tr>
+		<td align="right" height="30"><!--{$language.form_link_state}--></td>
+		<td>
+		<input type="radio" name="link_state" value="1" {if $link.state==1}checked{/if} /> <!--{$language.form_link_state_1}-->
+		<input type="radio" name="link_state" value="0" {if $link.state==0}checked{/if} /> <!--{$language.form_link_state_0}-->
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="button"/>
+		</td>
+		</tr>
+		<input type="hidden" name="link_id" value="<!--{$link.id}-->"/>
+	</form>
+	</table>
+				
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

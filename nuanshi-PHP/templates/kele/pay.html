@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><!--{$config.site_name}--></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->" />
+<meta name="description" content="<!--{$config.site_description|escape:html}-->" />
+<LINK href="/templates/kele/img/reset.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/common.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/pay.css" type=text/css rel=stylesheet>
+<!--[if lte IE 6]>
+<script src="/templates/kele/img/fixPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('.pngfix');
+</script>
+<![endif]--> 
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript"> 
+var mode_id=0;
+var mode_name="";
+var mode_per=100;
+var mode_no="";
+var gold_name="元宝";
+var gold_per=10;
+</script>
+</head>
+<body>
+<!--{include file="header.html"}-->
+ 
+<DIV class="mainContent clearfix">
+	<div class="left box uc">
+		<h3>
+			<strong class="fl icon_05">充值中心</strong>
+		</h3>
+       <form id="pay_form" method="post" action="http://pay.73k.com/api/pay.api.php" onsubmit="return check_form()">
+								 <input type="hidden" name="from" value="920wan"/>
+		<div class="margin">
+			<ul class="pay_nav fl">
+			<!--{foreach from=$paymode_list item=paymode}-->
+				<li><a href="javascript:void(0);" onclick="setPaymode(<!--{$paymode.mode_id}-->,'<!--{$paymode.mode_name}-->',<!--{$paymode.mode_money_per}-->,'<!--{$paymode.mode_no}-->')" id="mode<!--{$paymode.mode_id}-->"><!--{$paymode.mode_name}--></a> </li>
+				<!--{if $paymode.mode_is_default==1}-->
+					<script type="text/javascript">
+						mode_id=<!--{$paymode.mode_id}-->;
+						mode_name='<!--{$paymode.mode_name}-->';
+						mode_per=<!--{$paymode.mode_money_per}-->;
+						mode_no='<!--{$paymode.mode_no}-->';
+					</script>
+				<!--{/if}-->
+			<!--{/foreach}-->
+			</ul>
+			<div class="pay_main fr">
+			  <div class="step1">
+                    <div class="tip_t">
+                    </div>
+                    <div class="tip_b">
+                        <h4>
+							您当前选择的是“<span id="mode_name" class="c_o"></span>”支付方式</h4>
+							<input type="hidden" id="mode_id" name="mode_id" value="0" />
+											<input type="hidden" id="mode_no" name="payway" value="0" />
+                        <p id="pay_type_content">
+                            获得游戏币比例为<span id="mode_per" class="c_o2"></span>（部分充值渠道需要手续费），建议您充值时填写当前使用的手机号码，以便在遇到问题时我们能及时与您沟通。</p>
+                    </div>
+              </div>
+                <div class="step2">
+                    <h4>
+                        请选择您要充值到哪里</h4>
+                    <div id="div_game" class="step2_div">
+                        <p class="select_game">
+                            <label>
+                                充值游戏：</label>
+                            <span class="select_b">
+							<select id="game_id" name="gid" onchange="changeGame(this.options[selectedIndex].id)" class="select_t">
+                             <option value="0" >请选择游戏</option>
+							  <!--{foreach from=$game_list item=game}-->
+							  <option value="<!--{$game.game_no}-->" id="<!--{$game.game_id}-->" {if $game_id==$game.game_id}selected{/if}><strong id="targetGame"><!--{$game.game_name}--></strong></option>
+							  <!--{/foreach}-->
+                            </select>
+							</span>
+							<span id="sp_game"></span>                        </p>
+						<p class="select_game">
+                            <label>
+                                充值服务器：</label>
+                            <span class="select_b">
+							<select id="server_id" name="sid" class="select_t">
+							  <option value="0">请选择服务器</option>
+                            </select> 
+							</span>
+							<span id="sp_server"></span>						</p>
+				  </div>
+                </div>
+                <div class="step3">
+                    <h4>
+                        请填写并确认账号信息</h4>
+                    <div class="step3_div">
+                      <p>
+                            <label for="">
+                                充值帐号：</label>
+                            <input type="text" class="i" id="game_user" name="user" value="<!--{$login.username}-->" onblur="check_user()">
+                            <span id="sp_user"></span>
+                        </p>
+                        <p>
+                            <label for="">
+                                确认帐号：</label>
+                            <input type="text" class="i" id="game_user2" name="user2" value="<!--{$login.username}-->" onblur="check_user2()">
+                            <span id="sp_user2"></span>
+                        </p>
+						<!--<p id="for_role" style="display:none">
+                            <label for="">
+                                游戏角色：</label>
+                            <input type="text" class="i" id="game_role" name="game_role" value="" onblur="check_role()">
+                            <span id="sp_role"></span>
+                        </p>
+                        <p>
+                            <label for="">
+                                手机号码：</label>
+                            <input type="text" class="i" id="tel" name="tel">
+                        </p>-->
+                    </div>
+                </div>
+                <div class="step4">
+                    <h4>
+                        请选择金额</h4>
+                    <div class="step4_div">
+                        <p>
+                            <label for="">
+                                选择充值金额：</label>
+                           <select id="money" name="money" onchange="setGold(this.options[selectedIndex].value)">
+								<option value="1">1</option>
+								<option value="10">10</option>
+								<option value="20">20</option>
+								<option value="30">30</option>
+								<option value="40">40</option>
+								<option value="50">50</option>
+								<option value="100" selected="selected">100</option>
+								<option value="150">150</option>
+								<option value="200">200</option>
+								<option value="250">250</option>
+								<option value="300">300</option>
+								<option value="500">500</option>
+								<option value="800">800</option>
+								<option value="1000">1000</option>
+								<option value="1500">1500</option>
+								<option value="2000">2000</option>
+								<option value="3000">3000</option>
+								<option value="5000">5000</option>
+								<option value="10000">10000</option>
+							</select>
+                            <em>元（人民币）</em>
+                        </p>
+                        <p>
+                            <label for="">获得游戏币：</label>
+                            <span id="gold_cnt">1000</span>
+                            <em id="gold_str">元宝</em>
+                        </p>
+						<p id="bank" style="display:none">
+							<label for="">选择银行：</label>
+							<select id="bankId" name="tobank">
+								<option value="CCB">建设银行</option>
+								<option value="BCOM">交通银行</option>
+								<option value="ABC">农业银行</option>
+								<option value="ICBC">工商银行</option>
+								<option value="CMB">招商银行</option>
+								<option value="POST">邮政储蓄</option>
+								<option value="CMBC">民生银行</option>
+								<option value="BOC">中国银行</option>
+								<option value="CZB">浙商银行</option>
+								<option value="SPDB">上海浦东发展银行</option>
+								
+							</select>
+						</p>
+                    </div>
+                    <p>	<input type="hidden" name="time" value=""/>
+    <input type="hidden" name="sign" value=""/>
+                        <input type="submit" class="next hid" id="btnPay" value="确认充值">
+                    </p>
+                </div>
+          </div>
+		</div>
+		</form>
+	</div>
+  <DIV class=sidebar>
+    <DIV class="" id=uc_box>
+      <!--{include file="part_login.html"}-->
+    </DIV>
+    <DIV class="box latest_news">
+      <!--{include file="part_faq.html"}-->
+    </DIV>
+    <DIV class="box cs">
+      <DIV class=margin>
+      	<!--{include file="part_service.html"}-->
+      </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+<script type="text/javascript"> 
+$(document).ready(function(){
+	$("#btnPay").click(function(){
+		//防止重复提交
+		if($(this).hasClass('locked')) return false;
+		$(this).addClass('locked');
+		
+		var data = {};
+		data['user'] = $("#game_user").val();
+		data['payway'] = $("#mode_no").val();
+		data['money'] = $("#money").val();
+		data['gid'] = $("#game_id").val();
+		data['sid'] = $("#server_id").val();
+		$.ajax({
+			url:'getSign.php',
+			type:'POST',
+			data:data,
+			async:false,
+			dataType:'json',
+			success:function(result){
+				$("input[name=time]").val(result.time);
+				$("input[name=sign]").val(result.sign);
+			},
+			error:function(result){
+				alert('Error when getting sign!');
+			}
+			
+		});
+		
+	});
+	
+});
+</script>
+ 
+ 
+ 
+ 
+<script type="text/javascript"> 
+	//默认方式
+	setPaymode(mode_id,mode_name,mode_per,mode_no);
+	
+	//默认游戏
+	{if $game_id>0}
+		changeGame(<!--{$game_id}-->);
+	{/if}
+ 
+	function setPaymode(id,name,per,payway){
+		//样式
+		old_id=$("#mode_id")[0].value;
+		if(old_id>0){
+			$("#mode"+old_id).removeClass("current");
+		}
+		$("#mode"+id).addClass("current");
+	
+		$("#mode_id").val(id);
+		$("#mode_name").html(name);
+		$("#mode_per").html(per+'%');
+		$("#mode_no").val(payway);
+		
+		
+		//gold
+		mode_per=per;
+		setGold($("#money")[0].value);
+		
+		//bank
+		if(id==1){
+			$("#bank").show();
+		}
+		else{
+			$("#bank").hide();
+		}
+	}
+	function setGold(money){
+		gold=money*gold_per*(mode_per/100);
+		$("#gold_cnt").html(gold);
+		$("#gold_str").html(gold_name);
+	}
+	function changeGame(id){
+		//服务器列表
+		getServer(id);
+		
+		//游戏信息
+		$.ajax({
+			url:'pay.php',
+			data:"action=get_gameinfo&game_id="+id,
+			type:'get',
+			dataType:'json',
+			success:function(result){
+				//alert(result.name);
+				if(result.role=='1'){
+					$("#for_role").show();
+				}else{
+					$("#for_role").hide();
+				}
+				gold_name=result.name;
+				gold_per=result.per;
+				
+				//gold
+				setGold($("#money")[0].value);
+			}
+		});
+	}
+	function getServer(id){
+		var sid=<!--{$server_id}-->;
+		$.ajax({
+			url:'pay.php',
+			data:"action=get_server&game_id="+id+"&server_id="+sid,
+			type:'get',
+			dataType:'text',
+			success:function(result){
+				//alert(result);
+				$("#server_id").empty();
+				$("#server_id").append('<option value="0">请选择服务器</option>');
+				$("#server_id").append(result);
+			}
+		});
+	}
+ 
+	//ajax
+	function check_user(){
+		var user=$("#game_user")[0].value;
+		if(user==""){
+			$("#sp_user").html("<em>*</em>请输入充值帐号");
+			return false;
+		}
+		$.ajax({
+			type:"GET",
+			url:"user.php?action=check_member_username&member_username="+encodeURI(user)+"&r="+Math.random(), dataType:"text",async:false,success:function (e){
+			if (e==1) {
+				$("#sp_user").html("");
+			}else{
+				$("#sp_user").html("<em>*</em>充值帐号不存在");
+			}
+		}});
+	}
+	function check_user2(){
+		if($("#game_user")[0].value!=$("#game_user2")[0].value){
+			$("#sp_user2").html("<em>*</em>两次充值帐号不一样");
+			return false;
+		}
+		$("#sp_user2").html("");
+	}
+	
+	function check_form(){
+		if($("#game_id")[0].value==0){
+			$("#sp_game").html("<em>*</em>请选择充值游戏");
+			return false;
+		}
+		if($("#server_id")[0].value==0){
+			$("#sp_server").html("<em>*</em>请选择充值服务器");
+			return false;
+		}
+		if($("#game_user")[0].value==""){
+			$("#sp_user").html("<em>*</em>请输入充值帐号");
+			return false;
+		}
+		if($("#game_user")[0].value!=$("#game_user2")[0].value){
+			$("#sp_user2").html("<em>*</em>两次充值帐号不一样");
+			return false;
+		}
+		return true;
+	}
+</script>
+<!--{include file="footer.html"}-->
+</body>
+</html>
+

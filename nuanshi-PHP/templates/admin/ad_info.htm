@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.calendar.js"></script>
+<link href="styles/calendars.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#ad_start").cld();$("#ad_end").cld();
+});
+</script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="150" valign="top"><!--{include file="left.htm"}--></td>
+<td valign="top">
+<div class='title'>
+<a href="?action=other&do=ad_list"><!--{$language.ad_list}--></a>
+&raquo;&nbsp;<!--{if $mode=='insert'}--><!--{$language.ad_add}--><!--{else}--><!--{$language.ad_edit}--><!--{/if}-->
+
+</div>
+<div class='item'>
+	
+	<form action="?action=other&do=ad_<!--{$mode}-->" method="post" name="ad_info">
+	<table width="100%">
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_ad_name}--></td>
+		<td><input type="text" name="ad_name" class="input" size="60" value="<!--{$ad.name|escape:html}-->" />		</td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top" width="80" height="30"><!--{$language.form_ad_content}--></td>
+		<td><textarea name="ad_content" cols="80" rows="8" class="input"><!--{$ad.content|escape:html}--></textarea>
+		
+		</td>
+		</tr>
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_ad_start}--></td>
+		<td><input type="text" name="ad_start" readonly bj="cBj" id="ad_start" class="input" size="12" value="<!--{$ad.start}-->" />	
+		</td>
+		</tr>
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_ad_end}--></td>
+		<td><input type="text" name="ad_end" readonly bj="cBj" id="ad_end"  class="input" size="12" value="<!--{$ad.end}-->" />	
+		</td>
+		</tr>
+		<tr>
+		<td align="right" height="30"><!--{$language.form_ad_state}--></td>
+		<td>
+		<label><input type="radio" name="ad_state" value="1" {if $ad.state==1}checked{/if} /> <!--{$language.form_ad_state_1}--></label>
+		<label><input type="radio" name="ad_state" value="0" {if $ad.state==0}checked{/if} /> <!--{$language.form_ad_state_0}--></label>
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="button"/>
+		</td>
+		</tr>
+		<input type="hidden" name="ad_id" value="<!--{$ad.id}-->"/>
+	</table>
+	</form>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

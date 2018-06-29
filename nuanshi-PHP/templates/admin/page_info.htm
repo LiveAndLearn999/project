@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.editor.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="150" valign="top"><!--{include file="left.htm"}--></td>
+<td valign="top">
+<div class='title'>
+<a href="?action=content&do=page_list"><!--{$language.page_list}--></a>
+&raquo;&nbsp;<!--{if $mode=='insert'}--><!--{$language.page_add}--><!--{else}--><!--{$language.page_edit}--><!--{/if}-->
+</div>
+<div class='item'>
+	
+	<form action="?action=content&do=page_<!--{$mode}-->" method="post" name="page_info"><table width="100%">
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_page_title}--></td>
+		<td><input type="text" name="page_title" class="input"  size="60" value="<!--{$page.title|escape:html}-->" />		</td>
+		</tr>
+
+		<tr>
+		<td valign="top" align="right"><!--{$language.form_page_content}--></td>
+		<td><textarea name="page_content" id="page_content" style="width:100%;height:300px" class="xheditor"><!--{$page.content|escape:html}--></textarea></td>
+		</tr>
+
+		<tr>
+		<td align="right" height="30"><!--{$language.form_page_permissions}--></td>
+		<td>
+		<select name="page_permissions">
+		<option value="-2"  {if $page.permissions==-2}selected{/if}><!--{$language.form_page_permissions_0}--></option>
+		<option value="-1" {if $page.permissions==-1}selected{/if}><!--{$language.form_page_permissions_1}--></option>
+		<option value="0" {if $page.permissions==0}selected{/if}><!--{$language.form_page_permissions_2}--></option>
+		<!--{html_options options=$member_group selected=$page.permissions}-->
+		</select>
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_page_sort}--></td>
+		<td><input type="text" name="page_sort" class="input"  size="10" value="<!--{$page.sort|escape:html}-->" />		</td>
+		</tr>
+		
+		<tr>
+		<td align="right" height="30"><!--{$language.form_page_state}--></td>
+		<td>
+		<label><input type="radio" name="page_state" value="1" {if $page.state==1}checked{/if} /> <!--{$language.form_page_state_1}--></label>
+		<label><input type="radio" name="page_state" value="0" {if $page.state==0}checked{/if} /> <!--{$language.form_page_state_0}--></label>
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="button"/>
+		</td>
+		</tr>
+		<input type="hidden" name="page_id" value="<!--{$page.id}-->"/>
+	
+	</table></form>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

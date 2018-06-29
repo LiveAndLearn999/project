@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					<a href="?action=content&do=category_list&channel_id=<!--{$smarty.request.channel_id}-->"><!--{$language.category_list}--></a>
+&raquo;&nbsp;<!--{if $mode=='insert'}--><!--{$language.category_add}--><!--{else}--><!--{$language.category_edit}--><!--{/if}-->
+					
+				</h1>
+				
+				<div class="stat-container">
+				
+				
+				<form action="?action=content&do=category_<!--{$mode}-->" method="post" enctype="multipart/form-data" name="category_info">
+
+	<table width="100%">
+	
+		<tr>
+		<td width="100" height="30"><!--{$language.form_category_parent_id}--></td>
+		<td>
+		<select name="parent_id">
+		<option value="0"><!--{$language.form_category_parent_id_default}--></option>{$category_list}
+		</select>
+		</td>
+		</tr>
+		<tr>
+		<td width="100" height="30"><!--{$language.form_category_title}--></td>
+		<td><input type="text" name="category_name" size="40" value="<!--{$category.name|escape:html}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td width="100" height="30"><!--{$language.form_category_sort}--></td>
+		<td><input type="text" name="category_sort" size="40" value="<!--{$category.sort}-->" class="input"/></td>
+		</tr>
+
+		<tr>
+		<td height="30"><!--{$language.form_category_state}--></td>
+		<td>
+		<input type="radio" name="category_state" value="1" {if $category.state==1}checked{/if} /> <!--{$language.form_category_state_1}-->
+		<input type="radio" name="category_state" value="0" {if $category.state==0}checked{/if} /> <!--{$language.form_category_state_0}-->
+		</td>
+		</tr>	
+
+		<tr>
+		<td width="100" height="30">&nbsp;</td>
+		<td><input type="submit" value="<!--{$language.submit}-->" class="btn"/></td>
+		</tr>
+		</table>
+		<input type="hidden" name="category_id" value="<!--{$category.id}-->"/>
+		<input type="hidden" name="channel_id" value="<!--{$smarty.request.channel_id}-->"/>
+		</form>
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+#nav li span a{ color:#eb7f16; background:url(../images/index_2.png) no-repeat 12px -23px;}
+#content_3{ width:990px; margin:auto;}
+#content_3_right{width:710px; float:right; margin-top:10px;}
+#right_1{width:710px; height:36px; line-height:36px; text-indent:15px; background: url(../images/wrap_right_topbg.jpg);}
+#right_1 strong{height:36px; font:bold 14px/36px "微软雅黑","宋体";}
+#right_1 strong a{color:#4c4c4c; font-size:14px;}
+#right_1 strong a:hover{ color: #fb7b00;}
+#right_2{width: 648px; border-left: 1px #e0e0e0 solid; border-right: 1px #E0E0E0 solid; border-bottom: 1px #E0E0E0 solid; overflow: hidden; zoom: 1; padding: 25px 30px 30px 30px;}
+#right_2 dt{ text-align:center; border-bottom:1px dashed #ccc; margin-bottom: 20px; padding-bottom: 25px;}
+#right_2 dd{ line-height:24px;text-indent:20px;  }
+#right_2 strong{font-weight:bold;}
+#right_2 i{font-style:italic;}
+#right_2 b{font-weight:bold;}
+#right_2 em{font-style:italic;}
+
+#content_3_left{width:270px; float:left; margin-right:10px; min-height:330px; overflow:hidden;}
+/*
+#Top{ width: 240px; margin-bottom:12px;}
+#Top dl{ width: 240px; background: url(../images/602indexImg.png) no-repeat -926px -306px; overflow: hidden; zoom: 1;}
+#Top dt{width: 231px; height: 32px; overflow:hidden;zoom:1; font-size:15px;color:#2b2b2b;  vertical-align:middle;  font-weight:bold; padding-left: 9px;background: url(../images/602indexImg.png) no-repeat 0px -314px;float: left;margin-bottom: 5px;}
+#Top dt strong{ float:left; height:20px; display:inline; overflow:hidden; margin-top: 7px; font:bold 14px/20px "微软雅黑","宋体";}
+#Top dt .more{ margin-top:13px; margin-right:8px;}
+#Top dd{ width: 205px; height: 29px; line-height: 29px; border-bottom: 1px dashed #e3e3e3; padding-left: 29px; float: left; margin-right: 5px; overflow: hidden; zoom: 1;}
+#Top dd a{ color:#666;}
+#Top dd a:hover{ color:#d70000;}
+#Top dd span a{ color: #fb7b00; font-size:14px; font-weight:bold;}
+.more{ float: right; margin-top:10px; width:36px; height:9px; margin-right:5px;}
+.more a{ display:block; width:36px; height:9px; overflow:hidden; background:url(../images/602indexImg.png) no-repeat -915px -319px; text-indent:-999em;}
+*/
+h1{ font-size:16px; font-weight:bold; line-height:25px;}
+h2{ font-size:12px; font-weight: inherit }

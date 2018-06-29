@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+				<a href="?action=config&do=menu_list"><!--{$language.menu_list}--></a>
+&raquo;&nbsp;<!--{if $mode=='insert'}--><!--{$language.menu_add}--><!--{else}--><!--{$language.menu_edit}--><!--{/if}-->
+				</h1>
+				
+				<div class="stat-container">
+				
+				
+				
+
+<div class='item'>
+	<table width="100%">
+	<form action="?action=config&do=menu_<!--{$mode}-->" method="post">
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_menu_parent_id}--></td>
+		<td><select name="parent_id">
+		<option value="0"><!--{$language.select}--></option><!--{html_options options=$menu_list selected=$menu.parent_id}--></select></td>
+		</tr>
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_menu_name}--></td>
+		<td><input type="text" name="menu_name" size="40" value="<!--{$menu.name|escape:html}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td align="right"  height="30"><!--{$language.form_menu_link}--></td>
+		<td><input type="text" name="menu_link" size="40" value="<!--{$menu.link|escape:html}-->" class="input"/></td>
+		</tr>
+		
+		<tr>
+		<td align="right" height="30"><!--{$language.form_menu_target}--></td>
+		<td>
+		<input type="radio" name="menu_target" value="1" {if $menu.target==1}checked{/if} /> <!--{$language.form_menu_target_1}-->
+		<input type="radio" name="menu_target" value="0" {if $menu.target==0}checked{/if} /> <!--{$language.form_menu_target_2}-->
+		</td>
+		</tr>
+		
+		
+		<tr>
+		<td align="right" height="30"><!--{$language.form_menu_mode}--></td>
+		<td>
+		<input type="radio" name="menu_mode" value="0" {if $menu.mode==0}checked{/if} /> <!--{$language.form_menu_mode_1}-->
+		<input type="radio" name="menu_mode" value="1" {if $menu.mode==1}checked{/if} /> <!--{$language.form_menu_mode_2}-->
+		</td>
+		</tr>	
+		
+		<tr>
+		<td align="right" height="30"><!--{$language.form_menu_order}--></td>
+		<td><input type="text" name="menu_sort" size="10" value="<!--{$menu.sort|escape:html}-->" class="input" /></td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30"><!--{$language.form_menu_state}--></td>
+		<td>
+		<input type="radio" name="menu_state" value="1" {if $menu.state==1}checked{/if} /> <!--{$language.form_menu_state_2}-->
+		<input type="radio" name="menu_state" value="0" {if $menu.state==0}checked{/if} /> <!--{$language.form_menu_state_1}-->
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="btn"/>
+		</td>
+		</tr>
+		<input type="hidden" name="menu_id" value="<!--{$menu.id}-->"/>
+	</form>
+	</table>
+</div>
+
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+</body>
+</html>

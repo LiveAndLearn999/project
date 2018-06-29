@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="page-type" page="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<table width="100%" cellpadding="0" cellspacing="0" >
+<tr>
+<td width="150" valign="top"><!--{include file="left.htm"}--></td>
+<td valign="top">
+<div class='title'>
+<a href="?action=content&do=page_add"><!--{$language.page_add}--></a>
+&raquo;&nbsp;<!--{$language.page_list}--></div>
+<table cellspacing="0" cellpadding="0" width="100%">
+	<!--{foreach from=$page_list item=page}-->
+	<tr>
+	<td height="30" width="30" align="center"><!--{$page.id}--></td>
+	<td><a href="page.php?id=<!--{$page.id}-->" target="_blank"><!--{$page.title}--></a></td>
+	<td height="30" width="100" align="center">
+	<a href="?action=content&do=page_edit&page_id=<!--{$page.id}-->"><!--{$language.edit}--></a>
+	<a href="?action=content&do=page_delete&page_id=<!--{$page.id}-->" onclick="return confirm('<!--{$language.confirm_delete}-->')"><!--{$language.delete}--></a>
+	</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="3"></td></tr>
+	<!--{foreachelse}-->
+	<tr><td height="50" colspan="3" align="center"><!--{$language.nodata}--></td></tr>
+	<!--{/foreach}-->
+
+</td>
+</tr>
+</table>
+</body>
+</html>

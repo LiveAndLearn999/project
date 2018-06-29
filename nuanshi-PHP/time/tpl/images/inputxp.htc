@@ -1,0 +1,29 @@
+<public:component urn="com.rainersu.xinput">
+<public:attach event="onfocus" onevent="doFocus()" />
+<public:attach event="onblur" onevent="doBlur()" />
+</public:component>
+
+<script>
+/////普通色彩
+if(element.type == "text" || element.type == "password" || element.type == "file"){
+	with (element.style){
+		backgroundColor="#FFFFFF";color="#666666";border="#7F9DB9 1px solid";
+	}
+}
+/////激活色彩
+function doFocus(){
+  if(element.type == "text" || element.type == "password" || element.type == "file"){
+	with (element.style){
+		backgroundColor="#0A246A";borderColor="#7F9DB9";color="#FFFFFF";
+	}
+	}
+}
+/////离开后的色彩
+function doBlur(){
+  if(element.type == "text" || element.type == "password" || element.type == "file"){
+	with (element.style){
+		backgroundColor="#FFFFFF";color="#666666";border="#7F9DB9 1px solid";
+	}
+	}
+}
+</script>

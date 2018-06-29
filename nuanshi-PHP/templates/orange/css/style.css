@@ -1,0 +1,89 @@
+body{font-family:Tahoma,Helvetica,Arial,'',sans-serif;font-size:12px;color:#555}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,dl,dt,dd{padding:0px;margin:0px; word-break:break-all; }
+table {border-collapse:collapse; border-spacing:0; border:0px none;}
+td{border-color:#000;}
+fieldset,img {border:0px;}
+address,caption,cite,code,dfn,em,strong,th,var {font-weight:normal; font-style:normal;}
+ol,ul,dl,li{list-style:none;}
+*{ margin:0; padding:0;} 
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6 {font-weight:bold; font-size:100%;}
+img{vertical-align:top;}
+input,button{vertical-align:middle;}
+button{cursor:pointer;}
+abbr,acronym {border:0px;}
+.clearfix:after {
+		content:".";
+		clear:both;
+		display:block;
+		height:0;		
+		visibility:hidden;
+}
+.clearfix{display:inline-block; }
+.clearfix {display:block;}
+
+a{font-size:12px;}
+a:link{text-decoration:none; color:#555;}
+a:visited{text-decoration:none; color:#555;}
+a:hover{text-decoration:underline; color:#ff7c01;}
+a:active{text-decoration:none; color:#ff7c01;}
+
+
+/*
+.clearfix:before, .clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after{
+    clear:both;
+    overflow:hidden;
+}
+.clearfix{
+    *zoom:1;
+}
+*/
+
+
+
+/*-----header top-----*/
+.header_top{width:100%; height:34px; background:url(../images/header_bg.jpg);}
+.header_top .head{width:990px; margin:auto; overflow:hidden;zoom:1;}
+.header_top .head .left{float:left; width:640px; margin-top:5px;}
+.header_top .head .left_gg{height:14px; line-height:14px; background:url(../images/header_r4_c1.jpg) no-repeat 0px 0px; display:block; float:left; margin-top:5px; padding-left:20px;}
+.header_top .head .left_sina{float:left;display:block; width:100px;}
+.header_top .head .left_qq{float:left;display:block; width:100px;}
+
+.header_top .head .right{float:right; width:350px; text-align:right; margin-top:4px;}
+.header_top .head .right .she{background:url(../images/header_r3_c11.jpg) no-repeat 0px 0px; padding-left:20px;}
+.header_top .head .right .jia{background:url(../images/header_r3_c13.jpg) no-repeat 0px 0px; padding-left:20px; margin-left:10px;}
+.header_top .head .right span{background:url(../images/header_r3_c133.jpg) no-repeat;margin-left:10px; padding-left:20px;}
+.header_top .head .right strong{font-family:"΢ź"; font-size:16px; color:#ff600a;}
+
+/*-----header logo banner-----*/
+.header_body{width:990px; margin:auto; overflow:hidden;zoom:1; height:80px; overflow:hidden;}
+.header_body .logo{float:left; width:230px;  height:60px; overflow:hidden; margin:10px auto;}
+.header_body .banner{float:right; width:750px; height:80px; overflow:hidden;}
+.header_body .banner img{width:750px; height:80px;border:0 none;}
+/*-----header nav-----*/
+.header_nav{width:100%; height:52px; background:url(../images/header_r16_c7.jpg);}
+.header_nav .mainnav{ width:auto; height:52px; margin:0px auto; width:63%}
+.header_nav .mainnav ul{ margin:0; padding:0;}
+.header_nav .mainnav ul li{float:left; height:52px; font-family:"΢ź"; color:#FFF; font-weight:bold;}
+.header_nav .mainnav ul li a{color:#FFF; font-size:16px; width:130px; line-height:49px; display:block; text-align:center; text-shadow:1px 1px 0px #d87102;}
+.header_nav .mainnav ul li a:hover{color:#FFF; width:130px; height:49px; line-height:49px; display:block; text-align:center; text-decoration:none;display:block; text-shadow:1px 1px 0px #d87102;background:url(../images/header_r16_c8.jpg);}
+.header_nav .mainnav ul li .cutter{width:130px; height:49px; display:block; background:url(../images/header_r16_c8.jpg);}
+.header_nav .mainnav ul li span{float:left; display:block; background:url(../images/header_r16_c6.jpg); width:2px; height:52px;}
+
+/*-----link-----*/
+.link{width:970px; margin:10px auto 0px; border:#dadada 1px solid; padding:10px; line-height:23px; background:#fcfcfc; letter-spacing:0px;}
+.link span{font-weight:bold;}
+.link font{margin:0px 10px; color:#CCCCCC;}
+
+/*-----footer-----*/
+.footer{width:990px; background:url(../images/foot_bg.jpg) no-repeat 0 0; margin:10px auto; border-top:#dadada 1px solid; padding-top:10px;}
+.footer .information{text-align:center; line-height:23px;}
+.footer .information font{margin:0px 10px; color:#CCCCCC;}
+.footer .information span{text-align:center; line-height:23px; margin-top:10px; display:block;}
+.footer .copyright{text-align:center; padding:10px 0px 0px 0px;}
+
+.DynarchCalendar table {width:100%}

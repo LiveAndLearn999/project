@@ -1,0 +1,13 @@
+ <!--{foreach from=$news item=news}-->
+ <li>
+             <dl class="clearfix">
+                     <dt><img src="/uploads/zxxmbe.png" width="47" height="47" /></dt>
+                     <dd>
+                         <span class="clearfix">
+                             <strong>【<!--{$news.content_title}-->】</strong>
+                            <var><!--{$news.content_time}--></var> 
+                         </span>
+                         <p><a href="<!--{$news.url}-->" target="_blank"><span style="color:<!--{$news.color}-->"><!--{$news.content_description}--></span></a></p>
+                     </dd>
+   </dl>
+              </li><!--{/foreach}-->

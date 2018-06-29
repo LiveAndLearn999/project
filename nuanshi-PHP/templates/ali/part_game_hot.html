@@ -1,0 +1,23 @@
+<!--{foreach from=$game_hot item=game}-->
+ <dl class="d101 clearfix">
+                         <dt><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" alt="<!--{$game.game_name}-->"><img alt="<!--{$game.game_name}-->" title="" src="uploads/<!--{$game.game_logo}-->" /></a></dt>
+                         <dd>
+                             <div class="clearfix">
+                                 <strong><!--{$game.game_name}--></strong>
+                                 <span class="clearfix">
+                                     <a class="gw" href="<!--{$game.game_website}-->" target="_blank">介绍</a> 
+                                     <a class="bbs" href="<!--{$game.game_bbs}-->" target="_blank">下载</a> 
+                                     <a class="ksbtn" href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank">开始游戏</a> 
+                                 </span>
+                             </div>
+                             <p><!--{$game.game_depict}--></p>
+                             <ul class="clearfix">
+                                                                                                   <li onmouseout="this.className='clearfix'" onmousemove="this.className='clearfix on'" class="clearfix">
+                                     
+                                 </li>
+                                                                  <li onmouseout="this.className='clearfix'" onmousemove="this.className='clearfix on'" class="clearfix">
+                                     
+                                 </li>
+                                                                                               </ul>
+                         </dd>
+                     </dl><!--{/foreach}-->

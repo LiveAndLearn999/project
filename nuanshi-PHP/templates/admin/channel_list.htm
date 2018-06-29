@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+					<a href="?action=content&do=channel_add"><!--{$language.channel_add}--></a>
+&raquo;&nbsp;<!--{$language.channel_list}-->
+				</h1>
+				
+				<div class="stat-container">
+				
+				<table cellspacing="0" cellpadding="0" width="100%">
+	<!--{foreach from=$channel_list item=channel}-->
+	<tr>
+	<td height="40" width="30" align="center"><!--{$channel.id}--></td>
+	<td><a href="?action=content&do=content_list&channel_id=<!--{$channel.id}-->"><!--{$channel.name}--></a>&nbsp;<span style="color:#ccc">(<!--{$channel.description}-->)</span></td>
+	<td height="40" width="200" align="center">
+	
+	<a href="?action=content&do=category_list&channel_id=<!--{$channel.id}-->"><!--{$language.list_channel_category_list}--></a>	
+	
+	<a href="?action=content&do=content_add&channel_id=<!--{$channel.id}-->"><!--{$language.list_channel_content_add}--></a>
+	<a href="?action=content&do=channel_edit&channel_id=<!--{$channel.id}-->"><!--{$language.edit}--></a>
+	<a href="?action=content&do=channel_delete&channel_id=<!--{$channel.id}-->" onclick="return confirm('<!--{$language.confirm_delete}-->')"><!--{$language.delete}--></a>
+	</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="3"></td></tr>
+	<!--{foreachelse}-->
+	<tr><td height="50" colspan="3" align="center"><!--{$language.nodata}--></td></tr>
+	<!--{/foreach}-->
+	</table>
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

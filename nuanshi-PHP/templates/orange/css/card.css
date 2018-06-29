@@ -1,0 +1,89 @@
+.x_cont .rBottom {
+    background: url("../images/rBg2.gif") no-repeat scroll center 548px transparent;
+}
+.x_cont ul.backPic {
+    display: block;
+    width: 710px;
+    margin: 0px auto;
+    min-height: 828px;
+    padding: 0px 0px 0px 15px;
+}
+.clearfix {
+    display: block;
+}
+.clearfix {
+    display: inline-block;
+}
+.x_cont ul.backPic li.gmidb {
+    margin-right: 18px;
+}
+.x_cont ul.backPic li p.gf1 {
+    display: block;
+    width: 195px;
+    height: 118px;
+    margin: 56px auto 0px;
+    overflow: hidden;
+}
+.x_cont ul.backPic li {
+    float: left;
+    width: 212px;
+    height: 280px;
+    overflow: hidden;
+    background: url("../images/pBg.gif") no-repeat scroll -230px 0px transparent;
+}
+.x_cont ul.backPic li p.gf1 a img {
+    display: block;
+    border: 0px none;
+    width: 193px;
+    height: 112px;
+    overflow: hidden;
+}
+.x_cont ul.backPic li p.gf2 {
+    display: block;
+    width: 210px;
+    height: 30px;
+    margin: 0px auto;
+    text-align: center;
+    overflow: hidden;
+    line-height: 30px;
+    color: rgb(102, 102, 102);
+}
+.x_cont ul.backPic li p.gf2 strong {
+    display: inline-block;
+    color: rgb(51, 51, 51);
+}
+.x_cont ul.backPic li p a.s {
+    margin-left: -8px;
+}
+.x_cont ul.backPic li p a:hover {
+    color: rgb(250, 146, 23);
+    text-decoration: none;
+}
+.x_cont ul.backPic li p a:link, .x_cont ul.backPic li p a:visited {
+    color: rgb(102, 102, 102);
+    text-decoration: none;
+    padding: 0px;
+}
+.x_cont ul.backPic li p.gf3 a:hover {
+     
+    background: url("../images/btn.png") no-repeat scroll 0px -768px transparent;
+}
+.x_cont ul.backPic li p.gf3 a.gfBtn {
+    display: block;
+    width: 134px;
+    height: 41px;
+    overflow: hidden;
+    margin: 12px auto 0px;
+    background: url("../images/btn.png") no-repeat scroll -140px -768px transparent;
+    text-indent: -999em;
+    cursor: pointer;
+}
+.x_cont ul.backPic li p a:hover {
+    color: rgb(250, 146, 23);
+    text-decoration: none;
+}
+.x_cont ul.backPic li p a:link, .x_cont ul.backPic li p a:visited {
+    color: rgb(102, 102, 102);
+    text-decoration: none;
+    padding: 0px;
+}

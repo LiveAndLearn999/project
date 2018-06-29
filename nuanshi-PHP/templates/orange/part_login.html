@@ -1,0 +1,107 @@
+<div class="left" id="Tab1">
+          <div class="plate">
+ 			               <div class="top">
+               	<span>通行证</span><strong><a href="reg.php">注册</a></strong>
+               </div>
+			
+               <div class="cont">
+							<form id="login_form" name="login_form" method="post" action="user.php?action=login_ok">
+							<input name="post_mode" type="hidden" value="withtml5">
+                   <div class="admname">
+                   	<input placeholder='请输入账号' name="member_username" id="member_username" type="text" class="name" tabIndex="1" />
+                   	<input name="keeplive" type="checkbox" value="" id="rem" class="box_check" tabIndex="4" checked="checked"/><label for="ji">记住我</label>
+                   </div>
+                   <div class="admpsd"><input placeholder='请输入密码' name="member_password" id="member_password" type="password" class="password" tabIndex="2" />
+                   <a href="user.php?action=forget">忘记密码?</a></div>
+                   <div class="loginBtn"><input id="login_submit" type="submit" value="" class="loginBtn" /></div>
+                   <div class="p_bg"></div>
+                   <div class="kj">
+                   	<span>快速登录：</span>
+               		<a href="login.php?action=qq" class="qq">QQ登录</a>
+               		<!--<a href="/index.php?m=member&c=index&a=public_sina_login" class="sinabo">新浪微博</a>-->
+               		<!-- <a href="#" target="_blank" class="qqbo">QQ微博</a>
+               		<a href="#" target="_blank" class="rrbo">人人微博</a> -->
+                   </div>
+				</form>
+			       <script type="text/javascript">
+	var logins=function(){
+		var member_username=$('#member_username').val();
+		var member_password=$('#member_password').val();
+		if ($.trim(member_username)==''){
+			alert('<!--{$language.username_is_empty}-->');
+			return false;
+		}
+		if ($.trim(member_password)==''){
+			alert('<!--{$language.password_is_empty}-->');
+			return false;
+		}
+		if (member_password.length<6&&member_password.length>20){
+			alert('<!--{$language.member_password_text}-->');
+			return false;
+		}
+		return true;
+	};
+	$("#login_form").submit(function(){
+		return logins();
+	});
+</script>              
+            </div>
+               <div class="foot"></div>
+          </div>
+     </div>
+
+
+
+
+<div class="left" id="Tab2" style="display:none;">
+          <div class="plate">
+ 			               <div class="top">
+               	 	<span>通行证</span><strong><a href="user.php?action=logout">注销</a></strong>
+               </div>
+            
+               <div class="cont">
+			               <!-- loginned-->
+                 <div class="member">
+                       <div class="left_main"><a href="user.php"><img src="/uploads/<!--{$member.photo}-->" onerror="this.src='/templates/orange/images/damember.jpg'"  width="60" height="60" /></a></div>
+                       <div class="right_main">
+                            <ul>
+                                <li><strong><a href="user.php"><!--{insert name="get_login_name"}--></a></strong>
+                                                                        <a href="#" class="dj_pt">普通</a>
+                                                                    </li>
+                                <li>上次登录：<!--{insert name="get_last_time"}--></li>
+                                <li><i></i>平台币：<span>0.00</span></li>
+                            </ul>
+                       </div>
+                 </div>
+                 <div class="member2">
+                       <a href="user.php">修改资料</a>
+                       <a href="pay.php">游戏充值</a>
+                       <a href="service.php" target="_blank">客服中心</a>
+                </div>
+                 <div class="member3">
+                       <div class="main1">您玩过的游戏：</div>
+                       <div class="main2">
+                            <ul>
+							<!--{foreach from=$gamelog item=log}-->
+			                                <li>
+	                                <span><img src="uploads/<!--{$log.game_logo}-->" width="16" height="16" /></span> 
+	                                <em><a href="<!--{$log.game_website}-->"><!--{$log.game_name}--></a></em> 
+	                                <b>双线19服</b> <strong><a href="game.php?action=play&game_id=<!--{$log.game_id}-->&server_id=<!--{$log.server_id}-->" target="_blank ">开始游戏>></a></strong>
+	                            </li><!--{foreachelse}-->
+								 <li><em>未登陆过游戏</em></li>
+								<!--{/foreach}-->
+			                            </ul>
+                       </div>
+                  </div>  
+                                    
+            </div>
+               <div class="foot"></div>
+          </div>
+     </div>
+<script type="text/javascript">
+var login_state={insert name="get_login_state"};
+if(login_state==1){
+	$("#Tab1").hide();
+	$("#Tab2").show();
+}
+</script>

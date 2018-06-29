@@ -1,0 +1,21 @@
+﻿<div id="footer">
+   <!--{if $bottom_menu}--> <p><!--{foreach item=menu from=$bottom_menu name=bottom_menu}-->
+  <a href="{$menu.link}" {if $menu.target==1}target="_blank"{/if}>{$menu.name}</a>
+  <!--{if !$smarty.foreach.bottom_menu.last}-->┊<!--{/if}-->
+	<!--{/foreach}--><br></p>
+   <div>
+     <div id="div">
+<P>
+  Copyright@2016 玛岸游戏——南京玛岸网络科技有限公司 All rights reserved ┊ <!--{$config.site_icp}-->
+  </P>
+   <P>
+  地址：南京市雨花经济开发区凤华路18号8幢405室  联系电话：025-52359970
+    </P>
+	   <P>
+   健康游戏忠告:抵制不良游戏,拒绝盗版游戏。注意自我保护,谨防受骗上当。适度游戏益脑,沉迷游戏伤身。合理安排时间,享受健康生活。
+    </P>     </div>
+   </div>
+   <!--{/if}-->
+</div>
+<!--end footer-->
+  

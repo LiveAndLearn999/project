@@ -1,0 +1,81 @@
+@charset "gb2312";
+/* CSS Document */
+
+#nav li span a{ color:#eb7f16; background:url(../images/index_2.png) no-repeat 12px -23px;}
+#banner_2{ width: 709px; height:226px; padding:4px;float:left; background:#fb7c15;}
+#banner_21{ width:442px; height:223px; float:left; padding:4px 0 0 6px; margin-right:12px; background:#fff;}
+#banner_22{ width:256px; height:215px; float:left; padding:12px 0 0 18px; background:#fff;}
+#banner_22 dt{ width:232px; height:49px;}
+#banner_22 dd{ width:197px; height:28px; margin-bottom:8px; line-height:28px; padding-left:34px; background:url(../images/index_2.png) no-repeat -7px -372px;}
+
+#content_1{width:990px; overflow:hidden;zoom:1; margin-bottom:15px; margin:auto;}
+
+
+#content_3{width:990px; margin-bottom:20px; margin:10px auto 0px;}
+#Daquan{width:990px; overflow:hidden;zoom:1; border:#dedede 1px solid;}
+
+#Daquan_2{width:988px; overflow:hidden;zoom:1;}
+
+#lb{width:225px; height:215px; float:left; display:inline; overflow:hidden; margin-bottom:25px; margin-left:12px; margin-right:10px; margin-top:15px;}
+#lb_1{ width:220px; height:144px;}
+#lb_1 dt{ width:220px; height:115px; padding:5px 0 0 5px; background:url(../images/index_11.jpg) no-repeat;}
+#lb_1 dd{ width:220px; height:18px; overflow:hidden;}
+#lb_1 dd span{ width: 134px; height:18px; line-height:18px; display:block; float:left; margin:0 5px 0 8px; display:inline; padding-left: 11px; background: url(../images/602indexImg.png) no-repeat -947px -986px; overflow:hidden;}
+#lb_1 dd a{ width: 61px; height: 18px; display:block; float:left; text-align:center; line-height:18px; background: url(../images/602indexImg.png) no-repeat 0px -519px; color:#36c; float:right;}
+#lb_1 dd a:hover{background: url(../images/602indexImg.png) no-repeat -61px -519px;}
+#lb_2{ width:220px;}
+#lb_2 dt{ width:220px; height:22px; line-height:22px;}
+#lb_2 dt a {color: #36C;}
+#lb_2 dt span{  width:30px; padding-left:9px;   color: #fb7b00; float:left;}
+#lb_2 dt b{ width:66px; font-weight:100; float:left; color: #565656;}
+#lb_2 dt strong{ width:66px;_width:64px; font-weight:100; color: #20b4f1; float:left;}
+#lb_2 dd{ width:212px; height:22px; padding-top:4px; line-height:18px; padding-left:8px;}
+#lb_2 dd a{ width:60px; height:18px; color:#fff; float:left;display:block; background:url(../images/index_2.png) no-repeat -42px -291px; text-indent:-999em;}
+#lb_2 dd .Btn1{ float:left;width:84px; height:20px; overflow:hidden;background: url(../images/602indexImg.png) no-repeat 0px -539px;}
+#lb_2 dd .Btn1:hover{background: url(../images/602indexImg.png) no-repeat 0px -561px;}
+#lb_2 dd .Btn2{ float:right;width:84px; height:20px; overflow:hidden;background: url(../images/602indexImg.png) no-repeat -86px -539px;}
+#lb_2 dd .Btn2:hover{background: url(../images/602indexImg.png) no-repeat -86px -561px;}
+#tdao{ width:240px; height:174px; margin-bottom:8px; float:left;}
+#tao_1{ width:220px; height:30px; border:1px solid #cdcdcb; border-bottom:none; font-size:14px; color:#333; padding:0 8px 0 10px; font-weight:bold; line-height:30px; background:url(../images/index_2.gif) repeat-x;}
+#tao_1 a{ width:37px; height:6px; display:block; margin-top:12px; float:right;background:url(../images/index_2.png) no-repeat -254px -201px;}
+#tao_1 span{ float:left;}
+#tao_2{ width:230px; height:127px; float:left; padding:12px 0 0 8px; border:1px solid #e0e0e0; border-top:none;}
+#tao_2 dt{ width:119px; height:40px; float:left; line-height:30px;}
+#tao_2 dd{ width:104px; height:40px; float:left; line-height:30px;}
+
+#Phone{width:240px; height:158px; float:left;}
+#Phone img{ padding:1px; border:1px solid #cbccce;}
+
+#Raiders{ width:740px; height:286px; float:left;}
+#Raiders_left{ width:522px; height:286px; float:left; margin-right:7px;}
+#Raiders_left_1{ width:504px; height:32px; border:1px solid #ebebeb; padding-left:16px; font-size:14px; color:#f60; font-weight:bold; line-height:32px; background:url(../images/index_3.gif) repeat-x;}
+#Raiders_left_2{ width:520px; height:240px; padding-top:12px; border:1px solid #ebebeb; border-top:none;}
+#Raiders_news{ width:484px; height:29px; margin-left:20px;}
+#Raiders_news dt{ width:13px; height:29px; float:left;}
+#Raiders_news dd{ width:438px; height:29px; float:left; line-height:29px; font-size:14px; padding:0 10px 0 10px; background:url(../images/index_23.jpg) repeat-x;}
+#Raiders_news dd a{ display:block; height:29px; font-weight:bold; color:#f60; float:left; padding:0 16px 0 16px; float:left;}
+#Raiders_news dd a:hover{ background:#f60; color:#fff;}
+#Raiders_lb{ width:484px;height:180px; margin-left:20px;}
+#Raiders_lb li{ width:218px; height:26px; line-height:26px; margin-right:12px; float:left; padding-left:12px; background:url(../images/index_4.gif) no-repeat 2px 11px;}
+
+#Raiders_right{ width:209px; height:286px; float:left;}
+#Raiders_right dt{ width:197px;_width:204px; height:34px; font-size:14px; font-weight:bold; color:#f60; line-height:34px; padding-left:16px;_padding-left:6px; background:url(../images/index_2.png) no-repeat -8px -329px;}
+#Raiders_right dd{ width:186px; height:241px;padding:10px 12px 0 12px;_padding:10px 6px 0 6px;border:1px solid #ebebeb; border-top:none; background:url(../images/index_5.png) no-repeat 14px 18px;}
+#Raiders_right dd li{ width:186px; height:32px; color:#f60; font-weight:bold;line-height:32px; border-bottom:1px dashed #ebebeb;}
+#Raiders_right dd li a{ width:132px; height:32px; padding-left:25px; display:block; float:left;font-weight:100;}
+#Raiders_right dd li span{ float:left;}
+
+
+
+#Tips{ width:991px; height:22px; border-bottom:1px dashed #ddd; float:left; text-align:center; margin-bottom:10px;}
+#Tips_1{ width:991px; height:48px; line-height:22px;float:left; text-align:center;}
+
+#content_4{ overflow:hidden;zoom:1;}
+
+/*·­Ò³*/
+#pages {padding: 30px 0px 29px 0px;text-align: center;}
+#pages a{ line-height:20px; height:20px; overflow:hidden; padding: 4px 10px; background:url(../images/pagebg.gif) repeat-x; font-family:Arial, Helvetica, sans-serif; margin-right:5px; border-top: 1px rgb(214, 210, 210) solid; border-left: 1px #d3d3d3 solid; border-bottom: 1px rgb(199, 199, 199) solid; border-right: 1px rgb(187, 187, 187) solid;box-shadow: 1px 1px 1px #E8E8E8; color: rgb(134, 134, 134); font-size: 12px; } 
+#pages a:hover{line-height:20px; height:20px; overflow:hidden; padding: 4px 10px; background: #0591D2; font-family:Arial, Helvetica, sans-serif; font-size: 12px; margin-right:5px; border: 1px rgb(2, 89, 148) solid; color:#fff; font-weight:100;box-shadow: 1px 1px 1px #E8E8E8;}
+#pages span{line-height:20px; height:20px; overflow:hidden; padding: 4px 10px; background: #0591D2; font-family:Arial, Helvetica, sans-serif; font-size: 12px; margin-right:5px; border: 1px rgb(2, 89, 148) solid; color:#fff; font-weight:100;box-shadow: 1px 1px 1px #E8E8E8;font-weight: bold;}
+#pages .a1:hover,#pages .a1:hover,#pages .first:a1,#pages .prev:hover{line-height:20px; height:20px; overflow:hidden; padding: 4px 10px; background: #0591D2; font-family:Arial, Helvetica, sans-serif; font-size: 12px; margin-right:5px; border: 1px rgb(2, 89, 148) solid; color:#fff; font-weight:100;box-shadow: 1px 1px 1px #E8E8E8;font-weight: bold;}
+#pages .total{ font-size:12px; font-weight:100; font-family:Arial, Helvetica, sans-serif; margin-left:5px;} 

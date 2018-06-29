@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<link href="styles/calendars.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="150" valign="top"><!--{include file="left.htm"}--></td>
+<td valign="top">
+<div class='title'>
+<a href="?action=start&do=feedback_list"><!--{$language.feedback_list}--></a>&raquo;&nbsp;<!--{$language.feedback_edit}-->
+</div>
+<div class='item'>
+	<table width="100%">
+	<form action="?action=start&do=feedback_update" method="post" name="feedback_info">
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_feedback_name}--></td>
+		<td><input type="text" name="feedback_name" class="input" size="60" value="<!--{$feedback.name|escape:html}-->" />		</td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top" width="80" height="30"><!--{$language.form_feedback_content}--></td>
+		<td><textarea name="feedback_content" cols="80" rows="8" class="input"><!--{$feedback.content|escape:html}--></textarea>
+		</td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top" width="80" height="30"><!--{$language.form_feedback_reply}--></td>
+		<td><textarea name="feedback_reply" cols="80" rows="8" class="input"><!--{$feedback.reply|escape:html}--></textarea>
+		</td>
+		</tr>
+		
+		<tr>
+		<td align="right" height="30"><!--{$language.form_feedback_state}--></td>
+		<td>
+		<label><input type="radio" name="feedback_state" value="1" {if $feedback.state==1}checked{/if} /> <!--{$language.form_feedback_state_1}--></label>
+		<label><input type="radio" name="feedback_state" value="0" {if $feedback.state==0}checked{/if} /> <!--{$language.form_feedback_state_0}--></label>
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="button"/>
+		</td>
+		</tr>
+		<input type="hidden" name="feedback_id" value="<!--{$feedback.id}-->"/>
+	</form>
+	</table>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

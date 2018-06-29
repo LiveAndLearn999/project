@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><!--{$config.site_name}--></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->" />
+<meta name="description" content="<!--{$config.site_description|escape:html}-->" />
+<LINK href="/templates/kele/img/reset.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/common.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/gamelist.css" type=text/css rel=stylesheet>
+<!--[if lte IE 6]>
+<script src="/templates/kele/img/fixPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('.pngfix');
+</script>
+<![endif]--> 
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="header.html"}-->
+ 
+<DIV class="mainContent clearfix">
+  <div class="left box uc">
+	<h3>
+		<strong class="fl icon_06">新手礼包</strong>
+	</h3>
+    <div class=margin>
+		<ul class="g_list3 clearfix">
+			<!--{foreach from=$game_list item=game}-->
+			<li>
+				<img src="uploads/<!--{$game.game_logo}-->">
+				<div class="a6">所使用游戏:<span class="a7"><!--{$game.game_name}--></span></div>
+				<div><a href="card.php?action=card_list&id=<!--{$game.game_id}-->&name=<!--{$game.game_name}-->"><img src="templates/kele/img/cd_btn.gif" border="0" /></a></div>
+			</li>
+			<!--{/foreach}-->
+		</ul>
+    </div>
+  </div>
+  <div class=sidebar>
+    <div class="" id=uc_box>
+      <!--{include file="part_login.html"}-->
+    </div>
+    <div class="box latest_news">
+      <!--{include file="part_faq.html"}-->
+    </div>
+    <div class="box cs">
+      <div class=margin>
+      	<!--{include file="part_service.html"}-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--{include file="footer.html"}-->
+</body>
+</html>

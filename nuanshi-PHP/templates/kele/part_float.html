@@ -1,0 +1,73 @@
+<script type="text/javascript">
+document.write(
+'<!--[if lt IE 7]>' +
+'<style type="text/css">'+
+'#float_title{'+
+'top:expression(eval(document.compatMode &&'+
+'document.compatMode==\'CSS1Compat\') ?'+
+'documentElement.scrollTop + 105'+
+': document.body.scrollTop + 105);'+
+'}'+
+'#float{'+
+'top:expression(eval(document.compatMode &&'+
+'document.compatMode==\'CSS1Compat\') ?'+
+'documentElement.scrollTop + 160'+
+': document.body.scrollTop + 160);'+
+'}'+
+'</style>'+
+'<![endif]-->'+
+'<div id="float_title">'+
+'<h5><strong><a onfocus="this.blur();" href="javascript:void(0);" onmouseout="hideFloatPlayed()" onmouseover="showFloatPlayed(\'\');" onclick="showFloatPlayed(\'\');return false;">我玩过的游戏</a></strong></h5>'+
+'</div>' +
+'<div id="float" onmouseout="hideFloatPlayed()" onmouseover="showFloatPlayed(\'\');">' +
+'<p class="close" ><a href="javascript:void(0);" onclick="showFloatPlayed(\'none\');return false;" class="fr"></a></p>'+
+'<div class="float_div">'+
+'<ul>'+
+<!--{foreach from=$gamelog item=log}-->
+'<li id="sv1<!--{$log.id}-->" onmouseout="showdel(<!--{$log.id}-->,false);return false;" onmouseover="showdel(<!--{$log.id}-->,true);return false;"><a href="game.php?action=play&game_id=<!--{$log.game_id}-->&server_id=<!--{$log.server_id}-->" title="" target="_blank" ><!--{$log.game_name}-->-<!--{$log.server_name}--></a><a class="var" style="display:none;" id="close<!--{$log.id}-->" onclick="delgame(<!--{$log.id}-->);return false;" href="javascript:void(0);" >关闭</a></li>' +
+<!--{foreachelse}-->
+'<li class="noyet">您当前还未玩过游戏<a href="/game/" target="_blank">点这里挑个游戏开始吧！</a></li>' +
+<!--{/foreach}-->
+'</ul>'+
+'</div>' +
+'</div>'
+);
+var fp_time = null;
+function showFloatPlayed(display)
+{
+if(fp_time) clearTimeout(fp_time);
+document.getElementById('float').style.display = display;
+FloatPlayedCookie(display);
+}
+function hideFloatPlayed()
+{
+fp_time = setTimeout('showFloatPlayed("none")',100);
+}
+function FloatPlayedCookie(val){
+var nameString = 'FloatPlayed=' + val;
+var expiryString = "";
+var path = " ;path =/";
+document.cookie = nameString + expiryString + path;
+}
+function showdel(did,_bool)
+{
+if(_bool)
+{
+window.document.getElementById("close"+did).style.display = "";
+}
+else
+{
+window.document.getElementById("close"+did).style.display = "none";
+}
+}
+function delgame(val)
+{
+$.post("/FloatPlayed/" , {id : val, op: 'del'}, function (data)
+{
+if(data == 1)
+{
+window.document.getElementById("sv"+val).style.display = "none";
+}
+})
+}
+</script>

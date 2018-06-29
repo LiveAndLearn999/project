@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td width="150" valign="top"><!--{include file="left.htm"}--></td>
+<td valign="top">
+	<div class='title'>&raquo;&nbsp;<!--{$language.system_info}--></div>
+	<div class='item'>
+	<ul class='list'>
+	<li><!--{$language.system_info_1}-->{$system_info.SERVER_TIME}</li>
+	<li  style="background:#efefef"><!--{$language.system_info_2}-->{$system_info.SERVER_PORT}</li>
+	<li><!--{$language.system_info_3}--><a href='./' target="_blank" style="color:red;text-decoration:underline">{$system_info.SERVER_NAME}</a></li>
+	<li  style="background:#efefef"><!--{$language.system_info_4}-->{$system_info.PHP_OS}</li>
+	<li><!--{$language.system_info_5}-->{$system_info.SERVER_SOFTWARE}</li>
+	<li  style="background:#efefef"><!--{$language.system_info_6}-->MYSQL {$system_info.DB_VERSION}</li>
+	<li><!--{$language.system_info_7}-->{$system_info.DOCUMENT_ROOT}</li>
+	<li  style="background:#efefef"><!--{$language.system_info_8}-->{$system_info.UPLOAD_MAX_FILESIZE}</li>
+	</ul>
+	</div>
+	
+	<div class='title'>&raquo;&nbsp;运营方</div>
+	<div class='item'>
+	<ul class='list'>
+	<li>920wan游戏平台 <a href="http://920wan.com/" target="_blank">http://920wan.com</a></li>	
+	<li  style="background:#efefef">QQ：2282562828</li>	
+	</ul>
+	</div>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

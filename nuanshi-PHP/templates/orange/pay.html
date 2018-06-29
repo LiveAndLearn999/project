@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$config.site_name}--></title>
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->">
+<meta name="description" content="<!--{$config.site_description|escape:html}-->">
+<link href="/templates/orange/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/templates/orange/css/kflb.css" rel="stylesheet" type="text/css" />
+<link href="/templates/orange/css/pay.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+
+<script type="text/javascript" src="/templates/orange/js/jquery.pack.js"></script>
+<script type="text/javascript" src="/templates/orange/js/jQuery.blockUI.js"></script>
+<script type="text/javascript" src="/templates/orange/js/jquery.SuperSlide.js"></script>
+<script type="text/javascript" src="/templates/orange/js/jquery.js"></script>
+<script type="text/javascript" src="/templates/orange/js/xjt/jquery.pagination.js"></script>
+
+
+<script type="text/javascript">
+var mode_id=0;
+var mode_name="";
+var mode_depict="";
+var mode_per=100;
+var mode_no="";
+var gold_name="元宝";
+var gold_per=10;
+var serverData="";
+</script>
+</head>
+<body>
+<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end--> 
+<div id="container">
+<div id="content_1">
+<form id="pay_form" name="pay_form" method="post" action="?action=pay_ok" onsubmit="return check_form()">
+<div id="neiye-layout">
+        <div id="neiye_pay_left">
+           <div id="neiye_pay_left_list">
+              <div id="neiye_pay_left_list_t"></div>
+                  <div id="neiye_pay_left_list_c">
+                     <ul>
+					 <!--{foreach from=$paymode_list item=paymode}-->
+                         <li><a href="javascript:void(0);" onclick="setPaymode(<!--{$paymode.mode_id}-->,'<!--{$paymode.mode_name}-->','<!--{$paymode.mode_depict}-->',<!--{$paymode.mode_money_per}-->,'<!--{$paymode.mode_no}-->')" class="opt_<!--{$paymode.mode_no}-->" id="mode<!--{$paymode.mode_id}-->" class="paytype"><span class="name"><em></em><i><!--{$paymode.mode_name}--></i></span></a></li>
+                        <!--{if $paymode.mode_is_default==1}-->
+					<script type="text/javascript">
+						mode_id=<!--{$paymode.mode_id}-->;
+						mode_name='<!--{$paymode.mode_name}-->';
+						mode_depict='<!--{$paymode.mode_depict}-->';
+						mode_per=<!--{$paymode.mode_money_per}-->;
+						mode_no='<!--{$paymode.mode_no}-->';
+					</script>
+				<!--{/if}-->
+			<!--{/foreach}-->
+                    </ul>
+                  </div>
+                  <div id="neiye_pay_left_list_f"></div>
+                  <div class="clear"></div>
+            </div>
+            <div id="neiye_pay_left_infor">
+            <div id="payboxtop"></div>
+            <div id="neiye_pay_left_infor_t"><div class="paytitle"><span class="title">您当前选择的是“<strong id="mode_name" class="c_o"></strong>”的充值方式</span><span class="help" id="payhelp" ><a href="#" target="_blank">充值遇到问题</a></span></div></div>
+            <div id="neiye_pay_left_infor_c">
+            <!--paypal充值-->
+           	<input type="hidden" id="mode_id" name="mode_id" value="0" />
+											<input type="hidden" id="mode_no" name="payway" value="0" />
+            <!--paypal充值-->
+            <div class="neiye_pay_left_infor_c_1">
+                  <div id="czwhere" class="zhxz_box">
+                      <ul>
+                           <li class="payts">充值到哪里：</li>
+                           <li class="paytsbox">
+                               <label>
+                                   <input type="radio" name="pay_platform" id="pay_platform" value="" checked="checked" onClick="hide_select();">充值到游戏
+                               </label>
+                               <label>
+                                   <input type="radio" name="pay_platform" id="pay_platform" value="platform" class="end" onClick="hide_select('platform');" />充值到平台帐号
+                               </label>
+                           </li>
+                       </ul>
+                  </div>
+                  <div id="div_game1" class="neiye_pay_left_infor_c_1_c" style="border:1px solid #ff8800;padding:10px; width:430px;line-height:18px;margin:33px 0; display:none;">
+                      <img src="http://www.602.com/statics/images/tanhao.png" /> 充值到平台可以获得602游戏通用平台币。
+                      <a href="http://www.602.com/news/28/24.html" target="_blank" style="text-decoration:underline; color:#ff8800"> 什么是平台币？</a>&nbsp;&nbsp;
+                      <a href="http://www.602.com/news/28/24.html" target="_blank" style="text-decoration:underline; color:#ff8800"> 如何使用平台币？</a>&nbsp;&nbsp;
+                      <a href="http://www.602.com/news/28/24.html" target="_blank" style="text-decoration:underline; color:#ff8800">使用平台币有什么好处？</a>
+                  </div>
+                  <div class="neiye_pay_left_infor_c_1_c" id="div_game" style="display:;">
+                      <ul>	     
+                           <li id="tip"><span id="msg_for_game"></span></li>
+                           <li>
+                              <span class="name">请选择游戏：</span>
+                              <span class="select_game" >  
+                                  <div id="gameSet">
+                                      <a id="selgame" href="javascript:void(0);" onclick="open_select_game();">选择游戏</a><b onclick="open_select_game();"></b>
+                                  </div>
+                              </span>
+                              <div id="cz_select_game" style="display:none;">
+                                  <div class="cz_sg_nav">
+                                    <ul class="win_game_nav">
+                                      <!---->
+                                      <li class="no_2 on" id="no_2">
+                                          <a href="javascript:void(0);" class="">最近玩过的游戏</a>
+                                          <a href="javascript:void(0);" class="current">全部游戏</a>
+                                      </li>
+                                    </ul>
+                                    <span onclick="close_select_all()"><img src="/templates/orange/images/closed.gif" /></span>
+                                    <div class="clear"></div>
+                                  </div>
+                                  <!--全部的游戏-->
+                                  <div id="nlist2">
+                                      <ul class="my_game_data" id="my_game_data" style='display:none;'>
+									  <!--{foreach from=$gamelog item=log}-->
+									  <li id="wy" onclick="serverList('<!--{$log.game_name}-->','<!--{$log.game_id}-->','<!--{$log.game_money_per}-->')"><!--{$log.game_name}--></li>
+									  <!--{foreachelse}-->
+                                                                                        <p class='default'><a href="login.php">登录</a>后才会显示最近玩过的游戏哦!</p><!--{/foreach}-->
+                                                                                    </ul>
+                                      <ul class="all_game_data" id="all_game_data" style=''>
+                                          <!--{foreach from=$game_list item=game}-->
+                                            <li id="<!--{$game.game_no}-->" onclick="serverList('<!--{$game.game_name}-->','<!--{$game.game_id}-->','<!--{$game.game_money_per}-->')"><!--{$game.game_name}--></li>
+                                         
+                                             <!--{/foreach}-->
+                                                                              </ul>
+                                      <div class="clear"></div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li id="div_server"><span class="name">请选择服务器：</span>
+                                  <span class="select_game">
+                                     <div id="qfSet">
+                                        <a id="selfwq" href="javascript:void(0);" onclick="open_select_server();">选择区服</a><b onclick="open_select_server();"></b>
+                                     </div>
+                                  </span>
+                                  <div id="cz_select_server" style="display:none;">
+                                  <h3>
+                                      <span onclick="close_select_all()"><img src="/templates/orange/images/closed.gif" /></span>
+                                      <a href="javascript:void(0);" class="">最近玩过的服务器</a>
+                                      <a href="javascript:void(0);" class="current">全部服务器</a>
+                                  </h3>
+                                      <div id="my_server_data" class="cz_sega_boxa" style='display:none;'>
+                                          <div id="my_server_list"></div>
+                                      </div>
+                                          <div id="all_server_data" class="cz_sega_boxa" style=''>
+                                              <div id="selectfw"></div>
+                                              <div id="all_server_list1"><ul id="all_server_list" class="all_servers"></ul><div style="clear:both"></div></div>
+                                              <div id="Pagination" class="pagination"><span class="current prev">上一页</span><span class="current">1</span><span class="current next">下一页</span></div>
+                                          </div>
+                               </div>
+                           </li>
+                           <div class="clear"></div>
+                      </ul>
+                  </div>
+              </div>
+              <div class="neiye_pay_left_infor_c_1">
+                  <div class="neiye_pay_left_infor_c_1_c">
+                     <ul id="czzhbox">
+                          <li id="youid" style="display:none;"><span class="name">您充值的账号：</span><em></em><span id="zhts3"></span></li>
+                          <li id="youpintb" style="display:none;"><span class="name">您的平台币余额：</span><em><font>0</font>平台币</em></li>
+                          <li id="czzh1"><span id="cz_zh" class="name">需要充值的帐号:</span><span class="zh">
+                          <input type="text" name="trade_sn" id="trade_sn" value="" style="display:none;">
+                          <input type="text" name="member_name" id="member_name" onBlur="ajax_check_user();" value="" class="zhanghao"></span><em id="zhts1"></em></li>
+                          <li id="czzh2"><span id="qrcz_zh" class="name">确认充值帐号:</span><span class="zh"><input name="re_member_name" type="text" onblur="ajax_check_user()" id="re_member_name" value="" class="zhanghao"></span><em id="zhts2"></em></li>
+                          <li id="li_game_rname" style="display:none;"><span class="name">请选择充值的角色：</span><span class="zh"><select name="re_game_rid" type="text" id="re_game_rid"  class="select_game" onChange="on_rolechange(this);"></select></span><em>*</em><span>请确认您充值的角色</span></li>
+                          <div class="clear"></div>
+                      </ul>
+                  </div>
+               </div>	
+               <div class="neiye_pay_left_infor_c_1 jebox">
+                  <div class="neiye_pay_left_infor_c_1_c">
+                     <ul>
+                        <li>
+                          <span class="jename">充值金额：</span>
+                          <span id="je_set" class="select_game"> <select id="money" name="money" onchange="setGold(this.options[selectedIndex].value)">
+								
+								<option value="10">10</option>
+								<option value="20">20</option>
+								<option value="30">30</option>
+								<option value="40">40</option>
+								<option value="50">50</option>
+								<option value="100" selected="selected">100</option>
+								<option value="150">150</option>
+								<option value="200">200</option>
+								<option value="250">250</option>
+								<option value="300">300</option>
+								<option value="500">500</option>
+								<option value="800">800</option>
+								<option value="1000">1000</option>
+								<option value="1500">1500</option>
+								<option value="2000">2000</option>
+								<option value="3000">3000</option>
+								<option value="5000">5000</option>
+								<option value="10000">10000</option>
+							</select></span>
+                        </li>
+                        <li id='other_amount' style="display:none;"></li>
+                        <li style="display:none;"><span class="name">对应<span name="game_curr">元宝</span>数量：</span><span class="zh" id="pay_amount_show" style="line-height:26px;color:red"></span><span style="color:red;">*兑换比例为1元=<span id="parcen">X</span><span name="game_curr"></span></span></li>
+                        <li id="ylsuname" class="ylhs">您将获得：<font id="gold_cnt">1000</font> <em id="gold_str">元宝</em></li>
+                        <div class="clear"></div>
+                    </ul>
+                 </div>
+              </div>
+              <div class="clear"></div>
+              <div id="bank" style="display:none">
+                  <div id="bank_con">
+                          <span id="zggs"><label><input name="bankId" checked="checked" type="radio" value="ICBC-NET-B2C"/><a href="javascript:selectbank('ICBC-NET-B2C');">中国工商银行</a></label></span>
+                          <span id="zgjh"><label><input name="bankId" type="radio" value="CCB-NET-B2C"/><a href="javascript:selectbank('CCB-NET-B2C');">中国建设银行</a></label></span>
+                          <span id="zgly"><label><input name="bankId" type="radio" value="ABC-NET-B2C"/><a href="javascript:selectbank('ABC-NET-B2C');">中国农业银行</a></label></span>
+                          <span id="zgzs"><label><input name="bankId" type="radio" value="CMBCHINA-NET-B2C"/><a href="javascript:selectbank('CMBCHINA-NET-B2C');">招商银行</a></label></span>
+                          <span id="zgyh"><label><input name="bankId" type="radio" value="BOC-NET-B2C"/><a href="javascript:selectbank('BOC-NET-B2C');">中国银行</a></label></span>
+                          <span id="zgjt"><label><input name="bankId" type="radio" value="BOCO-NET-B2C"/><a href="javascript:selectbank('BOCO-NET-B2C');">交通银行</a></label></span>
+                          <span id="zggd"><label><input name="bankId" type="radio" value="CEB-NET-B2C"/><a href="javascript:selectbank('CEB-NET-B2C');">中国光大银行</a></label></span>
+                          <span id="zgms"><label><input name="bankId" type="radio" value="CMBC-NET-B2C"/><a href="javascript:selectbank('CMBC-NET-B2C');">中国民生银行</a></label></span>
+                          <span id="zgxy"><label><input name="bankId" type="radio" value="CIB-NET-B2C"/><a href="javascript:selectbank('CIB-NET-B2C');">兴业银行</a></label></span>
+                          <span id="zgpf"><label><input name="bankId" type="radio" value="SPDB-NET-B2C"/><a href="javascript:selectbank('SPDB-NET-B2C');">浦发银行</a></label></span>
+                          <span id="zgdy"><label><input name="bankId" type="radio" value="HKBEA-NET-B2C"/><a href="javascript:selectbank('HKBEA-NET-B2C');">东亚银行</a></label></span>
+                          <span id="zgzx"><label><input name="bankId" type="radio" value="ECITIC-NET-B2C"/><a href="javascript:selectbank('ECITIC-NET-B2C');">中信银行</a></label></span>
+                          <span id="zgyz"><label><input name="bankId" type="radio" value="POST-NET-B2C"/><a href="javascript:selectbank('POST-NET-B2C');">中国邮政储蓄银行</a></label></span>
+                          <span id="zgpa"><label><input name="bankId" type="radio" value="PINGANBANK-NET"/><a href="javascript:selectbank('PINGANBANK-NET');">平安银行</a></label></span>
+                          <span id="zgbh"><label><input name="bankId" type="radio" value="CBHB-NET-B2C"/><a href="javascript:selectbank('CBHB-NET-B2C');">渤海银行</a></label></span>
+                          <span id="zgbj"><label><input name="bankId" type="radio" value="BCCB-NET-B2C"/><a href="javascript:selectbank('BCCB-NET-B2C');">北京银行</a></label></span>
+                          <span id="zgnj"><label><input name="bankId" type="radio" value="NJCB-NET-B2C"/><a href="javascript:selectbank('NJCB-NET-B2C');">南京银行</a></label></span> 
+                          <span id="lbyh"><label><input name="bankId" type="radio" value="NBCB-NET-B2C"/><a href="javascript:selectbank('NBCB-NET-B2C');">宁波银行</a></label></span>
+                          <span id="gfyh"><label><input name="bankId" type="radio" value="GDB-NET-B2C"/><a href="javascript:selectbank('GDB-NET-B2C');">广发银行</a></label></span>
+                          <span id="shyh"><label><input name="bankId" type="radio" value="SHB-NET-B2C"/><a href="javascript:selectbank('SHB-NET-B2C');">上海银行</a></label></span>
+                          <span id="bjnc"><label><input name="bankId" type="radio" value="BJRCB-NET-B2C"/><a href="javascript:selectbank('BJRCB-NET-B2C');">北京农村商业银行</a></label></span>
+                          <span id="zsyh"><label><input name="bankId" type="radio" value="CZ-NET-B2C"/><a href="javascript:selectbank('CZ-NET-B2C');">浙商银行</a></label></span>
+                          <span id="hzyh"><label><input name="bankId" type="radio" value="HZBANK-NET-B2C"/><a href="javascript:selectbank('HZBANK-NET-B2C');">杭州银行</a></label></span>
+                          <span id="shnc"><label><input name="bankId" type="radio" value="SRCB-NET-B2C"/><a href="javascript:selectbank('SRCB-NET-B2C');">上海农村商业银行</a></label></span>
+                          <span id="nysy"><label><input name="bankId" type="radio" value="NCBBANK-NET-B2C"/><a href="javascript:selectbank('NCBBANK-NET-B2C');">南阳商业银行</a></label></span>
+                          <span id="hbyh"><label><input name="bankId" type="radio" value="SCCB-NET-B2C"/><a href="javascript:selectbank('SCCB-NET-B2C');">河北银行</a></label></span>
+                          <span id="zjtl"><label><input name="bankId" type="radio" value="ZJTLCB-NET-B2C"/><a href="javascript:selectbank('ZJTLCB-NET-B2C');">浙江泰隆商业银行</a></label></span>
+                  </div>
+                  <div id="all_bank"><a href="javascript:void(0);">选择更多</a></div>
+              </div>
+              <div class="neiye_pay_left_infor_c_2" id="tjanniu">
+                  <div class="pay">
+                      <input type="submit"  class="tjBtn"/>
+                  </div>
+              </div> 
+              
+             
+          </div>
+          <div id="neiye_pay_left_infor_f"></div>
+          <div id="wxts">
+                <div class="tstop"></div>
+                <div class="tscon">
+                    <h1>温馨提示：</h1>
+                    <p>
+                     获得游戏币比例为<span id="mode_per" class="c_o2"></span>（部分充值渠道需要手续费），建议您充值时填写当前使用的手机号码，以便在遇到问题时我们能及时与您沟通。</p>
+                </div>
+                <div class="tsbottom"></div>
+          </div>
+          <div class="clear"></div>
+          </div>
+      </div>
+            <div id="neiye_pay_right">
+            <div id="neiye_pay_right_kf">
+                  <div id="neiye_pay_right_help_t" class="kftitle">客服中心</div>
+                  <div id="neiye_pay_right_help_c">
+                       <span id="kfBtn"><a href="http://www.602.com/kefu.html" target="_blank">在线客服</a></span>
+                   <div id="lxfs">
+                       <span>客服电话：</span>
+                       <dl>
+                           <dt>021-39254937</dt>
+                           <dt>18621818602</dt>
+                       </dl>
+                       <span>E-mail：</span>
+                       <em>kf@602.com</em>
+                   </div>
+                   </div>
+            </div>
+            <div id="neiye_pay_right_help">
+                <div id="neiye_pay_right_help_t" class="cjwttitle">常见问题解答</div>
+                <div id="neiye_pay_right_help_c">
+                    <ul>  
+                                                                        <li><a href="http://www.602.com/news/28/4141.html" target="_blank">充值没到帐怎么办?</a></li>
+                                                <li><a href="http://www.602.com/news/28/4139.html" target="_blank">充值时“内容被阻止,....”</a></li>
+                                                <li><a href="http://www.602.com/news/28/2833.html" target="_blank">支付宝充值指南</a></li>
+                                                <li><a href="http://www.602.com/news/28/989.html" target="_blank">《网络游戏行业服务规范》</a></li>
+                                                <li><a href="http://www.602.com/news/28/56.html" target="_blank">骏网一卡通充值指南</a></li>
+                                                <li><a href="http://www.602.com/news/28/27.html" target="_blank">完美卡充值指南</a></li>
+                                                <li><a href="http://www.602.com/news/28/24.html" target="_blank">使用平台币有什么好处？</a></li>
+                                                <li><a href="http://www.602.com/news/28/23.html" target="_blank">游戏充值教程</a></li>
+                                                <li><a href="http://www.602.com/news/28/22.html" target="_blank">网银支付指南</a></li>
+                                                          
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    <div class="clear"></div>
+</div>
+<div id="tj"></div>
+</form>
+<div style="clear:both;"></div>
+<style>
+	#no_2 a {background:transparent;color:#eeeeee}
+	#no_2 a.current {background:#fff;color:#333}
+	#cz_select_server h3 a {background:transparent;color:#eeeeee}
+	#cz_select_server h3 a.current {background:#fff;color:#333}
+	#my_game_data li {cursor: pointer;display: inline;float: left;height: 20px;line-height: 20px;margin: 5px 7px;overflow: hidden;padding-left: 20px;width: 71px;}
+	#my_game_data .default{width:100%;margin:12px 0 12px 10px;color:#888;}
+	#my_game_data .default a {color:#ff6600;text-decoration:underline;}
+	#my_server_data .cz_sega_boxa{max-height:190px;_height:190px;overflow-x: hidden;overflow-y: auto;}
+	#my_server_id ul li {margin:6px 7px}
+	#my_server_data .default{width:100%;margin:12px 0 12px 10px;color:#888;}
+	#my_server_data .default a {color:#ff6600;text-decoration:underline;}
+	#cz_select_game,#cz_select_server{min-height:200px;_height:200px;top:95px;}
+	.neiye_pay_left_infor_c_1_c ul li#tip{height:16px;}
+</style>
+
+<script type="text/javascript">
+
+
+
+var SelectGame = $("#cz_select_game");
+var SelectServer = $("#cz_select_server");
+function open_select_game(){
+	SelectGame.show();
+	SelectServer.hide();
+}
+function open_select_server(){
+	var game_id =$("#game_id").val();
+	var game_Name =$("#selgame").text();
+	if(game_Name=="选择游戏"||game_id==0){
+		open_select_game();
+	}else{
+		SelectGame.hide();
+		SelectServer.show();
+	}
+}
+function close_select_all(){
+		SelectGame.hide();
+		SelectServer.hide();
+}
+function getServer(id){
+		var sid=<!--{$server_id}-->;
+		$.ajax({
+			url:'pay.php',
+			data:"action=get_server&game_id="+id+"&server_id="+sid,
+			type:'get',
+			dataType:'text',
+			success:function(result){
+				//alert(result);
+				$("#all_server_list").empty();
+				$("#all_server_list").append(result);
+			}
+		});
+	}
+
+
+
+function serverList(name,val,bili,select){
+		$("#game_id").val(val);		//设置游戏id
+		$("#gameSet a").html(name); //设置游戏名
+		$("#f_bianhao").val("");	//复位服务器id
+		$("#selfwq").text("选择区服");	//复位服务器名称
+		
+
+		$("#msg_for_game").hide();
+		$("#cz_select_game").hide();
+		$("#cz_select_server").show();
+		getServer(val);
+		
+		if(select=='my'){
+		
+		}
+}
+function selServer(val){
+		$("#selfwq").text(val);
+		$("#cz_select_server").hide();
+	}
+	setPaymode(mode_id,mode_name,mode_per,mode_no);
+function setPaymode(id,name,per,payway){
+		//样式
+		old_id=$("#mode_id")[0].value;
+		if(old_id>0){
+			$("#mode"+old_id).removeClass("curent");
+		}
+		$("#mode"+id).addClass("curent");
+	
+		$("#mode_id").val(id);
+		$("#mode_name").html(name);
+		$("#mode_per").html(per+'%');
+		$("#mode_no").val(payway);
+		
+		
+		//gold
+		mode_per=per;
+		setGold($("#money")[0].value);
+		
+		//bank
+		if(id==1){
+			$("#bank").show();
+		}
+		else{
+			$("#bank").hide();
+		}
+	}
+	function setGold(money){
+		gold=money*gold_per*(mode_per/100);
+		$("#gold_cnt").html(gold);
+		$("#gold_str").html(gold_name);
+	}
+	function selectbank(bankcode) {
+		$("input[value='"+bankcode+"']").attr('checked', true);
+	}
+</script>
+
+<script type="text/javascript">
+
+</script>
+
+   </div>    
+</div>
+<div id="content_4">
+<!--footer str-->
+<div class="footer">
+     <div class="information">
+          <a href="http://www.602.com/AboutUs/About.html">关于我们</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/swhz.html">商务合作</a><font>|</font>
+          <a href="#">法律声明</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/kfzx.html">客服中心</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/rczp.html">人才招聘</a><font>|</font>
+          <a href="http://bbs.602.com/">游戏论坛</a><br>
+          <span>游戏版权所有 Copyright (c) 2012 602.com All Rights Reserved<br>沪网文[2012]0880-122号 沪ICP备12047477号-5 电话021-39254937<br>增值电信业务经营许可证沪B2-20110013</span>
+     </div>
+     <div class="copyright"><img src="/statics/images/news/foot_1.jpg" width="100" height="38" /><img src="/statics/images/news/foot_2.jpg" width="100" height="38" /><img src="/statics/images/news/foot_3.jpg" width="100" height="38" /></div>
+</div>
+<div id="602tj" style="display:none;">
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5640667'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s20.cnzz.com/stat.php%3Fid%3D5640667' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+<!--footer end--></div>
+</body>
+</html>

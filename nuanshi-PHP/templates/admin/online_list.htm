@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="150" valign="top"><!--{include file="left.htm"}--></td>
+<td valign="top">
+<div class='title'>
+&raquo;&nbsp;<!--{$language.menu_online}--></div>
+<div class='item'>
+	<table cellspacing="0" cellpadding="0" width="100%">
+	<!--{foreach from=$online_list item=online}-->
+	<tr>
+	<td height="26" width="150" align="center"><!--{$online.time}--></td>
+	<td width="250"><!--{$online.address}-->&nbsp;(<!--{$online.ip}-->)</td>
+	<td  ><!--{$online.url}--></td>
+	<td  width="150" ><!--{$online.agent}--></td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="4"></td></tr>
+	<!--{foreachelse}-->
+	<tr><td height="50" colspan="4" align="center"><!--{$language.nodata}--></td></tr>
+	<!--{/foreach}-->
+	<!--{if $pagebar}-->
+	<tr><td height="26"  colspan="4" align="right"><!--{$pagebar}--></td></tr>
+	<!--{/if}-->
+	</table>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>

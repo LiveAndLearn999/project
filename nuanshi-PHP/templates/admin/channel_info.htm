@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+					<a href="?action=content&do=channel_list"><!--{$language.channel_list}--></a>
+&raquo;&nbsp;<!--{if $mode=='insert'}--><!--{$language.channel_add}--><!--{else}--><!--{$language.channel_edit}--><!--{/if}-->
+				</h1>
+				
+				<div class="stat-container">
+				
+				
+	
+	<form action="?action=content&do=channel_<!--{$mode}-->" method="post" enctype="multipart/form-data">
+ 
+		<table width="100%" cellspacing="5" cellpadding="0">
+<tr>
+		<td align="right" width="20%" height="30"><!--{$language.form_channel_name}--></td>
+		<td><input type="text" name="channel_name" size="40" value="<!--{$channel.name|escape:html}-->" class="input"/></td> </tr>
+
+		<tr>
+		<td align="right"><!--{$language.form_channel_description}--></td>
+		<td colspan="3"><textarea name="channel_description" cols="80" rows="3" class="textarea"><!--{$channel.description|escape:html}--></textarea></td>
+	 </tr>
+	 <tr>
+		<td align="right" height="30"><!--{$language.form_channel_upload_ext}--></td>
+		<td colspan="3">
+		<textarea name="channel_upload_ext" cols="80" rows="3" class="textarea"><!--{$channel.upload_ext|escape:html}--></textarea>
+		</td>
+		<tr>
+		<td align="right" height="30"><!--{$language.form_channel_sort}--></td>
+		<td><input type="text" name="channel_sort" size="10" value="<!--{$channel.sort}-->" class="input"/></td>
+		</tr>	 
+
+		<tr>
+<td height="30"  align="right"><!--{$language.form_channel_banner}--></td>
+		<td><input type="file" name="channel_banner" class="input"/>
+		<!--{if $channel.banner}-->
+		<a href="uploads/<!--{$channel.banner}-->" target="_blank"><img src="uploads/<!--{$channel.banner}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+		<input type="checkbox" name="channel_banner_delete" value="<!--{$channel.banner}-->" /> <!--{$language.delete}-->
+		<input type="hidden" name="channel_banner_old" value="<!--{$channel.banner}-->"/>
+		<!--{/if}-->
+		</td>
+		</tr>
+		</tr>
+
+		<tr><td colspan="4" bgcolor="#dddddd" height="1"></td></tr>
+
+		<tr>
+		<td align="right" height="30" width="20%"><!--{$language.form_channel_index}--></td>
+		<td width="30%">
+		<input type="radio" name="channel_index" value="1" {if $channel.index==1}checked{/if} /> <!--{$language.form_channel_index_1}-->
+		<input type="radio" name="channel_index" value="0" {if $channel.index==0}checked{/if} /> <!--{$language.form_channel_index_0}-->
+		</td>
+<td align="right" height="30" width="20%"><!--{$language.form_channel_index_style}--></td>
+		<td width="30%">
+		<select name="channel_index_style">
+		<option value="1" {if $channel.index_style==1}selected{/if}><!--{$language.form_channel_index_style_1}--></option>
+		</select>
+		</td>
+		</tr>	
+		<tr>
+		<td align="right" height="30"  width="15%"><!--{$language.form_channel_index_truncate}--></td>
+		<td width="35%"><input type="text" name="channel_index_truncate" size="10" value="<!--{$channel.index_truncate}-->" class="input"/></td>
+
+		<td align="right" height="30"  width="15%"><!--{$language.form_channel_index_size}--></td>
+		<td width="35%"><input type="text" name="channel_index_size" size="10" value="<!--{$channel.index_size}-->" class="input"/></td>
+		</tr>
+ 
+			
+
+		<tr>
+		<td align="right" height="30" width="20%"><!--{$language.form_channel_list_truncate}--></td>
+		<td width="30%"><input type="text" name="channel_list_truncate" size="10" value="<!--{$channel.list_truncate}-->" class="input"/></td>
+		<td align="right" height="30"  width="20%"><!--{$language.form_channel_list_style}--></td>
+		<td width="30%">
+		<select name="channel_list_style">
+		<option value="1" {if $channel.list_style==1}selected{/if}><!--{$language.form_channel_list_style_1}--></option>
+		</select>
+		</td>
+
+		</tr>
+
+		<tr>
+		<td align="right" height="30"  width="20%"><!--{$language.form_channel_list_size}--></td>
+		<td  width="30%"><input type="text" name="channel_list_size" size="10" value="<!--{$channel.list_size}-->" class="input"/></td>
+
+		<td align="right" height="30" width="20%"><!--{$language.form_channel_content_style}--></td>
+		<td width="30%">
+		<select name="channel_content_style">
+		<option value="1" {if $channel.content_style==1}selected{/if}><!--{$language.form_channel_content_style_1}--></option>
+		</select>
+		</td>
+		</tr>
+<tr><td colspan="4" bgcolor="#dddddd" height="1"></td></tr>	
+
+
+		<tr>
+		<td align="right" height="30"><!--{$language.form_channel_read_permissions}--></td>
+		<td>
+		<select name="channel_read_permissions">
+		<option value="-2"  {if $channel.read_permissions==-2}selected{/if}><!--{$language.form_channel_permissions_0}--></option>
+		<option value="-1" {if $channel.read_permissions==-1}selected{/if}><!--{$language.form_channel_permissions_1}--></option>
+		<option value="0" {if $channel.read_permissions==0}selected{/if}><!--{$language.form_channel_permissions_2}--></option>
+		<!--{html_options options=$member_group selected=$channel.read_permissions}-->
+		</select>
+		</td>
+
+		<td align="right" height="30"><!--{$language.form_channel_write_permissions}--></td>
+		<td>
+		<select name="channel_write_permissions">
+		<option value="-2"  {if $channel.write_permissions==-2}selected{/if}><!--{$language.form_channel_permissions_0}--></option>
+		<option value="-1" {if $channel.write_permissions==-1}selected{/if}><!--{$language.form_channel_permissions_1}--></option>
+		<option value="0" {if $channel.write_permissions==0}selected{/if}><!--{$language.form_channel_permissions_2}--></option>
+		<!--{html_options options=$member_group selected=$channel.write_permissions}-->
+		</select>
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30"><!--{$language.form_channel_comment_permissions}--></td>
+		<td>
+		<select name="channel_comment_permissions">
+		<option value="-2"  {if $channel.comment_permissions==-2}selected{/if}><!--{$language.form_channel_permissions_0}--></option>
+		<option value="-1" {if $channel.comment_permissions==-1}selected{/if}><!--{$language.form_channel_permissions_1}--></option>
+		<option value="0" {if $channel.comment_permissions==0}selected{/if}><!--{$language.form_channel_permissions_2}--></option>
+		<!--{html_options options=$member_group selected=$channel.comment_permissions}-->
+		</select>
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30"></td>
+		<td>
+		<input type="checkbox" name="channel_state" value="1" {if $channel.state==1}checked{/if} /> <!--{$language.form_channel_state}-->
+		<input type="checkbox" name="channel_cache" value="1" {if $channel.cache==1}checked{/if} /> <!--{$language.form_channel_cache}-->
+
+		<!--{if $mode=='insert'}-->
+		<input type="checkbox" name="channel_menu" value="1" {if $channel.menu==1}checked{/if} />
+		<!--{$language.form_channel_menu}-->
+		<!--{/if}-->
+
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td valign="center">
+		<input type="submit" value="<!--{$language.submit}-->" class="btn"/>
+
+
+		</td>
+		</tr>
+			</table>
+		<input type="hidden" name="channel_id" value="<!--{$channel.id}-->"/>
+	</form>
+
+
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

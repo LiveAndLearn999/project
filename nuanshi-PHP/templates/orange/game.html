@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$config.site_name}--></title>
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->">
+<meta name="description" content="<!--{$config.site_description|escape:html}-->">
+<link href="/templates/orange/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/templates/orange/css/kflb.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/templates/orange/js/jquery.pack.js"></script>
+<script type="text/javascript" src="/templates/orange/js/jQuery.blockUI.js"></script>
+<script type="text/javascript" src="/templates/orange/js/jquery.SuperSlide.js"></script>
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+<script src="/templates/orange/js/jquery.min.js"></script>
+    
+</head>
+
+<body>
+<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end--> 
+
+<!--login banner news str-->
+
+
+	
+<!--login banner news str-->
+<div class="container"> 
+	     <!--{include file="part_login.html"}-->
+     <div class="main">
+		
+        <div id="imgslider">
+    	     <div id="slider">
+				<script language='javascript'>
+		        bigimgsarr = new Array();
+				smallimgsarr = new Array();
+				titlearr = new Array();
+				linksarr = new Array();
+				buturlarr = new Array();				
+                commentarr = new Array();
+                var swfWidth=428;
+                var swfHeight=258;
+	            var bigimgs="";
+				var smallimgs = "";
+                var title = "";
+                var links = "";
+				var buturl = "";
+				var comment = "";
+	 <!--{foreach from=$game_focus item=game}-->
+	 bigimgsarr[<!--{$game.i}-->] = "uploads/<!--{$game.game_logo2}-->";
+	 smallimgsarr[<!--{$game.i}-->] = "uploads/<!--{$game.game_logo5}-->";
+	 titlearr[<!--{$game.i}-->] = "<!--{$game.game_name}-->";
+	 linksarr[<!--{$game.i}-->] = "<!--{$game.game_website}-->";
+	 buturlarr[<!--{$game.i}-->] = "game.php?action=server_list%26game_id=<!--{$game.game_id}-->";
+	 commentarr[<!--{$game.i}-->] = "<!--{$game.game_depict}-->";
+	 <!--{/foreach}-->
+	 for(i=1;i<bigimgsarr.length;i++){
+if(bigimgs=="") bigimgs = bigimgsarr[i];
+else bigimgs += "|"+bigimgsarr[i];
+}
+	  for(i=1;i<smallimgsarr.length;i++){
+if(smallimgs=="") smallimgs = smallimgsarr[i];
+else smallimgs += "|"+smallimgsarr[i];
+}
+for(i=1;i<titlearr.length;i++){
+if(title=="") title = titlearr[i];
+else title += "|"+titlearr[i];
+}
+for(i=1;i<linksarr.length;i++){
+if(links=="") links = linksarr[i];
+else links += "|"+linksarr[i];
+}
+for(i=1;i<buturlarr.length;i++){
+if(buturl=="") buturl = buturlarr[i];
+else buturl += "|"+buturlarr[i];
+}
+for(i=1;i<commentarr.length;i++){
+if(comment=="") comment = commentarr[i];
+else comment += "|"+commentarr[i];
+}
+
+	document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+swfWidth+'" height="'+swfHeight+'">');
+	document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="/templates/orange/swf/bigeyes1.swf"><param name="quality" value="high"><param name="bgcolor" value="#FFFFFF">');
+	document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+	document.write('<param name="FlashVars" value="bigimg='+bigimgs+'&url='+links+'&titles='+title+'&context='+comment+'&smallimg='+smallimgs+'&bturl='+buturl+'">');
+	document.write('<embed src="/templates/orange/swf/bigeyes1.swf" wmode="opaque" FlashVars="bigimg='+bigimgs+'&url='+links+'&titles='+title+'&context='+comment+'&smallimg='+smallimgs+'&bturl='+buturl+'" menu="false" bgcolor="#ffffff" quality="high" width="'+swfWidth+'" height="'+swfHeight+'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+	document.write('</object>');
+</SCRIPT>
+            </div>
+        </div>
+     </div>
+     <div class="right">
+          <div class="news">
+              <div class="cont">
+                   <div class="qh_name">
+                        <ul id='tabN'>
+                            <li class='hover'>公告</li>
+                            <li>活动</li>
+                        </ul>
+                   </div>
+                   <div class="qh_box" id='tabC'>
+                         <ul>
+                              <!--{foreach from=$ggnews item=news}-->
+                            <li>
+                            	<i></i><a href="<!--{$news.url}-->" target="_blank"><span style="color:<!--{$news.color}-->"><!--{$news.content_title}--></span></a>
+                            	<strong><!--{$news.content_time}--></strong>
+                            </li>
+							<!--{/foreach}-->
+                          </ul>
+                         <ul style="display:none">
+                           <!--{foreach from=$news item=news}-->
+                            <li>
+                            	<i></i><a href="<!--{$news.url}-->" target="_blank"><span style="color:<!--{$news.color}-->"><!--{$news.content_title}--></span></a>
+                            	<strong><!--{$news.content_time}--></strong>
+                            </li>
+							<!--{/foreach}-->
+                          </ul>
+                   </div>
+                    <script>
+                    var	Snav = $("#tabN").children(),
+	                Scon = $("#tabC").children();
+	                Snav.click(function(){
+		                var i = Snav.index(this);
+		                Snav.removeClass("hover").eq(i).addClass("hover");
+		                Scon.hide().eq(i).show();
+	                });
+                   </script>
+              </div>
+              <div class="foot"></div>
+          </div>
+     </div>
+</div>
+<!--login banner news end-->
+      
+      
+      
+      <div id="content_3">
+        <div id="content_3_right">
+       	  <div id="Daquan">
+       	    <div id="Daquan_2">
+ 
+ <!--{foreach from=$game_list item=game}-->
+       	            <div id="lb">
+                    	<div id="lb_1">
+                        	<dl>
+                            	<dt><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->"><img src="uploads/<!--{$game.game_logo}-->" onerror="this.src='/templates/orange/images/index_12.jpg'" width="215" height="100" /></a></dt>
+                                <dd><span><!--{$game.game_name}--></span><a href="card.php?game_id=<!--{$game.game_id}-->">领取礼包</a></dd>
+                                
+                            </dl>
+                        </div>
+                        <div id="lb_2">
+                        	<dl>
+                                  	<dt><span>NEW</span><b><!--{$game.server_trunon_date}--></b><a href="game.php?action=play&game_id=<!--{$game.game_id}-->&server_id=<!--{$game.server_id}-->"><strong><!--{$game.server_name}--></strong></a><a href="/game/show/73/469.html">火爆开启</a></dt>
+	                              	
+	     			
+								
+                                <dd><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" class="Btn1">开始游戏</a><a href="<!--{$game.game_website}-->" class="Btn2">进入官网</a></dd>	
+                            </dl>
+                        </div>
+                    </div>
+                  <!--{/foreach}-->
+
+       	            
+                 
+        
+                </div>
+				 <div id="pages"><!--{$pagebar}--> </div>
+            </div>
+        </div>
+      </div>
+    
+      
+      
+      
+      
+ 
+    
+
+
+
+
+<div id="content_4"><!--footer str-->
+<div class="footer">
+    <!--{include file="footer.html"}-->
+
+<!--footer end--></div>
+</body>
+</html>

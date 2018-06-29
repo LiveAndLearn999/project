@@ -1,0 +1,19 @@
+﻿<DIV id=footer>
+	<!--{if $bottom_menu}-->
+	<P>
+	<!--{foreach item=menu from=$bottom_menu name=bottom_menu}-->
+  <a href="{$menu.link}" {if $menu.target==1}target="_blank"{/if}>{$menu.name}</a>
+  <!--{if !$smarty.foreach.bottom_menu.last}-->┊<!--{/if}-->
+	<!--{/foreach}-->
+  </P>
+	<!--{/if}-->  
+  <P>
+  Copyright 2016@ 77777GAME——上海厚赛信息科技有限公司 All rights reserved ┊ <!--{$config.site_icp}-->
+  </P>
+   <P>
+  地址：上海市奉贤区柘林镇胡桥社区农交路28号第2幢1054室   联系电话：
+    </P>
+	   <P>
+   健康游戏忠告:抵制不良游戏,拒绝盗版游戏。注意自我保护,谨防受骗上当。适度游戏益脑,沉迷游戏伤身。合理安排时间,享受健康生活。
+    </P>
+</DIV>

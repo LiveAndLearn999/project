@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+					<a href="?action=game&do=card_add">添加新手卡</a>
+&raquo;&nbsp;新手卡列表
+				</h1>
+				
+				<div class="stat-container">
+				
+				
+				<table cellspacing="1" cellpadding="0" width="100%">
+	<tr class="titlebg">
+	<td height="20" width="40" align="center">ID</td>
+	<td>名称</td>
+	<td width="80">数量</td>
+	<td width="80">剩余</td>
+	<td width="250" align="center">操作</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="5"></td></tr>
+	<!--{foreach from=$card_list item=card}-->
+	<tr>
+	<td height="30" align="center"><!--{$card.id}--></td>
+	<td><!--{$card.name}--></td>
+	<td><!--{$card.count}--></td>
+	<td><!--{$card.frees}--></td>
+	<td align="center">
+	<a href="?action=game&do=card_batch&card_id=<!--{$card.id}-->">导入卡号</a>
+	| <a href="?action=game&do=card_log&card_id=<!--{$card.id}-->">获取记录</a>
+	| <a href="?action=game&do=card_edit&card_id=<!--{$card.id}-->"><!--{$language.edit}--></a>
+	| <a href="?action=game&do=card_delete&card_id=<!--{$card.id}-->" onclick="return confirm('<!--{$language.confirm_delete}-->')"><!--{$language.delete}--></a>
+	</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="5"></td></tr>
+	<!--{foreachelse}-->
+	<tr><td height="50" colspan="5" align="center"><!--{$language.nodata}--></td></tr>
+	<!--{/foreach}-->
+	<tr><td height="50" colspan="5" ><!--{$pagebar}--></td></tr>
+	</table>
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

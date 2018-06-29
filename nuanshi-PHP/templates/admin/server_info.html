@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.calendar.js"></script>
+<link href="styles/calendars.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#server_trunon_date").cld();
+});
+</script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+				<a href="?action=game&do=server_list">服务器列表</a>
+&raquo;&nbsp;<!--{if $mode=='insert'}-->添加服务器<!--{else}-->编辑服务器<!--{/if}-->	
+				</h1>
+				
+				<div class="stat-container">
+				
+				
+				<form action="?action=game&do=server_<!--{$mode}-->" method="post" enctype="multipart/form-data">
+		<table width="100%" cellspacing="5" cellpadding="0">
+<tr>
+  <td align="right" height="30">所属游戏</td>
+  <td>
+  	<select name="game_id">
+		<!--{foreach from=$game item=g}-->
+		<option value="<!--{$g.game_id}-->" {if $server.game_id==$g.game_id}selected{/if}><!--{$g.game_name}--></option>
+		<!--{/foreach}-->
+	</select>
+  </td>
+</tr>
+<tr>
+		<td align="right" width="20%" height="30">服务器编号</td>
+		<td><input type="text" name="server_no" size="10" value="<!--{$server.server_no}-->" class="input"/></td> </tr>
+<tr>
+  <td height="30"  align="right">服务器名称</td>
+  <td><input type="text" name="server_name" size="30" value="<!--{$server.server_name|escape:html}-->" class="input"/></td>
+</tr>
+<tr>
+<td width="20%" height="30"  align="right">服务器图标</td>
+	<td><input type="file" name="server_logo" class="input"/>
+	  <!--{if $server.server_logo}-->
+	  <a href="uploads/<!--{$server.server_logo}-->" target="_blank"><img src="uploads/<!--{$server.server_logo}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+	  <!--{/if}--></td>
+		</tr>
+		<tr>
+		<td width="20%" align="right">服务器描述</td>
+		<td><textarea name="server_depict" cols="80" rows="3" class="textarea"><!--{$server.server_depict|escape:html}--></textarea></td>
+		</tr>
+		<tr>
+		<td width="20%" height="30" align="right">服务器线路</td>
+		<td><input type="text" name="server_line" size="10" value="<!--{$server.server_line}-->" class="input"/></td>
+		<tr>
+		<td width="20%" height="30" align="right">服务器状态</td>
+		<td>
+		<select name="server_state">
+		<option value="1" {if $server.server_state==1}selected{/if}>即将开启</option>
+		<option value="2" {if $server.server_state==2}selected{/if}>维护</option>
+		<option value="3" {if $server.server_state==3}selected{/if}>正常</option>
+		<option value="4" {if $server.server_state==4}selected{/if}>新服</option>
+		<option value="5" {if $server.server_state==5}selected{/if}>流畅</option>
+		<option value="6" {if $server.server_state==6}selected{/if}>繁忙</option>
+		<option value="7" {if $server.server_state==7}selected{/if}>火热推荐</option>
+		</select>
+		<span style="color:red;">*即将开启状态到开服时间将自动更新为正常状态。</span>
+		</td>
+		</tr>	 
+		  <td align="right" height="30" width="20%">开服时间</td>
+		<td>
+		<input id="server_trunon_date" bj="cBj" type="text" name="server_trunon_date" size="10" value="<!--{$server.server_trunon_date}-->" class="input"/>
+		<select name="server_trunon_hour">
+		<!--{foreach from=$hours item=h}-->
+		<option value="<!--{$h}-->" {if $server.server_trunon_hour==$h}selected{/if}><!--{$h}--></option>
+		<!--{/foreach}-->
+		</select>时
+		</td>
+		</tr>
+		<tr>
+		<td align="right" height="30"  width="20%">服务器属性</td>
+		<td>
+		  <input type="checkbox" name="server_is_show" value="1" {if $server.server_is_show==1}checked{/if} />
+          是否显示
+          <input type="checkbox" name="server_is_best" value="1" {if $server.server_is_best==1}checked{/if} />
+		  首页新服
+          <input type="checkbox" name="server_is_pay" value="1" {if $server.server_is_pay==1}checked{/if} />
+		  允许充值</td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">游戏登陆网关</td>
+		<td><input type="text" name="server_login_gateway" size="30" value="<!--{$server.server_login_gateway}-->" class="input"/> <span style="color:red;">*不包含http://</span></td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">游戏充值网关</td>
+		<td><input type="text" name="server_pay_gateway" size="30" value="<!--{$server.server_pay_gateway}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td width="20%" height="30" align="right">显示排序</td>
+		<td><input type="text" name="server_sort" size="10" value="<!--{$server.server_sort}-->" class="input"/></td>
+		</tr>	
+
+		<tr>
+		<td width="20%" height="30" align="right">&nbsp;</td>
+		<td valign="center">
+		<input type="submit" value="<!--{$language.submit}-->" class="btn"/>		</td>
+		</tr>
+		</table>
+		<input type="hidden" name="server_id" value="<!--{$server.server_id}-->"/>
+	</form>
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+</body>
+</html>

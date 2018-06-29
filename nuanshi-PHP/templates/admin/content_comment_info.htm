@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+				<a href="?action=content&do=channel_list"><!--{$language.comment_list}--></a>
+&raquo;&nbsp;<!--{$language.comment_edit}-->	
+					
+				</h1>
+				
+				<div class="stat-container">
+				<table width="100%">
+	<form action="?action=content&do=comment_<!--{$mode}-->" method="post" enctype="multipart/form-data">
+		<tr>
+		<td align="right" width="80" valign="top">&nbsp;</td>
+		<td><a href="content.php?id=<!--{$comment.content_id}-->" target="_blank"><!--{$comment.content_title|escape:html}--></a></td>
+		</tr>
+		<tr>
+		<td align="right" width="80" valign="top"><!--{$language.form_comment_content}--></td>
+		<td><textarea name="comment_content" cols="50" rows="5" class="textarea"><!--{$comment.content|escape:html}--></textarea></td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top"><!--{$language.form_comment_reply}--></td>
+		<td><textarea name="comment_reply" cols="50" rows="5" class="textarea"><!--{$comment.reply|escape:html}--></textarea></td>
+		</tr>
+
+
+		<tr>
+		<td align="right" height="30"><!--{$language.form_comment_ip}--></td>
+		<td><!--{$comment.ip}-->(<!--{$comment.ip_address}-->)</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30"><!--{$language.form_comment_time}--></td>
+		<td><!--{$comment.time}--></td>
+		</tr>	
+		<tr>
+		<td align="right" height="30"><!--{$language.form_comment_state}--></td>
+		<td>
+		<input type="radio" name="comment_state" value="1" {if $comment.state==1}checked{/if} /> <!--{$language.form_comment_state_1}-->
+		<input type="radio" name="comment_state" value="0" {if $comment.state==0}checked{/if} /> <!--{$language.form_comment_state_0}-->
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="button"/>
+		</td>
+		</tr>
+		<input type="hidden" name="comment_id" value="<!--{$comment.id}-->"/>
+		<input type="hidden" name="content_id" value="<!--{$comment.content_id}-->"/>
+	</form>
+	</table>
+
+<table cellspacing="0" cellpadding="0" width="100%">
+	<form action="?action=content&do=comment_delete&content_id=<!--{$smarty.request.content_id}-->" method="post" name="comment_list">
+	<!--{foreach from=$comment_list item=comment}-->
+	<tr>
+	<td height="30" width="5%" align="center"><input type="checkbox" name="comment_id[]" value="<!--{$comment.id}-->" /></td>
+	<td>
+<!--{if $comment.photo}-->
+<img src="uploads/<!--{$comment.photo}-->" style="border:1px solid #eee;padding:1px;width:20px;height:20px;" align="absmiddle"/>
+<!--{/if}-->
+	<a href="?action=content&do=comment_edit&content_id=<!--{$comment.content_id}-->&comment_id=<!--{$comment.id}-->"><!--{$comment.content}--></a>
+<!--{if $comment.reply}-->
+<b style="color:#FE8217">[已回复]</b>
+<!--{/if}-->
+	</td>
+	<td  width="15%" align="center"><!--{$comment.time}--></td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="3"></td></tr>
+	<!--{/foreach}-->
+	</form>
+	<!--{if $comment_list}-->
+	<tr>
+	<td height="30" width="5%" align="center"><input type="checkbox" onclick="batch('comment_list',this)"  /></td>
+	<td colspan="2">
+	<table width="100%">
+	<tr>
+	<td width="100">
+	<select onchange="batch_do('comment_list',this.options[this.selectedIndex].value)">
+	<option><!--{$language.select}--></option>
+	<option value="delete"><!--{$language.selected_delete_comment}--></option>
+	</select>
+	</td>
+ 
+	</tr></table>
+	</td>
+	</tr>
+	<!--{/if}-->
+	</form>
+</table>
+				
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+<!--{foreach from=$game_list item=game}-->
+<dl class="clearfix">
+          <dt><!--{$game.game_name}--></dt>
+         <dd class="clearfix">
+         <a class="c1" href="<!--{$game.game_website}-->" target="_blank">官网</a>
+            <a class="c2" href="card.php?game_id=<!--{$game.game_id}-->">领取</a>
+         </dd>
+      </dl><!--{/foreach}-->

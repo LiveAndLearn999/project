@@ -1,0 +1,27 @@
+﻿<div id="imgShow" class="margin">
+  <div class="banner_t">
+      <ul>
+	  <!--{foreach from=$game_focus item=game}-->
+          <li><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->"><img src="uploads/<!--{$game.game_logo2}-->"></a></li>
+      <!--{/foreach}-->
+	  </ul>
+  </div>
+  <div class="banner_b">
+    <ul class="clearfix">
+	   <!--{foreach from=$game_focus item=game}-->
+	   <li onclick="showImg(<!--{$game.i}-->);" class="">
+          <a href="javascript:void(0);">
+            <img src="uploads/<!--{$game.game_logo5}-->" width="64" height="33">
+          </a>
+          <div>
+            <strong><!--{$game.game_name}--></strong>
+            <a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->"><span>新服开启</span></a>
+            <a href="<!--{$game.game_website}-->" target="_blank">官网</a>
+            <a href="<!--{$game.game_bbs}-->" target="_blank">论坛</a>
+          </div>
+       </li>
+	   <!--{/foreach}-->
+    </ul>
+  </div>
+</div>
+<script type="text/javascript" src="/templates/kele/img/filmslide.js"></script>

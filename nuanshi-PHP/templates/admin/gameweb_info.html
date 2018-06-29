@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					<a href="?action=gameweb&do=gameweblist">网站列表</a>
+&raquo;&nbsp;<!--{if $mode=='insert'}-->添加网站<!--{else}-->编辑网站<!--{/if}-->
+					
+				</h1>
+				
+				<div class="stat-container">
+				
+				<form action="?action=gameweb&do=gameweb_<!--{$mode}-->" method="post" enctype="multipart/form-data">
+		<table width="100%" cellspacing="5" cellpadding="0">
+<tr>
+		<td align="right" width="20%" height="30">网站名称</td>
+		<td><input type="text" name="title" size="10" value="<!--{$gameweb.title}-->" class="input"/> </td> </tr>
+<tr>
+  <td height="30"  align="right">关联游戏</td>
+  <td><select name="gameid">
+		<!--{foreach from=$game item=g}-->
+		<option value="<!--{$g.game_id}-->" {if $gameweb.gameid==$g.game_id}selected{/if}><!--{$g.game_name}--></option>
+		<!--{/foreach}-->
+	</select></td>
+</tr>
+
+		<tr>
+		<td width="20%" align="right">keywords</td>
+		<td><input type="text" name="keywords" size="10" value="<!--{$gameweb.keywords}-->" class="input"/> </td>
+		</tr>
+		<tr>
+		<td width="20%" height="30" align="right">description</td>
+		<td><textarea name="description" cols="80" rows="3" class="textarea"><!--{$gameweb.description|escape:html}--></textarea></td>
+		<tr>
+		<td width="20%" height="30" align="right">二级域名头</td>
+		<td><input type="text" name="domain" size="30" value="<!--{$gameweb.domain}-->" class="input"/></td>
+		</tr>	 
+		<tr>
+		<td align="right" height="30" width="20%">网站模板选择</td>
+		<td><input type="text" name="gametemp" size="30" value="<!--{$gameweb.gametemp}-->" class="input"/></td>
+		</tr>	
+		
+		<tr>
+		<td width="20%" height="30" align="right">&nbsp;</td>
+		<td valign="center">
+		<input type="submit" value="<!--{$language.submit}-->" class="btn"/>		</td>
+		</tr>
+		</table>
+		<input type="hidden" name="id" value="<!--{$gameweb.id}-->"/>
+	</form>
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+<script type="text/javascript">
+	function getServer(id){
+		$.ajax({
+			url:'pay.php',
+			data:"action=get_server&game_id="+id,
+			type:'get',
+			dataType:'text',
+			success:function(result){
+				//alert(result);
+				$("#server_id").empty();
+				$("#server_id").append('<option value="">全部</option>');
+				$("#server_id").append(result);
+			}
+		});
+	}
+	//默认游戏
+	{if $search.game_id>0}
+		getServer(<!--{$search.game_id}-->);
+	{/if}
+</script>
+</body>
+</html>

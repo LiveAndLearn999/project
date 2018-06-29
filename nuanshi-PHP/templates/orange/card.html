@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$config.site_name}--></title>
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->">
+<meta name="description" content="<!--{$config.site_description|escape:html}-->">
+<!--新增样式和JS 开始-->
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/card.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+<!--新增样式和JS 结束-->
+
+
+<script type="text/javascript" src="/templates/orange/js/jquery.pack.js"></script>
+<script type="text/javascript" src="/templates/orange/js/jQuery.blockUI.js"></script>
+<script type="text/javascript" src="/templates/orange/js/jquery.SuperSlide.js"></script>
+
+
+
+
+</head>
+
+<body>
+<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end--> 
+
+<div class="wrap">
+     <div class="left">
+	            <div class="plate">
+              <div class="top"><span>最新开服表</span><strong><em><a href="#" target="_blank">VIP新服送礼</a></em></strong></div>
+              <div class="cont">
+                  <dl>
+    			 <!--{foreach from=$game_news item=game}-->
+            	    <dt>
+            	    	            	    	<span><em><!--{$game.server_trunon_date}--></em></span>
+            	    						
+            	    	<b><!--{$game.server_trunon_hour}-->:00</b><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank"><strong><!--{$game.game_name}--></strong></a>
+            	    </dt>
+                    <dd><a href="game.php?action=play&game_id=<!--{$game.game_id}-->&server_id=<!--{$game.server_id}-->" target="_blank "><!--{$game.server_name}--></a></dd>
+		 <!--{/foreach}-->
+				
+                 </dl>
+              </div>
+              <div class="foot"></div>
+          </div>
+         
+	            <div class="plate m_top">
+              <div class="top"><span>联系客服</span> <strong><em>服务时间 9:00-22:00</em></strong></div>
+              <div class="cont">
+                  <div class="customer">
+                     <ul>
+                          <li class="phone">电话：<span>012-12345678</span></li>
+                          <li class="email">企业QQ：<a href="http://www.aliphp.net" target="_blank"><span style='font-size:14px;'>1815080514</span></a></li>
+                          <li class="resources"><span><a href="http://www.aliphp.net" target="_blank">客服论坛</a></span> <strong><a href="http://www.920.com/kefu.html" target="_blank">在线客服</a></strong></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="foot"></div>
+          </div>
+          
+          <div class="m_top"><a href="/jiazhang/index.html" target="_blank" class="people" onfocus=this.blur()></a></div>
+     </div>
+     <div class="right">
+     
+      <!---新手卡领取 开始-->
+    <div id="side_body">
+         <div class="name_mc1"><div class="name_mc2"><h1>新手卡领取</h1><strong><a href='user.php?action=card' target='_self'>查看已领取的新手卡>></a></strong></div></div>
+         <div class="side_card">
+              <div class="x_top"></div>
+              <div class="x_cont">
+                  <ul class="backPic clearfix">
+							<!--{foreach from=$game_list item=game}-->
+                                                                <li class="gmidb">
+                                   <p class="gf1">
+								  
+                                       <a href="card.php?action=card_list&id=<!--{$game.game_id}-->&name=<!--{$game.game_name}-->" target="_blank"><img src="uploads/<!--{$game.game_logo}-->" onerror="this.src='/templates/orange/images/index_12.jpg'"/></a>
+                                   </p>
+								   
+                                   <p class="gf2">
+                                      <strong><!--{$game.game_name}-->：</strong>
+                                      <a class="s" href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank">开始游戏</a>|
+                                      <a href="<!--{$game.game_website}-->" target="_blank">官网</a>|
+                                      <a href="pay.php?game_id=<!--{$game.game_id}-->" target="_blank">充值</a>
+                                   </p>
+                                   <p class="gf3">
+								
+								   
+								  
+                                      <a class="gfBtn" href="card.php?action=card_list&id=<!--{$game.game_id}-->&name=<!--{$game.game_name}-->" target="_blank">领取礼包</a>
+                                   </p>
+                                </li>
+                                     <!--{/foreach}-->                          
+															   
+                                                            </ul>
+                    
+                     
+                   
+              
+              </div>
+              <div class="x_foot"></div>
+         </div>
+    
+       
+         
+    </div>
+    <!---新手卡领取 结束-->     
+     </div>
+</div>
+
+<div id="content_4"><!--footer str-->
+<div class="footer">
+     <div class="information">
+          <a href="http://www.602.com/AboutUs/About.html">关于我们</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/swhz.html">商务合作</a><font>|</font>
+          <a href="#">法律声明</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/kfzx.html">客服中心</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/rczp.html">人才招聘</a><font>|</font>
+          <a href="http://bbs.602.com/">游戏论坛</a><br>
+          <span>游戏版权所有 Copyright (c) 2012 602.com All Rights Reserved<br>沪网文[2012]0880-122号 沪ICP备12047477号-5 电话021-39254937<br>增值电信业务经营许可证沪B2-20110013</span>
+     </div>
+     <div class="copyright"><img src="/statics/images/mycontent/foot_1.jpg" width="100" height="38" /><img src="/statics/images/mycontent/foot_2.jpg" width="100" height="38" /><img src="/statics/images/mycontent/foot_3.jpg" width="100" height="38" /></div>
+</div>
+<div id="602tj" style="display:none;">
+<script type="text/javascript" src="http://www.602.com/statics/js/tj.js"></script>
+</div>
+<!--footer end--></div>
+
+</body>
+</html>

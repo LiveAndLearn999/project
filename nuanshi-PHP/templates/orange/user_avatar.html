@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><!--{$config.site_name}--></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->" />
+<meta name="description" content="<!--{$config.site_description|escape:html}-->" /><link href="/favicon.ico" rel="bookmark" />
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+<link type="text/css" href="/statics/css/mycontent/avatar.css"  rel="stylesheet" />
+<script src="/templates/orange/js/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+	<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end--> 
+<!--header end-->
+	<!--account str-->
+	<div class="account">
+     <div class="main_top"><span><a href="/user.php?action=setuser">个人设置</a></span></div>     <div class="member">
+		<div class="left">
+			               <div class="da_m" id='avatar'>
+                  	<a href="/user.php?action=avatar"><img src="/uploads/<!--{$member.photo}-->" onerror="this.src='/templates/ali/images/avata.jpg'" width="179" height="179" /></a>
+                    <a href="/user.php?action=avatar" class="da_name" id='changeAvatar' style='display:none;'><div class="da_cont"></div><div class="da_na">修改图像</div></a>                
+               </div>
+<script>
+$("#avatar").hover(function(){
+	$("#changeAvatar").show();
+},function(){
+	$("#changeAvatar").hide();
+});
+</script>          </div>
+			<div class="right">               <div class="contont">
+                    <div class="left">
+                         <ul>
+                            <li class="m_bottom">
+                                <div class="h_font"><!--{insert name="get_login_name"}--></div>
+                                <div class="h_zs">
+                                                                          <a href="#" class="putong" >普通会员</a>
+                                                                     </div>
+                            </li>
+                             <li><b></b>上次登录时间：<!--{insert name="get_last_time"}--></li>
+                            <li><b></b>上次登录IP：<!--{insert name="get_last_ip"}--></li>
+                            <li><b></b>帐户余额：<strong><a href="pay.php">0.00</a></strong>平台币</li>
+                          </ul>
+                    </div>
+                    <div class="right" id='safeBar'>
+                         <div class="bg_member">
+                              <ul>
+                                  <li class="ju1">帐号安全等级：</li>
+                                  <li class="ju2">								  
+                                      <div class="anquan"><div style="width:<!--{insert name="get_safe"}-->%;"></div></div>
+                                  </li>
+                                  <li class="ju3">
+                                                                          <a href="javascript:void(0)" class="aq">查看</a>
+                                                                       </li>
+                              </ul>
+                         </div>
+                         
+                         <!--fudong  end-->
+                         <div class="fudong" id='safeTips' style='display:none;'>
+                             <div class="jiantou"></div>
+                             <div class="xinxi">
+                                  <dl>
+                                      <dt><span></span>密保邮箱</dt>
+                                      <dd>
+                                      	                                      		<a href="/user.php?action=setsec" class="aq"><!--{insert name="get_mail"}--></a>
+                                      	                                      </dd>
+                                      
+                                      <dt><strong></strong>绑定手机</dt>
+                                      <dd>
+                                      	                                      		<a href="/user.php?action=setphone" class="aq"><!--{insert name="get_phone"}--></a>
+                                      	                                      </dd>
+                                      
+                                      <dt><em></em>防沉迷设置</dt>
+                                      <dd>
+                                                                            		<a href="/user.php?action=setcer" class="aq"><!--{insert name="get_card"}--></a>
+                                                                            </dd>
+                                      
+                                      <dt><b></b>密码强度</dt>
+                                      <dd>
+                                      	<a class='aq' href="/user.php?action=setpass">中
+                                      	                                      	</a>
+                                      </dd>
+                                   
+                                      
+                                  </dl>
+                             </div>
+                         </div>
+                       <!-- end-->
+                 </div>
+               </div>
+<script>
+$("#safeBar").hover(function(){
+	$("#safeTips").show();
+},function(){
+	$("#safeTips").hide();
+});
+</script></div>
+		</div>
+		<div class="main_body">
+			<!--cont str-->
+			<div class="content">
+				               <div class="left">
+                    <div class="subnav">
+                         <ul>
+                             <li><a href="user.php" class="cutter">个人中心</a></li>
+                             <li><a href="/user.php?action=userinfo" >帐号安全</a></li>
+                             <li><a href="/user.php?action=paylog" >充值记录</a></li>
+                             <li><a href="/user.php?action=card" >短消息</a></li>
+                         </ul>
+                    </div>
+                    <div class="bgg" style="display:none;"></div>
+               </div>
+
+				<div class="right">
+					<!--games str-->
+					<div class="top"><i></i>修改图像</div>
+					<div class="body_cont">
+						 <div class="cont_photo2">
+                         
+                             <div class="font_sm">支持jpg、jpeg、gif、png、格式的图片，不超过2M。建议图片尺寸大于180*180</div> 
+                             <div class="touxiang">
+								<script type="text/javascript" src="http://www.602.com/statics/js/formvalidator.js" charset="UTF-8"></script>
+								<script type="text/javascript" src="http://www.602.com/statics/js/formvalidatorregex.js" charset="UTF-8"></script>
+								<script language="javascript" type="text/javascript"  src="http://www.602.com/phpsso_server/statics/js/swfobject.js"></script>
+								<script type="text/javascript">
+									var flashvars = {
+										'upurl' : "aHR0cDovL3d3dy42MDIuY29tL3BocHNzb19zZXJ2ZXIvaW5kZXgucGhwP209cGhwc3NvJmM9aW5kZXgmYT11cGxvYWRhdmF0YXImYXV0aF9kYXRhPXY9MSZhcHBpZD0xJmRhdGE9MzIwYUFRTlJBd1JVQmdkVFZWVUtVd01IVmdJQ0RsRldBVk5VQWxaR0RRWUpERk1IQUZJRUJVSkdSRHdFUlV4WU9nMVdIdzV5UXgxJTJGYkZaNGYwbGNKWGtQRGdOZkFBdGxNWDhQR3dKNWFtRmNLbndOVVE=&callback=return_avatar&"
+									};
+									var params = {
+										'align' : 'middle',
+										'play' : 'true',
+										'loop' : 'false',
+										'scale' : 'showall',
+										'wmode' : 'window',
+										'devicefont' : 'true',
+										'id' : 'Main',
+										'bgcolor' : '#ffffff',
+										'name' : 'Main',
+										'allowscriptaccess' : 'always'
+									};
+									var attributes = {
+
+									};
+									swfobject
+											.embedSWF(
+													"http://www.602.com/phpsso_server/statics/images/main.swf",
+													"myContent",
+													"490",
+													"434",
+													"9.0.0",
+													"http://www.602.com/phpsso_server/statics/images/expressInstall.swf",
+													flashvars, params,
+													attributes);
+
+									function return_avatar(data) {
+										if (data == 1) {
+											window.location.reload();
+										} else {
+											alert('failure');
+										}
+									}
+								</script>
+								<div style="float:right;">
+									                                       <div class="img_yd">
+                                            <ul>
+                                                <li><img src="http://www.602.com/phpsso_server/uploadfile/avatar/507/4/5063371/180x180.jpg" height="180" width="180" onerror="this.src='/statics/images/mycontent/damember.jpg'"></li>
+                                                <li>头像 180 x 180</li>
+                                            </ul>
+                                       </div>
+									                                       <div class="img_yd">
+                                            <ul>
+                                                <li><img src="http://www.602.com/phpsso_server/uploadfile/avatar/507/4/5063371/90x90.jpg" height="90" width="90" onerror="this.src='/statics/images/mycontent/damember.jpg'"></li>
+                                                <li>头像 90 x 90</li>
+                                            </ul>
+                                       </div>
+									                                       <div class="img_yd">
+                                            <ul>
+                                                <li><img src="http://www.602.com/phpsso_server/uploadfile/avatar/507/4/5063371/45x45.jpg" height="45" width="45" onerror="this.src='/statics/images/mycontent/damember.jpg'"></li>
+                                                <li>头像 45 x 45</li>
+                                            </ul>
+                                       </div>
+									                                       <div class="img_yd">
+                                            <ul>
+                                                <li><img src="http://www.602.com/phpsso_server/uploadfile/avatar/507/4/5063371/30x30.jpg" height="30" width="30" onerror="this.src='/statics/images/mycontent/damember.jpg'"></li>
+                                                <li>头像 30 x 30</li>
+                                            </ul>
+                                       </div>
+																	</div>
+                                <div style="float:left;">
+									<div id="myContent">
+										<p>Alternative content</p>
+									</div>
+								</div>
+							    <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
+						     </div>        
+                             
+						 </div>
+					<div class="foot"></div>
+					</div>
+					<!--games end-->
+					</div>
+				</div>
+				<!--cont end-->
+			</div>
+		</div>
+		<!--account end-->
+
+		<!--footer str-->
+<div class="footer">
+     <div class="information">
+          <a href="http://www.602.com/AboutUs/About.html">关于我们</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/swhz.html">商务合作</a><font>|</font>
+          <a href="#">法律声明</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/kfzx.html">客服中心</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/rczp.html">人才招聘</a><font>|</font>
+          <a href="http://bbs.602.com/">游戏论坛</a><br>
+          <span>游戏版权所有 Copyright (c) 2012 602.com All Rights Reserved<br>沪网文[2012]0880-122号 沪ICP备12047477号-5 电话021-39254937<br>增值电信业务经营许可证沪B2-20110013</span>
+     </div>
+     <div class="copyright"><img src="/statics/images/mycontent/foot_1.jpg" width="100" height="38" /><img src="/statics/images/mycontent/foot_2.jpg" width="100" height="38" /><img src="/statics/images/mycontent/foot_3.jpg" width="100" height="38" /></div>
+</div>
+<div id="602tj" style="display:none;">
+<script type="text/javascript" src="http://www.602.com/statics/js/tj.js"></script>
+</div>
+<!--footer end--></body>
+</html>

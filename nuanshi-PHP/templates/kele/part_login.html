@@ -1,0 +1,76 @@
+﻿<div id="Tab1">
+  <form id="login_form" name="login_form" method="post" action="user.php?action=login_ok">
+  <DIV class=login_b>
+  <H3 class=hid>用户登录</H3>
+  <DIV class="i clearfix">
+    <LABEL class=fl for=txtUserName>用户名：</LABEL>
+    <P class=fl>
+      <input id="member_username" name="member_username" type="text" />
+    </P>
+  </DIV>
+  <DIV class="i clearfix">
+    <LABEL class=fl for=txtPwd>密&nbsp;&nbsp;码：</LABEL>
+    <P class=fl>
+      <input id="member_password" name="member_password" type="password" />
+    </P>
+  </DIV>
+  <DIV class=b>
+	<input id="login_submit" type="submit" value="" class="hid cur" />
+	<input name="post_mode" type="hidden" value="withtml5">
+  </DIV>
+  <DIV class=b><a href="reg.php">免费注册</a> <a href="user.php?action=forget">找回密码</a></DIV>
+ 
+  </DIV>
+  </form>
+</div>
+<script type="text/javascript">
+	var logins=function(){
+		var member_username=$('#member_username').val();
+		var member_password=$('#member_password').val();
+		if ($.trim(member_username)==''){
+			alert('<!--{$language.username_is_empty}-->');
+			return false;
+		}
+		if ($.trim(member_password)==''){
+			alert('<!--{$language.password_is_empty}-->');
+			return false;
+		}
+		if (member_password.length<6&&member_password.length>20){
+			alert('<!--{$language.member_password_text}-->');
+			return false;
+		}
+		return true;
+	};
+	$("#login_form").submit(function(){
+		return logins();
+	});
+</script>
+<div id="Tab2" style="display:none;">
+<div class="login_a">
+    <h3 class="hid">用户登录</h3>
+    <div class="info">
+        <img alt="avata" src="/templates/kele/img/avata.jpg">
+        <dl>
+            <dt><strong>欢迎登录游戏平台！</strong></dt>
+                <dd class="u_name"><!--{insert name="get_login_name"}--></dd>
+				
+        </dl>
+    </div>
+    <div class="b t_c">
+        <a title="游戏中心" href="game.php">游戏中心</a>
+        <a title="用户中心" href="user.php">用户中心</a>
+        <a title="立即充值" href="pay.php">立即充值</a>
+        <a title="礼包领取" href="card.php">礼包领取</a>
+    </div>
+    <div class="b2 t_c">
+        <a title="安全退出" href="user.php?action=logout">安全退出</a>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+var login_state={insert name="get_login_state"};
+if(login_state==1){
+	$("#Tab1").hide();
+	$("#Tab2").show();
+}
+</script>

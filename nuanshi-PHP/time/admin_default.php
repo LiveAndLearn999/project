@@ -1,0 +1,57 @@
+<?php
+//登陆
+if($do==''){
+	$smarty=new smarty();smarty_header();
+	$smarty->display('login.htm');
+}
+//登陆处理
+if($do=='login'){
+	$admin_name=empty($_POST['admin_name'])?'':trim($_POST['admin_name']);
+	$admin_password=empty($_POST['admin_password'])?'':trim($_POST['admin_password']);
+	$admin_name=str_replace("#","",$admin_name);
+	$admin_name=str_replace("=","",$admin_name);
+	$admin_name=str_replace("'","",$admin_name);
+	$admin_name=str_replace("\"","",$admin_name);
+	$admin_name=str_replace("%","",$admin_name);
+	$admin_name=str_replace("and","",$admin_name);
+	$admin_name=str_replace("select","",$admin_name);
+	
+	$authcode=empty($_POST['authcode'])?'':addslashes(trim(strtolower($_POST['authcode'])));
+	if(empty($authcode)){
+		message(array('text'=>'验证码不能为空！','link'=>''));
+	}
+	if($authcode!=@$_SESSION['authcode']){
+		$_SESSION['authcode']=false;
+		unset($_SESSION['authcode']);
+		message(array('text'=>'验证码错误！','link'=>''));
+	}
+	
+	if(empty($admin_name)){
+		message(array('text'=>$language['admin_name_is_empty'],'link'=>''));
+	}
+	if(empty($admin_password)){
+		message(array('text'=>$language['admin_password_is_empty'],'link'=>''));
+	}
+	$row=$db->getone("SELECT * FROM ".$db_prefix."admin WHERE admin_name='".$admin_name."' AND admin_password='".password($admin_password)."' ");
+	if($row){
+		if($row['admin_state']==0){
+			message(array('text'=>$language['admin_is_lock'],'link'=>''));
+		}
+		$_SESSION['admin_id']=$row['admin_id'];
+		$_SESSION['admin_name']=$row['admin_name'];
+		$_SESSION['admin_permissions']=$row['admin_permissions'];
+	}else{
+		message(array('text'=>$language['login_is_failure'],'link'=>''));
+	}
+	admin_log('login','system',$_SESSION['admin_name']);
+	clear_cache();
+	message(array('text'=>$language['login_is_success'],'link'=>'?action=start'));
+}
+//退出处理
+if($do=='logout'){
+	admin_log('logout','system',$_SESSION['admin_name']);
+	unset($_SESSION['admin_id'],$_SESSION['admin_name'],$_SESSION['admin_permissions']);
+	clear_cache();
+	message(array('text'=>$language['logout_is_success'],'link'=>get_self()));
+}
+?>

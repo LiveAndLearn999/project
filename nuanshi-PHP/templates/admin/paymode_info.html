@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+				<a href="?action=game&do=paymode_list">充值方式列表</a>
+&raquo;&nbsp;<!--{if $mode=='insert'}-->添加充值方式<!--{else}-->编辑充值方式<!--{/if}-->
+	
+				</h1>
+				
+				<div class="stat-container">
+				
+				<form action="?action=game&do=paymode_<!--{$mode}-->" method="post" enctype="multipart/form-data">
+		<table width="100%" cellspacing="5" cellpadding="0">
+<tr>
+		<td align="right" width="20%" height="30">充值方式编号</td>
+		<td><input type="text" name="mode_no" size="10" value="<!--{$paymode.mode_no}-->" class="input"/> <span style="color:red;">*不可重复，作为支付接口的唯一标识。</span></td> </tr>
+<tr>
+  <td height="30"  align="right">充值方式名称</td>
+  <td><input type="text" name="mode_name" size="30" value="<!--{$paymode.mode_name|escape:html}-->" class="input"/></td>
+</tr>
+<tr>
+<td width="20%" height="30"  align="right">充值方式图标</td>
+	<td><input type="file" name="mode_logo" class="input"/>
+	  <!--{if $paymode.mode_logo}-->
+	  <a href="uploads/<!--{$paymode.mode_logo}-->" target="_blank"><img src="uploads/<!--{$paymode.mode_logo}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+	  <!--{/if}--></td>
+		</tr>
+		<tr>
+		<td width="20%" align="right">充值方式描述</td>
+		<td><textarea name="mode_depict" cols="80" rows="3" class="textarea"><!--{$paymode.mode_depict|escape:html}--></textarea></td>
+		</tr>
+		<tr>
+		<td align="right" height="30"  width="20%">属性</td>
+		<td>
+		  <input type="checkbox" name="mode_state" value="1" {if $paymode.mode_state==1}checked{/if} />
+          启用
+		  
+		  <input type="checkbox" name="mode_is_default" value="1" {if $paymode.mode_is_default==1}checked{/if} />
+          默认充值方式
+		  </td>
+		</tr>
+		<tr>
+		<td width="20%" height="30" align="right">显示排序</td>
+		<td><input type="text" name="mode_sort" size="10" value="<!--{$paymode.mode_sort}-->" class="input"/></td>
+		</tr>	
+		<tr>
+		<td align="right" height="30"  width="20%">游戏币比例</td>
+		<td><input type="text" name="mode_money_per" size="10" value="<!--{$paymode.mode_money_per}-->" class="input"/> *百分比 100%=1：1</td>
+		</tr>
+
+		<tr>
+		<td align="right" height="30" width="20%">充值接口配置1</td>
+		<td><input type="text" name="mode_port_s1" size="10" value="<!--{$paymode.mode_port_s1}-->" class="input"/> = <input type="text" name="mode_port_config1" size="30" value="<!--{$paymode.mode_port_config1}-->" class="input"/> *例如 商户=abc</td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">充值接口配置2</td>
+		<td><input type="text" name="mode_port_s2" size="10" value="<!--{$paymode.mode_port_s2}-->" class="input"/> = <input type="text" name="mode_port_config2" size="30" value="<!--{$paymode.mode_port_config2}-->" class="input"/> *例如 密钥=123456</td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">充值接口配置3</td>
+		<td><input type="text" name="mode_port_s3" size="10" value="<!--{$paymode.mode_port_s3}-->" class="input"/> = <input type="text" name="mode_port_config3" size="30" value="<!--{$paymode.mode_port_config3}-->" class="input"/> *预留7个参数 不需要可空</td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">充值接口配置4</td>
+		<td><input type="text" name="mode_port_s4" size="10" value="<!--{$paymode.mode_port_s4}-->" class="input"/> = <input type="text" name="mode_port_config4" size="30" value="<!--{$paymode.mode_port_config4}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">充值接口配置5</td>
+		<td><input type="text" name="mode_port_s5" size="10" value="<!--{$paymode.mode_port_s5}-->" class="input"/> = <input type="text" name="mode_port_config5" size="30" value="<!--{$paymode.mode_port_config5}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">充值接口配置6</td>
+		<td><input type="text" name="mode_port_s6" size="10" value="<!--{$paymode.mode_port_s6}-->" class="input"/> = <input type="text" name="mode_port_config6" size="30" value="<!--{$paymode.mode_port_config6}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">充值接口配置7</td>
+		<td><input type="text" name="mode_port_s7" size="10" value="<!--{$paymode.mode_port_s7}-->" class="input"/> = <input type="text" name="mode_port_config7" size="30" value="<!--{$paymode.mode_port_config7}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td width="20%" height="30" align="right">&nbsp;</td>
+		<td valign="center">
+		<input type="submit" value="<!--{$language.submit}-->" class="btn"/>		</td>
+		</tr>
+		</table>
+		<input type="hidden" name="mode_id" value="<!--{$paymode.mode_id}-->"/>
+	</form>
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+</body>
+</html>

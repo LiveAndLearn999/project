@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/*--设计：Dawu  重构：Nono 程序：Wu  2012-07 --*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,dl,dt,dd{padding: 0;margin: 0;}
+body{ font:12px "\5b8b\4f53", Arial, Helvetica, sans-serif;}
+table {border-collapse:collapse;border-spacing: 0;}
+
+address,caption,cite,code,dfn,em,th,var {font-weight:normal;font-style:normal; padding:0; margin:0;}
+ol,ul ,dl{list-style: none;}
+caption,th {text-align: left;}
+h1,h2,h3,h4,h5,h6 {font-weight: bold;font-size: 100%;}
+img {border:none;vertical-align:top; }
+input,button{vertical-align:middle;}
+button{cursor:pointer;}
+abbr,acronym { border: 0px;}
+.clearfix:after {content:".";clear:both;display:block;height:0;visibility:hidden;}
+.clearfix{display:inline-block; }
+.clearfix {display:block;}
+/*--------------------*/
+a,a:link{color:#3e567b; text-decoration:none; blr:expression(this.onFocus=this.blur());outline:none;}
+a:visited{}
+a:hover{color:#0889d3;}
+a:active{}
+
+.fl{float:left; }
+.fr{float:right; }
+/* // ----alpha---- // */
+#alpha{position:absolute;z-index:998;left:0;top:0;width:100%;height:1115px;background:none repeat scroll 0 0 #333333;filter:alpha(opacity=80);opacity: 0.8;-moz-opacity:0.8; }
+
+
+/* // ---- played ---- // */
+.leleFloat{position:fixed; top:200px;  right:40%; z-index:9999; _position:absolute; }
+.leleSwf{width:100px; height:100px;}
+*html .leleFloat{position:absolute;right:40%;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||300)-(parseInt(this.currentStyle.marginBottom,10)||0)))} 
+/* -- ---- played ---- -- */
+
+
+#alpha{position:absolute;z-index:998;left:0;top:0;width:100%;height:1115px;background:none repeat scroll 0 0 #333333;filter:alpha(opacity=80);opacity: 0.8;-moz-opacity:0.8; }
+.alpha_tm{background-color:none; filter:alpha(opacity=0);opacity:0;-moz-opacity:0;}

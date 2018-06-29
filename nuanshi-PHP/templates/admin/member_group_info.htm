@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					<a href="?action=member&do=member_add"><!--{$language.member_add}--></a>&raquo;&nbsp;<!--{$language.member_list}-->
+					
+				</h1>
+				
+				<div class="stat-container">
+				
+				<!--{include file="top.htm"}-->
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="150" valign="top"><!--{include file="left.htm"}--></td>
+<td valign="top">
+<div class='title'>
+<a href="?action=member&do=group_list"><!--{$language.member_group_list}--></a>
+&raquo;&nbsp;<!--{if $mode=='insert'}--><!--{$language.member_group_add}--><!--{else}--><!--{$language.member_group_edit}--><!--{/if}-->
+
+</div>
+<div class='item'>
+	<table width="100%">
+	<form action="?action=member&do=group_<!--{$mode}-->" method="post" name="group_info">
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_group_name}--></td>
+		<td><input type="text" name="group_name" size="40" value="<!--{$group.name|escape:html}-->" class="input"/></td>
+		</tr>
+
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="btn"/>
+		</td>
+		</tr>
+		<input type="hidden" name="group_id" value="<!--{$group.id}-->"/>
+	</form>
+	</table>
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

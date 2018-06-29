@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$config.site_name}--></title>
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->">
+<meta name="description" content="<!--{$config.site_description|escape:html}-->">
+<!--新增样式和JS 开始-->
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+<!--新增样式和JS 结束-->
+
+
+<script type="text/javascript" src="/templates/orange/js/jquery.pack.js"></script>
+<script type="text/javascript" src="/templates/orange/js/jQuery.blockUI.js"></script>
+<script type="text/javascript" src="/templates/orange/js/jquery.SuperSlide.js"></script>
+
+
+<script>
+
+var card ={}
+card.Gid = "";	//游戏id
+card.Sid = {};	//服务器id
+card.Type = card.Type || '';//类型
+card.Gurl = 'game.php?action=play&game_id=';
+
+$().ready(function() {
+	var SevSelected = $('#sele') ;
+	var SevList = $('#sub') ;
+	var SevLi = SevList.children();
+	var CardTips = $("#new_card_tips");
+	var CardAlert  = $("#new_card_shuoming");
+	var CardBtn = $("#lingqu");
+	if(card.Gid && card.Sid[0]){
+		$.each(SevLi,function(){
+			if(card.Sid[0] == this.id.match(/\d+/)) { SevSelected.text(this.innerHTML); }
+		});
+	}
+	$.each(SevLi,function(e){
+		$(this).mouseover(function (e) {
+			$(this).addClass("hover");
+		});
+		$(this).mouseout(function (e) {
+			$(this).removeClass("hover");
+		});
+		$(this).click(function (e) {
+			card.given = false;
+			card.Sid = this.id.match(/\d+/);
+			SevSelected.text(this.innerHTML);
+		});
+	});
+	SevSelected.click (function (e) {
+		e.stopPropagation();
+		SevList.toggle();
+		CardAlert.hide();
+	});
+	$(document).click(function (e) {
+			SevList.hide();
+	});
+	
+
+	
+	
+	CardBtn.click (function (e) {
+		$.ajax({
+			url:'card.php',
+			data:"action=get_card_ajax&id="+card.Sid,
+			type:'get',
+			dataType:'text',
+			success:function(result){
+				//alert(result);
+				
+				$("#startgame").show();
+				$("#new_card_value").val(result).focus().select();
+				
+			
+			}
+		});
+	});
+
+});
+
+
+
+</script>
+
+</head>
+
+<body>
+<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end--> 
+
+<div class="wrap">
+     <div class="left">
+	            <div class="plate">
+              <div class="top"><span>最新开服表</span><strong><em><a href="#" target="_blank">VIP新服送礼</a></em></strong></div>
+              <div class="cont">
+                  <dl>
+    			 <!--{foreach from=$game_news item=game}-->
+            	    <dt>
+            	    	            	    	<span><em><!--{$game.server_trunon_date}--></em></span>
+            	    						
+            	    	<b><!--{$game.server_trunon_hour}-->:00</b><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank"><strong><!--{$game.game_name}--></strong></a>
+            	    </dt>
+                    <dd><a href="game.php?action=play&game_id=<!--{$game.game_id}-->&server_id=<!--{$game.server_id}-->" target="_blank "><!--{$game.server_name}--></a></dd>
+		 <!--{/foreach}-->
+				
+                 </dl>
+              </div>
+              <div class="foot"></div>
+          </div>
+         
+	            <div class="plate m_top">
+              <div class="top"><span>联系客服</span> <strong><em>服务时间 9:00-22:00</em></strong></div>
+              <div class="cont">
+                  <div class="customer">
+                     <ul>
+                          <li class="phone">电话：<span>012-12345678</span></li>
+                          <li class="email">企业QQ：<a href="http://www.aliphp.net" target="_blank"><span style='font-size:14px;'>1815080514</span></a></li>
+                          <li class="resources"><span><a href="http://www.aliphp.net" target="_blank">客服论坛</a></span> <strong><a href="http://www.920.com/kefu.html" target="_blank">在线客服</a></strong></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="foot"></div>
+          </div>
+          
+          <div class="m_top"><a href="/jiazhang/index.html" target="_blank" class="people" onfocus=this.blur()></a></div>
+     </div>
+     <div class="right">
+     
+      <!---新手卡领取 开始-->
+    <div id="side_body">
+         <div class="name_mc1"><div class="name_mc2"><h1><!--{$game_name}--> 新手卡领取</h1><strong><a href='user.php?action=card' target='_self'>查看已领取的新手卡>></a></strong></div></div>
+         <div class="side_card">
+              <div class="x_top"></div>
+              <div class="x_cont">
+                  
+                     <div class="fuwuqi clearfix">
+                          <div class="left1"><strong>所属服务器：</strong></div>
+                          <div class="left2">
+<div id="search">
+    <div class="box">
+        <form>
+            <span class="select" id='sele'>请选择服务器</span>        
+          <!--<a href="javascript:;">搜索</a>-->
+        </form>
+    </div>
+<!--card.php?action=get_card&id=<!--{$card.id}-->
+    <ul class="sub" id="sub">
+	<!--{if $card_list}-->
+						<!--{foreach from=$card_list item=card}-->
+             <li id='<!--{$card.id}-->'>
+							<!--{$card.name}--></li>
+         
+			<!--{/foreach}-->
+								<!--{/if}-->
+        </ul>
+</div>
+                             </div>
+                          <div class="right3"><span class="annn"><a href="javascript:void(0);" id='lingqu'>立即领取</a></span></div>
+                     </div>
+                    
+                     <div class="xinshouka">
+                          <div class="left1"><strong>新手卡号：</strong></div>
+                          <div class="left2"><input name="textarea" type="text" class="input_b" id='new_card_value'/></div>
+                          <div class="right3"><span id='new_card_tips' style='display:none;'>按Ctrl+C进行复制</span></div>
+                     </div>
+                     <div class="name" id='new_card_shuoming' style='display:none;'>新手卡已领完</div>
+                     <div class="button_tj"><a id="startgame"  href="game.php?action=server_list&game_id=<!--{$game_id}-->" style='display:none;'></a></div>
+                     <div class="xin_font"><b>注：</b>每个通行证，每日可领取1张新手卡，该新手卡可在《<!--{$game_name}-->》相应区服使用，<br /><em>每张新手卡，仅限使用1次、且每个游戏内角色，</em><br /><em>仅可在当前服务器领取1次新手礼包，每个服务器新手卡领取时间以游戏内活动面板为准。</em></div>
+              
+              </div>
+              <div class="x_foot"></div>
+         </div>
+    
+       
+         
+    <div class="body_content">
+      <p><span class="fs14 fsb">新手礼包领取流程：</span><br />
+1）登录到<a href="http://qh.602.com"><!--{$game_name}--></a>游戏官方网址<br />
+2）【进入游戏】-&gt;活动中心-&gt;激活码兑换-&gt;输入礼包激活码-&gt;即可领取对应礼包奖励。<br />
+
+     </div>
+    
+    </div>
+      <!---新手卡领取 结束-->     
+     </div>
+</div>
+
+<div id="content_4"><!--footer str-->
+<div class="footer">
+     <div class="information">
+          <a href="http://www.602.com/AboutUs/About.html">关于我们</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/swhz.html">商务合作</a><font>|</font>
+          <a href="#">法律声明</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/kfzx.html">客服中心</a><font>|</font>
+          <a href="http://www.602.com/AboutUs/rczp.html">人才招聘</a><font>|</font>
+          <a href="http://bbs.602.com/">游戏论坛</a><br>
+          <span>游戏版权所有 Copyright (c) 2012 602.com All Rights Reserved<br>沪网文[2012]0880-122号 沪ICP备12047477号-5 电话021-39254937<br>增值电信业务经营许可证沪B2-20110013</span>
+     </div>
+     <div class="copyright"><img src="/statics/images/mycontent/foot_1.jpg" width="100" height="38" /><img src="/statics/images/mycontent/foot_2.jpg" width="100" height="38" /><img src="/statics/images/mycontent/foot_3.jpg" width="100" height="38" /></div>
+</div>
+<div id="602tj" style="display:none;">
+<script type="text/javascript" src="http://www.602.com/statics/js/tj.js"></script>
+</div>
+<!--footer end--></div>
+
+</body>
+</html>

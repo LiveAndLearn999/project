@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="page-type" page="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+					<a href="?action=other&do=link_add"><!--{$language.link_add}--></a>
+&raquo;&nbsp;<!--{$language.link_list}-->
+				</h1>
+				
+				<div class="stat-container">
+				
+				<table cellspacing="0" cellpadding="0" width="100%">
+	<!--{foreach from=$link_list item=link}-->
+	<tr>
+	<td height="30" width="30" align="center"><!--{$link.id}--></td>
+	<td><a href="<!--{$link.url}-->" target="_blank"><!--{$link.name}--></a>&nbsp;<span style="color:#ccc">(<!--{$link.text}-->)</span></td>
+	<td height="30" width="250"><!--{$link.url}--></td>
+	<td height="30" width="100" align="center">
+	<a href="?action=other&do=link_edit&link_id=<!--{$link.id}-->"><!--{$language.edit}--></a>
+	<a href="?action=other&do=link_delete&link_id=<!--{$link.id}-->" onclick="return confirm('<!--{$language.confirm_delete}-->')"><!--{$language.delete}--></a>
+	</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="4"></td></tr>
+	<!--{foreachelse}-->
+	<tr><td height="50" colspan="4" align="center"><!--{$language.nodata}--></td></tr>
+	<!--{/foreach}-->
+	<!--{if $pagebar}-->
+	<tr><td height="26"  colspan="4" align="right"><!--{$pagebar}--></td></tr>
+	<!--{/if}-->
+	</table>
+
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

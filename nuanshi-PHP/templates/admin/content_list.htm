@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="/scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+					<a href="?action=content&do=content_add&channel_id=<!--{$smarty.request.channel_id}-->"><!--{$language.content_add}--></a>
+&raquo;&nbsp;<!--{$channel_name}-->
+				</h1>
+				
+				<div class="stat-container">
+				
+				<!--{if $content_list}-->
+
+<table cellspacing="0" cellpadding="0" width="100%">
+	<form action="?action=content&do=content_delete" method="post" name="content_list">
+	<input type="hidden" name="channel_id" value="<!--{$smarty.request.channel_id}-->" />
+	<!--{foreach from=$content_list item=content}-->
+	<tr>
+	<td height="30" width="5%" align="center" nowrap="nowrap"><input type="checkbox" name="content_id[]" value="<!--{$content.id}-->" /></td>
+	<td width="80%">
+	<!--{if $content.category_name}-->
+		[<a href="?action=content&do=content_list&channel_id=<!--{$content.channel_id}-->&content_id=<!--{$content.id}-->&category_id=<!--{$content.category_id}-->" style="font-weight:bold;color:green"><!--{$content.category_name}--></a>]
+	<!--{/if}-->
+	<a href="?action=content&do=content_edit&channel_id=<!--{$content.channel_id}-->&content_id=<!--{$content.id}-->"><!--{$content.title}--></a>
+	<!--{if $content.thumb}-->
+		<a href="/uploads/<!--{$content.thumb}-->" target="_blank"><img src="<!--{if $content.thumb_http}--><!--{$content.thumb}--><!--{else}-->uploads/<!--{$content.thumb}--><!--{/if}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+	<!--{/if}-->
+	<!--{if $content.password}-->
+	<img src="/images/lock.gif" alt="<!--{$content.password}-->" align="absmiddle"/>
+	<!--{/if}-->
+	<!--{if $content.comment_count}-->
+	(<a href="?action=content&do=comment_list&content_id=<!--{$content.id}-->"><!--{$content.comment_count}--></a>)
+	<!--{/if}-->
+
+	<!--{if $content.is_best}-->
+	<b style="color:red">[<!--{$language.best}-->]</b>
+	<!--{/if}-->
+	</td>
+	<td  width="15%" align="center" nowrap="nowrap"><!--{$content.time}--></td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="3"></td></tr>
+	<!--{/foreach}-->
+	</form>
+
+	<tr>
+	<td height="30" width="5%" align="center"><input type="checkbox" onclick="batch('content_list',this)"  /></td>
+	<td colspan="2" width="95%">
+	<table width="100%">
+	<tr>
+	<td width="100px">
+	<select onchange="batch_do('content_list',this.options[this.selectedIndex].value)" style="width:100px">
+	<option><!--{$language.select}--></option>
+	<option value="best_yes"><!--{$language.selected_batch_best_yes}--></option>
+	<option value="best_no"><!--{$language.selected_batch_best_no}--></option>
+	<option value="delete"><!--{$language.selected_delete_content}--></option>
+	</select>
+
+	</td>
+	<td width="300" style="padding-top:19px">
+	<form method="get" name="content_search" onsubmit="if(this.elements['keyword'].value==''){this.elements['keyword'].focus();return false;}">
+
+<input type="hidden" name="action" value="content"/>
+<input type="hidden" name="do" value="content_list"/>
+<input type="hidden" name="channel_id" value="<!--{$smarty.request.channel_id}-->"/>
+<!--{if $smarty.request.category_id}-->
+<input type="hidden" name="category_id" value="<!--{$smarty.request.category_id}-->"/>
+<!--{/if}-->
+<input type="text" name="keyword" class="input" style="width:100px"/>
+<input type="submit" value="<!--{$language.search}-->" class="btn"/>
+</form>
+	
+	</td>
+	<td align="right"><!--{$pagebar}--></td>
+	</tr></table>
+	</td>
+	</tr>
+</table>
+<!--{else}-->
+<div style="line-height:50px;text-align:center;"><!--{$language.nodata}--></div>
+<!--{/if}-->
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+</body>
+</html>

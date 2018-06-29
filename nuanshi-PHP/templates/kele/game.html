@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><!--{$config.site_name}--></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->" />
+<meta name="description" content="<!--{$config.site_description|escape:html}-->" />
+<LINK href="/templates/kele/img/reset.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/common.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/gamelist.css" type=text/css rel=stylesheet>
+<!--[if lte IE 6]>
+<script src="/templates/kele/img/fixPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('.pngfix');
+</script>
+<![endif]--> 
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="header.html"}-->
+ 
+<DIV class="mainContent clearfix">
+  <DIV class="left box game_center">
+    <h3 class="gl"><strong class="fl pngfix hid">游戏中心</strong></h3>
+    <DIV class=margin>
+<ul class="g_list clearfix">
+<!--{foreach from=$game_list item=game}-->
+<li><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->"><img class="fl" src="uploads/<!--{$game.game_logo}-->"></a>
+  <div class="fl">
+    <p><strong><!--{$game.game_name}--></strong><br>
+      <a class="a1" href="card.php?game_id=<!--{$game.game_id}-->">领取礼包</a><br>
+	  <a class="a2" href="<!--{$game.game_website}-->" target="_blank">官方网站</a> <a class="a3" href="<!--{$game.game_bbs}-->" target="_blank">玩家论坛</a> </p>
+    <p><a class="a4 hid" href="pay.php?game_id=<!--{$game.game_id}-->">充值</a> <a class="a5 hid" href="game.php?action=server_list&game_id=<!--{$game.game_id}-->">进入游戏</a> </p>
+  </div>
+</li>
+<!--{/foreach}-->
+</ul>
+    </DIV>
+  </DIV>
+  <DIV class=sidebar>
+    <DIV class="" id=uc_box>
+      <!--{include file="part_login.html"}-->
+    </DIV>
+    <DIV class="box latest_news">
+      <!--{include file="part_faq.html"}-->
+    </DIV>
+    <DIV class="box cs">
+      <DIV class=margin>
+      	<!--{include file="part_service.html"}-->
+      </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+
+<!--{include file="footer.html"}-->
+</body>
+</html>

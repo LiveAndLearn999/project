@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$config.site_name}--></title>
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->">
+<meta name="description" content="<!--{$config.site_description|escape:html}-->">
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+<script src="/templates/orange/js/jquery.min.js"></script>
+      
+</head>
+
+<body>
+<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end--> 
+
+<!--login banner news str-->
+<div class="container"> 
+	     <!--begin:unlogin{{{-->
+        
+        <!--{include file="part_login.html"}-->
+        <!--}}}end:unlogin-->
+        <!--}}}end:logon-->
+   <div class="main">
+       <div id="imgslider">
+    	     
+	     <script language='javascript'>
+		        bigimgsarr = new Array();
+				smallimgsarr = new Array();
+				titlearr = new Array();
+				linksarr = new Array();
+				buturlarr = new Array();				
+                commentarr = new Array();
+                var swfWidth=428;
+                var swfHeight=258;
+	            var bigimgs="";
+				var smallimgs = "";
+                var title = "";
+                var links = "";
+				var buturl = "";
+				var comment = "";
+	 <!--{foreach from=$game_focus item=game}-->
+	 bigimgsarr[<!--{$game.i}-->] = "uploads/<!--{$game.game_logo2}-->";
+	 smallimgsarr[<!--{$game.i}-->] = "uploads/<!--{$game.game_logo5}-->";
+	 titlearr[<!--{$game.i}-->] = "<!--{$game.game_name}-->";
+	 linksarr[<!--{$game.i}-->] = "<!--{$game.game_website}-->";
+	 buturlarr[<!--{$game.i}-->] = "game.php?action=server_list%26game_id=<!--{$game.game_id}-->";
+	 commentarr[<!--{$game.i}-->] = "<!--{$game.game_depict}-->";
+	 <!--{/foreach}-->
+	 for(i=1;i<bigimgsarr.length;i++){
+if(bigimgs=="") bigimgs = bigimgsarr[i];
+else bigimgs += "|"+bigimgsarr[i];
+}
+	  for(i=1;i<smallimgsarr.length;i++){
+if(smallimgs=="") smallimgs = smallimgsarr[i];
+else smallimgs += "|"+smallimgsarr[i];
+}
+for(i=1;i<titlearr.length;i++){
+if(title=="") title = titlearr[i];
+else title += "|"+titlearr[i];
+}
+for(i=1;i<linksarr.length;i++){
+if(links=="") links = linksarr[i];
+else links += "|"+linksarr[i];
+}
+for(i=1;i<buturlarr.length;i++){
+if(buturl=="") buturl = buturlarr[i];
+else buturl += "|"+buturlarr[i];
+}
+for(i=1;i<commentarr.length;i++){
+if(comment=="") comment = commentarr[i];
+else comment += "|"+commentarr[i];
+}
+
+	document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+swfWidth+'" height="'+swfHeight+'">');
+	document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="/templates/orange/swf/bigeyes1.swf"><param name="quality" value="high"><param name="bgcolor" value="#FFFFFF">');
+	document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+	document.write('<param name="FlashVars" value="bigimg='+bigimgs+'&url='+links+'&titles='+title+'&context='+comment+'&smallimg='+smallimgs+'&bturl='+buturl+'">');
+	document.write('<embed src="/templates/orange/swf/bigeyes1.swf" wmode="opaque" FlashVars="bigimg='+bigimgs+'&url='+links+'&titles='+title+'&context='+comment+'&smallimg='+smallimgs+'&bturl='+buturl+'" menu="false" bgcolor="#ffffff" quality="high" width="'+swfWidth+'" height="'+swfHeight+'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+	document.write('</object>');
+</SCRIPT>
+            
+        </div>
+       
+     </div>
+     <div class="right">
+     
+          <div class="news">
+              <div class="cont">
+                   <div class="qh_name">
+                        <ul id='tabN'>
+                            <li class='hover'>公告</li>
+                            <li>活动</li>
+                        </ul>
+                   </div>
+                   <div class="qh_box" id='tabC'>
+                         <ul>
+						 
+                           <!--{foreach from=$ggnews item=news}-->
+                            <li>
+                            	<i></i><a href="<!--{$news.url}-->" target="_blank"><span style="color:<!--{$news.color}-->"><!--{$news.content_title}--></span></a>
+                            	<strong><!--{$news.content_time}--></strong>
+                            </li>
+							<!--{/foreach}-->
+							
+                           
+                          </ul>
+                         <ul style="display:none">
+						  <!--{foreach from=$news item=news}-->
+                            <li>
+                            	<i></i><a href="<!--{$news.url}-->" target="_blank"><span style="color:<!--{$news.color}-->"><!--{$news.content_title}--></span></a>
+                            	<strong><!--{$news.content_time}--></strong>
+                            </li>
+							<!--{/foreach}-->
+                            
+                          </ul>
+                   </div>
+                    <script>
+                    var	Snav = $("#tabN").children(),
+	                Scon = $("#tabC").children();
+	                Snav.click(function(){
+		                var i = Snav.index(this);
+		                Snav.removeClass("hover").eq(i).addClass("hover");
+		                Scon.hide().eq(i).show();
+	                });
+                   </script>
+              </div>
+              <div class="foot"></div>
+          </div>
+     </div>
+</div>
+<!--login banner news end-->
+
+<!--wrap str-->
+<div class="wrap">
+     <div class="left">
+		          <div class="plate">
+              <div class="top"><span>最新开服表</span><strong><em><a href="#" target="_blank">VIP新服送礼</a></em></strong></div>
+              <div class="cont">
+                  <dl>
+    			 <!--{foreach from=$game_news item=game}-->
+            	    <dt>
+            	    	            	    	<span><em><!--{$game.server_trunon_date}--></em></span>
+            	    						
+            	    	<b><!--{$game.server_trunon_hour}-->:00</b><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank"><strong><!--{$game.game_name}--></strong></a>
+            	    </dt>
+                    <dd><a href="game.php?action=play&game_id=<!--{$game.game_id}-->&server_id=<!--{$game.server_id}-->" target="_blank "><!--{$game.server_name}--></a></dd>
+		 <!--{/foreach}-->
+		 
+            	   
+				
+                 </dl>
+              </div>
+              <div class="foot"></div>
+          </div>
+     </div>
+     <div class="right">
+	          <div class="plate">
+              <div class="top">
+                  <span>推荐游戏</span>
+                  <strong>
+                      <div class="selectbox" id='selectbox'>
+                          <div class="name">领取新手卡</div>
+                          <div class="name_xiala" id='name_xiala' style='display:none;'>
+                              <ul><!--{foreach from=$game_list item=game}-->
+                                                                <li><a href="card.php?game_id=<!--{$game.game_id}-->" target="_blank"><!--{$game.game_name}--></a></li>
+                                                              <!--{/foreach}-->
+                                                            </ul>
+                          </div>
+                      </div>
+<script>
+$("#selectbox").hover(function(){
+	$("#name_xiala").show();
+},function(){
+	$("#name_xiala").hide();
+});
+$("#name_xiala").click(function(){
+	$(this).toggle();
+});
+
+</script>
+                 </strong>
+              </div>
+              <div class="cont">
+                   <div class="games_body">
+				   <!--{foreach from=$game_hot item=game}-->
+				                   <div class="games">
+	                        <div class="games1">
+	                            <dl>
+	                                <dt><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank"><img src="uploads/<!--{$game.game_logo3}-->" onerror="this.src='/templates/orange/images/index_12.jpg'" width="195" height="125" /></a></dt>
+	                                <dd><span></span><a href="<!--{$game.game_website}-->" target="_blank"><em><!--{$game.game_name}--></em></a> <strong>角色扮演</strong></dd>
+	                            </dl>
+	                        </div>
+	                        <div class="games2">
+	                            <dl>
+	                                <dt><!--{$game.game_depict}--></dt>
+	                                <dd><span><a href="game.php?action=play&game_id=<!--{$game.game_id}-->&server_id=<!--{$game.server_id}-->" target="_blank">进入游戏</a></span><strong><a href="<!--{$game.game_website}-->" target="_blank">官网</a></strong></dd>
+	                            </dl>
+	                        </div>
+	                   </div><!--{/foreach}-->
+					   
+			                  
+			                   
+			                   
+                   </div>             
+              </div>
+            <div class="foot"></div>
+          </div>
+     </div>
+</div>
+<!--wrap end-->
+
+
+<!--wrap str-->
+<div class="wrap">
+     <div class="left">
+		          <div class="plate">
+              <div class="top"><span>服务器列表</span></div>
+              <div class="cont">
+                  <div class="server">
+                      <ul><!--{foreach from=$game_show item=game}-->
+                      	                          <li>
+                          	<a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->">
+	                          	<!--<em><img src="http://i-1.920.com/2013/8/23/c3e469b1-ce0d-48be-bc50-1c59f34895c5.jpg" width="20" height="20" /></em>  -->
+	                          	<em><img src="uploads/<!--{$game.game_logo}-->" onerror="this.src='/templates/orange/images/index_12.jpg'" width="20" height="20" /></em>
+	                            <span><b><!--{$game.game_name}--> </b> [角色扮演]</span>
+	                          	<strong></strong>
+	                        </a>
+                          </li><!--{/foreach}-->
+                      	                         
+                      	                      </ul>
+                  </div>
+              </div>
+              <div class="foot"></div>
+          </div>
+          
+		          <div class="plate m_top">
+              <div class="top"><span>联系客服</span> <strong><em>服务时间 9:00-22:00</em></strong></div>
+              <div class="cont">
+                  <div class="customer">
+                      <ul>
+                          <li class="phone">电话：<span>012-12345678</span></li>
+                          <li class="email">企业QQ：<a href="http://www.aliphp.net" target="_blank"><span style='font-size:14px;'>1815080514</span></a></li>
+                          <li class="resources"><span><a href="http://www.aliphp.net" target="_blank">客服论坛</a></span> <strong><a href="http://www.920.com/kefu.html" target="_blank">在线客服</a></strong></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="foot"></div>
+          </div>
+		  <div class="m_top"><a href="jiazhang/index.html" target="_blank" class="people" onFocus="this.blur()"></a></div>
+     </div>
+     <div class="right">
+                  <div class="plate">
+              <div class="top">
+                  <span>热门游戏</span>
+                  <!--<strong><em><a href="#">更多游戏>></a></em></strong>-->
+              </div>
+              <div class="cont">
+                   <div class="main_games" id='main_games'>
+				   <!--{foreach from=$game_new item=game}-->
+                      	                         <div class="more_games">
+                              <span><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank"><img src="uploads/<!--{$game.game_logo4}-->" onerror="this.src='/templates/orange/images/index_12.jpg'" width="225" height="100" /></a>
+                              <div class="d_img"></div><div class="d_img2"><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->">列表</a> | <a href="<!--{$game.game_bbs}-->" target="_blank">论坛</a></div>
+                              </span>
+                              <dl>
+                                <dt><em><!--{$game.game_name}--></em><br />类型：角色扮演<br />区服：<!--{$game.server_name}--></dt>
+                                <dd><a href="game.php?action=play&game_id=<!--{$game.game_id}-->&server_id=<!--{$game.server_id}-->" target="_blank ">进入新服</a></dd>
+                             </dl>
+                         </div><!--{/foreach}-->
+						 
+                      	                         
+                      	                   </div>
+              </div>
+            <div class="foot"></div>
+          </div>
+<script>
+$("#main_games").children().hover(function(){
+	$(this).addClass('hover').siblings().removeClass('hover');
+});
+</script>        <!-- 攻略列表 -->
+          <div class="plate_news m_right">
+              <div class="top">
+                  <span>游戏动态</span>
+                  <strong><a target="_blank" href="news.php?id=1">更多>></a></strong>
+              </div>
+              <div class="cont">
+                   <div class="main_news">
+                        <ul> <!--{foreach from=$xwnews item=news}-->
+                            <li>
+                            	<i></i><a href="<!--{$news.url}-->" target="_blank"><span style="color:<!--{$news.color}-->"><!--{$news.content_title}--></a></span>
+                            </li>
+							<!--{/foreach}-->
+                            
+                        </ul>
+                   </div>
+              </div>
+            <div class="foot"></div>
+          </div>
+
+
+		          <div class="plate_news">
+              <div class="top">
+                  <span>常见问题</span>
+                  <strong><a target="_blank" href="news.php?id=2">更多>></a></strong>
+              </div>
+              <div class="cont">
+                   <div class="main_news">
+                        <ul>
+                             <!--{foreach from=$wtnews item=news}-->
+                            <li>
+                            	<i></i><span style="color:<!--{$news.color}-->"><a href="<!--{$news.url}-->" target="_blank"><!--{$news.content_title}--></a></span>
+                            </li>
+							<!--{/foreach}-->
+                        </ul>
+                   </div>
+              </div>
+            <div class="foot"></div>
+          </div>
+     </div>
+</div>
+<!--wrap end-->
+<!--link str-->
+<div class="link">
+     <span>友情链接：</span>
+ 				<!--{include file="part_link.html"}-->
+			</div>
+<!--link end--><!--footer str-->
+<div class="footer">
+ <!--{include file="footer.html"}-->
+     
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+					&raquo;&nbsp;提现列表
+				</h1>
+				
+				<div class="stat-container">
+				
+				<table cellspacing="1" cellpadding="0" width="100%">
+	<tr class="titlebg">
+	<td width="3%" align="center">ID</td>
+	<td width="5%" align="center">用户名</td>
+	<td width="5%">姓名</td>
+	<td width="8%">身份证</td>
+	<td width="5%">银行</td>
+	<td width="8%">卡号</td>
+	<td width="7%">电话</td>
+	<td width="5%">金额</td>
+	<td width="5%">状态</td>
+	<td width="9%">时间</td>
+	<td width="10%" align="center">操作</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="10"></td></tr>
+	<!--{foreach from=$list item=log}-->
+	<tr>
+	<td height="30" align="center"><!--{$log.id}--></td>
+	<td align="center"><!--{$log.username}--></td>
+	<td><!--{$log.truename}--></td>
+	<td><!--{$log.idcard}--></td>
+	<td><!--{$log.bank}--></td>
+	<td><!--{$log.bankno}--></td>
+	<td><!--{$log.tel}--></td>
+	<td><!--{$log.cash}--></td>
+	<td><!--{if $log.state==0}--><span style="color:red">未处理</span><!--{else}--><span style="color:green">已处理</span><!--{/if}--></td>
+	<td><!--{$log.log_time}--></td>
+	<td align="center">
+	<a href="?action=game&do=cash_modify&log_id=<!--{$log.id}-->&state=<!--{$log.state}-->" onclick="return confirm('确定要更改提现状态？')">更改状态</a>
+	| <a href="?action=game&do=cashlog_delete&log_id=<!--{$log.id}-->" onclick="return confirm('<!--{$language.confirm_delete}-->')"><!--{$language.delete}--></a>
+	</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="10"></td></tr>
+	<!--{foreachelse}-->
+	<tr><td height="50" colspan="10" align="center"><!--{$language.nodata}--></td></tr>
+	<!--{/foreach}-->
+	<tr>
+	<td height="50" colspan="10" align="right"><!--{$pagebar}--></td>
+	</tr>
+	</table>
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

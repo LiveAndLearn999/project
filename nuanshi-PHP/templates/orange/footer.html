@@ -1,0 +1,17 @@
+﻿
+     <div class="information">
+          <!--{if $bottom_menu}--> <!--{foreach item=menu from=$bottom_menu name=bottom_menu}-->
+  <a href="{$menu.link}" {if $menu.target==1}target="_blank"{/if}>{$menu.name}</a>
+  <!--{if !$smarty.foreach.bottom_menu.last}-->|<!--{/if}-->
+	<!--{/foreach}--> <!--{/if}--><br>
+          <span>游戏版权所有 Copyright (c) 2013 aliphp.net All Rights Reserved<br>苏网文[2013]0880-188号 苏ICP备123456号-5 电话011-12345678<br>增值电信业务经营许可证苏B2-20110013</span>
+     </div>
+     <div class="copyright"><img src="/templates/orange/images/foot_1.jpg" height="38" width="100"><img src="/templates/orange/images/foot_2.jpg" height="38" width="100"><img src="/templates/orange/images/foot_3.jpg" height="38" width="100"></div>
+
+
+
+
+
+
+<!--end footer-->
+  

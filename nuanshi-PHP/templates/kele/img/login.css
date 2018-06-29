@@ -1,0 +1,23 @@
+﻿
+.login{position:relative;width:900px;height:400px;margin:0 auto; background:url("login[1].jpg") no-repeat 0 0;}
+.sNav{margin:20px 0 0 50px;clear:both;color:#3d9800;}
+.sNav p{margin-top:40px;float:left;}
+.sNav a{margin:0 6px;color:#3d9800;}
+.slide{position:absolute;top:60px;left:178px; width:325px;height:200px;}
+.port{position:absolute;top:60px;right:100px;width:230px;color:#3d9800;}
+.port .i p{width:176px;height:29px;background:url("port[1].png") no-repeat 0 0; line-height:29px; }
+.port .i label{width:50px;line-height:29px; }
+.port .i2 p{width:176px;height:29px;background:url("port[2].png") no-repeat 0 0; line-height:29px; }
+.port .i2 label{width:50px;line-height:29px; }
+.pi_input1{width:170px;padding:5px 0 6px 3px;background:url("blank[1].gif") no-repeat 0 0;border:0;}
+.pi_input2{width:80px;padding:5px 0 6px 3px;background:url("blank[1].gif") no-repeat 0 0;border:0;}
+.port  div{height:29px;margin:10px 0; }
+.port .btnLogin{margin:20px 0 30px 0;}
+.btnLogin input{display:block;margin-left:50px;height:33px;width:112px;border:0;background:url("port[1].png") no-repeat 0 -85px; }
+.port .rember{}
+.rember input{margin-left:48px; *float:left;}
+.rember a{ *float:left; margin:0 10px 0 0;text-decoration:underline;color:#3d9800;}
+.rember a:hover{color:#f60;}
+.port .btnReg{margin:30px 0 0 0;}
+.btnReg a{display:block;margin-left:48px;width:155px;height:28px;background:url("port[1].png") no-repeat 0 -29px;}
+.btnReg a:hover{background-position:0 -57px;}

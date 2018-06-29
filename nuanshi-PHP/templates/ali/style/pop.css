@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+button{border:none;}
+
+/*--- sys pop  ---*/
+.sysPop{width:465px;padding-bottom:10px;position:absolute; z-index:999; top:30%; left:50%;margin-left:-235px;}
+.sysPop h3,.popTip h3{height:32px;line-height:32px;font-size:14px;color:#666;padding-left:32px;background:url(img/syspop.gif) no-repeat;}
+.sysPopMain{min-height:220px;_height:220px;padding:0 5px; border:1px solid #dcdcdc; border-top:0; background:#f8f8f8;}
+.sysPopMain dl{min-height:92px; _height:92px; padding:20px 24px 0 40px;background:#f8f8f8;}
+.sysPopMain dt{width:78px;height:79px;margin:0 6px 0 0; text-indent:-999em; background:url(img/syspop.gif) no-repeat 0 -43px;float:left;}
+.sysPopMain dd{width:300px;float:left;}
+.sysPopMain .suc dd{ padding-bottom:10px;}
+
+.sysPopMain dd h4{ display:block; min-height:20px; _height:20px; line-height:20px; margin:5px 0 10px;color:#feac16;font-size:16px;}
+.sysPopMain dd p{font-size:12px;line-height:18px; color:#666;}
+.sysPopMain dd p a{color:#0176a6; text-decoration:underline;}
+.sysPopMain dd p a:link,.sysPopMain dd p a:visited{color:#0176a6; text-decoration:underline;}
+.sysPopMain dd p a:hover{color:#0889d3;}
+
+.popGame{height:96px; border-top:1px dotted #dedede; padding-top:11px;}
+.popGame a img{ display:block; padding:2px; border:1px solid #e0e1e2; width:199px;height:78px;}
+.popGame a{float:left;}
+.popGame a.g1{margin:0 5px 0 20px;}
+
+/*--- error ---*/
+.sysPopMain dl.error dt{background:url(img/syspop.gif) no-repeat 0 -200px;}
+.sysPopMain dl.error dd h4{color:#e71f00;}
+
+/*--- exit ---*/
+.sysPopMain dl.exit dt{background:url(img/syspop.gif) no-repeat 0 -273px;}
+
+/*--- popTip ---*/
+
+.popTip{width:435px;position:absolute; z-index:999; top:30%; left:50%;margin-left:-235px;}
+.popTip h3 span{width:150px;height:32px;line-height:32px;font-size:14px;color:#666;float:left;}
+.popTip h3 a{width:15px;height:14px;margin:9px 9px 0 0;background:url(img/close.gif) no-repeat; text-indent:-999em;overflow:hidden;float:right;}
+.popTip h3 a:hover{background:url(img/closeon.gif) no-repeat;}
+
+
+.popTipMain{min-height:100px;_height:100px;padding:15px 5px 15px;border:1px solid #dcdcdc; border-top:0; background:#f8f8f8;}
+.popTipMain .warmTip{min-height:35px;_height:35px;padding:0 20px 0;}
+.popTipMain .warmTip h4{ display:block; height:30px; line-height:40px; text-align:center; color:#0176a6; font-size:14px; margin-bottom:6px;}
+.payTip h4{ margin-bottom:10px;}
+.popTipMain .warmTip p{ display:block; text-align:center; line-height:22px; color:#333;}
+.popTipMain .payTip p{ text-align:left; margin-left:4.5em; }
+.popTipMain .warmTip p span{ color:#ff8400; padding:0 3px;}
+.popTipMain .warmTip p a:link,.popTipMain .warmTip p a:visited{ color:#ff8400; text-decoration:none;padding:0 2px;}
+.popTipMain .warmTip p a:hover{ color:#c16400; text-decoration:underline; }
+.popTipMain .warmTip p em{ color:#ff8400; font-family:Arial, Helvetica, sans-serif; font-weight:bold; padding:0 3px;}
+.popTipMain .warmTip p span{ text-align:center; color:#666; font-size:13px;}
+.popTipMain .warmTip p span var{ color:#0176a6; font-style:normal;}
+
+.popTipMain dd{width:250px;line-height:25px;margin-top:5px;float:left;}
+.popTipMain dd h4{height:20px;line-height:20px;font-weight:normal;}
+.popTipMain dd h5{font-size:14px;color:#F60;}
+.popTipMain dd p{line-height:25px;}
+.popTipMain dd p em{color:#666;}
+.popTipMain dd strong{color:#F00;}
+.popTipMain dd strong.strColor{color:#f60;}
+
+.popTipMain dd a{margin:0 5px;color:#f60;}
+.popTipMain dd a:hover{ text-decoration:underline;color:#0889d3;}
+.popBtn{height:41px;padding:15px 20px 7px;}
+.popBtn a.sure1Btn{ display:block; width:104px;height:41px; background:url(img/syspop.gif) no-repeat 0 -155px; margin:0 auto; text-indent:-999em; cursor:pointer;}
+.popBtn a.sure1Btn:hover{background:url(img/syspop.gif) no-repeat 0 -198px;}
+
+.popBtn a.custBtn,.popBtn a.backtBtn,.popBtn a.payBtn,.popBtn a.apayBtn,.popBtn a.wpayBtn{ display:block; float:left; width:134px;height:41px; background-image:url(img/syspop.gif); margin:0 auto; text-indent:-999em; cursor:pointer;}
+.popBtn a.custBtn{ background-position:0 -245px; margin-right:8px; margin-left:55px; _margin-left:28px;}
+.popBtn a.custBtn:hover{ background-position:0 -290px;}
+
+.popBtn a.backtBtn{ background-position:-140px -245px;}
+.popBtn a.backtBtn:hover{background-position:-140px -290px;}
+
+.popBtn a.payBtn{ background-position:0 -340px; margin-right:8px; margin-left:53px; _margin-left:26px;}
+.popBtn a.payBtn:hover{background-position:0 -389px;}
+
+.popBtn a.apayBtn{ background-position:0 -436px; margin-right:8px; margin-left:53px; _margin-left:26px;}
+.popBtn a.apayBtn:hover{background-position:0 -483px;}
+
+.popBtn a.wpayBtn{ background-position:-140px -436px;}
+.popBtn a.wpayBtn:hover{ background-position:-140px -483px;}
+
+
+.popLogin{width:463px; height:279px; position:absolute; z-index:999; top:30%; left:50%;margin-left:-235px;}
+.popLogin h3{height:32px;line-height:32px;font-size:14px;color:#666;padding-left:22px;background:#ceecff;}
+.popLogin h3 span{width:200px;height:32px;line-height:32px;font-size:14px;color:#0d80ca;float:left; }
+.popLogin h3 a{width:15px;height:14px;margin:9px 9px 0 0;background:url(img/close1.gif) no-repeat; text-indent:-999em;overflow:hidden;float:right;}
+.popLogin h3 a:hover{background:url(img/closeon.gif) no-repeat;}
+.popLMain{ background:url(img/plbg.gif) no-repeat center 0; height:236px; overflow:hidden;}
+.popLogin ul{ display:block; padding:30px 0 0 100px;}
+.popLogin ul li{ display:block; height:28px;  margin-bottom:20px;}
+.popLogin ul li label{ display:inline-block; *display:inline; *zoom:1;  font-family:"宋体"; font-weight:normal;  height:28px; line-height:28px;vertical-align:middle; color:#2092ce;}
+.popLogin ul li input{ display:inline-block; *display:inline; *zoom:1; width:197px; height:26px; line-height:26px; background:#f4faff; border:1px solid #4ebcff; padding:0 5px;  color:#c2c2c2; vertical-align:middle; font-size:12px;}
+.rember{ width:213px; height:23px; overflow:hidden; margin:0 0 0 168px;;}
+.rember input{ float:left; border:0; width:16px; height:16px; vertical-align:middle; margin-right:5px;}
+.rember a{ float:left; height:15px; line-height:15px; vertical-align:middle;  vertical-align:middle; color:#00a8ff; text-decoration:none; white-space:nowrap;}
+.rember .pop_keeplive{}
+.rember a.r1{padding-right:20px; }
+.rember a.r2:link,.rember a.r2:visited{ width:57px; border-bottom:1px solid #00a8ff; overflow:hidden;}
+.rember a.r2:hover{ border-bottom:1px solid #f33;}
+.rember a:link,.rember a:visited{ color:#00a8ff; text-decoration:none;}
+.rember a:hover{ color:#f33; text-decoration:none;}
+.btnLogin{ clear:both;  margin:10px 0 10px 148px; *margin-left:76px;}
+.btnLogin .cur0,.btnLogin .cur1{float:left; border:0; width:96px; height:34px; overflow:hidden;  background-image:url(img/btn.png); text-indent:-999em; cursor:pointer;}
+.btnLogin .cur0{   background-position:0 -724px; margin-right:17px;}
+.btnLogin .cur1{ background-position:-110px -724px;}
+
+.popTipMain select{ width:140px; margin:0 3px;}
+.popTipMain .warmTip p a.clickCard:link,.popTipMain .warmTip p a.clickCard:visited{ text-decoration:underline; color:#ff8400;}
+.popTipMain .warmTip p a.clickCard:hover{ text-decoration:underline; color:#f00;}
+
+
+/*---add:xian 2013-04-06*/
+/*#popLogin .qqLogin{height:21px;margin-left:124px;}
+.qqLogin em{height:21px;line-height:21px;color:#999;float:left;}
+.qqLogin a{width:83px;height:21px;margin:0 auto;background:url(img/qq.gif) no-repeat;text-indent:-999em;overflow:hidden;float:left;}
+*/
+
+#popLogin .qqLogin{height:21px;margin-left:124px;}
+.qqLogin em{height:21px;line-height:21px;color:#999;float:left;}
+.qqLogin a{width:65px;height:21px;margin:0 auto;background:url(img/qq.png) no-repeat;text-indent:-999em;overflow:hidden;float:left;}
+
+.popTipMain .payTip p.mp{ margin:0; line-height:20px; margin-top:10px;}
+
+.payTip p.vLi label,.payTip p.vLi em, .payTip em input, .payTip em span, .payTip em button, .payTip em var{display:inline-block; *display:inline; *zoom:1; color:#3f930a; vertical-align:middle;}
+.payTip p.vLi em input{padding:3px;border:1px solid #55A3CD; background:#E9F7FF;width:77px;}
+.payTip p.vLi em span{padding:0 5px;}
+.payTip p.vLi.vLi button{width:58px;height:22px;line-height:22px;padding:0;margin-right:1px;font-size:12px; text-align:center; color:#fff;  background:url(img/vBtn.gif) no-repeat 0 -24px; border:0;}
+.payTip p.vLi.vLi button.dis{color:#828282; background:url(img/vBtn.gif) no-repeat 0 0; cursor:default;}
+.payTip p.vLi.vLi var{height:22px;line-height:22px;color:#FF8800; background:none; border:0;}
+.popTipMain .payTip .ib p{ margin-top:10px; margin-left:2.5em;}
+.popTipMain .payTip .ib p.yanTip{ color:#333;}
+
+
+/*---add:xian 2013-04-06*/

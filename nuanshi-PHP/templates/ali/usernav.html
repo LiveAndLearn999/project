@@ -1,0 +1,25 @@
+<div class="ucTitle">
+        <h3 class="clearfix" id="nav-id">
+            <a class="a0 " href="user.php">我的游戏</a>
+            <a class="a1 " href="user.php?action=setpass">安全中心</a>
+            <a class="a2 " href="user.php?action=setuser">我的资料</a>
+            <a class="a3 " href="user.php?action=paylog">充值记录</a>
+            <a class="a4 " href="user.php?action=card">站内消息</a>
+        </h3>
+		<script type="text/javascript" language="javascript">
+                       var nav = document.getElementById("nav-id");
+                       var links = nav.getElementsByTagName("a");
+                       var lilen = nav.getElementsByTagName("a");
+                       var currenturl = document.location.href;
+                       var last = 0;
+                       for (var i=0;i<links.length;i++)
+                               {
+                        var linkurl =  lilen[i].getAttribute("href");
+                        if(currenturl.indexOf(linkurl)!=-1)
+                       {
+                      last = i;
+                       }
+                  }
+                         links[last].className = "a"+last+" current";
+</script>
+   </div>

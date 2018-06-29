@@ -1,0 +1,40 @@
+<div class="header_body">
+     <div class="logo"><img src="/templates/orange/images/header_r13_c2.jpg" width="224" height="60" /></div>
+   <!--  <div class="banner"><img src="/statics/images/mycontent/header_r12_c5.jpg" width="707" height="69" /></div> -->   
+      <div class="banner">
+     头部BANNER
+      </div>    
+      
+</div>
+<div class="header_nav">
+     <div class="mainnav" id="main-nav">
+          <ul>
+		  <!--{if $top_menu}-->
+    	<!--{foreach item=menu from=$top_menu}-->
+		<li><span></span></li>
+    		<li ><A class="" href="{$menu.link}" {if $menu.target==1}target="_blank"{/if}>{$menu.name}</A></li>
+    	<!--{/foreach}-->
+    	<!--{/if}-->
+		  <script type="text/javascript" language="javascript">
+                       var nav = document.getElementById("main-nav");
+                       var links = nav.getElementsByTagName("a");
+                       var lilen = nav.getElementsByTagName("a");
+                       var currenturl = document.location.href;
+                       var last = 0;
+                       for (var i=0;i<links.length;i++)
+                               {
+                        var linkurl =  lilen[i].getAttribute("href");
+                        if(currenturl.indexOf(linkurl)!=-1)
+                       {
+                      last = i;
+                       }
+                  }
+                         links[last].className = "cutter";
+</script>
+		  
+		  
+              
+              
+          </ul>
+     </div>
+</div>

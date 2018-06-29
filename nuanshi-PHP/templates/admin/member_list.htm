@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.calendar.js"></script>
+<link href="styles/calendars.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#stime").cld();
+  $("#etime").cld();
+});
+</script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+					<a href="?action=member&do=member_add"><!--{$language.member_add}--></a>&raquo;&nbsp;<!--{$language.member_list}-->
+				</h1>
+				
+				<div class="stat-container">
+				
+				<form action="?action=member&do=member_list" method="post">
+	<table width="100%" border="0" cellspacing="2" cellpadding="2" >
+	  <tr>
+	    <td width="390" style=" padding-top:15px">时间：
+			<select name="time_type" style="width:100px">
+				<option value="1" {if $search.time_type==1}selected="selected"{/if}>注册时间</option>
+				<option value="2" {if $search.time_type==2}selected="selected"{/if}>最后登陆时间</option>
+			</select>
+			<input id="stime" name="stime" type="text" size="15" value="<!--{$search.stime}-->" readonly bj="cBj" style="width:100px"/>
+			-
+			<input id="etime" name="etime" type="text" size="15" value="<!--{$search.etime}-->" readonly bj="cBj" style="width:100px"/></td>
+	    <td width="200" style=" padding-top:15px">用户名：
+	      <input name="username" type="text" size="20" value="<!--{$search.username}-->" style="width:100px"/></td>
+	    <td><input type="submit" name="Submit" value="提交查询" class="btn" /></td>
+	  </tr>
+	</table>
+	</form>
+	<table cellspacing="1" cellpadding="0" width="100%">
+	<tr class="titlebg">
+		<!--
+		<td width="30" align="center"></td>
+		-->
+		<td height="20" width="80" align="center">ID</td>
+		<td>用户名</td>
+		<td width="150">注册时间</td>
+		<td width="100">注册IP</td>
+		<td width="150">最后登陆时间</td>
+		<td width="80">状态</td>
+		<td width="150">推广渠道</td>
+		</tr>
+		<form action="?action=member&do=member_delete" method="post" name="member_list">
+		<!--{foreach from=$member_list item=member}-->
+		<tr>
+		<!--
+		<td width="30" align="center"><input type="checkbox" name="member_id[]" value="<!--{$member.id}-->" /></td>
+		-->
+		<td height="30" width="80" align="center"><!--{$member.id}--></td>
+		<td><a href="?action=member&do=member_edit&member_id=<!--{$member.id}-->"><!--{$member.username}--></a></td>
+		<td width="150"><!--{$member.join_time}--></td>
+		<td width="100"><!--{$member.join_ip}--></td>
+		<td width="150"><!--{$member.last_time}--></td>
+		<td width="80">
+		{if $member.state==1}<!--{$language.form_member_state_1}-->{/if}
+		{if $member.state==0}<!--{$language.form_member_state_0}-->{/if}
+		</td>
+		<td width="150"><!--{$member.spread_user}--></td>
+		</tr>
+		<tr><td height="1" bgcolor="#eeeeee" colspan="8"></td></tr>
+		<!--{foreachelse}-->
+		<tr><td height="50" colspan="8" align="center"><!--{$language.nodata}--></td></tr>
+		<!--{/foreach}-->
+		</form>
+		<!--{if $member_list}-->
+		<tr>
+		<!--
+		<td height="30" width="30" align="center"><input type="checkbox" onclick="batch('member_list',this)"  /></td>
+		<td colspan="7">
+		<table width="100%">
+		<tr>
+		<td width="100">
+		<select onchange="batch_do('member_list',this.options[this.selectedIndex].value)">
+		<option><!--{$language.select}--></option>
+		<option value="delete"><!--{$language.selected_delete_member}--></option>
+		</select>
+		</td>
+		</tr></table>
+		</td>
+		-->
+		<td colspan="7" align="right"><!--{$pagebar}--></td>
+		</tr>
+		<!--{/if}-->
+	</table>
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

@@ -1,0 +1,176 @@
+.layout {
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+.w990 {
+    width: 990px;
+}
+.auto {
+    margin: 0px auto;
+}
+.help_tag {
+    margin-top: 10px;
+}
+.help_tag li {
+    float: left;
+    width: 165px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    line-height: 30px;
+    background: url("../images/reAllbgs.png") repeat-x scroll 0px 5px transparent;
+    text-align: center;
+    display: inline;
+    cursor: pointer;
+    margin-left: 5px;
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 3px 3px 0px 0px;
+    font-size: 14px;
+    font-family: "Î¢ÈíÑÅºÚ";
+    color: rgb(51, 51, 51);
+}
+.help_tag li.current {
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: rgb(36, 147, 57);
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+}
+.help_box {
+    height: 1%;
+    padding: 25px 25px 10px;
+    border: 1px solid rgb(217, 217, 217);
+    margin-top: -1px;
+    box-shadow: 0px 1px 1px rgb(239, 237, 237);
+}
+.faqlist{
+width:430px;
+}
+.hot_position ul li{
+    height: 25px;
+    width: 213px;
+    float:left;
+	
+    
+}
+.hot_position h3 {
+    margin-bottom: 16px;
+}
+.vertical_line, .vertical_line_kf {
+    background: url("../images/moduel_bgs.png") no-repeat scroll -740px -120px transparent;
+    width: 1px;
+    height: 162px;
+    display: inline;
+    margin-left: 5px;
+    margin-right: 35px;
+    overflow: hidden;
+    float: left;
+}
+.per_service {
+    width: 410px;
+}
+.fleft {
+    float: left;
+}
+.f14 {
+    font-size: 14px;
+}
+.c3 {
+    color: rgb(51, 51, 51);
+}
+.per_service ul li {
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    margin-left: 12px;
+    margin-top: 15px;
+}
+.per_service ul li .ser_lef{
+    display: block;
+    float: left;
+    width: 10px;
+    height: 25px;
+    background: url("../images/per.png") no-repeat scroll -259px -125px transparent;
+}
+.per_service ul li a {
+    display: block;
+    float: left;
+    height: 23px;
+    line-height: 23px;
+    width: 98px;
+    background-color: rgb(249, 249, 249);
+    border-width: 1px medium;
+    border-style: solid none;
+    border-color: rgb(218, 218, 218) -moz-use-text-color;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    text-align: center;
+    color: rgb(36, 147, 57) !important;
+}
+.per_service ul li .ser_rig {
+display: block;
+float: left;
+width: 10px;
+height: 25px;
+    background: url("../images/per.png") no-repeat scroll -269px -125px transparent;
+}
+
+
+.kf_ts {
+    width: 218px;
+    border: 1px solid rgb(218, 218, 218);
+    height: 152px;
+    padding-left: 20px;
+    padding-top: 20px;
+    border-radius: 3px;
+    float: left;
+    display: inline;
+    margin-left: 10px;
+    margin-top: 10px;
+    box-shadow: 0px 1px 1px rgb(239, 237, 237);
+}
+.phone_kf {
+    margin-left: 0px;
+}
+.mr20 {
+    margin-right: 20px;
+}
+.fleft {
+    float: left;
+}
+img {
+    border: 0px none;
+    vertical-align: middle;
+}
+.kf_ts h2 {
+    color: rgb(86, 86, 86);
+    font-family: "Î¢ÈíÑÅºÚ";
+    font-weight: 600;
+}
+.f20 {
+    font-size: 20px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.lh20 {
+    line-height: 20px;
+}
+.mt20 {
+    margin-top: 20px;
+}
+.kf_yd a {
+    display: block;
+    width: 108px;
+    height: 28px;
+    background: url("../images/btn_bg.png") no-repeat scroll 0px -356px transparent;
+    color: rgb(255, 255, 255) !important;
+    line-height: 28px;
+    text-align: center;
+    font-weight: bold;
+}
+.wid {
+    width: 110px;
+    overflow: hidden;
+}

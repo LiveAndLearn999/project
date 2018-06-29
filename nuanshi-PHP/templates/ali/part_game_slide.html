@@ -1,0 +1,20 @@
+  <!--{foreach from=$game_focus item=game}-->
+<div class="banner_item">
+                                   <a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target='_blank'><img src="uploads/<!--{$game.game_logo2}-->" title=""/></a>
+                                   <div class="caption">
+                                       <h3>
+                                          <!--{$game.game_name}-->
+                                                                                      <span>
+                                                                                              <a target="_blank" href="game.php?action=server_list&game_id=<!--{$game.game_id}-->">进入游戏</a>
+                                                                                              <a target="_blank" href="card.php?game_id=<!--{$game.game_id}-->" class="baggift">>新手卡</a>
+                                                                                              <a target="_blank" href="<!--{$game.game_website}-->">进入官网</a>
+																							   <a href="<!--{$game.game_bbs}-->" target="_blank">下载</a>                                                                                         </span>
+                                                                                  </h3>
+                                   </div>
+                               </div>
+							   <!--{/foreach}--></div>
+							    <ul class="pagination"> <!--{foreach from=$game_focus item=game}-->
+                                                              <li class="current"><a href="javascript:;"><!--{$game.i}--></a></li>
+															  <!--{/foreach}-->
+                                                              
+                                                          </ul>

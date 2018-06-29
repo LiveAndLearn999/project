@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.calendar.js"></script>
+<link href="styles/calendars.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#stime").cld();
+  $("#etime").cld();
+});
+</script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					<a href="?action=game&do=paymode_list">充值方式管理</a>
+&raquo;&nbsp;充值列表
+					
+				</h1>
+				
+				<div class="stat-container">
+				
+				<form action="?action=game&do=pay_list" method="post">
+	<table width="100%" border="0" cellspacing="2" cellpadding="2" align="center">
+	  <tr>
+		<td width="180">充值方式：
+		  <select name="mode_id" style="width:95px">
+		    <option value="">全部</option>
+		      <!--{foreach from=$paymode_list item=paymode}-->
+			  <option value="<!--{$paymode.mode_id}-->" {if $paymode.mode_id==$search.mode_id}selected="selected"{/if}><!--{$paymode.mode_name}--></option>
+			  <!--{/foreach}-->
+		    </select></td>
+	    <td width="350">充值游戏：
+          <select id="game_id" name="game_id" onchange="getServer(this.options[selectedIndex].value)" style="width:95px">
+            <option value="">全部</option>
+              <!--{foreach from=$game_list item=game}-->
+			  <option value="<!--{$game.game_id}-->" {if $game.game_id==$search.game_id}selected="selected"{/if}><!--{$game.game_name}--></option>
+			  <!--{/foreach}-->
+			</select>
+          <select id="server_id" name="server_id" style="width:95px">
+            <option value="">全部</option>
+			</select></td>
+	    <td>充值时间：
+          <input id="stime" name="stime" type="text" size="15" value="<!--{$search.stime}-->" readonly bj="cBj" style="width:95px"/>
+			-
+			<input id="etime" name="etime" type="text" size="15" value="<!--{$search.etime}-->" readonly bj="cBj" style="width:95px"/></td>
+	  </tr>
+	  <tr>
+	    <td>订单状态：
+          <select name="pay_state" style="width:95px">
+            <option value="">全部</option>
+            <option value="3" {if $search.pay_state==3}selected="selected"{/if}>未处理</option>
+			<option value="2" {if $search.pay_state==2}selected="selected"{/if}>处理中</option>
+			<option value="1" {if $search.pay_state==1}selected="selected"{/if}>已处理</option>
+			</select></td>
+	    <td>订单号：　
+	      <input name="order_no" type="text" size="20" value="<!--{$search.order_no}-->" /></td>
+	    <td>充值账号：
+          <input name="game_user" type="text" size="20" value="<!--{$search.game_user}-->" /></td>
+	  </tr>
+	  <tr>
+	    <td><input type="submit" name="Submit" value="提交查询" class="btn" /></td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	  </tr>
+	</table>
+	</form>
+	<hr></hr>
+	<table cellspacing="1" cellpadding="0" width="100%">
+	<tr class="titlebg">
+	<td height="20" width="2%" align="center">ID</td>
+	<td width="5%" align="center">订单号</td>
+	<td width="5%" align="center">充值方式</td>
+	<td width="5%" align="center">充值状态</td>
+	<td width="5%" align="center">充值账号</td>
+	<td width="5%" align="center">手机号</td>
+	<td width="5%" align="center">充值金额</td>
+	<td width="10%" align="center">充值时间</td>
+	<td width="5%" align="center">充值IP</td>
+	<td width="8%" align="center">充值游戏</td>
+	<td width="15%" align="center">操作</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="10"></td></tr>
+	<!--{foreach from=$pay_list item=pay}-->
+	<tr>
+	<td height="30" align="center"><!--{$pay.id}--></td>
+	<td align="center"><!--{$pay.order_no}--></td>
+	<td><!--{$pay.mode_id}--></td>
+	<td><span style="color:{if $pay.state==1}green{else}red{/if};"><!--{$pay.state_str}--></span></td>
+	<td><!--{$pay.game_user}-->{if $pay.game_role!=''} (<!--{$pay.game_role}-->){/if}</td>
+	<td><!--{$pay.tel}--></td>
+	<td><!--{$pay.money}--></td>
+	<td><!--{$pay.time}--></td>
+	<td><!--{$pay.ip}--></td>
+	<td><!--{$pay.game_id}-->-<!--{$pay.server_id}--></td>
+	<td align="center">
+	<a href="?action=game&do=pay_rehash&order_no=<!--{$pay.order_no}-->" onclick="return confirm('确定要手动处理订单？')">手动处理</a>
+	| <a href="?action=game&do=pay_modify&pay_id=<!--{$pay.id}-->&state=<!--{$pay.state}-->" onclick="return confirm('确定要更改订单状态？')">更改状态</a>
+	| <a href="?action=game&do=pay_delete&pay_id=<!--{$pay.id}-->" onclick="return confirm('<!--{$language.confirm_delete}-->')"><!--{$language.delete}--></a>
+	</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="10"></td></tr>
+	<!--{foreachelse}-->
+	<tr><td height="50" colspan="10" align="center"><!--{$language.nodata}--></td></tr>
+	<!--{/foreach}-->
+	<tr>
+	<td colspan="3" style="color:red;">&nbsp;&nbsp;合计金额：<!--{$total}--></td>
+	<td height="50" colspan="7" align="right"><!--{$pagebar}--></td>
+	</tr>
+	</table>
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+<script type="text/javascript">
+	function getServer(id){
+		$.ajax({
+			url:'pay.php',
+			data:"action=get_server&game_id="+id,
+			type:'get',
+			dataType:'text',
+			success:function(result){
+				//alert(result);
+				$("#server_id").empty();
+				$("#server_id").append('<option value="">全部</option>');
+				$("#server_id").append(result);
+			}
+		});
+	}
+	//默认游戏
+	{if $search.game_id>0}
+		getServer(<!--{$search.game_id}-->);
+	{/if}
+</script>
+</body>
+</html>

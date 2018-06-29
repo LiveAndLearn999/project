@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					游戏代理接口配置
+
+					
+				</h1>
+				
+				<div class="stat-container">
+				
+				
+				<form action="?action=config&do=api_update" method="post" enctype="multipart/form-data" name="api_update">
+
+	<table width="100%">
+	
+		<tr>
+		<td width="100" height="30">代理用户名：</td>
+		<td>
+		<input type="text" name="site" size="50" value="<!--{$site}-->" class="input"/>
+		</td>
+		</tr>
+		<tr>
+		<td width="100" height="30">代理KEY：</td>
+		<td><input type="text" name="apikey" size="50" value="<!--{$apikey}-->" class="input"/></td>
+		</tr>
+		
+		<tr>
+		<td width="100" height="30">&nbsp;</td>
+		<td><input type="submit" value="<!--{$language.submit}-->" class="btn"/></td>
+		</tr>
+		</table>
+		
+		</form>
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+</body>
+</html>

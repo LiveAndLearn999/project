@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><!--{$config.site_name}--></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->" />
+<meta name="description" content="<!--{$config.site_description|escape:html}-->" />
+<LINK href="/templates/kele/img/reset.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/common.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/main.css" type=text/css rel=stylesheet>
+<!--[if lte IE 6]>
+<script src="/templates/kele/img/fixPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('.pngfix');
+</script>
+<![endif]--> 
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.calendar.js"></script>
+<link href="styles/calendars.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#member_birthday").cld();
+});
+</script>
+</head>
+<body>
+<!--{include file="header.html"}-->
+ 
+<DIV class="mainContent clearfix">
+	<div class="left box uc">
+		<h3>
+			<strong class="fl icon_02">用户中心</strong>
+		</h3>
+		<div class="margin">
+			<div class="msg">
+				<strong>为了您的账户安全，请完善您的安全设置。</strong>
+			</div>
+			<form id="user_form" name="user_form" method="post" action="user.php?action=save&mode=<!--{$mode}-->">
+			<!--{if $mode=='setpass'}-->
+			<table cellpadding="4" cellspacing="4" width="100%" align="center">
+                <tr>
+                    <td width="15%" height="38" align="right">
+                        原密码：</td>
+                    <td width="85%">
+                  <input type="password" id="member_password" name="member_password" class="reg_i" /></td>
+                </tr>
+                <tr>
+                    <td height="38" align="right">
+                        新密码：</td>
+                    <td>
+                        <input type="password" id="new_password" name="new_password" class="reg_i" /></td>
+                </tr>
+                <tr>
+                    <td height="38" align="right">
+                        确认密码：</td>
+                    <td>
+                        <input type="password" id="new_password2" name="new_password2" class="reg_i" /></td>
+                </tr>
+                <tr>
+                    <td height="38"></td>
+                    <td>
+						<input type="image" name="save1" src="templates/kele/img/btn_save.gif" /></td>
+                </tr>
+            </table>
+		    <!--{/if}-->
+		  
+		    <!--{if $mode=='setsec'}-->
+			<table cellpadding="4" cellspacing="4" width="100%" align="center">
+                <tr>
+                    <td width="15%" height="38" align="right">
+                        电子邮箱：</td>
+                    <td width="85%">
+                  <input type="text" id="member_mail" name="member_mail" value="<!--{$member.mail}-->" class="reg_i" /></td>
+                </tr>
+                <!--
+				<tr>
+                    <td height="38" align="right">
+                        安全码：</td>
+                    <td>
+                        <input type="password" id="member_safecode" name="member_safecode" class="reg_i" /></td>
+                </tr>
+				-->
+                <tr>
+                    <td height="38"></td>
+                    <td>
+						<input type="image" name="save2" src="templates/kele/img/btn_save.gif" /></td>
+                </tr>
+          </table>
+		  <!--{/if}-->
+		  
+		  <!--{if $mode=='setuser'}-->
+			<table cellpadding="4" cellspacing="4" width="100%" align="center">
+                <tr>
+                    <td width="15%" height="38" align="right">
+                        昵称：</td>
+                    <td width="85%">
+                  <input type="text" id="member_nickname" name="member_nickname" value="<!--{$member.nickname}-->" class="reg_i" /></td>
+                </tr>
+				<tr>
+                    <td height="38" align="right">
+                        性别：</td>
+                    <td>
+					<label><input type="radio" name="member_sex" value="0" {if $member.sex==0}checked{/if} />男</label>
+					<label><input type="radio" name="member_sex" value="1" {if $member.sex==1}checked{/if}/>女</label>
+                    </td>
+                </tr>
+				<tr>
+                    <td height="38" align="right">
+                        生日：</td>
+                    <td>
+                        <input type="text" id="member_birthday" name="member_birthday" value="<!--{$member.birthday}-->" class="reg_i" readonly  bj="cBj" /></td>
+                </tr>
+				<tr>
+                    <td height="38" align="right">
+                        电话：</td>
+                    <td>
+                        <input type="text" id="member_phone" name="member_phone" value="<!--{$member.phone}-->" class="reg_i" /></td>
+                </tr>
+				<tr>
+                    <td height="38" align="right">
+                        来自：</td>
+                    <td>
+                        <input type="text" id="member_from" name="member_from" value="<!--{$member.from}-->" class="reg_i" /></td>
+                </tr>
+                <tr>
+                    <td height="38"></td>
+                    <td>
+						<input type="image" name="save3" src="templates/kele/img/btn_save.gif" /></td>
+                </tr>
+          </table>
+		  <!--{/if}-->
+		  
+		  <!--{if $mode=='setcer'}-->
+			<table cellpadding="4" cellspacing="4" width="100%" align="center">
+                <tr>
+                    <td width="15%" height="38" align="right">
+                        真实姓名：</td>
+                    <td width="85%">
+                  <input type="text" id="member_name" name="member_name" class="reg_i" /></td>
+                </tr>
+                <tr>
+                    <td height="38" align="right">
+                        身份证号码：</td>
+                    <td>
+                        <input type="text" id="member_card" name="member_card" class="reg_i" /></td>
+                </tr>
+                <tr>
+                    <td height="38"></td>
+                    <td>
+						<input type="image" name="save4" src="templates/kele/img/btn_save.gif" /></td>
+                </tr>
+          </table>
+		  <!--{/if}-->
+		  </form>
+		</div>
+	</div>
+  <DIV class=sidebar>
+    <DIV class="" id=uc_box>
+      <!--{include file="part_login.html"}-->
+    </DIV>
+    <DIV class="box latest_news">
+      <!--{include file="part_faq.html"}-->
+    </DIV>
+    <DIV class="box cs">
+      <DIV class=margin>
+      	<!--{include file="part_service.html"}-->
+      </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+
+<!--{include file="footer.html"}-->
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!--{foreach from=$game_hot item=game}-->
+<div class="g_link clearfix">
+    <a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->"><img src="uploads/<!--{$game.game_logo4}-->" class="fl"></a>
+    <p class="fl">
+        <a target="_blank" title="官方网站" href="<!--{$game.game_website}-->">游戏介绍</a>
+        <a target="_blank" title="玩家论坛" href="<!--{$game.game_bbs}-->">玩家论坛</a>
+        <a title="领取礼包" href="card.php?game_id=<!--{$game.game_id}-->">领取礼包</a>
+        <a title="进入游戏" href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" class="l4"><span>进入游戏</span></a>
+    </p>
+</div>
+<div class="g_intro clearfix">
+    <p><!--{$game.game_depict}--></p>
+</div>
+<div class="g_snap">
+    <h5><strong>游戏截图</strong></h5>
+    <ul>
+        <li>
+            <img src="uploads/<!--{$game.game_logo6}-->">
+        </li>
+         <li>
+            <img src="uploads/<!--{$game.game_logo7}-->">
+        </li>
+        <li>
+            <img src="uploads/<!--{$game.game_logo8}-->">
+        </li>
+        <li>
+            <img src="uploads/<!--{$game.game_logo9}-->">
+        </li>
+    </ul>
+</div>
+<!--{/foreach}-->

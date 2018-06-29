@@ -1,0 +1,128 @@
+<style>
+*{margin:0px;padding:0px;font-size:12px;}
+html,body{font-family:"Microsoft YAHEI","Tahoma";color : #666;font-size:12px; background:#fff;}
+a{text-decoration: none;color:#000;}
+img{border:0}
+a:hover{color:#437C3A;text-decoration:underline;}
+/*常用样式*/
+.comment{color:#999}
+.input{border:1px inset #ccc;background:#eee;font:normal 12px "Microsoft Yahei","Tahoma";padding:2px;color:#000}
+.textarea{border:1px inset #ccc;background:#eee;padding:2px;overflow:auto;font:normal 12px "Microsoft Yahei","Tahoma";color:#000}
+.button{margin:3px;padding:5px 11px}
+.clear{clear:both}
+/*顶部菜单样式*/
+.top{height:35px;background:#4b751d;text-align:right;color:#fff;font-size:14px;line-height:30px;}
+.top b{color:#EDC03C;font-size:14px;cursor:pointer}
+.top a{color:#fff;}
+.top a:hover{text-decoration:none;color:#EDC03C;}
+/*左菜单样式*/
+dl.leftmenu{margin:5px;padding:5px;background:#314f0f}
+dl.leftmenu dt{padding-left:15px;background:#4b751d;font:bold 14px "Microsoft Yahei","Tahoma";line-height:28px;color:#fff;}
+dl.leftmenu a{display:block;margin:3px;padding-left:20px;text-decoration:none;font:normal 12px "Microsoft Yahei","Tahoma";line-height:24px;color:#fff}
+dl.leftmenu a:hover{text-decoration:none;background:#ddeccd;color:#000;}
+dl.leftmenu .current{background:#ddeccd;color:#000;}
+/*盒子样式*/
+.title{position:relative;line-height:30px;height:30px;background:#fff;border-bottom:4px solid #4b751d;padding-left:20px;margin:5px 4px;font-weight:bold;font-size:14px;color:#4b751d;}
+.title a{float:right;display:block;margin-right:5px;font:normal 12px "Microsoft Yahei","Tahoma";text-decoration:none;padding:4px 10px;background:#4b751d;color:#fff;}
+.title a:hover{text-decoration:none;color:#fff;}
+.item{clear:both;margin:2px 4px;background:#fff;line-height:150%;}
+/*普通列表样式*/
+ul.list{padding:0px;list-style: none none outside;margin:0px;}
+ul.list li {padding-left:10px;height:25px;line-height:25px}
+/*列表样式*/
+.table_list{font-size:14px;background:#ccc;width:100%;table-layout:fixed;}
+.table_list tr{height:25px}
+.table_list td{background:#fff;}
+.table_list td.caption{font:bold 12px Tahoma;background:#eee;color:#666;}
+.table_list td.datetime{font:normal 10px Arial;color:#999;}
+.table_list a{font-size:12px;text-decoration:none;color:#333;}
+.table_list a:hover{color:#00497E}
+/*分页样式*/
+.pagebar{font:normal 12px "Tahoma";hieght:22px;line-height:22px;}
+.pagebar a{background:#fff;padding:5px 8px;margin-right:2px;text-decoration:none;color:#555;}
+.pagebar a:hover{background:#4b751d;color:#fff}
+.pagebar span.current{background:#4b751d;padding:5px 8px;margin-right:3px;color:#fff}
+.pagebar span.info{padding:5px 8px;margin-right:2px;color:#555;}
+/*菜单列表*/
+.list{position:relative;margin:10px;padding:10px;padding-left:50px;border:1px solid #eee;}
+.list .no{position:absolute;left:10px;top:8px;padding:3px 8px;background:#4b751d;color:#fff;}
+.list .name{font:bold 14px "Microsoft Yahei","Tahoma";color:#444;}
+.list .description{font:normal 12px "Microsoft Yahei","Tahoma";color:#ccc;}
+.list .button{margin-right:5px;float:right;padding:3px 8px;background:#4b751d;color:#fff;}
+
+/*内容列表*/
+.content_list{position:relative;padding:5px;padding-left:50px;border-bottom:1px solid #eee;}
+.content_no{margin:2px 5px;;display:block;text-align:center;padding:3px 8px;background:#4b751d;color:#fff;}
+.content_name{font:bold 14px "Microsoft Yahei","Tahoma";line-height:40px;color:#444;}
+.items{margin-right:5px;float:right;padding:3px 8px;background:#4b751d;color:#fff;}
+/*内容列表*/
+.category_list{padding:3px;}
+.category_list a{font:normal 12px "Microsoft Yahei","Tahoma";}
+.category_list a:hover{color:red}
+/*内容列表*/
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-block;}
+* html .clearfix{height:1%;}
+.clearfix{display:block;}
+
+.template_list{padding:10px;}
+.template_list a{display:block;width:200px;padding-left:5px;height:25px;float:left;text-decoration:none;color:#555;line-height:25px;}
+.template_list a:hover{background:#314f0f;color:#fff}
+
+.titlebg{background-color:#99FFFF;}
+</style>
+<div class='top' id="administrator">
+<table width="100%">
+<tr>
+<td width="150" align="left">&nbsp;
+	<b style="text-decoration:underline;cursor:pointer" onclick="location.href='?action=config&do=admin_edit&admin_id=<!--{$smarty.session.admin_id}-->'"><!--{$smarty.session.admin_name}--></b>,<!--{$language.welcome}-->
+</td>
+<td align="right">
+		<a href='?action=start'><!--{$language.menu_main}--></a>&nbsp;/&nbsp;
+		<a href='?action=start&do=log_list'><!--{$language.menu_log}--></a>&nbsp;/&nbsp;
+		<a href='?action=start&do=clear_cache'><!--{$language.menu_clear}--></a>&nbsp;/&nbsp;	
+		<a href='?do=logout'><!--{$language.menu_logout}--></a>&nbsp;&nbsp;
+</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript">
+function batch(form,checkbox){
+	var f=document.forms[form];
+	for (var i=0;i<f.elements.length;i++){
+		if (f.elements[i].type=='checkbox'){
+			if (checkbox.checked){
+				f.elements[i].checked=true;
+			}else{
+				f.elements[i].checked=false;
+			}
+		}
+	}
+}
+
+function batch_do(form,mode){
+	var f=document.forms[form];
+	var s=false;
+	for (var i=0;i<f.elements.length;i++){
+		if (f.elements[i].type=='checkbox'){
+			if (f.elements[i].checked){
+				s=true;
+			}
+		}
+	}
+	if (s==false){
+		return false;
+	}
+	if (mode=="best_yes"){
+		f.action='?action=content&do=best_yes';
+		f.submit();
+	}
+	if (mode=="best_no"){
+		f.action='?action=content&do=best_no';
+		f.submit();
+	}
+	if (mode=="delete"){
+		f.submit();
+	}
+}
+</script>

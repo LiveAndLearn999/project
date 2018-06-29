@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>　　</title>
+<link rel="stylesheet" href="http://static.66you.com/static/channel/style.css" />
+<script type="text/javascript" src="http://static.66you.com/static/channel/jquery-1.4.2.min.js"></script>
+<style>
+.main{ width:1000px; height:600px;margin: 0 auto;margin-top:8px;}
+</style>
+<script language="javascript">
+function getArrayItems(arr, num) {
+ var temp_array = new Array();
+ for (var index in arr) {
+ temp_array.push(arr[index]);
+ }
+ var return_array = new Array();
+ for (var i = 0; i<num; i++) {
+ if (temp_array.length>0) {
+ var arrIndex = Math.floor(Math.random()*temp_array.length);
+ return_array[i] = temp_array[arrIndex];
+ temp_array.splice(arrIndex, 1);
+ } else {
+ break;
+ }
+ }
+ return return_array;
+}
+
+var_html_title = "玩《烈焰》，火爆新区丰厚福利等你拿！";
+window.setInterval(function(){
+ var __tmp_html_title = document.title;
+ document.title = var_html_title;
+ var_html_title = __tmp_html_title;
+} , 500);
+
+if (window.location!=top.location)top.location=window.location;
+
+function openDiv(){return show();}
+function show(){
+ var _b = document.getElementById("bg");
+ _b.style.width = document.documentElement.scrollWidth+"px";
+ _b.style.height = document.documentElement.scrollHeight+"px";
+ _b.style.display = "block";
+ var _p = document.getElementById("popbox");
+ _p.width = 526; _p.height = 343;
+ _p.style.left = (document.documentElement.offsetWidth - _p.width)/2 + "px";
+ _p.style.top = (640- _p.height)/2 + "px";
+ _p.style.display = "block";
+ 
+ var _d = document.getElementById("popboxbg");
+ _d.width = 526; _d.height = 343;
+ _d.style.left = (document.documentElement.offsetWidth - _d.width)/2 + "px";
+ _d.style.top = (601- _d.height)/2 + "px";
+ _d.style.display = "block";
+
+}
+document.onclick = function start(){show()};
+
+function setBar(opt)
+{
+ if(opt=='lg'){
+ document.getElementById("login").style.display = "block";
+ document.getElementById("reg").style.display = "none";
+ document.getElementById("typecheck").value = "tologin"; 
+ document.getElementById("register").className="reg1";
+ document.getElementById("lg").className="lg1"; 
+ if($("#user").val()==''||$('#user').val()=='用户名'){
+ $("#user").focus();
+ }else{
+ $("#pass").focus();
+ }
+ }
+ if(opt=='reg'){
+ document.getElementById("reg").style.display = "block";
+ document.getElementById("login").style.display = "none";
+ document.getElementById("lg").className="lg"; 
+ document.getElementById("typecheck").value ="toreg"; 
+ document.getElementById("register").className="reg";
+ $("#username").focus();
+ }
+}
+
+function PostOK(error){
+ alert(error);
+}
+function PostError(error){
+ alert(error);
+}
+function checkReg()
+{
+ $("#register_form").submit();
+}
+function checkLogin()
+{
+ $("#login_form").submit();
+}
+$(function(){
+ $('form').submit(function() {
+ var flag=false;
+		if(this.value!=''){
+			$.ajax({
+				type:"GET",
+				url:"/user.php?action=check_member_username&member_username="+encodeURI(this.value)+"&r="+Math.random(), dataType:"text",async:false,success:function (e){
+				if (e==1) {
+					flag=false;
+				}else{
+					flag=true;
+				}
+			}});
+		}
+		if (!flag) {
+			$("#reg_info").html("账号已被注册");
+		}else{
+			$("#reg_info").html("账号可以使用");
+		}
+ }); 
+ 
+ return false;
+ });
+</script>
+</head>
+<body>
+
+<div id="bg"></div>
+<div id="popboxbg"> </div>
+<div id="popbox">
+ <div id="logintip">
+  <div class="titl">
+ 
+ <ul class="title"><li class="reg" id="register" onclick="setBar('reg')"><a></a></li><li class="lg" id="lg" onclick="setBar('lg')"><a></a></li></ul></div>
+ 
+ <div class="lg_c" id="login" style="display:none;">
+ <form action="/user.php?action=login_ok" method="post" id="login_form" name="login_form" autocomplete="off">
+<input type="hidden" name="gameId" value="11" />
+ <input type="hidden" name="serverId" value="191" />
+ <input type="hidden" value="withtml5" name="post_mode">
+ <ul >
+ <li style="margin-top:5px"><span class="reg_txt">账号：</span> <input class="rl_input" type="text" class="input" name="member_username" id="member_username" value="" /><span class="r_t" id="loginmsg"></span></li>
+
+ <li style='padding-top:10px;_padding-top:3px;'><span class="reg_txt">密码：</span><input class="rl_input" type="password" name="member_password" id="member_password"/><span class="r_t" id="loginpass"></span></li>
+ <li class="reg_info" style="height:10px;_height:1px"></li>
+ 
+ </ul>
+ <div class="btns"><a href="javascript:;" onclick="javascript:checkLogin();" class="submit_login" id="loginbtn2" name="loginbtn2" title="点击登陆"></a></div>
+ </form>
+ </div>
+
+ <div class="reg_c" id="reg">
+ <form action="/user.php?action=register_ok" method="post" id="register_form" name="register_form" autocomplete="off">
+ <input type="hidden" name="gameId" value="11" />
+ <input type="hidden" name="serverId" value="191" />
+ <input type="hidden" value="withtml5" name="post_mode">
+ <ul>
+ <li style="margin-top:5px"><span class="reg_txt">账号：</span><input class="rl_input" type="text" name="member_username" id="member_username" value="" /><!--<span class="r_t" id="usermsg"></span>--><span class="r_t" id="usermsg">建议用您的手机号或QQ</span></li>
+ <li style='padding-top:10px;_padding-top:3px;'><span class="reg_txt">密码：</span><input class="rl_input" type="password" name="member_password" id="member_password" /><span class="r_t" id="passmsg">建议使用字母+数字</span></li>
+ <li style='padding-top:12px;_padding-top:3px;'><span class="reg_txt">确认密码：</span><input class="rl_input" type="password" name="member_password_confirm" id="member_password_confirm" /><span class="r_t" id="conmsg"></span></li>
+  
+
+ <li class="reg_info" style="height:10px;_height:1px"></li>
+ 
+ </ul>
+ <div class="btns"><a href="javascript:;" onclick="javascript:checkReg();" class="submit_reg" id="loginbtn" name="loginbtn" title="点击注册"></a></div>
+ </form>
+ </div>
+ </div>
+
+</div>
+<div id="serverbg" ></div>
+<div class="main" >
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash.cab#version=9,0,28,0" width="1000" height="600" >
+
+ <param name="movie" value="http://static.66you.com/static/flashs/common/game/ly/main.swf" />
+ <param name="allowScriptAccess" value="always" />
+ <param name="wmode" value="transparent" />
+ <param name="quality" value="high" />
+ <embed allowScriptAccess="always" src="http://static.66you.com/static/flashs/common/game/ly/main.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="1000" height="600" wmode="transparent" ></embed>
+ </object>    
+</div>
+<div style="display:none;">
+</div>
+<div class="chatimg"></div>
+</body>
+</html>

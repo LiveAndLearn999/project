@@ -1,0 +1,39 @@
+﻿<DIV id=header>
+  <DIV class=top>
+    <IMG class=pngfix id=logo src="/templates/kele/img/logo.png">
+    <UL class="q_nav fr">
+      <LI>
+        <P class=fl><A class="icon i_reg" title=注册 href="reg.php">注册</A> <A class="icon i_log" title=登录 href="login.php">登录</A> <A class="icon i_pay" title=账户充值 href="pay.php">账户充值</A> </P>
+        <P class=fr><A title=设为首页 href="javascript:void(0);" onclick="addPageHome(this);return false;">设为首页</A>| <A title=收藏本站 href="javascript:void(0);" onclick="addFavorite();return false;">收藏本站</A></P>
+      </LI>
+    </UL>
+  </DIV>
+  <UL id=nav>
+    <LI class=menu>
+    	<!--{if $top_menu}-->
+    	<!--{foreach item=menu from=$top_menu}-->
+    		<A class="spe" href="{$menu.link}" {if $menu.target==1}target="_blank"{/if}>{$menu.name}</A>
+    	<!--{/foreach}-->
+    	<!--{/if}-->
+    </LI>
+    <LI class=s_msg>
+      <P class="fl icon i_laba">您好！如果您在游戏过程中遇到任何问题，可以咨询我们的在线客服帮您解决。</P>
+      <P class=fr></P>
+    </LI>
+  </UL>
+</DIV>
+<script type="text/javascript">
+    function addFavorite()
+    {
+        if (document.all) window.external.addFavorite('http://bbs.aliphp.net', '阿狸游戏平台');
+        else if (window.sidebar) window.sidebar.addPanel('阿狸游戏平台', 'http://bbs.aliphp.net', "");
+    }
+
+    function addPageHome(dom)
+    {
+        if(document.all){
+            dom.style.behavior='url(#default#homepage)';
+            dom.setHomePage('http://bbs.aliphp.net');
+        }
+    }
+</script>

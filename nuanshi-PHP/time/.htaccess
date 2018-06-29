@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteRule ^index.html$ index.php
+RewriteRule ^game.html$ game.php
+RewriteRule ^news-([0-9]+).html$ news.php?id=$1
+RewriteRule ^news-([0-9]+)-p([0-9]+).html$ news.php?id=$1&page=$2
+RewriteRule ^content-([0-9]+).html$ content.php?id=$1
+RewriteRule ^content-([0-9]+)-([0-9]+).html$ content.php?id=$1&page=$2
+RewriteRule ^user.html$ user.php
+RewriteRule ^pay.html$ pay.php
+RewriteRule ^card.html$ card.php
+RewriteRule ^reg.html$ reg.php
+RewriteRule ^login.html$ login.php

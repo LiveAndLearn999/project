@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$config.site_name}--></title>
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->">
+<meta name="description" content="<!--{$config.site_description|escape:html}-->">
+<link href="/templates/orange/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/templates/orange/css/newscontent.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end--> 
+
+
+
+	
+      
+      <div id="content_3">
+      	<div id="content_3_left">
+            	<div class="wrap"><div class="left">          <div class="plate">
+              <div class="top"><span>最新开服表</span><strong><em><a href="#" target="_blank">VIP新服送礼</a></em></strong></div>
+              <div class="cont">
+                  <dl>
+    			  <!--{foreach from=$game_news item=game}-->
+            	    <dt>
+            	    	            	    	<span><em><!--{$game.server_trunon_date}--></em></span>
+            	    						
+            	    	<b><!--{$game.server_trunon_hour}-->:00</b><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank"><strong><!--{$game.game_name}--></strong></a>
+            	    </dt>
+                    <dd><a href="game.php?action=play&game_id=<!--{$game.game_id}-->&server_id=<!--{$game.server_id}-->" target="_blank "><!--{$game.server_name}--></a></dd>
+		 <!--{/foreach}-->
+				
+                 </dl>
+              </div>
+              <div class="foot"></div>
+          </div>
+</div></div>
+      	</div>
+        <div id="content_3_right">
+       	  	<div id="right_1"><strong><!--{$channel_info.name}-->    >  正文</strong></div>
+            <div id="right_2">
+            	<dl>
+                	<dt><h1><span style="color:<!--{$content_info.color}-->"><!--{$content_info.title}--></span></h1><h2> 更新时间：<!--{$content_info.content_time}--></h2></dt>
+                    
+                    <dd><!--{$content_info.text}--></dd>
+					<dd>  </dd>
+                </dl>
+				
+            </div>
+			 <div id="right_2">
+                                        <span class="we"> <a href="www.aliphp.net" target="_blank">Aliphp.NeT</a>欢迎您<a class="add" href="javascript:void(0)" onclick='addFavorite();return false;'>收藏本站</a>，</span>
+                                        <div id="ckepop">
+                                                <span class="jiathis_txt">分享到：</span>
+												
+	<a class="jiathis_button_qzone">QQ空间</a>
+	<a class="jiathis_button_tsina">新浪微博</a>
+	<a class="jiathis_button_tqq">腾讯微博</a>
+	<a class="jiathis_button_weixin">微信</a>
+	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+	<a class="jiathis_counter_style"></a>
+                                       </div><div style="position:absolute;width:0px;height:0px;">
+                                       <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1367813380873579" charset="utf-8"></script>
+                                       </div>
+                                </div>    
+			<div id="right_2">
+<!--{if $prev!=''}-->
+<div>上一篇：
+<a href="<!--{$prev.url}-->" {if $content.target}target="_blank"{/if}><!--{$prev.title}--></a>
+</div>
+<!--{/if}-->
+<!--{if $next!=''}-->
+<div>
+下一篇：
+<a href="<!--{$next.url}-->" {if $content.target}target="_blank"{/if}><!--{$next.title}--></a>
+</div>
+<!--{/if}-->
+			  </div>
+			  
+        </div>
+      </div>
+      <div style="clear:both;"></div>
+      
+     
+    </div>
+
+
+<div id="content_4"><!--footer str-->
+<div class="footer">
+     <!--{include file="footer.html"}--></div>
+</body>
+</html>

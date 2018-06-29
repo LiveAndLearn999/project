@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+					<a href="?action=game&do=card_list">新手卡列表</a>
+&raquo;&nbsp;<!--{if $mode=='insert'}-->添加新手卡<!--{else}-->编辑新手卡<!--{/if}-->
+				</h1>
+				
+				<div class="stat-container">
+				<form action="?action=game&do=card_<!--{$mode}-->" method="post" enctype="multipart/form-data">
+		<table  cellspacing="5" cellpadding="0">
+<tr>
+  <td  height="30">所属游戏</td>
+  <td>
+  	<select name="card_game_id">
+		<!--{foreach from=$game item=g}-->
+		<option value="<!--{$g.game_id}-->" {if $card.card_game_id==$g.game_id}selected{/if}><!--{$g.game_name}--></option>
+		<!--{/foreach}-->
+	</select>
+  </td>
+</tr>
+<tr>
+  <td height="30"  >新手卡名称</td>
+  <td><input type="text" name="card_name" size="30" value="<!--{$card.card_name|escape:html}-->" class="input"/></td>
+</tr>
+		<tr>
+		<td width="20%" >新手卡描述</td>
+		<td><textarea name="card_depict" cols="80" rows="3" class="textarea"><!--{$card.card_depict|escape:html}--></textarea></td>
+		</tr>
+		<tr>
+		<td width="20%" >使用方式</td>
+		<td><textarea name="card_fs" cols="80" rows="3" class="textarea"><!--{$card.card_fs|escape:html}--></textarea></td>
+		</tr>
+		<tr>
+		<td  height="30"  width="20%">领取地址</td>
+		<td><input name="card_link" type="text" class="input" value="<!--{$card.card_link}-->" size="40"/>（若设置了此项则直接打开此连接）</td>
+		</tr>
+		
+		<tr>
+		<td  height="30"  width="20%">属性</td>
+		<td><label>
+		  <input type="checkbox" name="card_state" value="1" {if $card.card_state==1}checked{/if} />
+          显示</label></td>
+		</tr>	
+		<tr>
+		<td width="20%" height="30" >&nbsp;</td>
+		<td valign="center">
+		<input type="submit" value="<!--{$language.submit}-->" class="button"/>		</td>
+		</tr>
+		</table>
+		<input type="hidden" name="card_id" value="<!--{$card.card_id}-->"/>
+	</form>
+				
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

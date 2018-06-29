@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript">
+function select_template(code){
+	$('.template_select').attr("class","template");
+	$('#template_'+code).attr("checked","checked");
+	$('#template_thumb_'+code).attr("class","template_select");
+}
+</script>
+<style type="text/css">
+.template{border:1px solid #eee;padding:3px;width:60px;height:60px;}
+.template_select{border:3px solid red;padding:1px;width:60px;height:60px;}
+</style>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					
+					<!--{$language.menu_config_1}-->	<a href="#yxsz">其他配置</a>	 
+				</h1>
+				
+				<div class="stat-container">
+					
+
+
+<form action="?action=config&do=config_update" method="post" enctype="multipart/form-data">
+<table cellpadding="5">
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_name}--></td>
+<td><input class="input" type="text" name="site_name" size="40" value="{$config.site_name|escape:html}" style="width:300px"/></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_icp}--></td>
+<td><input class="input" type="text" name="site_icp" size="40" value="{$config.site_icp|escape:html}" style="width:300px"/></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_keywords}--></td>
+<td><input class="input" type="text" name="site_keywords" size="40" value="{$config.site_keywords|escape:html}" style="width:300px"/></td>
+</tr>
+
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_description}--></td>
+<td><textarea class="input" name="site_description" rows="4" cols="40" style="width:300px">{$config.site_description|escape:html}</textarea></td>
+</tr>
+
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_notice}--></td>
+<td><textarea class="input" name="site_notice" rows="4" cols="40" style="width:300px">{$config.site_notice|escape:html}</textarea></td>
+</tr>
+
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_state}--></td>
+<td><input type="radio" name="site_state" {if $config.site_state=='yes'}checked{/if} value="yes" /> <!--{$language.form_config_site_state_yes}--><input type="radio" name="site_state" {if $config.site_state=='no'}checked{/if} value="no" /> <!--{$language.form_config_site_state_no}--></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_close_text}--></td>
+<td><textarea class="input" name="site_close_text" rows="4" cols="40" style="width:300px">{$config.site_close_text|escape:html}</textarea></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_ip}--></td>
+<td><textarea class="input" name="site_ip" rows="4" cols="40" style="width:300px">{$config.site_ip|escape:html}</textarea></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_badwords}--></td>
+<td><textarea class="input" name="site_badwords" rows="4" cols="40" style="width:300px">{$config.site_badwords|escape:html}</textarea></td>
+</tr>
+
+<tr>
+<td  align="left" height="30"><!--{$language.form_config_site_language}--></td>
+<td>
+<select name="site_language" style="width:300px">
+<!--{foreach from=$language_dir item=language}-->
+<option value="{$language.folder}" {if $config.site_language==$language.folder}selected{/if}>{$language.info}</option>
+<!--{/foreach}-->
+</select>
+</td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_site_template}--></td>
+<td>
+
+<!--{foreach from=$template_dir item=template}-->
+<div style="width:80px;height:90px;float:left;text-align:center;">
+<label>
+<img id="template_thumb_{$template.no}" title="{$template.info|escape:html}" src="{$template.thumb}" class="{if $config.site_template==$template.folder}template_select{else}template{/if}" onclick="select_template({$template.no})"/><br />
+<input type="radio"  name="site_template" value="{$template.folder}"  {if $config.site_template==$template.folder}checked{/if} id="template_{$template.no}"/> 
+</label>
+</div>
+<!--{/foreach}-->
+<div style="clear:left"></div>
+</td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_online_time}--></td>
+<td><input class="input" type="text" name="online_time" value="{$config.online_time}" style="width:300px"/>&nbsp;(<!--{$language.form_config_online_time_text}-->)</td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_member_state}--></td>
+<td><input type="radio" name="member_state" {if $config.member_state=='yes'}checked{/if} value="yes"/>&nbsp;<!--{$language.form_config_member_state_yes}-->&nbsp;<input type="radio" name="member_state" {if $config.member_state=='no'}checked{/if} value="no"/>&nbsp;<!--{$language.form_config_member_state_no}--></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_member_validation_state}--></td>
+<td><input type="radio" name="member_validation_state" {if $config.member_validation_state=='yes'}checked{/if} value="yes"/>&nbsp;<!--{$language.form_config_member_validation_state_yes}-->&nbsp;<input type="radio" name="member_validation_state" {if $config.member_validation_state=='no'}checked{/if} value="no"/>&nbsp;<!--{$language.form_config_member_validation_state_no}--></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_rewrite_state}--></td>
+<td><input type="radio" name="rewrite_state" {if $config.rewrite_state=='yes'}checked{/if} value="yes"/> <!--{$language.form_config_rewrite_state_yes}-->&nbsp;<input type="radio" name="rewrite_state" {if $config.rewrite_state=='no'}checked{/if} value="no"/> <!--{$language.form_config_rewrite_state_no}--></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_feedback_state}--></td>
+<td><input type="radio" name="feedback_state" {if $config.feedback_state=='yes'}checked{/if} value="yes"/>&nbsp;<!--{$language.form_config_feedback_state_yes}-->&nbsp;<input type="radio" name="feedback_state" {if $config.feedback_state=='no'}checked{/if} value="no"/>&nbsp;<!--{$language.form_config_feedback_state_no}--></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_comment_state}--></td>
+<td><input type="radio" name="comment_state" {if $config.comment_state=='yes'}checked{/if} value="yes"/>&nbsp;<!--{$language.form_config_comment_state_yes}-->&nbsp;<input type="radio" name="comment_state" {if $config.comment_state=='no'}checked{/if} value="no"/>&nbsp;<!--{$language.form_config_comment_state_no}--></td>
+</tr>
+<tr><td align="left" height="30"><!--{$language.form_config_feedback_size}--></td><td><input class="input" type="text" name="feedback_size" value="{$config.feedback_size}" size="5" style="width:300px"/></td></tr>
+<tr><td height="1" bgcolor="#eeeeee" colspan="2"></td></tr>
+
+<tr><td align="left" height="30"><!--{$language.form_config_index_comment_size}--></td><td><input class="input" type="text" name="index_comment_size" value="{$config.index_comment_size}" size="5" style="width:300px"/></td></tr>
+<tr><td align="left" height="30"><!--{$language.form_config_index_comment_content_size}--></td><td><input class="input" type="text" name="index_comment_content_size" value="{$config.index_comment_content_size}" size="5" style="width:300px"/></td></tr>
+
+
+<tr><td align="left" height="30"><!--{$language.form_config_content_hot_size}--></td><td><input class="input" type="text" name="content_hot_size" value="{$config.content_hot_size}" size="5" style="width:300px"/></td></tr>
+<tr><td align="left" height="30"><!--{$language.form_config_content_hot_title_size}--></td><td><input class="input" type="text" name="content_hot_title_size" value="{$config.content_hot_title_size}" size="5" style="width:300px"/></td></tr>
+
+<tr><td align="left" height="30"><!--{$language.form_config_content_best_size}--></td><td><input class="input" type="text" name="content_best_size" value="{$config.content_best_size}" size="5" style="width:300px"/></td></tr>
+<tr><td align="left" height="30"><!--{$language.form_config_content_best_title_size}--></td><td><input class="input" type="text" name="content_best_title_size" value="{$config.content_best_title_size}" size="5" style="width:300px"/></td></tr>
+
+
+
+<tr><td align="left" height="30"><!--{$language.form_config_comment_size}--></td><td><input class="input" type="text" name="comment_size" value="{$config.comment_size}" size="5" style="width:300px"/></td></tr>
+
+
+<tr><td align="left" height="30">提成比例：</td><td><input class="input" type="text" name="search_size" value="{$config.search_size}" size="10" style="width:300px"/></td></tr>
+
+<tr><td height="1" bgcolor="#eeeeee" colspan="2"></td></tr>
+<a name="hysz" id="hysz"></a>
+
+<tr>
+<td align="left"height="30"><!--{$language.form_config_smtp_server}--></td>
+<td><input type="text" name="smtp_server" value="{$config.smtp_server|escape:html}" class="input" style="width:300px"/></td>
+</tr>
+<tr>
+<td align="left" height="30"><!--{$language.form_config_smtp_port}--></td>
+<td><input type="text" name="smtp_port" value="{$config.smtp_port|escape:html}" class="input" style="width:300px"/></td>
+</tr>
+<tr>
+<td align="left" height="30"><!--{$language.form_config_smtp_user}--></td>
+<td><input type="text" name="smtp_user" value="{$config.smtp_user|escape:html}" class="input" style="width:300px"/></td>
+</tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_smtp_password}--></td>
+<td><input type="text" name="smtp_password" value="{$config.smtp_password|escape:html}" class="input" style="width:300px"/></td>
+</tr>
+
+<tr><td height="1" bgcolor="#eeeeee" colspan="2"></td></tr>
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_image_thumb_open}--></td>
+<td><input type="radio" name="image_thumb_open" {if $config.image_thumb_open=='yes'}checked{/if} value="yes"/>&nbsp;<!--{$language.form_config_image_thumb_open_yes}-->&nbsp;<input type="radio" name="image_thumb_open"  {if $config.image_thumb_open=='no'}checked{/if} value="no"/>&nbsp;<!--{$language.form_config_image_thumb_open_no}--></td>
+</tr>
+<tr>
+<td align="left" height="30"><!--{$language.form_config_image_thumb_width}--></td>
+<td><input type="text" name="image_thumb_width" value="{$config.image_thumb_width}" class="input" style="width:300px"/></td>
+</tr>
+<tr>
+<td align="left" height="30"><!--{$language.form_config_image_thumb_height}--></td>
+<td><input type="text" name="image_thumb_height" value="{$config.image_thumb_height}" class="input" style="width:300px"/></td>
+</tr>
+
+
+<tr>
+<td align="left" height="30"><!--{$language.form_config_image_text_open}--></td>
+<td><input type="radio" name="image_text_open" {if $config.image_text_open=='yes'}checked{/if} value="yes"/>&nbsp;<!--{$language.form_config_image_text_open_yes}-->&nbsp;<input type="radio" name="image_text_open"  {if $config.image_text_open=='no'}checked{/if} value="no"/>&nbsp;<!--{$language.form_config_image_text_open_no}-->
+
+</td>
+</tr>
+
+<tr>
+<td align="left"  height="30"><!--{$language.form_config_image_pos}--></td>
+<td>
+<select name="image_pos" style="width:300px">
+<option value="0" {if $config.image_pos==0}selected{/if}/><!--{$language.form_config_image_pos_0}--></option>
+<option value="1" {if $config.image_pos==1}selected{/if}/><!--{$language.form_config_image_pos_1}--></option>
+<option value="2" {if $config.image_pos==2}selected{/if}/><!--{$language.form_config_image_pos_2}--></option>
+<option value="3" {if $config.image_pos==3}selected{/if}/><!--{$language.form_config_image_pos_3}--></option>
+<option value="4" {if $config.image_pos==4}selected{/if}/><!--{$language.form_config_image_pos_4}--></option>
+<option value="5" {if $config.image_pos==5}selected{/if}/><!--{$language.form_config_image_pos_5}--></option>
+<option value="6" {if $config.image_pos==6}selected{/if}/><!--{$language.form_config_image_pos_6}--></option>
+<option value="7" {if $config.image_pos==7}selected{/if}/><!--{$language.form_config_image_pos_7}--></option>
+<option value="8" {if $config.image_pos==8}selected{/if}/><!--{$language.form_config_image_pos_8}--></option>
+<option value="9" {if $config.image_pos==9}selected{/if}/><!--{$language.form_config_image_pos_9}--></option>
+</select><br />
+
+</td>
+</tr>
+<tr>
+<td align="left"  height="30">&nbsp;</td>
+<td><!--{$language.form_config_image_tip}--></td>
+</tr>
+<tr><td height="1" bgcolor="#eeeeee" colspan="2"></td></tr>
+
+		<tr>
+		<td align="left" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="btn btn-small btn-warning" style="width:100px"/>
+		</td>
+		</tr>
+</table>
+</form>
+ </div>
+	<a name="yxsz" id="yxsz"></a>			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->					
+
+</body>
+</html>

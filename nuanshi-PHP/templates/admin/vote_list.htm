@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="page-type" page="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<table width="100%" cellpadding="0" cellspacing="0" >
+<tr>
+<td width="150" valign="top"><!--{include file="left.htm"}--></td>
+<td valign="top">
+<div class='title'>
+<a href="?action=other&do=vote_add"><!--{$language.vote_add}--></a>
+&raquo;&nbsp;<!--{$language.vote_list}--></div>
+<table cellspacing="0" cellpadding="0" width="100%">
+	<!--{foreach from=$vote_list item=vote}-->
+	<tr>
+	<td height="30" width="30" align="center"><!--{$vote.id}--></td>
+	<td><a href="?action=other&do=vote_edit&vote_id=<!--{$vote.id}-->"><!--{$vote.title}--></a>&nbsp;<span style="color:#ccc">(<!--{$vote.start}-->~<!--{$vote.end}-->)</span></td>
+	<td height="30" width="100" align="center">
+	<a href="?action=other&do=vote_edit&vote_id=<!--{$vote.id}-->"><!--{$language.edit}--></a>
+	<a href="?action=other&do=vote_delete&vote_id=<!--{$vote.id}-->" onclick="return confirm('<!--{$language.confirm_delete}-->')"><!--{$language.delete}--></a>
+	</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="4"></td></tr>
+	<!--{foreachelse}-->
+	<tr><td height="50" colspan="4" align="center"><!--{$language.nodata}--></td></tr>
+	<!--{/foreach}-->
+
+</td>
+</tr>
+</table>
+</body>
+</html>

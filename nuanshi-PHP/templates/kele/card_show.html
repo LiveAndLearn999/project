@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><!--{$config.site_name}--></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->" />
+<meta name="description" content="<!--{$config.site_description|escape:html}-->" />
+<LINK href="/templates/kele/img/reset.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/common.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/gamelist.css" type=text/css rel=stylesheet>
+<!--[if lte IE 6]>
+<script src="/templates/kele/img/fixPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('.pngfix');
+</script>
+<![endif]--> 
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="header.html"}-->
+ 
+<DIV class="mainContent clearfix">
+  <div class="left box uc">
+	<h3>
+		<strong class="fl icon_06">新手礼包</strong>
+	</h3>
+    <div class=margin>
+		<div class="recommend_list">
+		  <p><strong>新手礼包</strong></p>
+		</div>
+		<!--{if $card_list}-->
+		<div class="xsk_content">
+			<h2>
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="center">名称</td>
+                <td width="15%" align="center">数量</td>
+                <td width="15%" align="center">剩余</td>
+                <td width="15%" align="center">限制</td>
+                <td width="20%" align="center">领取</td>
+              </tr>
+            </table>
+			</h2>
+			<ul>
+				<!--{foreach from=$card_list item=card}-->
+				<li>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					  <tr>
+						<td align="center"><!--{$card.name}--></td>
+						<td width="15%" align="center"><!--{$card.count}--></td>
+						<td width="15%" align="center"><!--{$card.frees}--></td>
+						<td width="15%" align="center">无限制</td>
+						<td width="20%" align="center">
+						<!--{if $card.link!=''}-->
+							<a href="<!--{$card.link}-->" target="_blank">我要领取</a>
+						<!--{else}-->
+							
+							<a href="card.php?action=get_card&id=<!--{$card.id}-->"><img src="templates/kele/img/cd_btn2.gif" border="0" /></a>
+							<!--{/if}-->
+						
+						</td>
+					  </tr>
+				  </table>
+				</li>
+				<!--{/foreach}-->
+			</ul>
+	  </div>
+	  <!--{/if}-->
+    </div>
+  </div>
+  <div class=sidebar>
+    <div class="" id=uc_box>
+      <!--{include file="part_login.html"}-->
+    </div>
+    <div class="box latest_news">
+      <!--{include file="part_faq.html"}-->
+    </div>
+    <div class="box cs">
+      <div class=margin>
+      	<!--{include file="part_service.html"}-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--{include file="footer.html"}-->
+</body>
+</html>

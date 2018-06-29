@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+<script type="text/javascript" src="scripts/jquery.calendar.js"></script>
+<link href="styles/calendars.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#vote_start").cld();$("#vote_end").cld();
+});
+</script>
+<script type="text/javascript">
+{literal}
+function additem(){
+	document.getElementById('vote_item').innerHTML+="<div style=\"padding:4px 0\"'><input type=\"text\" class=\"input\" name=\"vote_item[]\" size=\"50\"/>&nbsp;<a href=\"#\" onclick=\"removeitem(this)\">[-]</a></div>";
+}
+function removeitem(obj){
+var parent=obj.parentNode;
+	parent.innerHTML='';
+	parent.parentNode.removeChild(parent);
+}
+{/literal} 
+</script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="150" valign="top"><!--{include file="left.htm"}--></td>
+<td valign="top">
+<div class='title'>
+<a href="?action=other&do=vote_list"><!--{$language.vote_list}--></a>
+&raquo;&nbsp;<!--{if $mode=='insert'}--><!--{$language.vote_add}--><!--{else}--><!--{$language.vote_edit}--><!--{/if}-->
+
+</div>
+<div class='item'>
+	
+	<form action="?action=other&do=vote_<!--{$mode}-->" method="post" name="vote_info"><table width="100%">
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_vote_title}--></td>
+		<td><input type="text" name="vote_title" class="input" size="60" value="<!--{$vote.title|escape:html}-->" />		</td>
+		</tr>
+
+		<tr>
+		<td align="right" valign="top" width="80" height="30"><!--{$language.form_vote_items}--><br/><a href="javascript:additem();">[+]</a>&nbsp;</td>
+		<td>
+		<div id="vote_item">
+		<!--{foreach from=$vote.items item=vote_item}-->
+		<div style="padding:4px 0">
+		<input type="hidden" value="{$vote_item.id}" name="item_id[]" />
+		<input type="text" value="{$vote_item.title|escape:html}" class="input" name="item_title_{$vote_item.id}" size="50"/>
+		<label><input type="checkbox" name="delete_id[]" value="{$vote_item.id}"/>删除</label>
+		({$vote_item.count})
+		</div>
+		<!--{/foreach}-->
+		</div>
+		
+		</td>
+		</tr>
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_vote_start}--></td>
+		<td><input type="text" name="vote_start" readonly bj="cBj" id="vote_start"  class="input" size="12" value="<!--{$vote.start}-->" />	
+		</td>
+		</tr>
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_vote_end}--></td>
+		<td><input type="text" name="vote_end" readonly bj="cBj" id="vote_end"  class="input" size="12" value="<!--{$vote.end}-->" />	
+		</td>
+		</tr>
+
+
+		<tr>
+		<td align="right" width="80" height="30"><!--{$language.form_vote_place}--></td>
+		<td>
+		<label><input type="radio" name="vote_place" value="0" {if $vote.place==0}checked{/if}/> <!--{$language.form_vote_place_0}--></label>
+		<label><input type="radio" name="vote_place" value="1" {if $vote.place==1}checked{/if}/> <!--{$language.form_vote_place_1}--></label>
+		<label><input type="radio" name="vote_place" value="2" {if $vote.place==2}checked{/if}/> <!--{$language.form_vote_place_2}--></label>
+		<label><input type="radio" name="vote_place" value="3" {if $vote.place==3}checked{/if}/> <!--{$language.form_vote_place_3}--></label>
+		<label><input type="radio" name="vote_place" value="4" {if $vote.place==4}checked{/if}/> <!--{$language.form_vote_place_4}--></label>
+		<label><input type="radio" name="vote_place" value="5" {if $vote.place==5}checked{/if}/> <!--{$language.form_vote_place_5}--></label>
+		<label><input type="radio" name="vote_place" value="6" {if $vote.place==6}checked{/if}/> <!--{$language.form_vote_place_6}--></label>
+		</td>
+		</tr>
+
+			<tr>
+		<td align="right" height="30"><!--{$language.form_vote_mode}--></td>
+		<td>
+	
+		<label><input type="radio" name="vote_mode" value="0" {if $vote.mode==0}checked{/if} /> <!--{$language.form_vote_mode_0}--></label>
+		<label><input type="radio" name="vote_mode" value="1" {if $vote.mode==1}checked{/if} /> <!--{$language.form_vote_mode_1}--></label>
+		</td>
+		</tr>		
+		<tr>
+		<td align="right" height="30"><!--{$language.form_vote_state}--></td>
+		<td>
+		<label><input type="radio" name="vote_state" value="1" {if $vote.state==1}checked{/if} /> <!--{$language.form_vote_state_1}--></label>
+		<label><input type="radio" name="vote_state" value="0" {if $vote.state==0}checked{/if} /> <!--{$language.form_vote_state_0}--></label>
+		</td>
+		</tr>	
+
+		<tr>
+		<td align="right" height="30">&nbsp;</td>
+		<td>
+		<input type="submit" value="<!--{$language.submit}-->" class="button"/>
+		</td>
+		</tr>
+		<input type="hidden" name="vote_id" value="<!--{$vote.id}-->"/>
+	</table></form>
+</div>
+</td>
+</tr>
+</table>
+</body>
+</html>
+<!--{if $mode=='insert'}-->
+<script>additem();additem();additem();additem();</script>
+<!--{/if}-->

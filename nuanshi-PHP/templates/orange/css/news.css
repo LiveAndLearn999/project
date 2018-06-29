@@ -1,0 +1,37 @@
+@charset "gb2312";
+/* CSS Document */
+
+
+
+#content_3{width:990px; margin:auto;}
+#content_3_right{width:710px; float:right; margin:10px auto; overflow:hidden;zoom:1;}
+#right_1{width:710px; height:36px; line-height:36px; text-indent:15px; background: url(../images/wrap_right_topbg.jpg);}
+#right_1 strong{height:36px; font:bold 14px/36px "微软雅黑","宋体";}
+#right_1 strong a{color:#4c4c4c; font-size:14px;}
+#right_1 strong a:hover{ color: #fb7b00;}
+#right_2{width:708px; border:1px #E0E0E0 solid; padding-bottom:10px;}
+#right_2 ul{overflow:hidden;zoom:1;} 
+#right_2 li{width:695px; line-height:20px; border-bottom:1px dashed #ccc; float:left; margin:0px 10px; padding:5px 0px;}
+#right_2 li a{margin-left:4px; float:left;}
+#right_2 li span{ float:right; margin-right:4px;}
+
+
+
+#content_3_left{width:270px; float:left; margin-right:10px; height:330px; overflow:hidden;}
+/*
+#Top{ width: 240px; margin-bottom:12px;}
+#Top dl{ width: 240px; background: url(../images/602indexImg.png) no-repeat -926px -306px; overflow: hidden; zoom: 1;}
+#Top dt{width: 231px; height: 32px; overflow:hidden;zoom:1; font-size:15px;color:#2b2b2b;  vertical-align:middle;  font-weight:bold; padding-left: 9px;background: url(../images/602indexImg.png) no-repeat 0px -314px;float: left;margin-bottom: 5px;}
+#Top dt strong{ float:left; height:20px; display:inline; overflow:hidden; margin-top: 7px; font:bold 14px/20px "微软雅黑","宋体";}
+#Top dt .more{ margin-top:13px; margin-right:8px;}
+#Top dd{ width: 205px; height: 29px; line-height: 29px; border-bottom: 1px dashed #e3e3e3; padding-left: 29px; float: left; margin-right: 5px; overflow: hidden; zoom: 1;}
+#Top dd a{ color:#666;}
+#Top dd a:hover{ color:#d70000;}
+#Top dd span a{ color: #fb7b00; font-size:14px; font-weight:bold;}
+.more{ float: right; margin-top:10px; width:36px; height:9px; margin-right:5px;}
+.more a{ display:block; width:36px; height:9px; overflow:hidden; background:url(../images/602indexImg.png) no-repeat -915px -319px; text-indent:-999em;}
+*/
+
+.page{ display:block; float:left; width:400px; height:25px; line-height:25px; padding-left:5px;}
+
+#ClCache {display: none;}

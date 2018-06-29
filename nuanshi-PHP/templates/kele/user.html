@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><!--{$config.site_name}--></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->" />
+<meta name="description" content="<!--{$config.site_description|escape:html}-->" />
+<LINK href="/templates/kele/img/reset.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/common.css" type=text/css rel=stylesheet>
+<LINK href="/templates/kele/img/main.css" type=text/css rel=stylesheet>
+<!--[if lte IE 6]>
+<script src="/templates/kele/img/fixPNG.js"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('.pngfix');
+</script>
+<![endif]--> 
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="header.html"}-->
+ 
+<DIV class="mainContent clearfix">
+	<div class="left box uc">
+		<h3>
+			<strong class="fl icon_02">用户中心</strong>
+		</h3>
+		<div class="margin">
+			<div class="msg">
+				<strong>为了您的账户安全，请完善您的安全设置。</strong>
+			</div>
+			<div class="uc_link">
+				<dl>
+					<dt class="d1">账户充值： </dt>
+					<dd>
+						<a href="pay.php">游戏充值</a> <a href="user.php?action=paylog">充值记录</a>
+					</dd>
+					<dt class="d2">安全中心： </dt>
+					<dd>
+						<a href="user.php?action=setpass" class="c_r">修改密码</a> <a href="user.php?action=setsec">设置密保</a> <a href="user.php?action=setcer">防沉迷设置</a>
+					</dd>
+					<dt class="d3">资料设置： </dt>
+					<dd>
+						<a href="user.php?action=setuser">资料完善</a> <a href="user.php?action=sp">我的推广</a> <a href="user.php?action=card">我的新手卡</a>
+					</dd>
+				</dl>
+			</div>
+			<h4 class="played">
+				<strong>最近玩过的游戏：</strong></h4>
+				<ul class="iplay clearfix">
+					<!--{foreach from=$gamelog item=log}-->
+					<li>
+						<a href="game.php?action=server_list&game_id=<!--{$log.game_id}-->"><img src="uploads/<!--{$log.game_logo}-->"></a>
+						<div>
+						<p class="p1"><strong><!--{$log.server_name}--></strong></p>
+						<p class="p2"><a href="game.php?action=play&game_id=<!--{$log.game_id}-->&server_id=<!--{$log.server_id}-->">进入游戏</a></p>
+						<a class="ipay" href="pay.php?game_id=<!--{$log.game_id}-->">充值</a>
+						</div>
+					</li>
+					<!--{foreachelse}-->
+					<li class="noyet">您当前还未玩过游戏，您可以在<a href="game.php">游戏中心</a>挑选自己喜欢的游戏！</li>
+					<!--{/foreach}-->
+				</ul>
+			<!--
+			<h4 class="liked">
+				<strong>猜您可能会喜欢：</strong></h4>
+				<ul class="ilike">
+					<li></li>
+				</ul>
+			-->
+		</div>
+	</div>
+  <DIV class=sidebar>
+    <DIV class="" id=uc_box>
+      <!--{include file="part_login.html"}-->
+    </DIV>
+    <DIV class="box latest_news">
+      <!--{include file="part_faq.html"}-->
+    </DIV>
+    <DIV class="box cs">
+      <DIV class=margin>
+      	<!--{include file="part_service.html"}-->
+      </DIV>
+    </DIV>
+  </DIV>
+</DIV>
+
+<!--{include file="footer.html"}-->
+</body>
+</html>

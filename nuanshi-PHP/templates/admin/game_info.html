@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					<a href="?action=game&do=game_list">游戏列表</a>
+&raquo;&nbsp;<!--{if $mode=='insert'}-->添加游戏<!--{else}-->编辑游戏<!--{/if}-->
+					
+				</h1>
+				
+				<div class="stat-container">
+				
+				<form action="?action=game&do=game_<!--{$mode}-->" method="post" enctype="multipart/form-data">
+		<table width="100%" cellspacing="5" cellpadding="0">
+<tr>
+		<td align="right" width="20%" height="30">游戏编号</td>
+		<td><input type="text" name="game_no" size="10" value="<!--{$game.game_no}-->" class="input"/> <span style="color:red;">*不可重复，作为游戏接口的唯一标识。</span></td> </tr>
+<tr>
+  <td height="30"  align="right">游戏名称</td>
+  <td><input type="text" name="game_name" size="30" value="<!--{$game.game_name|escape:html}-->" class="input"/></td>
+</tr>
+<tr>
+<td width="20%" height="30"  align="right">游戏列表图标</td>
+	<td><input type="file" name="game_logo" class="input"/>
+	  <!--{if $game.game_logo}-->
+	  <a href="uploads/<!--{$game.game_logo}-->" target="_blank"><img src="/uploads/<!--{$game.game_logo}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+	  <!--{/if}--></td>
+		</tr>
+		<tr>
+		  <td align="right">首页推荐图标</td>
+		  <td><input type="file" name="game_logo3" class="input"/>
+            <!--{if $game.game_logo3}-->
+            <a href="uploads/<!--{$game.game_logo3}-->" target="_blank"><img src="/uploads/<!--{$game.game_logo3}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+			<!--{/if}--></td>
+		</tr>
+		<tr>
+		  <td align="right">首页火爆图标</td>
+		  <td><input type="file" name="game_logo4" class="input"/>
+            <!--{if $game.game_logo4}-->
+            <a href="uploads/<!--{$game.game_logo4}-->" target="_blank"><img src="/uploads/<!--{$game.game_logo4}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+			<!--{/if}--></td>
+		</tr>
+		<tr>
+		  <td align="right">首页幻灯图标</td>
+		  <td><input type="file" name="game_logo2" class="input"/>
+            <!--{if $game.game_logo2}-->
+            <a href="uploads/<!--{$game.game_logo2}-->" target="_blank"><img src="/uploads/<!--{$game.game_logo2}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+			<!--{/if}--></td>
+		</tr>
+		<tr>
+		  <td align="right">幻灯小图标</td>
+		  <td><input type="file" name="game_logo5" class="input"/>
+            <!--{if $game.game_logo5}-->
+            <a href="uploads/<!--{$game.game_logo5}-->" target="_blank"><img src="/uploads/<!--{$game.game_logo5}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+			<!--{/if}--></td>
+		</tr>
+		<tr>
+		  <td align="right">游戏截图1</td>
+		  <td><input type="file" name="game_logo6" class="input"/>
+            <!--{if $game.game_logo5}-->
+            <a href="uploads/<!--{$game.game_logo6}-->" target="_blank"><img src="/uploads/<!--{$game.game_logo6}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+			<!--{/if}--></td>
+		</tr>
+		<tr>
+		  <td align="right">游戏截图2</td>
+		  <td><input type="file" name="game_logo7" class="input"/>
+            <!--{if $game.game_logo5}-->
+            <a href="uploads/<!--{$game.game_logo7}-->" target="_blank"><img src="/uploads/<!--{$game.game_logo7}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+			<!--{/if}--></td>
+		</tr>
+		<tr>
+		  <td align="right">游戏截图3</td>
+		  <td><input type="file" name="game_logo8" class="input"/>
+            <!--{if $game.game_logo5}-->
+            <a href="uploads/<!--{$game.game_logo8}-->" target="_blank"><img src="/uploads/<!--{$game.game_logo8}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+			<!--{/if}--></td>
+		</tr>
+		<tr>
+		  <td align="right">游戏截图4</td>
+		  <td><input type="file" name="game_logo9" class="input"/>
+            <!--{if $game.game_logo5}-->
+            <a href="uploads/<!--{$game.game_logo9}-->" target="_blank"><img src="/uploads/<!--{$game.game_logo9}-->" alt="" align="absmiddle" style="width:20px;height:20px;border:1px solid #ccc;padding:1px"/></a>
+			<!--{/if}--></td>
+		</tr>
+		<tr>
+		<td width="20%" align="right">游戏描述</td>
+		<td><textarea name="game_depict" cols="80" rows="3" class="textarea"><!--{$game.game_depict|escape:html}--></textarea></td>
+		</tr>
+		<tr>
+		<td width="20%" height="30" align="right">游戏官网</td>
+		<td><input type="text" name="game_website" size="30" value="<!--{$game.game_website}-->" class="input"/></td>
+		<tr>
+		<td width="20%" height="30" align="right">游戏论坛</td>
+		<td><input type="text" name="game_bbs" size="30" value="<!--{$game.game_bbs}-->" class="input"/></td>
+		</tr>	 
+		<tr>
+		<td align="right" height="30" width="20%">新手指引</td>
+		<td><input type="text" name="game_freshman" size="30" value="<!--{$game.game_freshman}-->" class="input"/></td>
+		</tr>	
+		<tr>
+		<td align="right" height="30"  width="20%">游戏属性</td>
+		<td>
+		  <input type="checkbox" name="game_is_show" value="1" {if $game.game_is_show==1}checked{/if} />
+          是否显示
+          
+          <input type="checkbox" name="game_is_best" value="1" {if $game.game_is_best==1}checked{/if} />
+		  首页推荐
+		  
+          <input type="checkbox" name="game_is_hot" value="1" {if $game.game_is_hot==1}checked{/if} />
+		  首页火爆
+          
+          <input type="checkbox" name="game_is_focus" value="1" {if $game.game_is_focus==1}checked{/if} />
+          首页幻灯
+</td>
+		</tr>
+		<tr>
+		<td width="20%" height="30" align="right">显示排序</td>
+		<td><input type="text" name="game_sort" size="10" value="<!--{$game.game_sort}-->" class="input"/></td>
+		</tr>	
+		<tr>
+		<td align="right" height="30"  width="20%">游戏币比例</td>
+		<td><input type="text" name="game_money_per" size="10" value="<!--{$game.game_money_per}-->" class="input"/> *1元=10元宝</td>
+		</tr>
+		  <td align="right" height="30" width="20%">游戏币名称</td>
+		<td><input type="text" name="game_money_name" size="10" value="<!--{$game.game_money_name}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td align="right" height="30"  width="20%">游戏充值属性</td>
+		<td>
+		  <input type="checkbox" name="game_pay_role" value="1" {if $game.game_pay_role==1}checked{/if} />
+          是否需要游戏角色
+		  </td>
+		</tr>
+<!--
+		<tr>
+		<td align="right" height="30" width="20%">游戏登陆网关</td>
+		<td><input type="text" name="game_login_gateway" size="30" value="<!--{$game.game_login_gateway}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">游戏充值网关</td>
+		<td><input type="text" name="game_pay_gateway" size="30" value="<!--{$game.game_pay_gateway}-->" class="input"/></td>
+		</tr>
+-->
+		<tr>
+		<td align="right" height="30" width="20%">游戏接口配置1</td>
+		<td><input type="text" name="game_port_s1" size="10" value="<!--{$game.game_port_s1}-->" class="input"/> = <input type="text" name="game_port_config1" size="30" value="<!--{$game.game_port_config1}-->" class="input"/> *例如 平台=abc</td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">游戏接口配置2</td>
+		<td><input type="text" name="game_port_s2" size="10" value="<!--{$game.game_port_s2}-->" class="input"/> = <input type="text" name="game_port_config2" size="30" value="<!--{$game.game_port_config2}-->" class="input"/> *例如 密钥=123456</td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">游戏接口配置3</td>
+		<td><input type="text" name="game_port_s3" size="10" value="<!--{$game.game_port_s3}-->" class="input"/> = <input type="text" name="game_port_config3" size="30" value="<!--{$game.game_port_config3}-->" class="input"/> *预留5个参数 不需要可空</td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">游戏接口配置4</td>
+		<td><input type="text" name="game_port_s4" size="10" value="<!--{$game.game_port_s4}-->" class="input"/> = <input type="text" name="game_port_config4" size="30" value="<!--{$game.game_port_config4}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td align="right" height="30" width="20%">游戏接口配置5</td>
+		<td><input type="text" name="game_port_s5" size="10" value="<!--{$game.game_port_s5}-->" class="input"/> = <input type="text" name="game_port_config5" size="30" value="<!--{$game.game_port_config5}-->" class="input"/></td>
+		</tr>
+		<tr>
+		<td width="20%" height="30" align="right">&nbsp;</td>
+		<td valign="center">
+		<input type="submit" value="<!--{$language.submit}-->" class="btn"/>		</td>
+		</tr>
+		</table>
+		<input type="hidden" name="game_id" value="<!--{$game.game_id}-->"/>
+	</form>
+				
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="UTF-8">
+<head>
+<meta http-equiv="member-Type" member="text/html; charset=UTF-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					<a href="?action=member&do=group_add"><!--{$language.member_group_add}--></a>&raquo;&nbsp;<!--{$language.member_group_list}-->
+					
+				</h1>
+				
+				<div class="stat-container">
+				
+				
+				<table cellspacing="0" cellpadding="0" width="100%">
+		<!--{foreach from=$group_list item=group}-->
+		<tr>
+		<td height="26" align="center" width="30"><!--{$group.id}--></td>
+		<td><a href="?action=member&do=group_edit&group_id=<!--{$group.id}-->"><!--{$group.name}--></a></td>
+		<td width="100" align="center" >
+		<!--{if $smarty.session.admin_name!=$admin.name}-->
+		<a href="?action=member&do=group_edit&group_id=<!--{$group.id}-->"><!--{$language.edit}--></a>
+		<a href="?action=member&do=group_delete&group_id=<!--{$group.id}-->" onclick="return confirm('<!--{$language.confirm_delete}-->')"><!--{$language.delete}--></a>
+		<!--{/if}-->
+		</td>
+		</tr>
+		<tr><td height="1" bgcolor="#eeeeee" colspan="3"></td></tr>
+		<!--{foreachelse}-->
+		<tr><td height="50" colspan="3" align="center"><!--{$language.nodata}--></td></tr>
+		<!--{/foreach}-->
+	</table>
+				
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>

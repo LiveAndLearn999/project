@@ -1,0 +1,111 @@
+﻿
+.h_hot_game{margin:-2px auto 12px; width:956px;padding-left:4px;height:86px;overflow:hidden;background:url("h_hot_game[1].png")  no-repeat 0 0;}
+.con{margin:0 auto; width:960px; }
+.col1{margin:0; width:238px;}
+.col1 .box{margin-bottom:0;}
+.col2{margin:0; width:240px;overflow:hidden;}
+
+.getgift{zoom:1;}
+.getgift .margin{margin:4px 3px; }
+.getgift img{width:230px;height:230px;}
+
+.friendlink{margin:12px auto; _margin:10px auto 12px; width:960px;}
+.friendlink .margin{height:52px; background:url("bg_friendlink[1].png") repeat-x 0 0; }
+.friendlink ul{margin:5px 15px; }
+.friendlink li {float:left;}
+.friendlink li a{margin:0 8px;color:#335e36; line-height:40px; }
+
+.psphoto{margin:12px auto; _margin:10px auto 12px; width:960px;}
+.psphoto .margin{height:110px; background:url("bg_friendlink[1].png") repeat-x 0 0; }
+.psphoto ul{margin:5px 8px; }
+.psphoto li {float:left;}
+.psphoto li img {width:100px; height:100px; margin-right:4px;}
+
+.yxtj h3 strong,.friendlink h3 strong{padding-left:34px; background-position:0 -180px; }
+.zxkf h3 strong{background-position:0 -212px; }
+.latest_news h3 strong{background-position:0 -242px; }
+.zxkf,.latest_news{margin-bottom:12px;}
+
+
+.yxtj{margin:0 12px;width:456px;_width:453px;height:600px;overflow:hidden; }
+.yxtj .margin{padding:8px 10px 12px; }
+.g_link{height:97px; }
+.g_link img{width:290px;height:95px;}
+.g_link p{margin-left:15px; width:95px;padding-top:3px;}
+.g_link p a{display:block; padding-left:20px; line-height:23px;  background:url("icon[1].png") no-repeat 0 -276px; color:#399008; }
+.g_link p a:hover{}
+.g_link p .l4{margin-left:3px; padding-left:0;background:url("btn[1].png") no-repeat right -84px;}
+.g_link p .l4 span{ display:block;color:#fff;font:bold 14px/24px arial,""; margin-right:3px; text-align:center;background:url("btn[1].png") no-repeat 0 -60px;}
+.g_intro{margin:12px 0 8px;width:420px; height:60px;overflow:hidden;line-height:21px; }
+.g_snap{ }
+.g_snap h5 {margin-bottom:12px; border-bottom:1px solid #e6e6e6;}
+.g_snap h5 strong{font:bold 14px/24px arial,"";color:#399008;  }
+.g_snap li{display:inline;margin-right:1px;}
+.g_snap li img{border:1px solid #666; width:98px;height:57px;  }
+
+.col1 .zxkf{margin-bottom:12px;}
+.zxkf_div {margin:0 auto;height:65px;width:210px;padding-left:5px;padding-top:7px; border-bottom:1px dashed #cdcdcc;}
+.zxkf_div img{ width:115px;height:58px; }
+.zxkf_div a{display:block;margin-bottom:6px; width:72px;height:24px; line-height:24px; text-decoration:none;text-align:center;}
+.zxkf_div p{margin-left:15px;}
+.zxkf .intro{width:214px; padding:6px 8px; line-height:20px;}
+.zxkf .intro strong{color:#4a9309; font:bold 12px/24px arial,"";}
+
+.line_div {margin:0 auto;height:1px;width:100%; border-bottom:1px dashed #cdcdcc;}
+
+/*--recommend--*/
+.h_hot_div{position:relative;float:left;margin:0 1px;width:236px;height:85px;background:url("bg_hot[1].png") no-repeat 0 0;}
+.current{background-position:0 -85px; }
+.h_hot_div p{position:absolute; left:95px;top:55px; width:132px;}
+.h_hot_div p a{color:#38671d;text-decoration:underline;margin-right:-2px;}
+.h_hot_div p a:hover{color:#f60;}
+.h_hot_div .a3{float:right;*margin-top:-22px;_margin-top:-24px;vertical-align:middle;width:55px;height:20px;
+padding-left:12px;line-height:20px;background:url("a3[1].png") no-repeat 0 0; color:#090;text-decoration:none;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* Google ChromeSafari 3.0Opera 9 CSS式 */
+.h_hot_div .a3{margin-top:-22px;}
+}
+.h_hot_div .a3:hover{color:#f60;text-decoration:none;}
+/*--banner--*/
+#banner{width:706px;height:245px;margin:0; background:url("bg_banner[1].png") no-repeat 0 0; }
+#banner .margin{ padding:6px 0 0 5px;}
+.banner_t ul{ width:696px; height:186px; white-space:nowrap; overflow:hidden;}
+.banner_t ul li{ display:inline;}
+.banner_t ul li img{ width:696px; height:186px;}
+
+
+.banner_b ul{ height:44px; margin-top:2px;}
+.banner_b ul li{ width:230px;height:44px; float:left; margin-right:3px;cursor:pointer;}
+.banner_b ul .on{ background:url("banner_on[1].jpg") no-repeat;}
+.banner_b ul li a img{ border:1px solid #fff; float:left; margin:3px 0 0 3px;}
+.banner_b ul li div{ float:left; margin-left:10px; line-height:18px; padding-top:3px;}
+.banner_b ul li strong{ display:block; font-weight:bold; }
+.banner_b ul li div a{ text-decoration:underline; color:#999;}
+.banner_b ul li div a:hover{ color:#090;}
+.banner_b ul li div img{ background:none; margin-top:8px; width:auto; height:auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

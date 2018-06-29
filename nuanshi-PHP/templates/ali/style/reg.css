@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+.rbg02{ background:url(img/fBg.gif) repeat-x center bottom;}
+
+.main{ width:1000px; margin:19px auto 11px;}
+.col3{ width:760px; }
+.col2{ width:229px;}
+.box3{ width:229px; overflow:hidden;}
+.cBox{ border:1px solid #dee0e2;  background:#f9f9f9;}
+
+.boxMain{ min-height:636px; _height:645px;}
+.userWay{ width:227px; border:1px solid #dee0e2; overflow:hidden;}
+.userWay ul{ display:block; padding:11px;}
+.userWay ul li a{ display:block; width:205px; height:74px; overflow:hidden; background-image:url(img/csthoff.gif); text-indent:-999em; cursor:pointer;}
+.userWay ul li a:hover,.userWay ul li a.on{ background-image:url(img/csthon.gif);}
+.userWay ul li a.w1{ background-position:0 0;}
+.userWay ul li a.w2{ background-position:0 -85px; margin:11px auto;}
+.userWay ul li a.w3{ background-position:0 -170px;}
+.userWay ul li a.w4{ background-position:0 -255px;}
+.userWay ul li a.w5{ background-position:0 -340px; margin-top:11px;}
+
+.joinUs{ margin:10px auto 0;}
+.joinUs h3{ display:block; height:41px; line-height:30px; color:#666; text-align:center; font-size:14px;}
+.joinUs ul{ display:block; width:205px; height:255px; overflow:hidden; margin:0 auto;}
+.joinUs ul li a{ display:block; width:201px; height:80px; padding:1px; background:#fafafa; border:1px solid #e0e1e2; margin-bottom:6px;}
+.joinUs ul li a:hover{ background:#fff2f2; }
+.joinUs ul li a img{ display:block;  width:199px; height:78px;  border:1px solid #f7f7f7;}
+.joinUs .jBtn{ clear:both; margin:0 auto; width:79px; height:36px; overflow:hidden;}
+.joinUs .jBtn a{ display:block; width:79px; height:26px; overflow:hidden; cursor:pointer; text-indent:-999em; background:url(img/btn.png) no-repeat -96px 0;}
+.joinUs .jBtn a:hover{background:url(img/btn.png) no-repeat -178px 0;}
+.boxMain h3{ display:block; width:758px; height:109px; margin:0 auto; background:url(img/regBg.gif) no-repeat center 0;}
+.boxMain h3 p{ display:block; color:#67c2ff; font-size:12px; font-weight:normal; padding:77px 0 0 45px;}
+
+.ucWay{ clear:both; display:block; padding:15px 0 0 90px; *padding-top:30px;}
+.ucWay li{ display:block;  margin:1.8em 0 0 0;  color:#333; overflow:hidden;}
+.ucWay li label{display:inline-block; *display:inline; *zoom:1; width:105px; height:25px; line-height:25px; font:normal 14px "宋体"; color:#333; vertical-align:middle; text-align:right; text-align:right; line-height:23px;}
+.ucWay li input{ width:196px; padding:4px 3px; border:1px solid #bee2f1; background:#f0f8fc;  vertical-align:middle; height:20px; line-height:20px; color:#666; font-size:12px;}
+.ucWay li input.ierror{ border:1px solid #d34932; background:#fefce4;}
+.ucWay .validate input{width:69px; margin-right:4px; }
+.ucWay .validate img {vertical-align:middle;}
+.ucWay em{ display:inline-block; padding:0 3px; color:#0c72b6; vertical-align:middle; font-family:Arial, Helvetica, sans-serif; }
+.ucWay span{display:inline-block; color:#939393; }
+.ucWay span a:link,.ucWay span a:visited{ color:#333; text-decoration:underline; padding-left:10px;}
+.ucWay span a:hover{ color:#fa9217; text-decoration:underline;}
+.ucWay span.warn{color:#d34932; background:url(img/warn.png) no-repeat 0 0; padding-left:20px; line-height:16px;}
+.ucWay span.suc{display:inline-block; background:url(img/suc.png) no-repeat 0 0; width:40px; height:16px; vertical-align:middle; }
+.ucWay .safe{ clear:both; display:block; width:203px; height:41px; overflow:hidden; margin:20px auto 0;}
+.ucWay .safe1{ margin:20px auto 0; width:135px;}
+.ucWay .safe .safeBtn{ float:left; border:0; background:url(img/btn.png) no-repeat 0 -66px;  width:135px; height:41px; overflow:hidden; text-indent:-999em; cursor:pointer; margin-right:15px;}
+.ucWay .safe a{ float:left; height:41px; line-height:41px; white-space:nowrap; color:#666; text-decoration:underline; font-size:14px;}
+.ucWay .safe a:link,.ucWay .safe a:visited{ color:#666; text-decoration:underline;}
+.ucWay .safe a:hover{ color:#fa9217;}
+.ucWay span.success_level{width:67px;height:19px;background-image:url(); vertical-align:middle; text-align:center;display:inline-block; margin:0;}
+.v0{background-position:0 0;}
+.v1{background-position:0 -19px;}
+.v2{background-position:0 -38px;}
+.v3{background-position:0 -57px;}
+.ucWay li.b{ margin:35px 0 20px;}
+.ucWay li.b input{display:inline-block; border:0; width:16px; height:16px; vertical-align:middle; margin-left:111px;}
+.ucWay li.b label{display:inline-block; width:400px; height:16px; line-height:16px; vertical-align:middle; font-size:12px; color:#666; text-align:left;}
+.ucWay li.b label a{display:inline-block;  white-space:nowrap; color:#0c72b6; text-decoration:underline; padding:0 2px;}
+.ucWay li.b label a:link,.ucWay li.b label a:visited{color:#0c72b6; text-decoration:underline;}
+.ucWay li.b label a:hover{color:#00f; text-decoration:underline;}
+.regWay button{ clear:both; display:block; border:0; width:135px; height:41px; overflow:hidden; margin:10px 0 20px 199px; background:url(img/btn.png) no-repeat 0 -674px; text-indent:-999em; cursor:pointer;}
+
+.rbg01 .logo{ margin-bottom:10px;}
+.login{ clear:both; width:1000px; position:relative; margin:5px auto 0;  }
+.userLogin{ width:271px; height:325px; position:absolute; top:112px; right:54px; overflow:hidden;}
+.userLogin ul{ display:block;}
+.userLogin ul li label{ display:none;}
+.userLogin ul li input{ display:block; border:0; width:259px; height:38px; background:#fff; border:1px solid #dcdcdc; padding:0 5px; line-height:38px; color:#c2c2c2; margin-bottom:13px; *margin-bottom:5px;}
+.rember{ width:213px; height:23px; overflow:hidden; margin:0 0 0 41px; *margin-top:10px;}
+.rember input{ float:left; border:0; width:16px; height:16px; vertical-align:middle; margin-right:5px;}
+.rember a{ float:left; height:15px; line-height:15px; vertical-align:middle;  vertical-align:middle; color:#00a8ff; text-decoration:none; white-space:nowrap;}
+.rember .pop_keeplive{}
+.rember a.r1{padding-right:45px; }
+.rember a.r2:link,.rember a.r2:visited{ width:57px; border-bottom:1px solid #00a8ff;}
+.rember a.r2:hover{ border-bottom:1px solid #f33;}
+.rember a:link,.rember a:visited{ color:#00a8ff; text-decoration:none;}
+.rember a:hover{ color:#f33; text-decoration:none;}
+.btnLogin{ width:220px; margin:10px auto;}
+.btnLogin .cur0,.btnLogin .cur1{ float:left; border:0; width:96px; height:34px; overflow:hidden;  background-image:url(img/btn.png); text-indent:-999em; cursor:pointer;}
+.btnLogin .cur0{ background-position:0 -724px;}
+.btnLogin .cur1{ float:right; background-position:-110px -724px;}
+.qqLogin{margin-left:60px;}

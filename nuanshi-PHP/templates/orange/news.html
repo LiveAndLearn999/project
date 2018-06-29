@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><!--{$config.site_name}--></title>
+<meta name="keywords" content="<!--{$config.site_keywords|escape:html}-->">
+<meta name="description" content="<!--{$config.site_description|escape:html}-->">
+<link href="/templates/orange/css/css.css" rel="stylesheet" type="text/css" />
+<link href="/templates/orange/css/news.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="/templates/orange/css/style.css" rel="stylesheet" />
+<link type="text/css" href="/templates/orange/css/common.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+<!--header str-->
+<!--begin top-->
+<!--{include file="top.html"}-->
+<!--end top-->
+ <!--{include file="header.html"}-->
+<!--header end--> 
+
+
+
+      
+      <div id="content_3">
+      	<div id="content_3_left">
+             <div class="wrap"><div class="left">          <div class="plate">
+              <div class="top"><span>最新开服表</span><strong><em><a href="#" target="_blank">VIP新服送礼</a></em></strong></div>
+              <div class="cont">
+                  <dl>
+    			  <!--{foreach from=$game_news item=game}-->
+            	    <dt>
+            	    	            	    	<span><em><!--{$game.server_trunon_date}--></em></span>
+            	    						
+            	    	<b><!--{$game.server_trunon_hour}-->:00</b><a href="game.php?action=server_list&game_id=<!--{$game.game_id}-->" target="_blank"><strong><!--{$game.game_name}--></strong></a>
+            	    </dt>
+                    <dd><a href="game.php?action=play&game_id=<!--{$game.game_id}-->&server_id=<!--{$game.server_id}-->" target="_blank "><!--{$game.server_name}--></a></dd>
+		 <!--{/foreach}-->
+				
+                 </dl>
+              </div>
+              <div class="foot"></div>
+          </div>
+</div></div>
+      	</div>
+        <div id="content_3_right">
+       	  	<div id="right_1"><strong><!--{$channel_info.name}-->   </strong></div>
+            <div id="right_2">
+		          <ul>
+<!--{foreach from=$content_list item=content}-->
+<li><a href="{$content.url}">[<!--{$content.channel_name}-->]<span style="color:<!--{$content.color}-->"> {$content.title}</span></a><span>[{$content.time}]</span></li>
+<!--{/foreach}-->	
+
+        </ul>
+        <div id="pages" class="text-c"><!--{$pagebar}--></div>
+            </div>
+        </div>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+
+
+<div id="content_4"><!--footer str-->
+<div class="footer">
+    <!--{include file="footer.html"}--></div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title><!--{$language.title}--></title>
+<script type="text/javascript" src="scripts/jquery.js"></script>
+</head>
+<body>
+<!--{include file="top.htm"}-->
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+<!--{include file="left.htm"}-->
+<div class="span9">
+				
+				<h1 class="page-title">
+					<a href="?action=game&do=card_list">新手卡列表</a>
+&raquo;&nbsp;新手卡获取记录
+					
+				</h1>
+				
+				<div class="stat-container">
+				
+				
+				
+				<table cellspacing="1" cellpadding="0" width="100%">
+	<tr class="titlebg">
+	<td height="20" width="40" align="center">ID</td>
+	<td width="200">获取用户</td>
+	<td>获取时间</td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="3"></td></tr>
+	<!--{foreach from=$card_log item=log}-->
+	<tr>
+	<td height="30" align="center"><!--{$log.id}--></td>
+	<td><!--{$log.get_user}--></td>
+	<td><!--{$log.get_time}--></td>
+	</tr>
+	<tr><td height="1" bgcolor="#eeeeee" colspan="5"></td></tr>
+	<!--{foreachelse}-->
+	<tr><td height="50" colspan="5" align="center"><!--{$language.nodata}--></td></tr>
+	<!--{/foreach}-->
+	</table>
+				
+				
+				</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+				</div> <!-- /stat-container -->
+				
+				
+				<!-- /widget -->
+				
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+<!--{include file="footer.htm"}-->		
+</body>
+</html>
