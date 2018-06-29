@@ -1,0 +1,31 @@
+<ion-view  hide-tabs="true">
+    <ion-nav-title>晒单</ion-nav-title>
+    <ion-nav-buttons side="left" style="color:#fff">
+        <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+    </ion-nav-buttons>
+    <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+      <div class="xjl_yjfk">
+       <form id="shaidanForm" name="shaidanForm">
+        <input type="hidden" id="sdpid" name="pid" />
+        <input type="hidden" id="sdpterm" name="pterm" />
+        <input type="hidden" id="sdu" name="u" />
+        <div class="xjl_lxdh">
+         <input type="text" class="lxfs" placeholder="请输入标题" id="sdtitle" name="title" />
+        </div>
+        <div class="xjl_text">
+         <textarea cols="" rows="" class="xjl_yjfktext" placeholder="请在这里输入内容" id="sdcontent" name="content"></textarea>
+         <div>
+          <ul class="page_pic_emotion clear" id="nav_page">
+           <li class="page_pic pic_on" id="page_pic">
+            <dl>
+    			<dd><input type="file" accept="image/jpg, image/jpeg, image/png /*" onchange="form_pics.addImg(this);" name="pics[]"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="><span onclick="form_pics.removeImg(this);">&nbsp;</span></dd><dt><label>最多可上传3张图片</label></dt>
+            </dl> 
+           </li>
+          </ul>
+         </div>
+         <a id="sdbtnSub" href="javascript:;" ng-click="shaidanSubmit()" class="xjl_tj">提交</a>
+        </div>
+       </form>
+      </div>
+    </ion-content>
+</ion-view>

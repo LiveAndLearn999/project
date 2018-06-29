@@ -1,0 +1,200 @@
+﻿<ion-view hide-tabs="false">
+  <ion-nav-title>我的一元行</ion-nav-title>
+  <ion-nav-buttons side="right">
+  	<div class="button icon ssk button-clear btnsm" ng-click="noticeList()"><i class="ic icsm ic_chat"></i>公告</div>
+  </ion-nav-buttons>
+  <ion-content delegate-handle="mineScroll" overflow-scroll="true">
+    <div class="contacta h5-1yyg-v1" style="padding-bottom:10px;">
+      <!--个人中心头像-->
+      <div class="grzx">
+        <div class="grzx_tx">
+          <div class="grzx_txtop">
+            <a ng-click="jumpNext()">
+            	<img class="head_pic_c" src="{{headpic}}"/>
+              <div style="float:left;color:#fff;text-shadow:2px 2px 2px #666;margin-left:10px;">
+                <p dir="dir" content="nickname"></p>
+                <p>{{experience}}</p>
+              </div>
+              <div class="grzx_jt" >
+                <img src="img/icon_jt2.png"/>
+              </div>
+              <div class="clear"></div>
+            </a>
+          </div>
+        </div>
+        <div class="grzx_txbottom" ng-if="mob.prJfBt">
+          <div class="grzx_txbottom_1" ng-click="integralDetails();">
+            <a href="javascript:"><p class="ye">{{integral}}</p><p>可用积分</p></a>
+          </div>
+          <div class="grzx_txbottom_1" ng-click="accountDetail();">
+            <a href="javascript:;"><p class="ye">{{balance}}</p><p>可用余额</p></a>
+          </div>
+          <div class="grzx_txbottom_1" ng-click="recharge()">
+            <a href="javascript:;"><img src="img/cz.png" style="display:block;margin:auto;width:25px;height:25px;vertical-align:middle;"/><p>去充值</p></a>
+          </div>
+          <div class="grzx_txbottom_1" ng-click="cash()" style="border:none;">
+            <a id="withdraw_deposit" href="javascript:;"><img src="img/xtx.png" style="display:block;margin:auto;width:25px;height:25px;vertical-align:middle;" /><p>去提现</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="cardexplain show_more">
+        <ul class="round operate navlist my_ul">
+          <li class="mobile-font">
+            <table class="icardTable">
+              <tbody>
+              <tr>
+                <td class=''style=""><img alt=" " src="img/nc_icon2.png" /></td>
+                <td>
+                  <div class="list-titel no-img" ng-click="buyRecord()">
+                    <a href="javascript:void(0)">我的一元行记录<img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                  <div class="borderD"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class='my_td'><img alt="" src="img/xb_icon2.png" /></td>
+                <td>
+                  <div class="list-titel no-img" ng-click="winGoods(1)">
+                    <a href="javascript:void(0)">获得的商品<img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                  <div class="borderD"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class='my_td'><img alt=" " src="img/sjh_icon2.png" /></td>
+                <td>
+                  <div class="list-titel no-img" ng-click="myindexorderdetail_share()">
+                    <a href="javascript:void(0)">我的晒单<img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                  <div class="borderD"></div>
+                </td>
+              </tr>
+              <tr ng-if="mob.cardexplain">
+                <td class='my_td'><img alt=" " src="img/ico_gift.png" /></td>
+                <td>
+                  <div class="list-titel no-img" ng-click="myGift()">
+                    <a href="javascript:void(0)" class="link-has-red-point" link-red-point="linkPoint">我的红包<img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                  <div ng-if="mob.repairBill" class="borderD"></div>
+                </td>
+              </tr>
+              <tr ng-if="mob.repairBill">
+                <td class='my_td'><img alt=" " src="img/ico_supple.png" /></td>
+                <td>
+                  <div class="list-titel no-img" ng-click="supple()">
+                    <a href="javascript:void(0)">不到账补单<img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table> 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="cardexplain show_more">
+        <ul class="round operate navlist my_ul">
+          <li class="mobile-font">
+            <table class="icardTable">
+              <tbody>
+              <tr ng-if="mob.cardexplain">
+                <td class='my_td'><img alt="" src="img/commission_icon.png" /></td>
+                <td>
+                  <div class="list-titel no-img" ng-click="commission()">
+                    <a href="javascript:void(0)">佣金管理<img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                  <div class="borderD"></div>
+                </td>
+              </tr>
+              <tr ng-if="mob.cardexplain">
+                <td class='my_td'><img alt="" src="img/xgmm_icon2.png" /></td>
+                <td>
+                    <div class="list-titel no-img" ng-click="accountDetail();">
+                      <a href="javascript:void(0)">账户明细
+                      <img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                    </div>
+                    <div class="borderD"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class='my_td'><img alt="" src="img/sfz_icon2.png" /></td>
+                <td>
+                  <div class="list-titel no-img" ng-click="userAddress()">
+                    <a href="javascript:void(0)">收货地址管理<img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table> 
+          </li>
+        </ul>
+      </div>
+
+      <div class="cardexplain show_more">
+        <ul class="round operate navlist my_ul">
+          <li class="mobile-font">
+            <table class="icardTable">
+              <tbody>
+              <tr ng-if="mob.prJfBt">
+                <td class='my_td'><img src="img/nc_guide.png" /></td>
+                <td id="iconSign">
+                  <div class="list-titel no-img" ui-sref="mine.guide">
+                    <a href="javascript:void(0)">新手指南<img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                  <div class="borderD"></div>
+                </td>
+              </tr>
+              <tr ng-if="mob.prJfBt">
+                <td class='my_td'><img src="img/nc_sjf.png" /></td>
+                <td id="iconSign">
+                  <div class="list-titel no-img" ng-click="sendIntegral()">
+                    <a href="javascript:void(0)">签到领积分
+                      <img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                  <div class="borderD"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class='my_td'><img src="img/nc_iconfx.png" /></td>
+                <td>
+                  <div class="list-titel no-img">
+                    <a href="javascript:void(0)" class="big-link a_click_reveal_share_ewm" ng-click="share($event)" tankuangid='ewm_div'>
+                      分享<img alt="" src="img/rignt_icon.png" class="icon-right-card" />
+                    </a>
+                  </div>
+                  <div class="borderD"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class='my_td'><img src="img/ico_setting.png" /></td>
+                <td>
+                  <div class="list-titel no-img" ng-click="mySeting()">
+                    <a href="javascript:void(0)">设置
+                      <img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                  <div class="borderD"></div>
+                </td>
+              </tr>
+              <tr>
+                <td class='my_td'><img src="img/ico_customerService.png" /></td>
+                <td>
+                  <div class="list-titel no-img" ng-click="customerService()">
+                    <a href="javascript:void(0)">在线客服<img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                  </div>
+                </td>
+              </tr>
+              </tbody>
+            </table> 
+          </li>
+        </ul>
+      </div>
+
+      <div ng-if="mob.shengming" class="cardexplain show_more">
+        <ul class="round operate navlist my_ul" style="text-align:center;height:40px;line-height:40px;">
+                          声明：所有奖品和活动与苹果公司(Apple lnc)无关。
+        </ul>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

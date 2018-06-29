@@ -1,0 +1,29 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>物流信息</ion-nav-title>
+    <ion-nav-buttons side="left" style="color:#fff">
+        <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+    </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fff;" go-back>
+      <div class="gl-box" style="-webkit-touch-callout:inherit;-webkit-user-select:text;-moz-user-select:text;-o-user-select:text;user-select:text;">
+          <div class="gl-title">
+              <i></i>
+              <span>物流信息</span>
+          </div>
+          <div style="color:#5aa2f4;padding-left:10px;line-height:22px" ng-if="expr.expressFlag">
+              <p style="font-size:14px">快递公司：{{expr.express}}</p>
+              <p style="font-size:14px;">快递单号：{{expr.expressNo}}</p>
+          </div>
+          <div class="wl-mid">
+              <ul>
+                  <li class="clearfix"  ng-repeat="item in dataList">
+                      <div class="wl-line"><i></i> <span class="wl-ico"></span></div>
+                      <div class="fr">
+                          <p>{{item.operateState}}</p>
+                          <p>{{item.operateTime}}</p>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,190 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>商品详情</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <div class="an">
+      <a href="#/{{dqqishu.host}}/newbieQishu/{{dqqishu.pid}}/{{dqqishu.pterm}}" style="font-size:12px;">第{{dqqishu.pterm}}期&nbsp;<img ng-src="img/qbfl.png" style="width:9%;vertical-align: middle" /></a>
+    </div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" go-back>
+    <!--下拉刷新-->
+    <ion-refresher on-refresh="doRefresh()" pulling-text="下拉刷新"></ion-refresher>
+    
+    <div class="cp_xq{{random}}" style="padding-bottom:20px" ng-if="current">
+      <!-- 倒计时 -->
+      <div class="cp_djs" ng-if="visible">
+        <div class="jjdjs" style="line-height:25px;margin-top:5px;">
+          <img style="display:inline-block;vertical-align:middle!important;width:20px" src="img/icon_djs2.png" /><i style="display:inline-block;vertical-align:middle!important;">&nbsp;&nbsp;&nbsp;揭晓倒计时</i>
+        </div>
+        <div class="szjs">
+          <span class="cp_sz" style="font-size: 26px;" ng-bind="daojishi.mm"></span>
+          <span class="cp_szm">:</span>
+          <span class="cp_sz" style="font-size: 26px;" ng-bind="daojishi.ss"></span>
+          <span class="cp_szm">:</span>
+          <span class="cp_sz" style="font-size: 26px;" ng-bind="daojishi.s_m_100"></span>
+        </div>
+      </div>
+
+      <div class="cp_xq_js1">
+        <div class='cp_xq_tp'>
+          <img ng-src="{{proData.pic}}" />
+        </div>
+        <div class='cp_xq_wz'>
+          <p>{{proData.ptitle}}<span style='color:#de0000;margin-left:10px;'>{{proData.remark}}</span></p>
+          <p style='color:#9a9a9a'>价值：<span style='color:#017cff'>￥{{proData.price}}</span></p>
+          <p style='color:#de0000'>{{proData.premark}}</p>
+        </div>
+      </div>
+      <div class="cp_xq_js2">
+        <div class='Progress-bar'>
+        <p class='u-progress'><span class='pgbar' style='width:{{jinduData.baifenbi}};'><span class='pging'></span></span></p>
+        <ul class='Pro-bar-li'>
+          <li class='P-bar01'><em>{{jinduData.finish_time}}</em>已参与</li>
+          <li class='P-bar02'><em>{{jinduData.total_time}}</em>总需人次</li>
+          <li class='P-bar03'><em>{{jinduData.shengyu_time}}</em>剩余</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cp_kh" ng-if="showPrevPterm"></div>
+      <div class="cp_xq_js3" ng-if="showPrevPterm">
+        <a ng-href="{{proPtermLast.url}}"> <h3>上一期获得者</h3>
+	        <div class='cp_ksyq'>
+	        	<div class='cp_ksyq_tx'>
+	          	<img ng-src="{{proPtermLast.headpic}}"/>
+	          </div>
+	        	<div class='cp_ksyq_wz'>
+		          <p style='font-size:14px'><span style='color:#017cff'>{{proPtermLast.nickname}}</span></p>
+		          <p>揭晓时间：{{proPtermLast.publictime}}</p>
+		          <p>购买时间：{{proPtermLast.intime}}</p>
+		          <p>幸运元行码：<span style='color:#de0000'>{{proPtermLast.luckynumber}}</span></p>
+                  <p>参与人次：<span style='color:#de0000'>{{proPtermLast.winner_renci}}</span>次</p>
+	          </div>
+	        </div> 
+        </a>
+      </div>
+      <div class="cp_kh"></div>
+      <div class="cp_xq_js4" style="border-bottom:1px solid #dedede;">
+        <a ng-href="{{orderShare.url}}" style="display:block;width:100%;height:100%"><span style="font-size:14px;">商品晒单 ({{orderShare.share_num}})</span>
+          <span style="float:right" class="cp_jt"><img src="img/rignt_icon.png" /></span>
+        </a>
+      </div>
+      <div class="cp_xq_js4" style="border-bottom:1px solid #dedede;">
+        <a ng-href="#/{{dqqishu.host}}/imageText/{{dqqishu.pid}}" style="display:block;width:100%;height:100%"><span>图文详情 (建议在wifi下查看) </span><span style="float:right" class="cp_jt"><img src="img/rignt_icon.png" /></span></a>
+      </div>
+      <div class="cp_xq_js4" style="border-bottom:1px solid #dedede;">
+        <a ng-href="#/{{dqqishu.host}}/proBuyDetail/{{dqqishu.pid}}/{{dqqishu.pterm}}" style="display:block;width:100%;height:100%"><span>本期购买记录</span><span style="float:right" class="cp_jt"><img src="img/rignt_icon.png" /></span></a>
+      </div>
+      <div class="cp_xq_js4" style="border-bottom:1px solid #dedede;">
+        <a ng-href="#/{{dqqishu.host}}/gainerList/{{dqqishu.pid}}" style="display:block;width:100%;height:100%"><span>历史期数获得者信息列表</span><span style="float:right" class="cp_jt"><img src="img/rignt_icon.png" /></span></a>
+      </div>
+    </div>
+    
+    
+    
+    <div class="cp_xqt{{random}}" style="padding-bottom:20px" ng-if="!current">
+      <div class="cp_xq_js1">
+
+        <div class='cp_xq_tp'>
+          <img ng-src="{{productData.pic}}" />
+        </div>
+        <div class='cp_xq_wz'>
+          <p>{{productData.ptitle}}<span style='color:#de0000;margin-left:10px;'>{{productData.remark}}</span></p>
+          <p style='color:#9a9a9a'>价值：<span style='color:#017cff'>￥{{productData.price}}</span></p> {{productData.limitP}}
+        </div>
+
+      </div>
+      <div class="cp_xq_js2">
+        <div class="Progress-bar">
+          <p class="u-progress"><span class="pgbar" style="width:{{jinduData.baifenbi}}%;"><span class="pging"></span></span></p>
+          <ul class="Pro-bar-li">
+            <li class="P-bar01"><em>{{jinduData.total_time}}</em>已参与</li>
+            <li class="P-bar02"><em>{{jinduData.total_time}}</em>总需人次</li>
+            <li class="P-bar03"><em>0</em>剩余</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="cp_kh"></div>
+      <div class="hdz hdztb">
+        <img src="img/hdz.png" />
+      </div>
+      <div class="cp_xq_js3">
+        <a ng-href="{{huodezheData.uurl}}">
+          <div class="cp_ksyq">
+            <div class="cp_ksyq_tx">
+              <img ng-src="{{huodezheData.headpic}}" />
+            </div>
+            <div class="cp_ksyq_wz">
+              <p style="font-size:14px"><span style="color:#017cff">{{huodezheData.nickname}}</span></p>
+              <p>揭晓时间：{{huodezheData.publictime}}</p>
+              <p>购买时间：{{huodezheData.intime}}</p>
+              <p>幸运元行码：<span style="color:#de0000" ng-bind-html="huodezheData.luckynumber"></span></p>
+            </div>
+          </div> 
+        </a>
+      </div>
+      <div class="cp_kh"></div>
+      <div class="cp_xq_qs">
+        <div class="cp_xq_qsxq">
+          <h3>获得者本期共参与<span style="color:#de0000">{{jinduData.winner_renci}}</span>人次</h3>
+          <div class="qsxq" id="winner_shopnumber">
+            <div>
+              <ul>
+                <li ng-repeat="item in otherData" class="{{item.state}}">{{item.shopnumber}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="ckgd" ng-click="shopNumber()"><a href="javascript:void(0)">查看更多&gt;&gt;</a></div>
+      </div>
+      <div class="cp_kh"></div>
+      <div class="cp_xq_js4" style="border-bottom:1px solid #dedede;">
+        <a ng-href="{{orderShare.url}}" style="display:block;width:100%;height:100%"><span>计算详情</span><span style="float:right" class="cp_jt"><img src="img/rignt_icon.png" /></span></a>
+      </div>
+      <div class="cp_xq_js4" style="border-bottom:1px solid #dedede;">
+        <a ng-href="#/{{dqqishu.host}}/imageText/{{dqqishu.pid}}" style="display:block;width:100%;height:100%"><span>图文详情 (建议在wifi下查看) </span><span style="float:right" class="cp_jt"><img src="img/rignt_icon.png" /></span></a>
+      </div>
+      <div class="cp_xq_js4" style="border-bottom:1px solid #dedede;">
+        <a ng-href="#/{{dqqishu.host}}/proBuyDetail/{{dqqishu.pid}}/{{dqqishu.pterm}}" style="display:block;width:100%;height:100%"><span>本期购买记录</span><span style="float:right" class="cp_jt"><img src="img/rignt_icon.png" /></span></a>
+      </div>
+      <div class="cp_xq_js4" style="border-bottom:1px solid #dedede;">
+        <a ng-href="#/{{dqqishu.host}}/gainerList/{{dqqishu.pid}}" style="display:block;width:100%;height:100%"><span>历史期数获得者信息列表</span><span style="float:right" class="cp_jt"><img src="img/rignt_icon.png" /></span></a>
+      </div>
+    </div>
+    
+    
+  </ion-content>
+  <ion-footer-bar>
+  	<div ng-if="current">
+  		<div class="btnshopparea" style="width:100%;height:50px;line-height:50px;" ng-if="!visible">
+	      <!--购买状态-->
+          <div style="width:72%" class="fl">
+            <div class="wxc-compute" style="margin-left:10px;width:105px;border:1px solid #a8a8a8;border-radius:5px;position:relative;margin-top:10px;">
+              <em ng-click="numDecrease(dqqishu.pid)" style="border-right:1px solid #a8a8a8"><img style="display:block" src="img/xnum_minus1.png" class="reduce" /></em>
+              <input style="width:47px" type="number" focus-input  ng-blur="numChange(proData.shengyu_time)" ng-model="proData.num" class="wxc-input" maxlength="6"/>
+              <em ng-click="numAdd(dqqishu.pid,proData.shengyu_time)" style="border-left:1px solid #a8a8a8"><img style="display:block" src="img/xnum_add.png" class="add" /></em>
+            </div>
+            <span class="fl" style="margin-left:15px;font-size:13px;color:#323232;">合计：￥{{proData.num}}</span>
+          </div>
+          <div style="width:28%;background-color:#de0000;line-height:50px;font-size:14px;text-align:center;color:#fff" class="fr" ng-click="orderBuy()">立即购买</div>
+	    </div>
+	    <!--倒计时时显示-->
+	    <div class="btnshopparea" ng-if="visible">
+	      <div style="margin-left:10%" class="cp_ma" ng-click="reload(bottomData.detailUrl)">
+	        <a ng-href="{{bottomData.detailUrl}}">第{{bottomData.now_term}}期(正在进行...)</a>
+	      </div>
+	    </div>
+    </div>
+    
+    <div ng-if="!current">
+    	<div class="btnshopparea">
+	      <div style="margin-left:10%" class="cp_ma" ng-click="reload(bottomData.detailUrl)">
+	        <a>第{{bottomData.now_term}}期(正在进行...)</a>
+	      </div>
+	    </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

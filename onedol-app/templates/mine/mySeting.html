@@ -1,0 +1,122 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>设置</ion-nav-title>
+	<ion-nav-buttons side="left" style="color:#fff">
+		<div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+	</ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="cardexplain show_more">
+      <ul class="round operate navlist mysetul">
+        <li class="mobile-font">
+          <table class="icardTable">
+            <tbody>
+	            <tr>
+	              <td style="border:0;width:5px;"></td>
+	              <td>
+	                <div class="list-titel no-img" ng-click="mySetingSafe()">
+	                  <a href="javascript:void(0)">安全设置<b class='safe_b'></b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+	                </div>
+					<div class="borderD"></div>
+	              </td>
+	            </tr>
+				<tr>
+					<td style="border:0;width:5px;"></td>
+					<td>
+						<div class="list-titel no-img" ng-click="mySetingSecret()">
+							<a href="javascript:void(0)">隐私设置<b class='safe_b'></b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+						</div>
+					</td>
+				</tr>
+            </tbody>
+          </table> 
+        </li>
+      </ul>
+    </div>
+    
+    <div class="cardexplain show_more">
+      <ul class="round operate navlist mysetul">
+        <li class="mobile-font">
+          <table class="icardTable">
+            <tbody>
+	            <tr>
+	              <td style="border:0;width:5px;"></td>
+	              <td>
+	                <div class="list-titel no-img" onclick="skip('#/mine/news')">
+	                  <a href="javascript:void(0)">帮助中心<b class='safe_b'></b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+	                </div>
+	                <div class="borderD"></div>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td style="border:0;width:5px;"></td>
+	              <td>
+	                <div class="list-titel no-img" ng-click ="proposal()">
+	                  <a href="javascript:void(0)">意见反馈<b class='safe_b'></b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+	                </div>
+	              </td>
+	            </tr>
+            </tbody>
+          </table> 
+        </li>
+      </ul>
+    </div>
+
+    <div class="cardexplain show_more">
+      <ul class="round operate navlist mysetul mysetul">
+        <li class="mobile-font">
+          <table class="icardTable">
+            <tbody>
+	            <tr>
+	              <td style="border:0;width:5px;"></td>
+	              <td>
+	                <div class="list-titel no-img" onclick="skip('#/mine/about?id=1')">
+	                  <a href="javascript:void(0)">关于我们<b class='safe_b'></b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+	                </div>
+	                <div class="borderD"></div>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td style="border:0;width:5px;"></td>
+	              <td>
+	                <div class="list-titel no-img" onclick="skip('#/mine/about?id=10')">
+	                  <a href="javascript:void(0)">服务协议<b class='safe_b'></b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+	                </div> 
+	              </td>
+	            </tr>
+            </tbody>
+          </table> 
+        </li>
+      </ul>
+    </div>
+    
+    <div class="cardexplain show_more">
+      <ul class="round operate navlist mysetul">
+        <li class="mobile-font">
+          <table class="icardTable">
+            <tbody>
+	            <tr>
+	              <td style="border:0;width:5px;"></td>
+	              <td>
+	                <div class="list-titel no-img">
+	                  <a href="javascript:void(0)">应用版本号<b style="font-weight:normal;color:#666;position:absolute;right:20px;font-size:14px;">{{yyversion}}</b></a>
+	                </div>
+	                <div class="borderD"></div>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td style="border:0;width:5px;"></td>
+	              <td>
+	                <div class="list-titel no-img">
+	                  <a href="javascript:void(0)">资源版本号<b style="font-weight:normal;color:#666;position:absolute;right:20px;font-size:14px;">{{zyversion}}</b></a>
+	                </div> 
+	              </td>
+	            </tr>
+            </tbody>
+          </table>
+        </li>
+      </ul>
+    </div>
+    <div class="tc" ng-if="isShowLog">
+      <div ng-click="userLogOut()"><a href="javascript:;">退出登录</a></div>
+    </div>
+  </ion-content>
+</ion-view>

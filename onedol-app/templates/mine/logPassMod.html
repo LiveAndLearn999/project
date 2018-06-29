@@ -1,0 +1,30 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>修改登录密码</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="registerCon" style="padding-top:22px!important;">
+      <div class="binSuccess5">
+        <ul>
+          <li class="accAndPwd">
+            <dl>
+              <input ng-model="user.passwordold" type="password" placeholder="原密码" maxlength="18" />
+              <b></b>
+            </dl>
+            <dl>
+              <input ng-model="user.txtPassword" type="password" placeholder="新密码" maxlength="18" />
+              <b></b>
+            </dl>
+            <dl>
+              <input ng-model="user.txtPasswordConfirm" type="password" placeholder="确认密码" maxlength="18" />
+              <b></b>
+            </dl> 
+          </li>
+          <li>密码：6-18位字母或数字</li>
+        </ul>
+        <a href="javascript:;" ng-click="logPassModSubmit()" class="orangeBtn loginBtn">确认修改</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

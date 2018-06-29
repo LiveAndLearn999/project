@@ -1,0 +1,34 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title style="font-size: 16px;">获得者信息列表</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <div>
+      <div  ng-repeat="item in gainerList">
+      <div class="cp_xq_js3">
+        <a ng-href="{{item.url}}">
+          <div class="cp_ksyq">
+            <div class="cp_ksyq_tx">
+              <img style="margin-top:10px" ng-src="{{item.headpic}}" />
+            </div>
+            <div class="cp_ksyq_wz">
+              <p style="font-size:14px"><span style="color:#017cff">{{item.nickname}}</span></p>
+              <p>中奖期数：第{{item.pterm}}期</p>
+              <p>揭晓时间：{{item.publictime}}</p>
+              <p>购买时间：{{item.intime}}</p>
+              <p>幸运元行码：<span style="color:#de0000">{{item.luckynumber}}</span></p>
+              <p>参与人次：<span style='color:#de0000'>{{item.winner_renci}}</span>次</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="cp_kh"></div>
+      </div>
+      <ion-infinite-scroll ng-if="canLoadMoreList.code" on-infinite="loadListMore()" distance="1%"></ion-infinite-scroll>
+    </div>
+
+  </ion-content>
+</ion-view>

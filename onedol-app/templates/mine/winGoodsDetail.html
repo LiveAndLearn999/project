@@ -1,0 +1,25 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>购买详情</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <div class="button icon ssk button-clear" ng-click="share()"><i class="ic ic_share_white_2"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div>
+      <div dir="dir" content="buy.buyRecordDetail"></div>
+      <div class="tsxx">
+        <h4>[提示信息]</h4>
+        <p>1.点击“确认发货”按钮后，请确认收货地址是否正确</p>
+        <p>2.如果您拍错了、对商品型号、款式、颜色不满意，可将此商品委托平台转让给其他用户(由平台收取部分服务费)</p>
+        <p>此商品将以<span style="color:#f60" id="price_huigou">{{buy.huigou}}</span>元转让给其他用户</p>
+      </div>
+      <div dir="dir" content="buy.shopnumberDiv"></div>
+
+    </div>
+  </ion-content>
+  <ion-footer-bar>
+    <div class="xzfs" dir="dir" content="buy.bottom"></div>
+  </ion-footer-bar>
+</ion-view>

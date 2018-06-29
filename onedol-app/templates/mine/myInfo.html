@@ -1,0 +1,143 @@
+<ion-view hide-tabs="true">
+ <ion-nav-title>个人资料</ion-nav-title>
+ <ion-nav-buttons side="left" style="color:#fff">
+  <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+ </ion-nav-buttons>
+ <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+  <div style="height:1px;"></div>
+  <div class="cardexplain show_more">
+   <ul class="round operate navlist" >
+    <li class="mobile-font">
+     <table class="icardTable">
+      <tbody>
+       <tr>
+        <td class='td_info'></td>
+        <td>
+         <div class="list-titel no-img">
+		  <form id='headpicForm'>
+		  	<input name='u' id='u' type='hidden'>
+        	<input type='file' name='headpicInput' class='headpicInputClass' accept="image/jpeg,image/png,image/bmp">
+		  </form>
+          <a href="javascript:">
+          	头像<b class='safe_b'>
+            <img class='touxiangHeadpic' src="{{userData.headpic}}" style="width:35px;"/></b>
+            <img src="img/rignt_icon.png" class="icon-right-card" />
+          </a>
+         </div>
+         <div class="borderD"></div>
+        </td>
+       </tr>
+       <tr>
+        <td class='td_info'></td>
+        <td>
+         <div class="list-titel no-img" onclick="skip('#/mine/myNickname')">
+          <a href="javascript:;">昵称<b class='safe_b'>{{userData.nickname}}</b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+         </div>
+        </td>
+       </tr>
+      </tbody>
+     </table> 
+    </li>
+   </ul>
+  </div>
+  <div class="cardexplain show_more">
+   <ul class="round operate navlist" >
+    <li class="mobile-font">
+     <table class="icardTable">
+      <tbody>
+       <tr>
+        <td class='td_info'></td>
+        <td>
+         <div class="list-titel no-img" onclick="skip('#/mine/mySex')">
+          <a href="javascript:void(0)">性别<b class='safe_b'>{{userData.sex}}</b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+         </div>
+         <div class="borderD"></div>
+        </td>
+       </tr>
+       <tr>
+        <td class='td_info'></td>
+        <td>
+         <div class="list-titel no-img" onclick="skip('#/mine/myBirthday')">
+          <a href="javascript:void(0)">生日<span class="bz">&nbsp;&nbsp;一年内只能修改一次</span><b class='safe_b'>{{userData.birthday}}</b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+         </div>
+         <div class="borderD"></div>
+        </td>
+       </tr>
+       <tr>
+        <td class='td_info'></td>
+        <td>
+         <div class="list-titel no-img" onclick="skip('#/mine/myQq')">
+          <a href="javascript:void(0)">QQ<span class="bz">&nbsp;&nbsp;备用联系信息</span><b class='safe_b'>{{userData.qq}}</b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+         </div> 
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </li>
+   </ul>
+  </div>
+  <div class="cardexplain show_more">
+   <ul class="round operate navlist" >
+    <li class="mobile-font">
+     <table class="icardTable">
+      <tbody>
+       <tr>
+        <td class='td_info'></td>
+        <td>
+         <div class="list-titel no-img" onclick="skip('#/mine/myHometown?id=2')">
+          <a href="javascript:void(0)">现居地<b class='safe_b'>{{userData.address}}</b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+         </div>
+         <div class="borderD"></div>
+        </td>
+       </tr>
+       <tr>
+        <td class='td_info'></td>
+        <td>
+         <div class="list-titel no-img" onclick="skip('#/mine/myHometown?id=1')">
+          <a href="javascript:void(0)">家乡<b class='safe_b'>{{userData.hometown}}</b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+         </div> 
+        </td>
+       </tr>
+      </tbody>
+     </table> 
+    </li>
+   </ul>
+  </div>
+  <div class="cardexplain show_more">
+   <ul class="round operate navlist" >
+    <li class="mobile-font">
+     <table class="icardTable">
+      <tbody>
+       <tr>
+        <td class='td_info'></td>
+        <td>
+         <div class="list-titel no-img" onclick="skip('#/mine/mySignature')">
+          <a href="javascript:void(0)">个性签名<b class='safe_b'>{{userData.signature}}</b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+         </div> 
+        </td>
+       </tr>
+      </tbody>
+     </table> 
+    </li>
+   </ul>
+  </div>
+  <div class="cardexplain show_more">
+   <ul class="round operate navlist" >
+    <li class="mobile-font">
+     <table class="icardTable">
+      <tbody>
+       <tr>
+        <td class='td_info'></td>
+        <td>
+         <div class="list-titel no-img">
+          <a href="javascript:void(0)">邀请码<b class='safe_b'>{{userData.invitationCode}}</b></a>
+         </div> 
+        </td>
+       </tr>
+      </tbody>
+     </table> 
+    </li>
+   </ul>
+  </div>
+ </ion-content>
+</ion-view>

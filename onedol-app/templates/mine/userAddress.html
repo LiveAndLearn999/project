@@ -1,0 +1,45 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>收货地址管理</ion-nav-title>
+    <ion-nav-buttons side="left" style="color:#fff">
+        <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+    </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div style="padding-top:10px;">
+      <div id="all_address">
+      	<div ng-if="data.length<=0" style="text-align:center;">您还没有收货地址。</div>
+        <div ng-if="data.length >0" class="order-place-table swipe-delete" cellpadding="0" cellspacing="0" data-role="listview">
+					<ion-list can-swipe=true>
+						<ion-item style="padding:0;" ng-repeat="item in data">
+							<table>
+              <tr class="address_list">
+                <td style="width:30px;background:#fff;" ng-bind-html="item.tmp_def"></td>
+                <td style="padding:0px">
+                  <div class="ui-btn ui-icon-carat-r edit-btn">
+                    <div ng-click="toAddSubmit(item.aid)" class="p-name">
+                      <span class="bigf address_text">{{item.name}}</span>
+                      <span>{{item.mobile}}</span>
+                    </div>
+                    <p ng-click="toAddSubmit(item.aid)" class="address_text p_address">{{item.add}}</p>
+                    <img style="margin-top:-17px;width:30px;" src="img/wxc_remove.png" class="order_arrow" ng-click="delAdd(item.aid)" />
+                  </div>
+                  <div class="borderD"></div>
+                </td>
+            	</tr>
+            	</table>
+            	<ion-option-button class="button-info" ng-click="delAdd(item.aid)">删除</ion-option-button>
+          	</ion-item>
+        	</ion-list>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="ht60">
+    <div class="fixed-bottom white-bg"  style="height:36px;line-height:36px;margin:12px auto;">
+      <a ng-href="#/{{host}}/userAddressSubmit">
+        <div class="choose-time">
+          <span class="am-button"> 添加地址</span>
+        </div> 
+      </a>
+    </div>
+  </ion-footer-bar>
+</ion-view>

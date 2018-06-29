@@ -1,0 +1,111 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>幸运积分</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+      <div class="pd-box">
+      		<p class="tit">您当前的可用积分：<span>{{signInfo.integral}}</span></p>
+          <h4>获得积分</h4>
+          <div class="box-inner">
+              <h6 class="box-tit clearfix">
+                  <b class="ion-circle"></b>
+                  <p class="fl">您本月已打卡<span>{{signInfo.signCount}}</span>天 连续打卡<span>{{signInfo.continuationCount}}</span>天  共获得<span>{{signInfo.amount}}</span>积分</p>
+              </h6>
+              <a class="box-link" href="#/{{host}}/showSignHistory">查看我的打卡记录</a>
+              <div class="tb-outter">
+                  <table class="tb" dir="dir" content="myText">
+
+                  </table>
+              </div>
+              <h6 class="box-tit clearfix">
+                  <b class="ion-circle"></b>
+                  <p class="fl">您上月累计消费<span>{{signInfo.summony}}</span>元 <em id="isGetJf"><i id="updateFont">可</i>领取<span>{{signInfo.integration}}</span>积分；</em></p>
+              </h6>
+              <a class="img-voucher"><img src="{{signInfo.url}}" ng-click="clickRece()"/></a>
+          </div>
+          <h4>积分规则</h4>
+          <ul class="box-rule">
+              <li>
+                  <h5>1.积分有什么用途？</h5>
+                  <p>赠送的积分可以参与一元行网站所有商品的夺宝购买；</p>
+              </li>
+              <li>
+                  <h5>2.如何获得积分？</h5>
+                  <p>方法一：每日签到获得积分（抽奖形式）如上图；</p>
+                  <div class="rule-tb">
+                      <table>
+                          <tr>
+                              <th width="34%">连续签到天数</th>
+                              <td width="22%">7天</td>
+                              <td width="22%">15天</td>
+                              <td width="22%">一个月</td>
+                          </tr>
+                          <tr>
+                              <th>获得积分</th>
+                              <td>50积分</td>
+                              <td>100积分</td>
+                              <td>150积分</td>
+                          </tr>
+                      </table>
+                  </div>
+                  <p class="clearfix">
+                      <span class="fl">方法二：领券获得；</span>
+                      <span class="fl">1.领券条件：每位用户在此时间段<i>（每月1号00:00至月末最后一天00:00）</i>参与夺宝，未持有夺宝活动幸运号码;<br/>2.领券时间：当月任意时间段可领取上月符合条件的积分，月末最后一天24:00之前未领取视作弃领；在<i>点击领取</i>按钮后即可获得积分，相应数量的积分将自动赠送至用户账户；</span>
+                  </p>
+                  <div class="rule-tb">
+                      <table>
+                          <tr>
+                              <th width="32%">月度现金消费金额（元）</th>
+                              <td width="17%">50-100</td>
+                              <td width="17%">101-500</td>
+                              <td width="17%">501-1000</td>
+                              <td width="17%">1001-3000</td>
+                          </tr>
+                          <tr>
+                              <th>获得积分</th>
+                              <td>500</td>
+                              <td>1000</td>
+                              <td>3000</td>
+                              <td>10000</td>
+                          </tr>
+                          <tr>
+                              <th>月度现金消费金额（元）</th>
+                              <td>3001-8000</td>
+                              <td>8001-12000</td>
+                              <td>12000以上</td>
+                              <td></td>
+                          </tr>
+                          <tr>
+                              <th>获得积分</th>
+                              <td>35000</td>
+                              <td>100000</td>
+                              <td>150000</td>
+                              <td></td>
+                          </tr>
+                      </table>
+                  </div>
+                  <p>方法一与方法二的积分可以同时获得同时使用；</p>
+              </li>
+              <li>
+                  <h5>3.关于赠送积分的有效期？</h5>
+                  <p>任何时间段都可使用；</p>
+              </li>
+              <li>
+                  <h6>注：一元行对赠送积分规则有最终解释权，请用户及时关注一元行官网最新公告。</h6>
+              </li>
+          </ul>
+      </div>
+  </ion-content>
+</ion-view>
+<div ng-if="diaResult" class='popup-container popup-showing active' style='background:rgba(0,0,0,0.2)'>
+    <div id="signResult" class='reveal-modal qdsc' style='left:5%;width:90%;height:9.09rem;padding:0px;background:transparent;background-image:url(img/dia-result.png);background-size:100% 100%;box-shadow:none;-webkit-box-shadow:none;opacity:1;visibility:visible;'>
+        <div style='position:absolute;width:1rem;height:1rem;top:0.8rem;right:0.35rem;cursor:pointer;' ng-click='closeTankuang()'></div>
+        <div style='position:absolute;top:3.8rem;width:100%;'>
+            <p style='margin:0.45rem 0.55rem 0px 0px;text-align:center;font-size:0.6rem;line-height:0.6rem;color:#00a3eb;font-weight:bold;'>已成功签到<i style='font-size:0.6rem;font-weight:600;'>{{dia.signCount}}</i>天</p>
+            <p ng-if="dia.flag == 1" class='ru-p' style='margin:0.65rem 0.55rem 0px 0px;text-align:center;font-size:0.65rem;line-height:0.65rem;color:#ff0612;font-weight:bold;'>今日获得<i style='font-size:1rem;font-weight:600;vertical-align:top!important;'>{{dia.integration}}</i>积分</p>
+            <p ng-if="dia.flag == 0" class='ru-p' style='margin:0.65rem 0.55rem 0px 0px;text-align:center;font-size:0.65rem;line-height:0.65rem;color:#ff0612;font-weight:bold;'>谢谢参与</p>
+        </div>
+        <a ng-click="goIndex()" style='cursor:pointer;position:absolute;left:25%;bottom:0.9rem;display:block;width:40%;height:1rem;line-height:1rem;font-size:0.6rem;color:#fff;background-color:#fab70e;text-align:center;border-radius:6px;'>去花积分</a>
+    </div>
+</div>

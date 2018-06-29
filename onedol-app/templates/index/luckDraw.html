@@ -1,0 +1,53 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>幸运大转盘</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" go-back>
+    <div class="bg-luck">
+        <img class="img-luck" src="https://resource.1yuanxing.com/images/vouchers/img_luck.png" />
+        <div class="pr">
+            <img class="bg-luck-circles" src="https://resource.1yuanxing.com/images/vouchers/bg_circles.png" />
+            <div class="luck-loop">
+                <img class="luck-loop-l" src="img/ico_pink_horn.png">
+                <div class="luck-loop-m">
+                    <div id="luckLoop">
+                        <p>您本月度已抽奖{{drawInfo.hasBeenUsedCount}}次，还剩余{{drawInfo.unusedCount}}次抽奖机会，当月已累计消费金额{{drawInfo.alreadyConsumed}}元，还差{{drawInfo.stillNeedSthConsumption}}元满足下一次抽奖机会。<span style="padding-left:16px"></span>您本月度已抽奖{{drawInfo.hasBeenUsedCount}}次，还剩余{{drawInfo.unusedCount}}次抽奖机会，当月已累计消费金额{{drawInfo.alreadyConsumed}}元，还差{{drawInfo.stillNeedSthConsumption}}元满足下一次抽奖机会。</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="luck-circle">
+                <img class="bg-cont" src="img/bg_cont.png"/>
+                <div class="outercont">
+                    <div class="outer-cont">
+                        <div class="outer"><img ng-src="{{drawInfo.imgurl}}"></div>
+                    </div>
+                    <div class="inner-cont">
+                        <div class="inner" ng-click="rotate()"><img src="img/inner_cont.png"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="luck-rule">
+                <h3>活动说明</h3>
+                <div dir="dir" content="luckRule"></div>
+            </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>
+<div class="dialog" ng-if="isShowResult">
+    <div id="dialogLuck" class="dia-outter" style="margin-top:30px;">
+        <img class="bg-dialog-win" src="img/bg_dia_win.png" />
+        <img class="dialog-win-top" src="img/img_win.png" />
+        <div class="dia-inner-win">
+            <img class="dialog-win-tip" src="img/bg_dia_content_tip.png" />
+            <h6>恭喜您获得</h6>
+            <p>{{drawResult.title}}</p>
+            <p>可在“我的--获得的商品”中查看</p>
+            <img class="dialog-win-goods" ng-src="{{drawResult.imgurl}}" />
+            <a ng-href="#/{{host}}/winGoods/2">去查看奖品</a>
+        </div>
+        <div class="btn-dia-close" ng-click="closeDialog()"><img src="img/btn_dia_close.png" /></div>
+    </div>
+</div>

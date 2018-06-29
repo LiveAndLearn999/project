@@ -1,0 +1,63 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>提现</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa" go-back>
+    <div class="xjl_yjfk">
+    	<p ng-if="isWithdraw" style="color:#f00;text-align:center;font-size:16px;line-height:30px;padding:10px;" ng-bind-html="isWithdrawInfo"></p>
+    	<div class="zhmx" ng-if="showTips" style="padding:0 10px;height:auto;background-color:inherit;">
+        <ul>
+        	<li style="margin:10px 0;width:{{item.width}};" ng-repeat="item in txTypes" class="{{showTipAry[item.i]}}" ng-click="tabAc({{item.index}})"><a href="javascript:void(0)">{{item.name}}</a></li>
+        </ul>
+      </div>
+      <div class="xjl_fl" ng-if="showTipYHK">
+      	<p style="color:#f00;line-height:20px;padding:5px 0;" ng-bind-html="transfer.infoYHK"></p>
+        <input type="text" placeholder="请输入提现金额" class="lxfs" ng-model="user.sum" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+        <p>当前可提现金额：<span>{{balance}}</span>元&nbsp;&nbsp;(最低提现100元)</p>
+        <div class="xjl_lxdh" style=" padding:0px 0px 10px 0px">
+          <input type="text" class="lxfs" placeholder="请输入所在城市名称" ng-model="user.city"/>
+        </div>
+        <div class="xjl_lxdh" style=" padding:0px 0px 10px 0px">
+          <input type="text" class="lxfs" placeholder="请输入开户人姓名" ng-model="user.name"/>
+        </div>
+        <div class="xjl_lxdh" style=" padding:0px 0px 10px 0px">
+          <input type="text" class="lxfs" placeholder="请输入身份证号" ng-model="user.idcard"/>
+        </div>
+        <div class="xjl_lxdh" style=" padding:0px 0px 10px 0px">
+          <input type="text" class="lxfs" placeholder="请输入银行卡号" ng-model="user.bankcard"/>
+        </div>
+        <div class="xjl_lxdh" style=" padding:0px 0px 10px 0px">
+          <input type="text" class="lxfs" placeholder="请输入银行名称例如中国建设银行" ng-model="user.bank"/>
+        </div>
+        <div class="xjl_lxdh" style=" padding:0px 0px 10px 0px">
+          <input type="text" class="lxfs" placeholder="请输入开户银行例如中国建设银行中山路分行" ng-model="user.bankDeName"/>
+        </div>
+        <div class="xjl_lxdh wjjymm" style=" padding:0px 0px 10px 0px">
+          <input type="password" class="lxfs" placeholder="请输入交易密码" ng-model="user.traderpassword"/>
+          <p ng-if="isSet">您暂未设置交易密码，<a href="javascript:skip('#/mine/traderPassSet')">去设置</a></p>
+          <p ng-if="isForget">忘记交易密码？<a href="javascript:skip('#/mine/traderPassSet')">去重置</a></p>
+        </div>
+        <a href="javascript:void(0);" ng-click="subCardBtn(0)" class="xjl_tj">确认提现</a>
+      </div>
+      <div class="xjl_fl" ng-if="showTipWX">
+      	<p style="color:#f00;line-height:20px;padding:5px 0;" ng-bind-html="transfer.infoWX"></p>
+        <input type="text" placeholder="请输入提现金额" class="lxfs" ng-model="userwx.sum" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+        <p>当前可提现金额：<span>{{balance}}</span>元&nbsp;&nbsp;(最低提现100元)</p>
+        <div class="xjl_lxdh" style=" padding:0px 0px 10px 0px">
+          <input type="text" class="lxfs" placeholder="请输入开户人姓名" ng-model="userwx.name" />
+        </div>
+        <div class="xjl_lxdh" style=" padding:0px 0px 10px 0px">
+          <input type="text" class="lxfs" placeholder="请输入身份证号" ng-model="userwx.idcard" />
+        </div>
+        <div class="xjl_lxdh wjjymm" style=" padding:0px 0px 10px 0px">
+          <input type="password" class="lxfs" placeholder="请输入交易密码" ng-model="userwx.traderpassword"/>
+          <p ng-if="isSet">您暂未设置交易密码，<a href="javascript:skip('#/mine/traderPassSet')">去设置</a></p>
+          <p ng-if="isForget">忘记交易密码？<a href="javascript:skip('#/mine/traderPassSet')">去重置</a></p>
+        </div>
+
+        <a href="javascript:void(0);" ng-click="subCardBtn(1)" class="xjl_tj">确认提现</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

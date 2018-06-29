@@ -1,0 +1,37 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title style="font-size: 16px;">购买记录</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <div class="zhmx nav-fixed">
+    <ul>
+      <li style="width:50%;" class="{{tab[0].tabClass}}" ng-click="tabAc(0)"><a href="javascript:void(0)">进行中</a></li>
+      <li style="width:50%;" class="{{tab[1].tabClass}}" ng-click="tabAc(1)"><a href="javascript:void(0)">已（正）揭晓</a></li>
+    </ul>
+  </div>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;padding-top:55px;" go-back>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <div ng-if="tab[0].isShow" style="">
+      <a class='loading' style="background:initial;box-shadow:none;" href='javascript:void(0)' ng-if="!isbuyOnRecordShow">暂无进行中商品的记录</a>
+      <div ng-if="isbuyOnRecordShow" class="pane1" style="height:auto;">
+        <div class="prolist">
+          <div class="scroll" dir="dir" content="myOnText">
+
+          </div>
+        </div>
+      </div>
+      <ion-infinite-scroll ng-if="canLoadMoreOn.code" on-infinite="loadOnMore()" distance="1%"></ion-infinite-scroll>
+    </div>
+    <div ng-if="tab[1].isShow">
+      <a class='loading' style="background:initial;box-shadow:none;" href='javascript:void(0)' ng-if="!isbuyAnnouncedShow">暂无已（正）揭晓商品的记录</a>
+      <div ng-if="isbuyAnnouncedShow" class="pane1" style="height:auto;">
+        <div class="prolist">
+          <div class="scroll" dir="dir" content="myAnnouncedText">
+
+          </div>
+        </div>
+      </div>
+      <ion-infinite-scroll ng-if="canLoadMoreAnnounced.code" on-infinite="loadAnnouncedMore()" distance="1%"></ion-infinite-scroll>
+    </div>
+  </ion-content>
+</ion-view>

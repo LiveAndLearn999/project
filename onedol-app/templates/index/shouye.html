@@ -1,0 +1,157 @@
+﻿<ion-view hide-tabs="false">
+	<ion-nav-title>
+		<h1 class="title"><img src="img/logo.png"/></h1>
+	</ion-nav-title>
+    <ion-nav-buttons side="left">
+    	<div class="button icon ssk button-clear" ng-click="share()"><i class="ic ic_share_white"></i></div>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    	<div class="button icon ssk button-clear" ui-sref="index.search"><i class="ic ic_search_white"></i></div>
+    </ion-nav-buttons>
+	<ion-content overflow-scroll="true" ng-click="pauseScroll($event)">
+    	<!--下拉刷新-->
+    	<ion-refresher on-refresh="doRefresh()" pulling-icon="ion-arrow-down-c" pulling-text="下拉刷新"></ion-refresher>
+    	<div class="h5-1yyg-v1" id="scdiv">
+    		<!-- 焦点图 -->
+		    <ion-slide-box auto-play="true" does-continue="true" ng-if="bannerListFlag">
+		        <ion-slide ng-repeat="item in bannerList">
+					<img ng-click="bannerSkip(item.link)" class='banner' ng-src="{{item.pic}}" alt="{{item.title}}" style="display:block;max-width:100%;margin:auto"/>
+		        </ion-slide>
+		    </ion-slide-box>
+		    <!-- 分类 -->
+		    <div class="spfl" ng-if="mob.classify">
+				<div ng-click="getVoucher()"><img style="margin:8px auto -5px;display:block;width:96%;" src="https://resource.1yuanxing.com/images/huiyi_get.png"></div>
+		        <div class="spfl_a1">
+		        	<ul style='display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display:flex;justify-content: space-around;-webkit-justify-content: space-around;-moz-justify:space-around'>
+			            <!--<li><a href="#/index/inviteIntr"><img src="img/icon_yaoqing.png" /><p class="lh16">邀请返现</p></a></li>-->
+			            <li ui-sref="index.orderdetailshare"><img src="img/icon_sd.png" style="padding-bottom:4px"/><p class="lh16">晒单</p></li>
+						<!--<li ng-click="luckDraw()"><img src="img/icon_draw.png" /><p class="lh16">幸运大转盘</p></li>-->
+			            <li ng-click="recharge()"><img src="img/icon_cz.png" style="padding-bottom:4px"/><p class="lh16">账户充值</p></li>
+						<!--<li ui-sref="index.newbie"><img src="img/icon_newbie.png" /><p class="lh16">新手专区</p></li>-->
+			            <li ui-sref="index.guide"><img src="img/icon_guide.png" style="padding-bottom:4px"/><p class="lh16">新手指南</p></li>
+			            <li ui-sref="index.moneyget"><img src="img/icon_zlmoney.png" style="padding-bottom:4px"/><p class="lh16">邀友返现</p></li>
+						<li id="iconNewbie" ui-sref="index.snatch"><img src="img/icon_snatch.png" style="padding-bottom:4px"/><p class="lh16">红包大派送</p></li>
+		          	</ul>
+		        </div>
+		    </div>
+			<div class="loop" ng-click="gobalLink()">
+				<img class="loop-l" src="img/ico_horn.png">
+				<div class="loop-m"></div>
+				<img class="loop-r" src="img/ico_rarrow.png">
+			</div>
+		    <!-- 最新揭晓 -->
+		    <section ng-if="prodjslist.length>0" class="g-main mt10 bt" style="width:100%;text-align:left;">
+		        <div class="zxjx">
+		        	<div id="public_pro_0" class="jx1">
+			        	<a id='pro_a_0' ng-href="#/{{host}}/{{jjjx[0].producturl}}&pid={{jjjx[0].pid_pub}}&pterm={{jjjx[0].pterm_pub}}">
+				            <div class='jx1_1'>
+					            <p class='js' style="margin-bottom:0;">揭晓倒计时</p>
+					            <div ng-if="daojishiDiv" class='szjs' id='yijiexiao_0' style="box-sizing:content-box;">
+					            	<span ng-if="jjjx[0].daojishiSpan" style='color:#de0000;'>已揭晓</span>
+					                <span ng-if="!jjjx[0].daojishiSpan" id='daojishi_pro_span_fen_0' class='sz'>{{daojishi[0].mm}}</span>
+					              	<span ng-if="!jjjx[0].daojishiSpan" class='szm'>:</span>
+					              	<span ng-if="!jjjx[0].daojishiSpan" id='daojishi_pro_span_miao_0' class='sz'>{{daojishi[0].ss}}</span>
+					              	<span ng-if="!jjjx[0].daojishiSpan" class='szm'>:</span>
+					              	<span ng-if="!jjjx[0].daojishiSpan" id='daojishi_pro_span_miaom_0' class='sz'>{{daojishi[0].s_m_100}}</span>
+					            </div>
+				            </div>
+				          	<div class='jx1_2'>
+					          	<span class="ellipsis3">{{jjjx[0].ptitle}}</span>
+					          	<img ng-src="{{jjjx[0].pic}}" width='80' height='80'/>
+				          	</div>
+			        	</a>
+		          	</div>
+		          	<div class="jx2 index-pub-pro">
+			            <div id="public_pro_1" class="jx2_1">
+			            	<a id='pro_a_1'  ng-href="#/{{host}}/{{jjjx[1].producturl}}&pid={{jjjx[1].pid_pub}}&pterm={{jjjx[1].pterm_pub}}">
+			               		<span style="line-height:25px;width:100%;" class="ellipsis1">{{jjjx[1].ptitle}}</span>
+			              		<div ng-if="daojishiDiv" class='szjs' id='yijiexiao_1' style="box-sizing: content-box;">
+					                <span ng-if="jjjx[1].daojishiSpan" style='color:#de0000;'>已揭晓</span>
+					                <span ng-if="!jjjx[1].daojishiSpan" id='daojishi_pro_span_fen_1' class='sz'>{{daojishi[1].mm}}</span>
+					                <span ng-if="!jjjx[1].daojishiSpan" class='szm'>:</span>
+					                <span ng-if="!jjjx[1].daojishiSpan" id='daojishi_pro_span_miao_1' class='sz'>{{daojishi[1].ss}}</span>
+					                <span ng-if="!jjjx[1].daojishiSpan" class='szm'>:</span>
+					                <span ng-if="!jjjx[1].daojishiSpan" id='daojishi_pro_span_miaom_1' class='sz'>{{daojishi[1].s_m_100}}</span>
+					            </div>
+			            		<div ng-if="!daojishiDiv" class='szjs'  style="box-sizing: content-box;"></div>
+			            		<div class='sy_djscp'><img ng-src="{{jjjx[1].pic}}"/></div> 
+			            	</a>
+		            	</div>
+			            <div class="jx2_2 index-pub-pro">
+			            	<div id="public_pro_3" class="cp3">
+				                <a id='pro_a_2' ng-href="#/{{host}}/{{jjjx[2].producturl}}&pid={{jjjx[2].pid_pub}}&pterm={{jjjx[2].pterm_pub}}">
+					                <div class='index_pub_div'><img ng-src="{{jjjx[2].pic}}" class='sy_xcp'/></div>
+					                <div class='index_pub_pro'>
+					                	<span style="line-height:25px;width:100%;" class="ellipsis1">{{jjjx[2].ptitle}}</span>
+						                <div ng-if="daojishiDiv" class='szjs' id='yijiexiao_2' style="box-sizing: content-box;">
+						                  	<span ng-if="jjjx[2].daojishiSpan" style='color:#de0000;'>已揭晓</span>
+						                  	<span ng-if="!jjjx[2].daojishiSpan" id='daojishi_pro_span_fen_2' class='sz'>{{daojishi[2].mm}}</span>
+						                  	<span ng-if="!jjjx[2].daojishiSpan" class='szm'>:</span>
+						                  	<span ng-if="!jjjx[2].daojishiSpan" id='daojishi_pro_span_miao_2' class='sz'>{{daojishi[2].ss}}</span>
+						                  	<span ng-if="!jjjx[2].daojishiSpan" class='szm'>:</span>
+						                  	<span ng-if="!jjjx[2].daojishiSpan" id='daojishi_pro_span_miaom_2' class='sz'>{{daojishi[2].s_m_100}}</span>
+						                </div>
+					                </div>
+				                </a>
+				            </div>
+		            	</div>
+			            <div class="jx2_2 index-pub-pro" style="border:none">
+			            	<div id="public_pro_4" class="cp3">
+			                	<a id='pro_a_3' ng-href="#/{{host}}/{{jjjx[3].producturl}}&pid={{jjjx[3].pid_pub}}&pterm={{jjjx[3].pterm_pub}}">
+					                <div class='index_pub_div'><img ng-src="{{jjjx[3].pic}}" class='sy_xcp'/></div>
+					                <div class='index_pub_pro'>
+					                	<span style="line-height:25px;width:100%;" class="ellipsis1">{{jjjx[3].ptitle}}</span>
+					                	<div ng-if="daojishiDiv" class='szjs' id='yijiexiao_3' style="box-sizing:content-box;">
+						                  	<span ng-if="jjjx[3].daojishiSpan" g style='color:#de0000;'>已揭晓</span>
+						                  	<span ng-if="!jjjx[3].daojishiSpan" id='daojishi_pro_span_fen_3' class='sz'>{{daojishi[3].mm}}</span>
+						                  	<span ng-if="!jjjx[3].daojishiSpan" class='szm'>:</span>
+						                  	<span ng-if="!jjjx[3].daojishiSpan" id='daojishi_pro_span_miao_3' class='sz'>{{daojishi[3].ss}}</span>
+						                  	<span ng-if="!jjjx[3].daojishiSpan" class='szm'>:</span>
+						                  	<span ng-if="!jjjx[3].daojishiSpan" id='daojishi_pro_span_miaom_3' class='sz'>{{daojishi[3].s_m_100}}</span>
+						                </div>
+					                </div> 
+			                	</a>
+			              	</div>
+			            </div>
+		          	</div>
+		        </div>
+		    </section>
+		    <!-- 人气推荐  -->
+		    <section class="g-main mt10 fgx">
+		      	<div class="m-tt1 bt" id="index-nav" style="width:100%;border-bottom:none;">
+		          	<ul class="nav-t clearfix">
+		            	<li>
+				            <a ng-click="getIndexProTjSx(2,$event,1,0);" px='1' class="{{navFourLi[0]}}">人气</a>
+				            <a ng-click="getIndexProTjSx(2,$event,0,1);" px='0' class="{{navFourLi[1]}}">即将揭晓</a>
+				            <a ng-click="getIndexProTjSx(2,$event,4,2);"  px='4' class="{{navFourLi[2]}}">最新</a>
+				            <a class="arrows {{navFourLi[3]}}" style="position:relative" ng-click="getIndexProTjSx(2,$event,3,3);" px='3'>价格<s class="arrowDown {{arrowPx[0]}}"></s><s class="arrowUp {{arrowPx[1]}}"></s></a>
+			            </li>
+		          	</ul>
+		        </div>
+		        <ul class="four-box clearfix">
+		        	<li class="product-style-item qgxl" ng-repeat="item in rqtjList">
+		                <a style="display:block" href="#/{{host}}/newproductdetail?type=1&pid={{item.pid}}">
+		                  	<div class="f_bor_tr qgxl_tj">
+			                    <div class="m-tj-pic">
+			                    	<img image-lazy-src="{{item.pic}}" lazy-scroll-resize="true" src="img/pro_pic_default.png" border="0" alt="">
+									<h2 class="ellipsis2 lh2">(第{{item.now_term}}期){{item.ptitle}}</h2>
+			                      	<ins class="u-promo" style="color:#9b9b9b;">价值:￥{{item.price}}</ins>
+			                    </div>
+			                    <div class="f-box-bt">
+			                      	<div class="Progress-bar">
+			                        	<p class="u-progress"><span class="pgbar" style="width:{{item.baifenbi}};"><span class="pging"></span></span></p>
+			                        	<ul class="Pro-bar-li"><li class="P-bar01"><em>{{item.finish_time}}</em>已参与</li><li class="P-bar02"><em>{{item.total_time}}</em>总人次</li><li class="P-bar03"><em>{{item.shengyu_time}}</em>剩余</li></ul>
+			                      	</div>
+			                      	<div class="addRound" ng-click="addCart(item.pid,0,item.pic,$event,$index)"><img src="img/ic_add_shopping_cart.png"></div>
+			                    </div>
+		                  	</div>
+		                </a>
+		            </li>
+		        </ul>
+		    </section>
+		    
+    	</div>
+		<ion-infinite-scroll ng-if="canLoadMore.code" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+  	</ion-content>
+</ion-view>
+<div class="to-top" ng-click="toTop()" ng-if="showToTop"><img src="img/icon_jt.png"></div>

@@ -1,0 +1,46 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>晒单详情</ion-nav-title>
+	<ion-nav-buttons side="left" style="color:#fff">
+		<div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+	</ion-nav-buttons>
+  <ion-content overflow-scroll="true" go-back>
+    <div>
+      	<div class="qbsd_xq">
+      		<div class="spsd_xq">
+        		<div class="spsd_tx_xq"><a href="{{curJson.href_mp}}"><img ng-src="{{curJson.headpic}}" /></a></div>
+        		<div class="spsd_xx_xq">
+          			<a href="{{curJson.href_mp}}" ng-if="isBuyGet">
+						<p><span style="font-size:14px;color:#F60">{{curJson.nickname}}</span></p>
+						<p style="font-size:12px;color:#9d9d9d">总共购买：<span style="font-size:14px;color:#eb3f4b">{{curJson.num}}</span>人次</p>
+						<p style="font-size:12px;color:#9d9d9d">获得的商品：(第{{curJson.pterm}}期){{curJson.ptitle}}</p>
+          			</a>
+					<a href="{{curJson.href_mp}}" ng-if="!isBuyGet">
+						<p><span style="font-size:14px;color:#F60">{{curJson.nickname}}</span></p>
+						<p style="font-size:12px;color:#9d9d9d">获得途径：{{curJson.typename}}</p>
+						<p style="font-size:12px;color:#9d9d9d">获得的商品：{{curJson.ptitle}}</p>
+					</a>
+          		</div>
+        	</div>
+			<div class="spsd_zt_xq">
+				<div class="bg-sd" ng-if="curJson.shareIntegralFlag"><p>{{curJson.shareIntegral}}<span>元</span></p></div>
+          		<div class="spsd_jt"><img src="img/jt.png" /></div>
+          		<p class="spsd_zt_bt">{{curJson.title}}</p>
+          		<p class="spsd_zt_sj"> {{curJson.intime}}</p>
+          		<p>{{curJson.content}}</p>
+          		<div ng-bind-html="curJson.tmp_pic"></div>
+          	</div> 
+
+      	</div>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar>
+      <div class="spsd_hd_xq">
+        <ul>
+          <li ng-click="showPopup(curJson.remark,curJson.content)"><a href="javascript:;" class="a_click_reveal" share="{{curJson.id}}" tankuangid="share_div"><img src="img/icon_fx.png" /></a></li>
+          <li ng-click="toComment(curJson.id)"><a href="javascript:;"><img src="img/icon_ly.png" /><span style="color:#ff6600;margin-left:2px;">{{curJson.num_comment}}</span></a></li>
+          <li ng-click="dianzan(curJson.id)" style="border:none"><a href="javascript:;"><img id="dianzan" ng-src="{{curJson.shareSrc}}" /><span id="num_clicklike" style="color:#e80113;margin-left:2px;">{{num_clicklike}}</span></a></li>
+        </ul>
+      </div>
+  </ion-footer-bar>
+</ion-view>

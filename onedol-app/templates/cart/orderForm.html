@@ -1,0 +1,126 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>订单提交</ion-nav-title>
+    <ion-nav-buttons side="left" style="color:#fff">
+        <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+    </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+
+    <div class="zhcz" style="padding-bottom:20px">
+      <div class="js_sp" dir="dir" content="order.top" id="cart_list_pro_order"></div>
+      <div style="text-align:right;line-height:25px;padding-right:10px">
+        	总需支付金额：<span style="color:#ff5000" id="summoney">￥{{summoney}}</span>
+      </div>
+      <div style="border-top:1px solid #ddd;">
+
+          <div ng-if="mob.balancePaid" class="zffs">
+              <ul style="border-bottom:1px solid #ddd" ng-click="openModal()">
+                  <li style="padding:12px 10px;">
+                      <div class="zffs_fr fffs1" style="margin-left:10px;color:#444;">
+                          <p>选择红包</p>
+                          <p class="fr-p grayColor {{couponStyle}}">{{order.couponName}}</p>
+                          <img src="img/down_icon.png" class="icon-down-card">
+                      </div>
+                  </li>
+              </ul>
+          </div>
+
+        <div ng-if="mob.jifenPaid" class="zffs" style="border-bottom:1px solid #ddd;">
+          <ul>
+            <li style="padding:8px 10px 6px;border-bottom:none;">
+            	<label style="display:block;">
+	              <div class="zffs_fr fffs1" style="margin-left:10px;color:#444;">
+	                <p>共有积分{{order.integralAll}}</p>
+	                <p class="fr-p">可用积分{{order.integral}}<span style="margin-left:8px">(可抵扣{{order.jifenMaxMoney}}元)</span></p>
+	                <em><input style="top:0px;" class="pay_other" name="shiyongjifen" type="checkbox" value="1" id="shiyongjifen" ng-click="userIntegral($event)"/></em>
+	              </div>
+              </label>
+            </li>
+            <li style="padding:0px 10px 6px;border-bottom:none;">
+                <div class="zffs_fr fffs1" style="margin-left:10px;color:#444;" ng-click="showIntegralRule()">
+                    <p class="grayColor">积分使用规则</p>
+                    <img src="img/down_icon.png" class="icon-down-card {{integralRule.style}}">
+                </div>
+            </li>
+            <li style="padding:0px 10px 8px;" ng-if="integralRule.flag">
+               <div class="zffs_fr fffs1" style="padding:5px 8px;margin:0px 10px;color:#444;background-color:#f2f2f2;border-radius:6px">
+                   <p dir="dir" content="integralRule.content"></p>
+               </div>
+            </li>
+          </ul>
+        </div>
+
+        <div ng-if="mob.balancePaid" class="zffs" style="border-bottom:1px solid #ddd">
+          <ul>
+            <li>
+                <label style="display:block;">
+                    <div class="zffs_fr fffs1" style="margin-left:10px;color:#444;">
+                        <p>账户余额</p>
+                        <p id="balance">{{order.balanceAll}} 元（可用{{order.balance}}元）</p>
+                        <em><input style="top:7px;" class="pay_other" name="shiyongyue" type="checkbox" value="1" id="shiyongyue" ng-click="userBalance($event)"/></em>
+                    </div>
+                </label>
+            </li>
+          </ul>
+        </div>
+
+          <div ng-if="mob.balancePaid" class="zffs" style="border-bottom:1px solid #ddd">
+              <ul>
+                  <li style="padding:12px 10px;">
+                      <label style="display:block;line-height:20px">
+                          <div class="zffs_fr fffs1 clearfix" style="margin-left:10px;color:#444;">
+                              <p class="fl" style="color:#aeaeae;">总计：￥{{summoney}}</p>
+                              <p class="fl" style="color:#aeaeae;margin-left:15px;">红包优惠：￥{{coupon.money}}</p>
+                              <p class="fr" style="color:#ff5000;">实付：￥{{order.reactMoney}}</p>
+                          </div>
+                      </label>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div ng-if="mob.balancePaid" style="text-align:right;line-height:25px;padding-right:10px">
+            <p style="text-align:left;color:#ff5000;line-height:20px;padding-left:10px">温馨提示：积分和红包折扣不能同时使用；余额和其他折扣同时使用，优先扣除折扣，最后扣除余额。</p>
+      </div>
+      <div ng-if="getPayListFlag" class="zffs" style="background-color:#fafafa;">
+          <ul>
+              <li style="padding:0px 10px 8px;">
+                  <div class="zffs_fr fffs1" style="padding:8px 8px;margin:10px 10px 0;color:#444;background-color:#fff;border-radius:6px">
+                      <p style="padding-right:90px;">如果您的积分、余额不足，请先前往充值余额！</p>
+                      <a style="position:absolute;right:5px;top:50%;margin-top:-13px;width:80px;height:26px;line-height:26px;border:1px solid #f00;color:#f00;text-align:center" href="#/{{host}}/recharge">去充值</a>
+                  </div>
+              </li>
+          </ul>
+      </div>
+      <!-- 支付方式  -->
+      <div class="zffs paystyle-c" style="border-bottom:1px solid #ddd;" ng-repeat="item in getPayList">
+      	<ul>
+          <li>
+          	<label>
+	            <div class="zffs_fl">
+	              <div><img style="width:42px;margin-top:4px" image-lazy-src="{{item.icon}}" lazy-scroll-resize="true" src="img/pro_pic_default.png"/></div>
+	            </div>
+	            <div class="zffs_fr" ng-if="item.description != ''">
+                    <h2 style="font-weight:bold;font-size:16px;display:inline-block;padding-right:10px;" dir="dir" content="item.name"></h2>
+                    <h2 style="margin-top:0;font-size:16px;color:#999;display:inline-block;" dir="dir" content="item.explain"></h2>
+                    <h2 style="margin-top:0;color:#999" dir="dir" content="item.description"></h2>
+	              <em><input class="pay_other payWangyin" name="paystyle" type="radio" attr-type="{{item.type}}" value="{{item.id}}"/></em>
+	            </div>
+                <div class="zffs_fr" ng-if="item.description == ''">
+                    <h2 style="line-height:43px;font-weight:bold;font-size:16px;" dir="dir" content="item.name"></h2>
+                    <em><input class="pay_other payWangyin" name="paystyle" type="radio" attr-type="{{item.type}}" value="{{item.id}}"/></em>
+                </div>
+	            <div class="clear"></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+      
+      <!--<a href="javascript:;" ng-click="orderFormSubmit()" class="btn mt50" style="margin-top:10px;margin-bottom:0px">提交订单</a>-->
+    </div>
+  </ion-content>
+  <ion-footer-bar style="padding:0px;height:50px">
+    <div class=""  style="width:100%;height:50px;line-height:50px;" >
+        <div style="width:70%" class="fl"><p style="margin-left:10px;font-size:13px;color:#323232;" class="fl">红包优惠：￥{{coupon.money}}</p><p style="margin-left:20px;font-size:13px;color:#ff5000;" class="fl">待支付：￥{{order.summoney_pay_other}}</p></div>
+        <div style="width:30%;background-color:#de0000;line-height:50px;font-size:14px;text-align:center;color:#fff" class="fr" ng-click="orderFormSubmit()">提交订单</div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

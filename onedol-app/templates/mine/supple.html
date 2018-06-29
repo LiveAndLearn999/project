@@ -1,0 +1,21 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>不到账补单</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa" go-back>
+    <div class="xjl_yjfk">
+      <div class="xjl_fl">
+      	<p style="color:#f00;line-height:20px;padding:5px 0;font-size:14px;" dir="dir" content="infoTips"></p>
+        <div class="xjl_lxdh" style="padding:0px 0px 10px 0px">
+          <p>充值的金额：</p><input type="text" class="lxfs" placeholder="充值的金额,如：10" ng-model="user.balance"/>
+        </div>
+        <div class="xjl_lxdh" style="padding:0px 0px 10px 0px">
+          <p>充值交易号：</p><input type="text" class="lxfs" placeholder="如：2013111600001000860068817350" ng-model="user.onumber"/>
+        </div>
+        <a href="javascript:void(0);" ng-click="subCardBtn()" class="xjl_tj">提交补单</a>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

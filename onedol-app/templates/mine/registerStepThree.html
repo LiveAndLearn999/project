@@ -1,0 +1,31 @@
+<ion-view hide-tabs="true">
+ <ion-nav-title>注册</ion-nav-title>
+ <ion-nav-buttons side="left" style="color:#fff">
+  <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+ </ion-nav-buttons>
+ <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+  <div class="wrapper">
+   <div class="registerCon" style="padding-top:22px!important;">
+    <ul>
+     <li><input type="password" ng-model="user.txtPassword" maxlength="18" placeholder="请设置登录密码" /></li>
+     <li><input type="password" ng-model="user.txtPasswordConfirm" maxlength="18" placeholder="请确认密码" /></li>
+     <li ng-if="tmp.isShow"><input type="text" ng-model="user.invitationCode" maxlength="18" placeholder="邀请码(可以不填)" /></li>
+	 <li>密码：6-18位字母或数字</li>
+     <li><span class="{{tmp.chk}}" ng-click="toChoose()"><em></em>是否拥有邀请码？</span></li>
+     <li style="margin-top:20px;"><a href="javascript:;" ng-click="register()" class="orangeBtn">完成注册</a></li>
+    </ul>
+   </div>
+  </div>
+ </ion-content>
+</ion-view>
+<div id="tipRegSucc" class="gDia" style="display:none">
+ <div class="outter-dialog">
+  <div class="reveal-modal qdsc" style="opacity:1;visibility:visible;">
+   <h3 style="position:absolute;top:0%;left:0;width:100%;text-align:center;font-size:16px;line-height:35px;">温馨提示</h3>
+   <ul style="text-align:left;padding-top:10px;">
+    <li>恭喜您注册成功，获得了新手红包，快去登录使用红包吧！</li>
+   </ul>
+   <div class="fxfs"><a style="width:50%;margin-left:25%;" href="javascript:void(0)" class="qd" ng-click="tipRegSucc()">确定</a></div>
+  </div>
+ </div>
+</div>

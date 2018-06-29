@@ -1,0 +1,25 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>打卡记录</ion-nav-title>
+    <ion-nav-buttons side="left" style="color:#fff">
+        <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+    </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#f2f2f2;" go-back>
+      <div class="gl-box">
+          <div class="gl-title">
+              <i></i>
+              <span>日历签到记录</span>
+          </div>
+          <div class="achievement clearfix">
+              <p class="achieve-item">你当月已打卡<span class="sign-count">{{sign.signCount}}</span>天 连续打卡<span class="sign-days">{{sign.signDays}}</span>天  共获得<span class="sign-num">{{sign.signNum}}</span>积分！</p>
+              <select class="sign-month-select ico-select" ng-model="sign.month" dir="dir" content="sign.signMonth" ng-change="undatePage()">
+              </select>
+          </div>
+          <div class="sign-calendar clearfix">
+              <ul class="sign-title">
+                  <li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li>
+              </ul>
+              <ul class="sign-list clearfix" dir="dir" content="sign.signList"></ul>
+          </div>
+      </div>
+  </ion-content>
+</ion-view>

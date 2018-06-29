@@ -1,0 +1,21 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>交易密码</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="wrapper">
+      <div class="registerCon" style="padding-top:22px!important;">
+        <ul>
+          <li>{{user.linkedMobile}}</li>
+          <li class="pass-li1" style="display:none;"><input ng-model="user.txtMobile" type="text" placeholder="请输入手机号码" maxlength="11"/></li>
+          <li class="pass-li2"><input ng-model="user.mobileCode" type="text" placeholder="请输入验证码" maxlength="6" /></li>
+          <li class="pass-li3"><a style="font-size:16px;" href="javascript:;" ng-click="getSmscodeBackPass()" class="{{styleBtn[1]}}">{{smsBtn}}</a></li>
+          <li class="pass-li1"><input ng-model="user.txtPassword" type="password" placeholder="请输入交易密码(6位数字)" maxlength="6"/></li>
+          <li class="pass-li1"><input ng-model="user.txtPasswordConfirm" type="password" placeholder="请确认交易密码" maxlength="6"/></li>
+          <li class="pass-li4"><a href="javascript:;" ng-click="traderPassBackSubmit()" class="{{styleBtn[0]}}">提 交</a></li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

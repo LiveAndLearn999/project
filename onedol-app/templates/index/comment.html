@@ -1,0 +1,27 @@
+﻿<ion-modal-view>
+  <ion-header-bar class="dark_blue-bg">
+    <h1 class="title" style="color:#fff;">评论</h1>
+    <div class="buttons">
+      <button class="button button-clear" style="color:#fff;" ng-click="closeModal()">关闭</button>
+    </div>
+  </ion-header-bar>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;">
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefreshComment()"></ion-refresher>
+		<a class='loading' ng-if="datas.length==0" href='javascript:void(0)'>目前没有评论</a>
+		<div>
+      <div class="plxq" ng-repeat="item in datas">
+        <a ng-click="closeModal()" ng-href="{{item.userUrl}}">
+          <img class="lpxq-headpic" src="{{item.headpic}}"/>
+          <div class="plxq_rwx">
+            <p class="plxq_rw">{{item.nickname}}<span style=" float:right; color:#999; font-size:12px">{{item.intime}}</span></p>
+            <p class="gmjl_rwa" ng-bind-html="item.content"></p>
+          </div>
+        </a>
+      </div>
+   </div>
+    <ion-infinite-scroll ng-if="canLoadMore.comment" on-infinite="loadMoreComment()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+  <ion-footer-bar>
+    <div class="slj" style="position:fixed;bottom:0;left:0;"><input style="padding:0 5px;" ng-model="postData.content" type="text" placeholder="说两句吧!"/><a href="javascript:;" ng-click="plSubmit(commentid)">发送</a></div>
+  </ion-footer-bar>
+</ion-modal-view>

@@ -1,0 +1,50 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>计算详情</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div>
+      <div class="rule clearfix" ng-if="isNew">
+        <h2 class="tu13">幸运元行码计算方式</h2>
+        <div class="rule-exp r-box">
+          <p>幸运元行码由公式计算得出，公式中的四个数字（数值A、B、C、D）都是不受人为干扰的。</p>
+          <p class="p-imph">幸运元行码=（数值A+数值B+数值C+数值D）%数值E +10000001</p>
+          <p><span>数值A：</span>该商品最后一个号码分配完毕后，将该时间点前本站全部商品的最后50个参与时间的数值（每个时间按时、分、秒、毫秒的顺序组合，如21:36:15.236则为213615236）进行求和得出数值A；</p>
+          <p><span>数值B：</span>所有商品最后50条购买时间对应的商品期数之和（如第1976期、第2309期则为1976+2309）进行求和得出数值B；</p>
+          <p><span>数值C：</span>所有商品最后50条购买人次总和；</p>
+          <p><span>数值D：</span>最新一期福彩号码（一个五位数值）；</p>
+          <p><span>数值E：</span>该商品的总需参与人次（如iPhone7 128GB在一元行网站的价格是6888元，数值E为6888；）</p>
+          <p style="color:#42b0f5"><span>所以本期幸运元行码为：</span></p>
+          <p class="p-imph" style="font-size:14px;">（{{number.jisuantimetotal}}+{{number.jisuantPterm}}+{{number.jisuanSums}}+{{number.fucaicode}}）%{{number.total_time}} +10000001 = {{number.luckynumber}}</p>
+        </div>
+      </div>
+      <div class="jzjxsj mt10">
+        <div class="jzjxsj_1" dir="dir" content="data.top"></div>
+      </div>
+      <table class="jsxq" border="0" cellspacing="0" cellpadding="0">
+        <tr ng-if="!isNew">
+          <th width="46%" class="th-jisuan">购买时间</th>
+          <th width="27%" class="th-jisuan">时间转换数据</th>
+          <th width="27%" class="th-jisuan">会员账号</th>
+        </tr>
+        <tr ng-if="isNew">
+          <th width="36%" class="th-jisuan th-sm">购买时间</th>
+          <th width="20%" class="th-jisuan th-sm">时间转换数据</th>
+          <th width="20%" class="th-jisuan th-sm">会员账号</th>
+          <th width="12%" class="th-jisuan th-sm">购买人次</th>
+          <th width="12%" class="th-jisuan th-sm">商品期数</th>
+        </tr>
+      </table>
+
+      <table class="jsxq jssj" border="0" cellspacing="0" cellpadding="0">
+        <tbody dir="dir" content="data.tbody"></tbody>
+      </table>
+
+      <div class="jsjg" ng-if="!isNew">
+        <div class="jsjg_1" dir="dir" content="data.bottom"></div>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

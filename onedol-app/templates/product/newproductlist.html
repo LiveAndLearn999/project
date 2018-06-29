@@ -1,0 +1,72 @@
+﻿<ion-view hide-tabs="false">
+	<ion-nav-title>所有商品</ion-nav-title>
+	<ion-nav-buttons side="right"><div class="button icon ssk button-clear" ui-sref="product.search"><i class="ic ic_search_white"></i></div></ion-nav-buttons>
+    <!--分类栏 -->
+    <div class="sysp_qbfl" id="shaixuan_div" style="position:fixed;z-index:1111;top:44px;width:75%;left:25%;">
+        <!-- 导航 -->
+        <div class="nav-t">
+          	<ul class="clearfix">
+            	<!--<li>
+	              	<a ng-click="getProduct(2,$event);" px='0' class="cur">即将揭晓</a>
+	              	<a ng-click="getProduct(2,$event);" px='1'>人气</a>
+	              	<a ng-click="getProduct(2,$event);"  px='4'>最新</a>
+	              	<a class="arrows" style="position:relative" ng-click="getProduct(2,$event);" px='3'>价格<s class="arrowDown"></s><s class="arrowUp"></s></a>-->
+	              	<a ng-click="getProduct(2,$event,0,0);" class="{{navFourLi[0]}}">即将揭晓</a>
+				    <a ng-click="getProduct(2,$event,1,1);" class="{{navFourLi[1]}}">人气</a>
+				    <a ng-click="getProduct(2,$event,4,2);" class="{{navFourLi[2]}}">最新</a>
+				    <a class="arrows {{navFourLi[3]}}" style="position:relative" ng-click="getProduct(2,$event,3,3);">价格<s class="arrowDown {{arrowPx[0]}}"></s><s class="arrowUp {{arrowPx[1]}}"></s></a>
+            	</li>
+          	</ul>
+        </div>
+    </div>
+
+    <ion-content overflow-scroll="true" style="width:24%;">
+      	<dl class="nav-l">
+        	<dd>
+          		<a ng-click="getProduct(1,$event,0,0);" class="{{navListLi[0]}}">全部</a>
+        	</dd>
+        	<dd ng-repeat = "item in biglist">
+          		<a ng-click="getProduct(1,$event,item.id,$index+1);" class="{{navListLi[$index+1]}}">{{::item.title}}</a>
+        	</dd>
+      	</dl>
+    </ion-content>
+	<ion-content overflow-scroll="true" id="nav-r" ng-click="pauseScroll($event)" delegate-handle="navr">
+      	<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+      	<!-- 商品 -->
+      	<section class="g-main">
+        	<div class="rqtj" id="big_div">
+          		<a class='loading' id='no_pro_tip' href='javascript:void(0)' ng-if="!isGoodsShow">暂无商品记录。</a>
+          		<!-- 列表 -->
+          		<div ng-if="isGoodsShow">
+          			<div class="goodsList sm" id="getProduct" ng-repeat="item in listGoods track by item.pid">
+						<ul>
+              				<a ng-href="{{item.purl}}" style="display: block">
+								<li>
+	                    			<span id="29275" class="z-Limg"><img image-lazy-src="{{item.pic}}" lazy-scroll-resize="true"  src="img/pro_pic_default.png"/></span>
+									<div class="goodsListR">
+										<h2 class="ellipsis2">{{item.ptitle}}</h2>
+										<div class="pRate sm">
+	                      					<div class="Progress-bar">
+		                        				<p class="jz">价值：￥{{item.price}}</p>
+		                        				<p class="u-progress"><span class="pgbar" style="width:{{item.baifenbi}};"><span class="pging"></span></span></p>
+						                        <ul class="Pro-bar-li">
+						                            <li class="P-bar01"><em>{{item.finish_time}}</em>已参与</li>
+						                            <li class="P-bar02"><em>{{item.total_time}}</em>总需人次</li>
+						                            <li class="P-bar03"><em>{{item.shengyu_time}}</em>剩余</li>
+						                        </ul>
+		                      				</div>
+		                      				<div class="addRound" ng-click="addCart(item.pid,0,item.pic,$event,$index)"><img src="img/ic_add_shopping_cart.png"></div>
+		                      			</div>
+				              		</div>
+				                    <div class="clear"></div>
+								</li>
+            				</a>
+						</ul>
+          			</div>
+          		</div>
+          		<ion-infinite-scroll ng-if="canLoadMore.code" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+        	</div>
+      	</section>
+
+  	</ion-content>
+</ion-view>

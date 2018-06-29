@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>一元行</title>
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" href="jslib/ionic/css/ionic.min.css?t=201805091130" />
+	<link rel="stylesheet" href="jslib/timepicer/timePicker-min.css?t=201801291508" />
+	<link rel="stylesheet" href="css/css.css?t=201804271608" />
+	<script type="text/javascript" src="jslib/flexible.js"></script>
+</head>
+
+<body>
+	<!-- ionic基础结构 -->
+	<ion-nav-bar class="bar-position dark_blue-bg box-shadow" style="color:white!important;"></ion-nav-bar>
+
+	<ion-nav-view nav-view-direction="forward"></ion-nav-view>
+
+	<!-- 晒单图片全屏展示 -->
+	<!-- <div ng-click="gBanList.length=0" class="gDia" ng-if="gBanList.length>0">
+		<ion-slide-box active-slide="myActiveSlide">
+			<ion-slide ng-repeat="item in gBanList">
+				<img style="width:100%;" ng-src="{{item.pic}}" ng-pinch-zoom image-position/>
+			</ion-slide>
+		</ion-slide-box>
+	</div> -->
+	<!-- 新手注册红包 -->
+	<div id="firstDialog" class="gDia zlxss" style="display:none;">
+		<!---->
+		<div class="outter-dialog">
+			<!--"jumpPage(){{fDialogImg}}"-->
+			<div style="width: 100%;top:50%;position: absolute;">
+				<div ng-click="forceUploadHuiyi()" class="outter-download fl">
+					<img class="outter-scale-img" src="img/update_download.png" alt="">
+				</div>
+				<div ng-click="forceGotoHuiyi()" class="outter-goto fl">
+					<img class="outter-scale-img" src="img/update-open.png" alt="">
+				</div>
+			</div>
+			<!-- <img class="img-get" ng-click="jumpPage()" src='' style='margin-top:15%'> -->
+		</div>
+	</div>
+	<!-- 回忆游戏网红包 -->
+	<div id="huiyiDialog" class="gDia" style="display:none">
+		<div class="outter-dialog" style="display:none">
+			<div class="huiyi-box" style="position:relative">
+				<div style="right:0;" class="btn-close" ng-click="closeHuiyiDialog()">
+					<img src="img/btn_dia_close2.png">
+				</div>
+				<div class="huiyi-top">
+					<h5>{{huiyiMessage}}</h5>
+					<h6 ng-if="huiyiStatus != 1">【可到回忆游戏网-我的红包 查看详情哦】</h6>
+					<ul class="huiyi-voucher clearfix">
+						<li ng-repeat="item in huiyiImgList">
+							<img src="{{huiyiImgList[$index]}}" />
+						</li>
+					</ul>
+					<div class="huiyi-tit">
+						<p class="huiyi-line"></p>
+						<img style="margin-left:5px" src="img/ico_diamond.png" />
+						<span>使用规则</span>
+						<img style="margin-right:5px" src="img/ico_diamond2.png" />
+						<p class="huiyi-line"></p>
+					</div>
+					<p class="huiyi-rule" dir="dir" content="huiyiRule"></p>
+				</div>
+				<div class="huiyi-bottom clearfix">
+					<div ng-click="uploadHuiyi()" class="fl">下载APP</div>
+					<div ng-click="goHuiyi()" class="fr">去回忆游戏网</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="diaIntr" class='popup-container popup-showing active' style='background:rgba(0,0,0,0.5);display:none;'>
+		<div id="diaIntr1" style="position:absolute;left:205px;top:229px;display:none;">
+			<img style="width:90px;display:block;" src="img/dia_intr_01.png" />
+			<p style="color:#fff;font-size:13px;margin-bottom:26px;">新增“新手专区”</p>
+			<a onclick="ikonw()" style="color:#fff;font-size:12px;padding:5px 15px;border:1px solid #fff;border-radius:50px;">我知道啦</a>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jslib/md5.min.js"></script>
+<script type="text/javascript" src="jslib/global.js?t=201804121705"></script>
+<script type="text/javascript" src="jslib/jquery-1.8.0.min.js?t=201801291508"></script>
+<script data-main="jslib/main.js" src="jslib/require.js"></script>
+<!-- <script data-main="jslib/main-build.js?t=20180626920" src="jslib/require.js"></script> -->
+<script type="text/javascript" src="jslib/aliqr.js"></script>
+
+</html>

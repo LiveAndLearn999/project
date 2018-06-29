@@ -1,0 +1,62 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>晒单分享</ion-nav-title>
+	<ion-nav-buttons side="left" style="color:#fff">
+		<div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+	</ion-nav-buttons>
+  <ion-content overflow-scroll="true" go-back>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <a class='loading' href='javascript:;' ng-if="!isShareShow">暂无晒单分享。</a>
+    <!--晒单列表-->
+    <div ng-if="isShareShow">
+      <em ng-repeat="item in sharelist track by item.id">
+        <div class="{{item.ul_style}}" style="{{item.div_style}}">
+        	<div class="spsd">
+        		<div class="spsd_tx">
+          			<a style="display:block;" ng-href="{{item.href_mp}}"><img ng-src="{{item.headpic}}" /></a>
+          		</div>
+				<div class="spsd_xx" style="width:85%;padding-right:50px;">
+					<a style="display:block;" ng-href="{{item.href_mp}}">
+					  <span style="font-size:14px;color:#FF6600">{{item.nickname}}</span>
+					</a>
+					<a ng-href="{{item.href_mp}}" style="display:block;color:#999">{{item.intime}}</a>
+				</div>
+				<div class="bg-sds" ng-if="item.shareIntegralFlag"><p>{{item.shareIntegral}}<span>元</span></p></div>
+        	</div>
+        	<div class="spsd_zt">
+        		<a style="display:block;" ng-href="{{item.href_os}}"><p style="height:55px;overflow:hidden;" ng-bind-html="item.content"></p></a>
+				<div class="spsd_tp">
+					<ul>
+					<li ng-click="move($index,$event)" ng-repeat="item in item.ul_html">
+						<p class="back-image" back-image-src="{{item.pic}}"></p>
+					</li>
+					<div style="clear:both;"></div>
+					</ul>
+				</div>
+        	</div>
+        	<div class="spsd_hd">
+        		<ul>
+          		<li ng-click="showPopup(item.remark,item.content)">
+              	<a href="javascript:;" class="a_click_reveal" share="{{item.id}}" tankuangid="share_div">
+                	<img src="img/icon_fx.png" tankuangid="ewm_div" />
+              	</a>
+          		</li>
+          		<li ng-click="toComment(item.id)">
+              	<a href="javascript:;">
+                	<img src="img/icon_ly.png" />
+                	<span style="color:#e50000">{{item.num_comment}}</span>
+              	</a>
+          		</li>
+          		<li style="border:none" ng-click="dianzan(item.id)">
+            		<a href="javascript:;">
+              		<img id="dianzan_{{item.id}}" ng-src="img/{{item.src}}" />
+              		<span id="num_clicklike_{{item.id}}" style="color:#e50000">{{item.num_clicklike}}</span>
+            		</a>
+          		</li>
+          	</ul>
+        	</div>
+        </div>
+      </em>
+    </div>
+    <ion-infinite-scroll ng-if="canLoadMore.code" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

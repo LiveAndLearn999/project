@@ -1,0 +1,44 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>产品列表</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" go-back>
+    <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <div class="mt48 mb60">
+      <section class="g-main">
+        <div class="rqtj">
+            <a class='loading' href='javascript:void(0)' ng-if="!isGoodsShow">暂无商品记录。</a>
+            <!-- 列表 -->
+            <div ng-if="isGoodsShow">
+              <div class="goodsList" ng-repeat="item in listGoods">
+                <ul>
+                  <a ng-href="{{item.purl}}" style="display:block">
+                    <li>
+                      <span class="z-Limg"><img image-lazy-src="{{item.pic}}" lazy-scroll-resize="true"  src="img/pro_pic_default.png"/></span>
+                      <div class="goodsListR">
+                        <h2>{{item.ptitle}}</h2>
+                        <div class="pRate">
+                          <div class="Progress-bar">
+                            <p class="jz">价值：￥{{item.price}}</p>
+                            <p class="u-progress"><span class="pgbar" style="width:{{item.baifenbi}};"><span class="pging"></span></span></p>
+                            <ul class="Pro-bar-li">
+                              <li class="P-bar01"><em>{{item.finish_time}}</em>已参与</li>
+                              <li class="P-bar02"><em>{{item.total_time}}</em>总需人次</li>
+                              <li class="P-bar03"><em>{{item.shengyu_time}}</em>剩余</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          <ion-infinite-scroll ng-if="canLoadMore.code" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+        </div>
+      </section>
+    </div>
+  </ion-content>
+</ion-view>

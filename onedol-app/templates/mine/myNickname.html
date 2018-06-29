@@ -1,0 +1,17 @@
+<ion-view hide-tabs="true">
+ <ion-nav-title>我的昵称</ion-nav-title>
+ <ion-nav-buttons side="left" style="color:#fff">
+  <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+ </ion-nav-buttons>
+ <ion-nav-buttons side="right">
+  <div class="icon rbtn" ng-click="setNickname()"><a style="color:#fff;font-size:16px;" href="javascript:;">完成</a></div>
+ </ion-nav-buttons>
+ <ion-content overflow-scroll="true" go-back>
+  <div class="xjl_yjfk">
+   <div class="xjl_lxdh">
+    <input type="text" class="lxfs" placeholder="请输入您的昵称" maxlength='10' ng-model="user.nickname"/>
+	<div class="ncxg_zs">昵称长度为2-10个字符，由汉字、字母组成</div>
+   </div>
+  </div>
+ </ion-content>
+</ion-view>

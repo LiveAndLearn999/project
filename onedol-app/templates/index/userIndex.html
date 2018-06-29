@@ -1,0 +1,112 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>个人主页</ion-nav-title>
+    <ion-nav-buttons side="left" style="color:#fff">
+        <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+    </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <div class="an">
+      <a ng-href="#/{{host}}/userCard?u={{uid}}" style="font-size:12px;">个人名片<img ng-src="img/qbfl.png" style="width:9%;vertical-align:middle" /></a>
+    </div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div>
+      <div class="qgmjl" ng-click="skip('#/{{host}}/userCard?u={{uid}}')">
+        <div class="qgmjl_tx">
+          <img src="{{header.headpic}}" style="border-radius:100%;overflow:hidden;width:80px;height:80px;display:block;"/>
+        </div>
+        <div class="qgmjl_mc" dir="dir" content="header.nickname"></div>
+      </div>
+      <div class="qgmjl_fl" style="margin-top:0px">
+        <div class="tab_a qgmjl_jl {{tabCss[0]}}" ng-click="tab(1)" style="margin-left:2%;">
+          <a>购买记录</a>
+        </div>
+        <div class="tab_a qgmjl_hdsp {{tabCss[1]}}" ng-click="tab(2)">
+          <a>获得的商品</a>
+        </div>
+        <div class="tab_a qgmjl_sd {{tabCss[2]}}" ng-click="tab(3)">
+          <a>晒单分享</a>
+        </div>
+      </div>
+      <!-- 购买记录  -->
+      <section ng-if="curTab==1">
+        <div class="rqtj tabdiv">
+          <div class="goodsList borderbottom1">
+						<a ng-if="buyRecordOne[0]" class="loading" style="background:initial;" href="javascript:void(0)">TA隐藏了购买记录！</a>
+						<a ng-if="buyRecordOne[1]" class="loading" style="background:initial;" href="javascript:void(0)">需要添加好友才可以看到TA购买记录！</a>
+						<a ng-if="buyRecordOne[2]" class="loading" style="background:initial;" href="javascript:void(0)">TA还没有购买记录哦！</a>
+            <ul ng-click="skip(item.pUrl)" ng-repeat="item in buyRecords">
+              <p class="{{item.classColor}}">{{item.jiexiaoStatus}}</p>
+              <li>
+                <span class="z-Limg"><img ng-src="{{item.pic}}" ng-click="skip(item.pUrl)" /></span>
+                <div class="goodsListR">
+                  <h2>(第{{item.pterm}}期){{item.ptitle}}</h2>
+                  <div class="pRate" style="margin-right:0px;">
+                    <div class="Progress-bar">
+                      <p class="u-progress"><span class="pgbar" style="width:{{item.baifenbi}};"><span class="pging"></span></span></p>
+                      <ul class="Pro-bar-li">
+                        <li class="P-bar01"><em>{{item.finish_time}}</em>已参与</li>
+                        <li class="P-bar02"><em>{{item.total_time}}</em>总需人次</li>
+                        <li class="P-bar03"><em>{{item.shengyu_time}}</em>剩余</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            <ion-infinite-scroll ng-if="canLoadMore[0].code&&curTab==1" on-infinite="loadMorebuyRecord()" distance="1%"></ion-infinite-scroll>
+          	<a ng-if="buyRecordOne[3]" class="loading" style="background:initial;" href="javascript:void(0)">非好友只显示TA最近三条购买记录！</a>
+          </div>
+        </div>
+      </section>
+			<!-- 获得的商品  -->
+      <section ng-if="curTab==2">
+        <div class="tabdiv">
+          <div class="borderbottom1 shadowless pad0  disable-user-behavior">
+          	<a ng-if="buyRecordTwo[0]" class="loading" style="background:initial;" href="javascript:void(0)">TA隐藏了获得的商品！</a>
+						<a ng-if="buyRecordTwo[1]" class="loading" style="background:initial;" href="javascript:void(0)">需要添加好友才可以看到TA获得的商品！</a>
+						<a ng-if="buyRecordTwo[2]" class="loading" style="background:initial;" href="javascript:void(0)">TA还没有获得的商品哦！</a>
+            <div class="gmjl" ng-click="skip(item.pUrl)" style="background-color:#fff;border-bottom:1px solid #dedede" ng-repeat="item in buyRecordHd">
+              <div style="float:left">
+                <img class="imgwh" ng-src="{{item.pic}}"/>
+              </div>
+              <div class="gmjl_jt">
+                <p class="orange1" style="font-size:14px;color:#666">(第{{item.pterm}}期) {{item.ptitle}}</p>
+                <div style="padding-bottom:5px;padding-top:5px;color:#666">
+                  <p style="margin-bottom:0;line-height:20px">幸运购买码：<em class="ng-binding" style="color:#e80113">{{item.luckynumber}}</em></p>
+                  <p style="margin-bottom:0;line-height:20px">揭晓时间：<em class="ng-binding">{{item.publictime}}</em></p>
+                </div>
+              </div>
+            </div>
+            <ion-infinite-scroll ng-if="canLoadMore[1].code&&curTab==2" on-infinite="loadMorebuyRecordHd()" distance="1%"></ion-infinite-scroll>
+          	<a ng-if="buyRecordTwo[3]" class="loading" style="background:initial;" href="javascript:void(0)">非好友只显示TA最近三条获得的商品！</a>
+          </div>
+        </div>
+      </section>
+			<!-- 晒单分享  -->
+      <section ng-if="curTab==3">
+        <div class="tabdiv">
+          <div class="borderbottom1 shadowless pad0  disable-user-behavior">
+            <a ng-if="buyRecordThree[0]" class="loading" style="background:initial;" href="javascript:void(0)">TA隐藏了晒单分享！</a>
+						<a ng-if="buyRecordThree[1]" class="loading" style="background:initial;" href="javascript:void(0)">需要添加好友才可以看到TA晒单分享！</a>
+						<a ng-if="buyRecordThree[2]" class="loading" style="background:initial;" href="javascript:void(0)">TA还没有晒单分享哦！</a>
+            <div class="gmjl" ng-click="skip(item.pUrl)" style="background-color:#fff;border-bottom:1px solid #dedede" ng-repeat="item in shaidan">
+	            <div style="float:left">
+	              <img class="imgwh" ng-src="{{item.pic}}" />
+	            </div>
+            	<div class="gmjl_jt">
+              	<p class="orange1" style="font-size:14px;color:#666666">(第{{item.pterm}}期) {{item.ptitle}}</p>
+              	<div style="padding-bottom:5px;padding-top:5px;color:#666666">
+                	<p style="margin-bottom:0;line-height:20px">幸运购买码：<em class="ng-binding" style="color:#e80113">{{item.luckynumber}}</em></p>
+                	<p style="margin-bottom:0;line-height:20px">揭晓时间：<em class="ng-binding">{{item.publictime}}</em></p>
+              	</div>
+            	</div>
+          	</div>
+          	<ion-infinite-scroll ng-if="canLoadMore[2].code&&curTab==3" on-infinite="loadMoreshaidan()" distance="1%"></ion-infinite-scroll>
+          	<a ng-if="buyRecordThree[3]" class="loading" style="background:initial;" href="javascript:void(0)">非好友只显示TA最近三条晒单分享！</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </ion-content>
+</ion-view>

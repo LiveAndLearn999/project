@@ -1,0 +1,168 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>在线客服</ion-nav-title>
+	<ion-nav-buttons side="left" style="color:#fff">
+		<div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+	</ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="cardexplain show_more">
+      <ul class="round operate navlist mysetul">
+        <li class="mobile-font">
+          <dl class="icardTable">
+			<dt>
+			  	<div class="list-titel no-img">
+			  		<a style="color:#000;font-weight:bold;font-size:16px;" href="javascript:void(0)">热点问题</a>
+		  		</div>
+				<div class="borderD"></div>
+			</dt>
+			<dt ng-click="exchange(0)">
+	            <div class="list-titel no-img">
+	               <a class="hot" href="javascript:void(0)">一元行提醒您：保护自身利益，避免损失<img alt="" src="img/ico_hot.png" class="icon-hot" /><img alt="" src="img/down_icon.png" class="icon-down-card {{style[0]}}" /></a>
+	            </div>
+	            <div ng-if="!list[0]" class="borderD"></div>
+	        </dt>
+			<dd ng-if="list[0]" class="bg-palegrey">
+				<div class="borderD"></div>
+				<div class="list-titel no-img con-a">
+							1、各种形式的合购、合资、私下交易等都具有极高的风险，请大家切勿参与；<br/>
+							2、凡以“高中奖率、内部员工、系统存在漏洞”等信息进行代购的，均属欺诈行为；<br/>
+							3、一元行官方工作人员在任何时候都不会向用户索取账户密码等信息，请大家注意保护自己的信息安全；<br/>
+							4、当您获得商品后，一元行不会以私信或QQ私聊等形式通知您获得商品，更不会以任何理由要求您缴纳任何其他费用；<br/>
+							5、如有疑问请第一时间联系一元行在线客服，客服工作时间为8点30至21点。<br/>
+							感谢大家一直以来的信任与支持，祝大家好运滚滚来哦~
+				</div>
+				<div class="borderD"></div>
+			</dd>
+	        <dt ng-click="exchange(1)">
+	            <div class="list-titel no-img">
+	               <a class="hot" href="javascript:void(0)">一元行的幸运号码是怎么计算出来的<img alt="" src="img/ico_hot.png" class="icon-hot" /><img alt="" src="img/down_icon.png" class="icon-down-card {{style[1]}}" /></a>
+	            </div>
+	            <div ng-if="!list[1]" class="borderD"></div>
+	        </dt>
+			<dd ng-if="list[1]" class="bg-palegrey">
+				<div class="borderD"></div>
+				<div class="list-titel no-img con-a">
+							公平、公正是一元行赖以生存的根本。夺宝的幸运元行码由公式计算得出，公式中的四个数字（数值A、B、C、D）都是不受人为干扰的。 <br/>
+							幸运元行码=变化值+10000001 <br/><b class="font-bold">变化值=（数值A+数值B+数值C+数值D）%数值E</b><br/>
+							<b class="font-bold">数值A：</b>该商品最后一个号码分配完毕后，将该时间点前本站全部商品的最后50个参与时间的数值（每个时间按时、分、秒、毫秒的顺序组合，如21:36:15.236则为213615236）进行求和得出数值A；<br/>
+							<b class="font-bold">数值B：</b>所有商品最后50条购买时间对应的商品期数之和（如第1976期、第2309期则为1976+2309）进行求和得出数值B；<br/>
+							<b class="font-bold">数值C：</b>所有商品最后50条购买人次总和；<br/>
+							<b class="font-bold">数值D：</b>最新一期福彩号码（一个五位数值）；<br/>
+							<b class="font-bold">数值E：</b>该商品的总需参与人次（如iPhone7 128GB在一元行网站的价格是6888元，数值E为6888；） <br/>
+							一元行购物平台，结合福彩开奖结果及特定计算公式，全程保证活动公平公正、公开透明。一元行君非常欢迎您可以关注我们每一期的元行码分配和最终计算结果是否符合，相信越来越多的用户来监督，就能彰显一元行的透明性和公平性，再次对您表示感谢，祝您夺宝愉快,好运连连！
+				</div>
+				<div class="borderD"></div>
+			</dd>
+			<dt ng-click="exchange(2)">
+				<div class="list-titel no-img">
+					<a class="tit-q" href="javascript:void(0)">一元行获得的商品什么时候发货<img alt="" src="img/down_icon.png" class="icon-down-card {{style[2]}}" /></a>
+				</div>
+				<div ng-if="!list[2]" class="borderD"></div>
+			</dt>
+			<dd ng-if="list[2]" class="bg-palegrey">
+				<div class="borderD"></div>
+				<div class="list-titel no-img con-a">
+							我们在您获得商品并正确填写收货地址以后1-7个工作日内给您安排发货！
+							我司的商品都是由苏宁易购发货并且配送，正品保障；
+							（黄金定制类商品一般为顺丰配送），暂不支持指定快递。
+				</div>
+				<div class="borderD"></div>
+			</dd>
+			<dt ng-click="exchange(3)">
+				<div class="list-titel no-img">
+					<a class="tit-q" href="javascript:void(0)">我可以修改已确认的收货地址吗<img alt="" src="img/down_icon.png" class="icon-down-card {{style[3]}}" /></a>
+				</div>
+				<div ng-if="!list[3]" class="borderD"></div>
+			</dt>
+			<dd ng-if="list[3]" class="bg-palegrey">
+				<div class="borderD"></div>
+				<div class="list-titel no-img con-a">
+							获得幸运商品后，一旦确认收货地址，无法二次修改。请您慎重填写！
+							如因用户个人原因，导致快递无法正常派发，二次寄送则由用户自行承担物流运输费用。
+				</div>
+				<div class="borderD"></div>
+			</dd>
+			<dt ng-click="exchange(4)">
+				<div class="list-titel no-img">
+					<a class="tit-q" href="javascript:void(0)">获得的商品如何保修<img alt="" src="img/down_icon.png" class="icon-down-card {{style[4]}}" /></a>
+				</div>
+				<div ng-if="!list[4]" class="borderD"></div>
+			</dt>
+			<dd ng-if="list[4]" class="bg-palegrey">
+				<div class="borderD"></div>
+				<div class="list-titel no-img con-a">
+							一元行所有商品均由苏宁易购提供服务，商品质量问题可直接联系苏宁易购客服协商解决。（黄金、指定类商品除外）；若您遇到无法自行联系处理的，可联系一元行官方客服，我们会帮您协助处理。
+				</div>
+				<div class="borderD"></div>
+			</dd>
+			<dt ng-click="exchange(5)">
+				<div class="list-titel no-img">
+					<a class="tit-q" href="javascript:void(0)">可以挑选幸运商品的颜色或型号吗<img alt="" src="img/down_icon.png" class="icon-down-card {{style[5]}}" /></a>
+				</div>
+				<div ng-if="!list[5]" class="borderD"></div>
+			</dt>
+			<dd ng-if="list[5]" class="bg-palegrey">
+				<div class="borderD"></div>
+				<div class="list-titel no-img con-a">
+							用户获得的幸运商品按参与商品时的商品名称来寄送，颜色型号等均不能挑选或更改。
+				</div>
+				<div class="borderD"></div>
+			</dd>
+			<dt ng-click="exchange(6)">
+				<div class="list-titel no-img">
+					<a class="tit-q" href="javascript:void(0)">获得的商品如果缺货怎么办<img alt="" src="img/down_icon.png" class="icon-down-card {{style[6]}}" /></a>
+				</div>
+			</dt>
+			<dd ng-if="list[6]" class="bg-palegrey">
+				<div class="borderD"></div>
+				<div class="list-titel no-img con-a">
+							如因缺货造成商品无法派送，一元行客服会主动联系用户。<br/>
+							用户可转让幸运商品，兑换为现金，现金可提现到指定账户；<br/>
+							如不提现也可继续参与夺宝活动。
+				</div>
+			</dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+	  <div class="cardexplain show_more">
+		  <ul class="round operate navlist mysetul">
+			  <li class="mobile-font">
+				  <table class="icardTable">
+					  <tbody>
+					  <!--<tr>
+						  <td style="border:0;width:5px;"></td>
+						  <td>
+							  <div class="list-titel no-img">
+								  <a style="display:block" href="mqqwpa://im/chat?chat_type=crm&uin=938176645&version=1&src_type=web&web_src=http:://www.1yuanxing.com"><img src="img/ico_customerServiceQQ.png" class="icon-left" /><span style="margin-left:8px;color:#f00;display:inline;font-size:15px;">QQ客服：4006818100</span><b class='safe_b'></b></a>
+							  </div>
+							  <div class="borderD"></div>
+						  </td>
+					  </tr>-->
+					  <tr>
+						  <td style="border:0;width:5px;"></td>
+						  <td>
+							  <div class="list-titel no-img" ><!--ng-click="customerService()"-->
+								  <li ui-sref="mine.games" style="display:block">
+								  	<img src="img/ico_customerServiceQQ.png" class="icon-left" /><span style="margin-left:8px;color:#f00;display:inline;font-size:15px;">QQ客服</span>
+								  	<b class='safe_b'></b>
+								  </li>
+							  </div>
+							  <div class="borderD"></div>
+						  </td>
+					  </tr>
+					  <tr>
+						  <td style="border:0;width:5px;"></td>
+						  <td>
+							  <div class="list-titel no-img">
+								  <a rj-hold-active style="display:block" href="tel:4001677588"><img src="img/ico_hotline.png" class="icon-left" /><span style="margin-left:8px;color:#f00;display:inline;font-size:15px;">客服热线：4001-677-588</span><b class='safe_b'></b></a>
+							  </div>
+						  </td>
+					  </tr>
+					  </tbody>
+				  </table>
+			  </li>
+		  </ul>
+	  </div>
+	  <div style="padding-bottom:10px;"></div>
+  </ion-content>
+</ion-view>

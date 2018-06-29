@@ -1,0 +1,43 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>安全设置</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="cardexplain show_more">
+      <ul class="round operate navlist" style="border-radius:0 0 10px 10px;border-top:0">
+        <li class="mobile-font">
+          <table class="icardTable">
+            <tbody>
+            <tr>
+              <td style="border:0;width:5px;"></td>
+              <td>
+                <div class="list-titel no-img" onclick="skip('#/mine/logPassMod')">
+                  <a href="javascript:void(0)">登录密码<b class='safe_b'>修改</b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                </div>
+                <div class="borderD"></div>
+              </td>
+            </tr>
+            <tr>
+              <td style="border:0;width:5px;"></td>
+              <td>
+                <div class="list-titel no-img" onclick="skip('#/mine/traderPassSet');">
+                  <a href="javascript:void(0)">交易密码<b class='safe_b' style="font-size:15px;">{{user.traderpassword}}</b><img alt="" src="img/rignt_icon.png" class="icon-right-card" /></a>
+                </div>
+                <div class="borderD"></div>
+              </td>
+            </tr>
+            <tr>
+              <td style="border:0;width:5px;"></td>
+              <td>
+                <div class="list-titel no-img">
+                  <a href="javascript:void(0)">手机号绑定<b class='safe_b' style="font-size:15px;">{{user.mobile}}</b></a>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table> </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>一元行</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="registerCon " style="padding-top:22px!important;">
+      <div id="_umfp" style="display:inline;width:1px;height:1px;overflow:hidden"></div>
+      <div class="binSuccess5">
+        <ul>
+          <li class="accAndPwd">
+            <dl>
+              <input style="border-radius:5px 5px 0 0;" ng-model="user.username" type="text" placeholder="手机号/邮箱" maxlength="50" />
+              <i></i>
+            </dl>
+            <dl>
+              <input ng-model="user.password" type="password" placeholder="密码" maxlength="18"/>
+              <b></b>
+            </dl>
+            <dl style="margin-top:10px;">
+              <div id="dom_id"></div>
+            </dl>
+            <input type='hidden' id='csessionid' name='csessionid'/>
+            <input type='hidden' id='sig' name='sig'/>
+            <input type='hidden' id='token' name='token'/>
+            <input type='hidden' id='scene' name='scene'/>
+          </li>
+        </ul>
+        <a id="btnLogin" href="javascript:;" ng-click="userLoginSubmit()" class="orangeBtn loginBtn">登录</a>
+      </div>
+      <div class="forget gray9">
+        <a href="#/{{host}}/logPassback">忘记密码&nbsp;&nbsp;</a> |
+        <a href="#/{{host}}/register">&nbsp;&nbsp;新用户注册</a>
+      </div>
+    </div>
+    <div ng-if="mob.onelog" class="oter_operation gray9 fs_text" style="margin-top:40px;">
+      <h3>选择登录方式</h3>
+      <div class="fs">
+        <a href="javascript:;" ng-click="onelogQq()"><img src="img/qqx.png" /></a>
+        <a href="javascript:;" ng-click="onelogWeixin()"><img src="img/xwx.png" /></a>
+      </div>
+    </div>
+
+    <div ng-if="mob.shengming" class="oter_operation gray9 fs_text" style="margin-bottom:80px;margin-top:30px;">
+      <div class="fs">
+                     声明：本软件所有商品抽奖活动与苹果公司(Apple Inc)无关，苹果公司(Apple Inc)的产品不会作为抽奖活动奖品，苹果公司(Apple Inc)不以任何方式发起或参与活动。
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

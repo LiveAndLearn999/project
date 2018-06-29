@@ -1,0 +1,65 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>佣金管理</ion-nav-title>
+    <ion-nav-buttons side="left" style="color:#fff">
+        <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+    </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fff;margin-bottom:1.5rem">
+  	<div class="comm-tit clearfix" style='padding-bottom:10px;'>
+  		<p class="fl zlfl">
+  			<span>累计获得佣金<br /><font >{{getUser.yongjintotal |currency:'￥'}}</font></span>
+  			<!--<span>已转出至余额<br /><font >{{getUser.yongjintotal-getUser.yongjin | currency:'￥'}}</font></span>-->
+  			<span>可转至余额<br /><font >{{getUser.yongjin | currency:'￥'}}</font></span>
+  		</p>
+  		<!--<a href="#/mine/rollOut" class="fr">转出到元行账户</a>-->
+  	</div>
+    <div class="zhmx">
+      <ul>
+      	<li ng-repeat='item in zllist'  style="width:50%;" >
+      		<p ng-click="tabAc($index)" ng-class={'zlczmx':i==$index} style='width:40%;margin:0 auto;'>{{item}}</p>
+      	</li>
+      </ul>
+    </div>
+    <!--邀请明细-->
+    <div class="jfmx" ng-if="tab[0].isShow">
+      <ul style='border-top:0 !important'>
+        <li style="width:33.3%;text-align:center;" class="jfmx_1"><span>已注册用户</span></li>
+        <li style="width:33.3%;text-align:center;" class="jfmx_2"><span>注册时间</span></li>
+        <li style="width:33.3%;text-align:center;" class="jfmx_2"><span>消费状态</span></li>
+      </ul>
+      <div>
+      	<ul ng-if="inviteRecords.length == 0" style="line-height:35px;text-align:center;">暂无邀请明细</ul>
+      	<ul ng-repeat="item in inviteRecords">
+      		<li style="width:33.3%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">{{item.nickname}}</span></li>
+      		<li style="width:33.3%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">{{item.intime}}</span></li>
+      		<li style="width:33.3%;text-align:center;" class="jfmx_2"><span>{{item.experience}}</span></li>
+      	</ul>
+      </div>
+      <ion-infinite-scroll ng-if="canLoadRecordInvite.code" on-infinite="recordInvitationLoad()" distance="1%"></ion-infinite-scroll>
+    </div>
+    <!--佣金明细-->
+    <div class="jfmx" ng-if="tab[1].isShow">
+      <p style="color:#f00;padding:0px 10px 10px">温馨提示：好友必须现金消费(不包含积分消费和获得商品后转让使用余额消费)才能获得佣金哦！</p>
+      <ul>
+      	<li style="width:22%;text-align:center;" class="jfmx_2"><span>邀请用户</span></li>
+      	<li style="width:33%;text-align:center;" class="jfmx_2"><span>消费时间</span></li>
+        <!--<li style="width:15%;text-align:center;" class="jfmx_2"><span>类型</span></li>-->
+        <li style="width:23%;text-align:center;" class="jfmx_2"><span>消费金额</span></li>
+        <li style="width:22%;text-align:center;" class="jfmx_2"><span>佣金</span></li>
+      </ul>
+      <div>
+      	<ul ng-if="commissRecords.length == 0" style="line-height:35px;text-align:center;">暂无佣金明细</ul>
+      	<ul ng-repeat="item in commissRecords">
+      		<li style="width:22%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">{{item.nickname}}</span></li>
+      		<li style="width:33%;text-align:center;" class="jfmx_2"><span style="font-size:8px;overflow:hidden;display:block;">{{item.intime}}</span></li>
+      		<!--<li style="width:15%;text-align:center;" class="jfmx_2"><span>{{item.receiveuid}}</span></li>-->
+      		<li style="width:23%;text-align:center;" class="jfmx_2"><span>{{item.sum | currency:'￥'}}</span></li>
+      		<li style="width:22%;text-align:center;" class="jfmx_2"><span>{{item.commiss |currency:'￥'}}&nbsp;{{item.maths}}</span></li>
+      	</ul>
+      </div>
+      <ion-infinite-scroll ng-if="canLoadRecordCommiss.code" on-infinite="recordCommissLoad()" distance="1%"></ion-infinite-scroll>
+    </div>
+  </ion-content>
+  <div ui-sref="mine.rollOut" style='position: fixed;bottom:0;height:1.5rem;line-height:1.5rem;background: #00b4ff;width:100%;text-align: center;'>
+		<a href="javascript:;" style='font-size: .5rem;color:#fff'>佣金转出至余额</a>
+	</div>
+ </ion-view>

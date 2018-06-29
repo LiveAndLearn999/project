@@ -1,0 +1,61 @@
+<ion-view hide-tabs="false">
+  <ion-nav-title>最新揭晓</ion-nav-title>
+  <ion-content overflow-scroll="true" ng-click="pauseScroll($event)">
+    <ion-refresher pulling-icon="ion-arrow-down-c" pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+    <div class="">
+      <!-- 商品 -->
+      <section class="g-main">
+        <div class="rqtj" id="big_div">
+          <a class='loading' id='no_pro_tip' href='javascript:void(0)' ng-if="!isGoodsShow">暂无揭晓记录</a>
+          <div ng-if="isGoodsShow">
+            <!-- 列表 -->
+            <div class="goodsList" id="getProductPublic">
+              <div ng-repeat="item in listGoods track by item.id">
+                <ul ng-if="item.type1 == 'show'" style="display:{{item.show}}" class="public_ul ywcjx" id="yijiexiao_ul_{{item.id}}" >
+                  <a style="display:block;" ng-href="{{item.url1}}">
+                  <div class="pzzjx"><span class="jx_text">已揭晓</span></div>
+                  <li>
+                    <span class="z-Limg"><img image-lazy-src="{{item.pic}}" lazy-scroll-resize="true"  src="img/pro_pic_default.png"/></span>
+                    <div class="goodsListR">
+                      <h2 class="ellipsis1">{{item.ptitle1}}</h2>
+                      <h2>获得者：<span class="blue" >{{item.nickname}}</span></h2>
+                      <div class="pRate">
+                        <div class="Progress-bar">
+                          <p class="jz">本期参与：<span class="blue">{{item.num_total}}</span>人次</p>
+                          <p class="jz">商品价值：{{item.price}}</p>
+                          <p class="jz">揭晓时间：{{item.publictime}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  </a>
+                </ul>
+                <ul ng-if="item.type2 == 'show'" class="public_ul" id="daojishi_ul_{{item.id}}" >
+                  <a style="display:block;" ng-href="{{item.url2}}">
+                  <div class="pzzjx"><span class="jx_text">正在揭晓</span></div>
+                  <li>
+                    <span class="z-Limg"><img image-lazy-src="{{item.pic}}" lazy-scroll-resize="true"  src="img/pro_pic_default.png"/></span>
+                    <div class="goodsListR">
+                      <h2 class="ellipsis2">{{item.ptitle2}}</h2>
+                      <div class="pRate">
+                        <div class="Progress-bar">
+                          <p class="jz">价值：{{item.price}}</p>
+                          <div class="jxdjs">
+                            <img style="display:inline-block;vertical-align:middle!important;width:16px" src="img/icon_djs.png"/><i style="display:inline-block;vertical-align:middle!important;">&nbsp;&nbsp;&nbsp;揭晓倒计时</i>
+                            <span style="display:inline-block;vertical-align:middle!important;" id="daojishi_span_{{item.id}}">&nbsp;&nbsp;&nbsp;&nbsp;00:00:00</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <ion-infinite-scroll ng-if="canLoadMore.code" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,9 @@
+﻿<!--二维码弹框-->
+<p style="text-align:center;margin-bottom:2px;" ng-if="invitationCodeShow">您的邀请码是：<span style="color:#ff5000;">{{invitationCode}}</span></p>
+<a href="javascript:void(0)" class="ewm"><img style="width:80%;display:block;margin:auto" ng-src="{{app_ewm}}" id="app_ewm"/></a>
+<p style="text-align:center;">或通过以下方式分享给朋友</p>
+<div class="fxfs three">
+	<a href="javascript:;" class="fx" ng-click="WeixinAppShare(0)" ><img src="img/wxhy.gif" /><p>微信好友</p></a>
+	<a href="javascript:;" class="fx" ng-click="WeixinAppShare(1)" ><img src="img/wx.gif" /><p>朋友圈</p></a>
+	<a href="javascript:;" class="fx" ng-click="WeixinAppShare(3)" ><img src="img/qqhy.png" /><p>QQ好友</p></a>
+</div>

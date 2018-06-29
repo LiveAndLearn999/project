@@ -1,0 +1,17 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>我的签名</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <div class="icon rbtn"><a style="color:#fff;font-size:16px;" href="javascript:;" ng-click="setSignature()">完成</a></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="xjl_yjfk">
+      <div class="xjl_text">
+        <textarea cols="" rows="" ng-model="data.signature" class="xjl_yjfktext" placeholder="请输入您的签名" maxlength='50' style='height:70px;'></textarea>
+        <div class="ncxg_zs">签名最大长度为50个字符</div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

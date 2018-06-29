@@ -1,0 +1,81 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>个人名片</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right" >
+    <div class="button icon ssk button-clear" style="font-size:40px;" ng-click="gotoHome()"><i class="ic ic_home_white"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="tx">
+      <div class="grmp">
+        <div class="grmp_tx">
+          <img ng-src="{{data.headpic}}" style="width:60px;border-radius:30px;height:60px;overflow:hidden;" />
+        </div>
+        <div class="grmp_mc">
+          {{data.nickname}}
+        </div>
+        <div class="grmp_dh">
+          {{data.username}}
+        </div>
+      </div>
+    </div>
+    <div class="cardexplain show_more">
+      <ul class="round operate navlist" style="border-radius:0 0 10px 10px;border-top:0">
+        <li class="mobile-font">
+          <table class="icardTable">
+            <tbody>
+            <tr>
+              <td style="border:0;width:5px;"></td>
+              <td>
+                <div class="list-titel no-img">
+                  <a href="javascript:void(0)" class="grmp_xxm">性别</a>
+                  <span class="grmp_xx">
+                    {{data.sex}}
+                  </span>
+                </div>
+                <div class="borderD"></div>
+              </td>
+            </tr>
+            <tr>
+              <td style="border:0;width:5px;"></td>
+              <td>
+                <div class="list-titel no-img">
+                  <a href="javascript:void(0)" class="grmp_xxm">现居地</a>
+                  <span class="grmp_xx">
+                    {{data.address}}
+                  </span>
+                </div>
+                <div class="borderD"></div>
+              </td>
+            </tr>
+            <tr>
+              <td style="border:0;width:5px;"></td>
+              <td>
+                <div class="list-titel no-img">
+                  <a href="javascript:void(0)" class="grmp_xxm">家乡</a>
+                  <span class="grmp_xx">
+                    {{data.hometown}}
+                  </span>
+                </div>
+                <div class="borderD"></div> 
+              </td>
+            </tr>
+            <tr>
+              <td style="border:0;width:5px;"></td>
+              <td style="position:relative;">
+                <div class="list-titel no-img">
+                  <a style="position:absolute;top:10px;left:10px;" href="javascript:void(0)" class="grmp_xxm">个性签名</a>
+                  <span class="grmp_xx" id="signature" style="padding-left:88px">
+                    {{data.signature}}
+                  </span>
+                </div> 
+              </td>
+            </tr>
+            </tbody>
+          </table> 
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

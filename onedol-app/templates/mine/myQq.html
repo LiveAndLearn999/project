@@ -1,0 +1,16 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>我的QQ</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <div class="icon rbtn" ng-click="setQq()"><a style="color:#fff;font-size:16px;" href="javascript:;">完成</a></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="xjl_yjfk">
+      <div class="xjl_lxdh">
+        <input type="text" class="lxfs" ng-model="data.qq" placeholder="请输入您的QQ" maxlength='15' />
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

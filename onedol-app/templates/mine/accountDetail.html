@@ -1,0 +1,82 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>账户明细</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <div class="zhmx nav-fixed">
+    <ul>
+      <li style="width:25%;border-right:none;" class="{{tab[0].tabClass}}" ng-click="tabAc(0)"><a href="javascript:void(0)">充值明细</a></li>
+      <li style="width:25%;border-right:none;" class="{{tab[1].tabClass}}" ng-click="tabAc(1)"><a href="javascript:void(0)">消费明细</a></li>
+      <li style="width:25%;border-right:none;" class="{{tab[2].tabClass}}" ng-click="tabAc(2)"><a href="javascript:void(0)">提现明细</a></li>
+      <li style="width:25%;" class="{{tab[3].tabClass}}" ng-click="tabAc(3)"><a href="javascript:void(0)">转让明细</a></li>
+    </ul>
+  </div>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;" go-back>
+    <div class="fnb">
+      <!-- 充值明细 -->
+      <div class="jfmx" ng-if="tab[0].isShow" style="border-bottom:none;">
+        <ul>
+          <li style="width:33.3%;text-align:center;" class="jfmx_1"><span>充值时间</span></li>
+          <li style="width:33.3%;text-align:center;" class="jfmx_2"><span>资金渠道</span></li>
+          <li style="width:33.3%;text-align:center;" class="jfmx_2"><span>充值金额</span></li>
+        </ul>
+        <div>
+          <ul ng-if="rechargeRecords.length == 0" style="line-height:35px;text-align:center;border-bottom: 1px solid #ddd;">暂无充值明细</ul>
+          <ul ng-repeat="item in rechargeRecords">
+            <li style="width:33.3%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">{{item.intime}}</span></li>
+            <li style="width:33.3%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">{{item.remark}}</span></li>
+            <li style="width:33.3%;text-align:center;" class="jfmx_2"><span>￥{{item.sum}}</span></li>
+          </ul>
+        </div>
+        <ion-infinite-scroll ng-if="canLoadRecordRecharge.code" on-infinite="recordRechargeLoad()" distance="1%"></ion-infinite-scroll>
+      </div>
+      <!-- 消费明细 -->
+      <div class="jfmx" ng-if="tab[1].isShow" style="border-bottom:none;">
+        <ul>
+          <li style="width:50%!important;text-align:center;" class="jfmx_1"><span>消费时间</span></li>
+          <li style="width:50%;text-align:center;" class="jfmx_2"><span>消费金额</span></li>
+        </ul>
+        <div>
+          <ul ng-if="consumeRecords.length == 0" style="line-height:35px;text-align:center;border-bottom: 1px solid #ddd;">暂无消费明细</ul>
+          <ul ng-repeat="item in consumeRecords">
+            <li style="width:50%!important;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">{{item.intime}}</span></li>
+            <li style="width:50%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">￥{{item.sum}}</span></li>
+          </ul>
+        </div>
+        <ion-infinite-scroll ng-if="canLoadRecordConsume.code" on-infinite="recordConsumeLoad()" distance="1%"></ion-infinite-scroll>
+      </div>
+      <!-- 提现明细 -->
+      <div class="jfmx" ng-if="tab[2].isShow" style="border-bottom:none;">
+        <ul>
+          <li style="width:50%!important;text-align:center;" class="jfmx_1"><span>提现时间</span></li>
+          <li style="width:50%;text-align:center;" class="jfmx_2"><span>提现金额</span></li>
+        </ul>
+        <div>
+          <ul ng-if="withdrawRecords.length == 0" style="line-height:35px;text-align:center;border-bottom: 1px solid #ddd;">暂无提现明细</ul>
+          <ul ng-repeat="item in withdrawRecords">
+            <li style="width:50%!important;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">{{item.intime}}</span></li>
+            <li style="width:50%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">￥{{item.sum}}</span></li>
+          </ul>
+        </div>
+        <ion-infinite-scroll ng-if="canLoadRecordWithdraw.code" on-infinite="recordWithdrawLoad()" distance="1%"></ion-infinite-scroll>
+      </div>
+      <!-- 转让明细 -->
+      <div class="jfmx" ng-if="tab[3].isShow" style="border-bottom:none;">
+        <ul>
+          <li style="width:35%;text-align:center;" class="jfmx_2"><span>转让时间</span></li>
+          <li style="width:25%;text-align:center;" class="jfmx_2"><span>转让金额</span></li>
+          <li style="width:40%;text-align:center;" class="jfmx_2"><span>备注</span></li>
+        </ul>
+        <div>
+          <ul ng-if="assignRecords.length == 0" style="line-height:35px;text-align:center;border-bottom:1px solid #ddd;">暂无转让明细</ul>
+          <ul ng-repeat="item in assignRecords">
+            <li style="width:35%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">{{item.intime}}</span></li>
+            <li style="width:25%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">￥{{item.sum}}</span></li>
+            <li style="width:40%;text-align:center;" class="jfmx_2"><span style="font-size:10px;overflow:hidden;display:block;">{{item.remark}}</span></li>
+          </ul>
+        </div>
+        <ion-infinite-scroll ng-if="canLoadRecordAssign.code" on-infinite="recordAssignLoad()" distance="1%"></ion-infinite-scroll>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

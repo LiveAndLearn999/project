@@ -1,0 +1,89 @@
+﻿<ion-view hide-tabs="false">
+  <ion-nav-title>购物车</ion-nav-title>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa;">
+    <!-- 购物车列表 -->
+	<div ng-if="carts.length > 0">
+      <div class="content" id="content">
+        <!--<div id="cart-list-wp">-->
+          <div class="wxc-store-list">
+            <ion-list can-swipe=true class="wxc-list-con wxc-finish clearfix">
+              <ion-item style="padding:0;" ng-repeat="item in carts">
+	              <li class="shop_lists clearfix">
+	                <div class="wxc-Edits">
+	                  <div class="wxc-list-desc">
+	                    <p class="wxc-list-title ellipsis1"><a ng-href="{{item.url}}" >{{item.ptitle}}</a></p>
+	                    <p class="wxc-list-title fbt"><a href="{{item.url}}" >{{item.shengyu_xiangou}}</a></p>
+	                    <div class="wxc-compute" style="border: 1px solid #a8a8a8;border-radius:5px;position:relative;">
+	                      <em ng-click="numDecrease(item.pid,item.selected,$index)" style="border-right:1px solid #a8a8a8"><img src="img/xnum_minus1.png" class="reduce" /></em>
+	                      <input type="number" focus-input id="num_pro_{{item.pid}}" ng-blur="numChange($event,$index)" ng-model="item.num"  class="wxc-input" pid="{{item.pid}}" max="{{item.max_buy}}" sel="{{item.selected}}" maxlength="6"/>
+	                      <em ng-click="numAdd(item.pid,item.selected,item.max_buy,$index)" style="border-left:1px solid #a8a8a8"><img src="img/xnum_add.png" class="add" /></em>
+	                    </div>
+	                  </div>
+	                  <div class="wxc-list-price">
+	                    <p class="wxc-list-meony"> ￥<span id="jiages"><b id="price_pro_{{item.pid}}">{{item.num}}</b></span></p>
+	                    <div class="wxc-remove">
+	                      <a ng-click="delCartPro(item.pid,$index)" class="remove_goods"><img src="img/wxc_remove.png" /></a>
+	                    </div>
+	                  </div>
+	                </div>
+	                <div style="position:absolute;top:10px;width:34px;padding:25px 10px 25px 0;cursor:pointer;" ng-click="selCartPro(item.pid,item.selected,$index)"><i style="margin-top:0px" class="dg{{item.sel}}"></i></div>
+	                <a style="top:10px;left:44px;padding-top:8px" class="wxc-list-img" ng-href="{{item.url}}"><img image-lazy-src="{{item.pic}}" lazy-scroll-resize="true" src="img/pro_pic_default.png"/></a>
+	              </li>
+	              <ion-option-button class="button-info" ng-click="delCartPro(item.pid,$index)">删除</ion-option-button>
+              </ion-item>
+            </ion-list>
+          </div>
+        <!--</div>-->
+      </div>
+    </div>
+    <!-- 购物车为空或者未登录 -->
+    <div ng-if="carts.length == 0" class="cart_k" style="padding:0;">
+      <div style="padding:20px 0;margin:auto;width:180px;text-align:center;">
+        <img src="img/kgwc.png" style="width:76px;">
+        <span>{{cartNoneSpan}}</span>
+        <a class="btn-link" href="javascript:;" ng-click="toBuy()">{{cartNoneA}}</a>
+      </div>
+      <div class="cart-tj">
+          <div class="cart-lt">
+              <div class="line-md"></div>
+              <h6>热门推荐</h6>
+          </div>
+          <ul class="four-box clearfix">
+              <li class="product-style-item qgxl" ng-repeat="item in rqtjList">
+                  <a style="display:block" href="#/{{host}}/newproductdetail?type=1&pid={{item.pid}}">
+                      <div class="f_bor_tr qgxl_tj">
+                          <div class="m-tj-pic">
+                              <img image-lazy-src="{{item.pic}}" lazy-scroll-resize="true" src="img/pro_pic_default.png" border="0" alt="">
+                              <h2 class="ellipsis2 lh2">(第{{item.now_term}}期){{item.ptitle}}</h2>
+                              <ins class="u-promo" style="color:#9b9b9b;">价值:￥{{item.price}}</ins>
+                          </div>
+                          <div class="f-box-bt">
+                              <div class="Progress-bar">
+                                  <p class="u-progress"><span class="pgbar" style="width:{{item.baifenbi}};"><span class="pging"></span></span></p>
+                                  <ul class="Pro-bar-li"><li class="P-bar01"><em>{{item.finish_time}}</em>已参与</li><li class="P-bar02"><em>{{item.total_time}}</em>总人次</li><li class="P-bar03"><em>{{item.shengyu_time}}</em>剩余</li></ul>
+                              </div>
+                              <div class="addRound" ng-click="addCart(item.pid,0,item.pic,$event,$index)"><img src="img/ic_add_shopping_cart.png"></div>
+                          </div>
+                      </div>
+                  </a>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar ng-if="carts.length > 0">
+    <div class="wxc-balance white" style="border-top:none">
+      <div class="wxc-balance-left" style="border-top:1px solid #d7d7d7;">
+        <style>
+          .on{background: url("img/xuanzhong.png") no-repeat; background-size: 24px 24px;border:1px solid transparent!important;}
+        </style>
+        <i id="is_sel_all" class="{{choose[0]}}" ng-click="selCartProAll($event)"></i>
+        <span class="wxc-all">全选</span>
+        <span class="wxc-all" style="float:right">合计：￥{{summoney}}</span>
+      </div>
+      <div class="wxc-balance-right" ng-click="jiesuan()" style="text-align:center;line-height:50px;font-size:16px;background-color:#ff5000;">
+        结算(<span id="cart_length" style="font-size:16px">{{cart_length}}</span>)
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-view>

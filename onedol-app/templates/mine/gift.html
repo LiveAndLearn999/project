@@ -1,0 +1,102 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>我的红包</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <nav class="tab-bnav">
+    <ul class="clearfix">
+      <li class="{{tab[0].tabClass}}" ng-click="tabAc(0)"><a>可使用</a></li>
+      <li class="{{tab[1].tabClass}}" ng-click="tabAc(1)"><a>已使用</a></li>
+      <li class="{{tab[2].tabClass}}" ng-click="tabAc(2)"><a>已过期</a></li>
+    </ul>
+  </nav>
+  <ion-content overflow-scroll="true" style="background-color:#efefef;" go-back>
+      <div class="tab-box use-gift" ng-if="tab[0].isShow">
+        <ul ng-if="useRecords.length == 0" style="line-height:35px;text-align:center;border-bottom:1px solid #929292;">暂无可使用的红包</ul>
+        <ul class="list-gift">
+          <li ng-repeat="item in useRecords">
+            <div class="tb-top">
+              <div class="tb-left">
+                <div>
+                  <p class="tb-lfp">￥<span>{{item.money}}</span></p>
+                  <p class="tb-lsp" ng-if="item.moneyLimitFlag">满{{item.limitMoney}}元可用</p>
+                </div>
+              </div>
+              <div class="tb-right">
+                <a class="btn-use-gift" ng-click="buyProduct()">立即使用</a>
+                <div class="tb-right-t">
+                  <p>{{item.catalogueName}}<span class="pdl8" style="font-size:14px">{{item.typesName}}</span></p>
+                  <p>{{item.startTime}}--{{item.finishTime}}</p>
+                </div>
+                <div class="tb-right-b" ng-click="seeRule($event)">
+                  <p>使用说明</p>
+                  <img class="ico-arrow-down" src="img/ico_arrow_down.png">
+                  <img class="ico-arrow-up" src="img/ico_arrow_up.png">
+                </div>
+              </div>
+            </div>
+            <div class="tb-bottom" style="display:none" dir="dir" content="item.explain"></div>
+          </li>
+        </ul>
+        <ion-infinite-scroll ng-if="canLoadRecordUse.code" on-infinite="useLoadMore()" distance="1%"></ion-infinite-scroll>
+      </div>
+      <div class="tab-box disuse-gift"  ng-if="tab[1].isShow">
+        <ul ng-if="disuseRecords.length == 0" style="line-height:35px;text-align:center;border-bottom:1px solid #929292;">暂无已使用的红包</ul>
+        <ul class="list-gift">
+          <li ng-repeat="item in disuseRecords">
+            <div class="tb-top">
+              <div class="tb-left">
+                <div>
+                  <p class="tb-lfp">￥<span>{{item.money}}</span></p>
+                  <p class="tb-lsp" ng-if="item.moneyLimitFlag">满{{item.limitMoney}}元可用</p>
+                </div>
+              </div>
+              <div class="tb-right">
+                <img class="bg-top-gift" src="img/bg_used.png">
+                <div class="tb-right-t">
+                  <p>{{item.catalogueName}}<span class="pdl8" style="font-size:14px">{{item.typesName}}</span></p>
+                  <p>{{item.startTime}}--{{item.finishTime}}</p>
+                </div>
+                <div class="tb-right-b" ng-click="seeRule($event)">
+                  <p>使用说明</p>
+                  <img class="ico-arrow-down" src="img/ico_arrow_down.png">
+                  <img class="ico-arrow-up" src="img/ico_arrow_up.png">
+                </div>
+              </div>
+            </div>
+            <div class="tb-bottom" style="display:none" dir="dir" content="item.explain"></div>
+          </li>
+        </ul>
+        <ion-infinite-scroll ng-if="canLoadRecordDisuse.code" on-infinite="disuseLoadMore()" distance="1%"></ion-infinite-scroll>
+      </div>
+    <div class="tab-box disuse-gift"  ng-if="tab[2].isShow">
+      <ul ng-if="overdueRecords.length == 0" style="line-height:35px;text-align:center;border-bottom:1px solid #929292;">暂无已过期的红包</ul>
+      <ul class="list-gift">
+        <li ng-repeat="item in overdueRecords">
+          <div class="tb-top">
+            <div class="tb-left">
+              <div>
+                <p class="tb-lfp">￥<span>{{item.money}}</span></p>
+                <p class="tb-lsp" ng-if="item.moneyLimitFlag">满{{item.limitMoney}}元可用</p>
+              </div>
+            </div>
+            <div class="tb-right">
+              <img class="bg-top-gift" src="img/bg_expired.png">
+              <div class="tb-right-t">
+                <p>{{item.catalogueName}}<span class="pdl8" style="font-size:14px">{{item.typesName}}</span></p>
+                <p>{{item.startTime}}--{{item.finishTime}}</p>
+              </div>
+              <div class="tb-right-b" ng-click="seeRule($event)">
+                <p>使用说明</p>
+                <img class="ico-arrow-down" src="img/ico_arrow_down.png">
+                <img class="ico-arrow-up" src="img/ico_arrow_up.png">
+              </div>
+            </div>
+          </div>
+          <div class="tb-bottom" style="display:none" dir="dir" content="item.explain"></div>
+        </li>
+      </ul>
+      <ion-infinite-scroll ng-if="canLoadRecordOverdue.code" on-infinite="overdueLoadMore()" distance="1%"></ion-infinite-scroll>
+    </div>
+  </ion-content>
+</ion-view>

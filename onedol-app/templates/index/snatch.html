@@ -1,0 +1,83 @@
+﻿<ion-view hide-tabs="true">
+  <ion-nav-title>红包大派送</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" go-back>
+    <div class="bg-snatch">
+        <img class="img-luck" src="https://resource.1yuanxing.com/images/vouchers/top_snatch.png" />
+        <div class="box-snatch">
+            <div class="area-coupon">
+                <div class="area-coupon-outter" ng-if="case.case1">
+                    <div class="area-coupon-inner">
+                        <img class="area-cou-m" src="img/coupon_snatch.png">
+                        <img class="area-cou-a1" src="img/shape1.png">
+                        <img class="area-cou-a2" src="img/shape2.png">
+                        <img class="area-cou-a3" src="img/shape3.png">
+                        <img class="area-cou-a4" src="img/shape4.png">
+                        <div class="info-coupon">
+                            <p>红包开抢时间</p>
+                            <p>{{case1.startTime}}</p>
+                        </div>
+                    </div>
+                    <div class="btn-snatch-m" ng-click="returnIndex()"><img src="img/btn_home.png"></div>
+                </div>
+                <div class="area-coupon-outter clearfix" ng-if="case.case2">
+                    <div class="area-coupon-inner">
+                        <img class="area-cou-m" src="img/coupon_snatch.png">
+                        <img class="area-cou-a1" src="img/shape1.png">
+                        <img class="area-cou-a2" src="img/shape2.png">
+                        <img class="area-cou-a3" src="img/shape3.png">
+                        <img class="area-cou-a4" src="img/shape4.png">
+                        <div class="info-coupon">
+                            <p>红包开抢倒计时</p>
+                            <p>{{case2.timeRub}}</p>
+                        </div>
+                    </div>
+                    <div class="btn-snatch-l" ng-click="returnIndex()"><img src="img/btn_home.png"></div>
+                    <div class="btn-snatch-r" ng-click="snatch()"><img src="img/btn_snatch.png"></div>
+                </div>
+                <div class="area-coupon-outter pdt20" ng-if="case.case3">
+                    <div class="area-coupon-inner">
+                        <img class="bg-cou-m" src="img/bg_coupon.png">
+                        <div class="info-coupon-t">
+                            <p ng-if="case3.isRep">您本轮已领取</p>
+                            <p ng-if="!case3.isRep">恭喜您获得</p>
+                            <p>￥<span>{{case3.money}}</span></p>
+                        </div>
+                        <div class="info-coupon-b">
+                            <p ng-if="case3.moneyLimitFlag"><i></i>满{{case3.limitMoney}}元可用</p>
+                            <p><i></i>{{case3.typesName}}</p>
+                            <p><i></i>{{case3.validity}}到期</p>
+                        </div>
+                    </div>
+                    <div class="btn-snatch-m" ng-click="showPopup(case3.money,case3.typesName,case3.catalogueName)"><img src="img/btn_con_share.png"></div>
+                </div>
+                <div class="area-coupon-outter pdt20" ng-if="case.case4">
+                    <div class="area-coupon-inner">
+                        <img class="bg-cou-m" src="img/bg_coupon_end.png">
+                        <div class="info-coupon-end">
+                            <p>下轮红包发放时间</p>
+                            <p>{{case4.startTime}}</p>
+                        </div>
+                    </div>
+                    <div class="btn-snatch-m" ng-click="returnIndex()"><img src="img/btn_home_red.png"></div>
+                </div>
+            </div>
+
+            <div class="snatch-rule">
+                <div class="sr-header clearfix">
+                    <div class="sr-header-l">
+                        <img class="rotate180" src="img/line_rule.png"><s></s>
+                    </div>
+                    <div class="sr-header-m">活动规则</div>
+                    <div class="sr-header-r">
+                        <s></s><img src="img/line_rule.png">
+                    </div>
+                </div>
+                <div class="sr-content"  dir="dir" content="explain"></div>
+            </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

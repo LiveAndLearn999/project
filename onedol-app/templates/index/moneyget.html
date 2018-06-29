@@ -1,0 +1,76 @@
+<ion-view hide-tabs="true">
+  <ion-nav-title>佣金返现</ion-nav-title>
+    <ion-nav-buttons side="left" style="color:#fff">
+        <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+    </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fff;" go-back>
+  	<div class='zlcommImg' style='position: relative;'>
+  		<div>
+  			<img ng-src="{{zlimg.zlbanner}}" style='width:100%'/>
+  		</div>
+  		<div style='text-align: right;margin-top:-25px'><img src="{{zlimg.zlsjx}}" style='margin:10px 35px -40px;width:14%'/></div>
+  		<!--<div class='zl'>
+  			<p class='zllistTop zlli'>
+  				<span>邀请的好友</span>
+  				<span>好友消费金额</span>
+  				<span>佣金</span>
+  			</p>
+  			<ul>
+  				<p style='height:100px;background:#CCC;text-align: center;line-height:100px' ng-if='list'>{{val}}</p>
+	  			<li ng-repeat='item in commissRecords' class='zllist zlli'>
+	  				<span>{{item.nickname}}</span>
+  					<span>{{item.sum | currency:'￥'}}</span>
+  					<span>{{item.commiss | currency:'￥'}}&nbsp;({{item.maths}})</span>
+	  			</li>
+  			</ul>
+  			<p class='zllistFooter zlli'><font>累计获得佣金 : {{getUser.yongjintotal | currency:'￥'}}</font> </p>
+  		</div>-->
+  		
+  		<div style='text-align: center;color:red;margin-bottom:15px;margin-top:4px'>
+  			您累计获得佣金 : {{getUser.yongjintotal | currency:'￥'}}
+  		</div>
+  		<div style='text-align: center;color:#fff' class='zljianbian'>
+  			<li ui-sref="mine.commission">点我查看详情>></li>
+  		</div>
+  		<div style='padding-bottom:8px'><img ng-src="{{zlimg.zlsjx2}}" style='margin:-12px 50px 6px;width:10%;'/></div>
+  		<div class='zlguize' style='z-index:10;position: relative;margin-bottom:-15px;color:#693e00'>
+  			<img ng-src="{{zlimg.zlhf}}" style='width:55%;height:30px;margin:-13px auto 5px auto;display:block'/>
+  			<p>①一元行老客户邀请新客户返现详情：</p>
+				<p>A邀请B，A可得B现金消费金额2%的佣金；</p>
+				<p>B邀请C，B可得C现金消费金额的2%,A可得C消费金额1%的
+				佣金；</p>
+				<p>C邀请D，C可得D现金消费2%的佣金，B、A可得D消费1%
+				的佣金；</p>
+				<p>D邀请E， D可得E现金消费金额2%的佣金，B、C可得E消费
+				金额1%的佣金，A不得佣金。以此类推；</p>
+				<p>②佣金满100元可提现，不满100元可充值至余额消费；</p>
+				<p>③一元行拥有对本活动最终解释权，如发现违规行为
+				（如：作弊、恶意刷单、虚假交易等），一元行有权取消违
+				规交易并禁封账号，必要时可追究法律责任！</p>
+  		</div>
+  		<!--<div style='padding-bottom:1.5rem'>-->
+  			<img ng-src="{{zlimg.zlfooter}}" alt="" style='width:100%;padding-bottom:1.8rem'/>
+  		<!--</div>-->
+  	</div>
+  	
+  </ion-content>
+  <div class='zlfooter' style='vertical-align: "" !important;'>
+  	<p class='zljianbian' style='height:45px !important'><span ng-click='zlfx()'><img src="img/zlerweima.png" /><font>扫码邀请</font></span></p>
+		<p class='zljianbian' style='height:45px !important'><span ng-click='share()'><img src="{{zlimg.zlfx}}" /><font>分享邀请</font></span></p>
+		
+	</div>
+	<div class='zlfxfooter'>
+		<a href="javascript:;"  ng-click="WeixinAppShare(0)" ><img src="img/zlweixinimg.png" /><p>微信好友</p></a>
+		<a href="javascript:;"  ng-click="WeixinAppShare(1)" ><img src="img/zlquanimg.png" /><p>朋友圈</p></a>
+		<a href="javascript:;"  ng-click="WeixinAppShare(3)" ><img src="img/zlqqimg.png" /><p>QQ好友</p></a>
+		<span ng-click='zlbye()'>×</span>
+	</div>
+</ion-view>
+<div id='zlboxerweima' style='width:100%;height:100%;position: absolute;z-index: 999;' ng-show='zlweima'>
+	<p >
+		<img ng-src="{{app_ewm}}" alt="" style='width:60%;;margin:0 auto;display:block;'/>
+		<span  style='display:block;width:100%;text-align: center;font-size: .5rem'>扫描二维码，邀请好友加入</span>
+		<font>|</font>
+		<a href="javascript:;" ng-click='zlfalse()'>×</a>
+	</p>
+</div>

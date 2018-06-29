@@ -1,0 +1,24 @@
+﻿<ion-view  hide-tabs="true">
+  <ion-nav-title>转出到元行账户</ion-nav-title>
+  <ion-nav-buttons side="left" style="color:#fff">
+    <div class="button icon ssk button-clear" ng-click="goBack()"><i class="ic ic_arrow_left"></i></div>
+  </ion-nav-buttons>
+  <ion-content overflow-scroll="true" style="background-color:#fafafa" go-back>
+    <div class="xjl_yjfk">
+      <div class="xjl_fl">
+        <p style="color:#f00;line-height:20px;padding:5px 0;">温馨提示：单笔转出金额不能小于1元且必须是整数</p>
+        <p style="font-size:14px;">当前佣金余额：<span style="font-size:15px;" id="balance">￥{{balance}}</span>元&nbsp;&nbsp;</p>
+        <div class="xjl_lxdh" style=" padding:0px 0px 10px 0px">
+          <input type="text" placeholder="请输入转出金额" class="lxfs" ng-model="user.sum" id="sum" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
+        </div>
+        <div class="xjl_lxdh wjjymm" style=" padding:0px 0px 10px 0px">
+          <input type="password" class="lxfs" placeholder="请输入交易密码" ng-model="user.traderpassword" id="traderpassword"/>
+          <p ng-if="isSet">您暂未设置交易密码，<a href="javascript:skip('#/mine/traderPassSet')">去设置</a></p>
+          <p ng-if="isForget">忘记交易密码？<a href="javascript:skip('#/mine/traderPassSet')">去重置</a></p>
+        </div>
+        <a href="javascript:void(0);" ng-click="subCardBtn(0)" class="xjl_tj">确认转出到元行账户</a>
+      </div>
+      
+    </div>
+  </ion-content>
+</ion-view>
